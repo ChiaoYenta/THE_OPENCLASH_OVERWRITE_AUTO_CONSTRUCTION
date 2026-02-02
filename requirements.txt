@@ -1,0 +1,22 @@
+# OpenClash Config Generator Requirements
+
+# YAML 处理
+PyYAML>=6.0.1
+
+# 模板引擎
+Jinja2>=3.1.2
+
+# Git 操作 (可选)
+GitPython>=3.1.40
+
+# HTTP 请求
+requests>=2.31.0
+
+# 命令行参数解析 (Python 内置，此处仅作记录)
+# argparse
+
+# 日志记录 (Python 内置，此处仅作记录)
+# logging
+
+# 文件操作 (Python 内置，此处仅作记录)
+# pathlib
