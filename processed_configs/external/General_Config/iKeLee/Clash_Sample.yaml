@@ -1,6 +1,52 @@
 # Processed: raw_configs/external/General_Config/iKeLee/Clash_Sample.yaml
 # Providers: 2 proxy, 23 rule
 
+rules:
+- RULE-SET, LAN, DIRECT
+- RULE-SET, Direct, DIRECT
+- RULE-SET, Proxy, 兜底后备策略
+- RULE-SET, ChinaDownloadCDN, DIRECT
+- RULE-SET, InternationalDownloadCDN, 境外下载
+- RULE-SET, AI, AI
+- RULE-SET, TikTok, TikTok
+- RULE-SET, SpeedtestIntl, SpeedtestIntl
+- RULE-SET, Steam, 兜底后备策略
+- RULE-SET, Game, 游戏选择
+- RULE-SET, Netflix, Netflix
+- RULE-SET, Emby, Emby
+- RULE-SET, TestFlight, TestFlight
+- RULE-SET, iCloudChina, DIRECT
+- RULE-SET, ApplePushNotificationService, DIRECT
+- RULE-SET, AppleSoftwareUpdates, DIRECT
+- RULE-SET, AppleID, Apple账户
+- RULE-SET, AppStore, App Store
+- RULE-SET, 1Password, 1Password
+- RULE-SET, Microsoft, 兜底后备策略
+- RULE-SET, Google, 兜底后备策略
+- RULE-SET, Telegram, 兜底后备策略
+- RULE-SET, ESET_China, DIRECT
+- GEOIP, CN, DIRECT
+- MATCH, 兜底后备策略
+proxy-providers:
+  机场名称1:
+    type: http
+    interval: 3600
+    health-check: &id001
+      enable: true
+      url: http://www.google.com/blank.html
+      interval: 6
+    url: 机场1的订阅URL
+    path: ./proxy_providers/机场名称1.yaml
+    override:
+      additional-prefix: '[机场名称1] '
+  机场名称2:
+    type: http
+    interval: 3600
+    health-check: *id001
+    url: 机场2的订阅URL
+    path: ./proxy_providers/机场名称2.yaml
+    override:
+      additional-prefix: '[机场名称2] '
 proxy-groups:
 - name: 游戏选择
   type: select
@@ -416,49 +462,3 @@ rule-providers:
     proxy: DIRECT
     path: ./rules/ESET_China.yaml
     url: https://kelee.one/Tool/Clash/Rule/ESET_China.yaml
-proxy-providers:
-  机场名称1:
-    type: http
-    interval: 3600
-    health-check: &id001
-      enable: true
-      url: http://www.google.com/blank.html
-      interval: 6
-    url: 机场1的订阅URL
-    path: ./proxy_providers/机场名称1.yaml
-    override:
-      additional-prefix: '[机场名称1] '
-  机场名称2:
-    type: http
-    interval: 3600
-    health-check: *id001
-    url: 机场2的订阅URL
-    path: ./proxy_providers/机场名称2.yaml
-    override:
-      additional-prefix: '[机场名称2] '
-rules:
-- RULE-SET, LAN, DIRECT
-- RULE-SET, Direct, DIRECT
-- RULE-SET, Proxy, 兜底后备策略
-- RULE-SET, ChinaDownloadCDN, DIRECT
-- RULE-SET, InternationalDownloadCDN, 境外下载
-- RULE-SET, AI, AI
-- RULE-SET, TikTok, TikTok
-- RULE-SET, SpeedtestIntl, SpeedtestIntl
-- RULE-SET, Steam, 兜底后备策略
-- RULE-SET, Game, 游戏选择
-- RULE-SET, Netflix, Netflix
-- RULE-SET, Emby, Emby
-- RULE-SET, TestFlight, TestFlight
-- RULE-SET, iCloudChina, DIRECT
-- RULE-SET, ApplePushNotificationService, DIRECT
-- RULE-SET, AppleSoftwareUpdates, DIRECT
-- RULE-SET, AppleID, Apple账户
-- RULE-SET, AppStore, App Store
-- RULE-SET, 1Password, 1Password
-- RULE-SET, Microsoft, 兜底后备策略
-- RULE-SET, Google, 兜底后备策略
-- RULE-SET, Telegram, 兜底后备策略
-- RULE-SET, ESET_China, DIRECT
-- GEOIP, CN, DIRECT
-- MATCH, 兜底后备策略
