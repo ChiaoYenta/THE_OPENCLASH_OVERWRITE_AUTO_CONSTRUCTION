@@ -1,15 +1,16 @@
-{# 主路由 OpenClash 覆写配置模板 #}
-{# ============================================================================ #}
-{# 配置名称: {{ config_name }} #}
-{# 配置类型: {{ config_type }} #}
-{# Provider 数量: {{ provider_count }} #}
-{# ============================================================================ #}
+# ==========================================================
+# OpenClash 覆写配置文件 - 主路由标准模式
+# 来源: {{ source_type }} / {{ config_name }}
+# Provider数量: {{ provider_count }}
+# 生成时间: {{ timestamp }}
+# ==========================================================
 
 [General]
+# 核心设置
+CORE_TYPE = Meta
 CONFIG_FILE = /etc/openclash/config/{{ config_name }}.yaml
-CORE_TYPE = Smart
 
-# DNS
+# DNS 设置
 ENABLE_REDIRECT_DNS = 1
 ENABLE_CUSTOM_DNS = 0
 APPEND_DEFAULT_DNS = 0
@@ -19,7 +20,7 @@ CUSTOM_FAKEIP_FILTER = 1
 CUSTOM_FAKEIP_FILTER_MODE = blacklist
 FAKEIP_RANGE = 198.18.0.1/16
 
-# IPv6
+# IPv6 设置
 IPV6_ENABLE = 1
 IPV6_DNS = 1
 IPV6_MODE = 0
@@ -28,44 +29,45 @@ ENABLE_V6_UDP_PROXY = 1
 # 代理模式
 EN_MODE = fake-ip
 ENABLE_UDP_PROXY = 1
-DISABLE_UDP_QUIC = 0
+DISABLE_UDP_QUIC = 1
 ROUTER_SELF_PROXY = 1
 PROXY_MODE = rule
 
-# 分流
+# 分流设置
 CHINA_IP_ROUTE = 1
 CHINA_IP6_ROUTE = 1
 CHNR_AUTO_UPDATE = 1
 CHNR_UPDATE_WEEK_TIME = *
 CHNR_UPDATE_DAY_TIME = 0
 
+# 高级功能
 ENABLE_META_SNIFFER = 1
 ENABLE_META_SNIFFER_CUSTOM = 1
 ENABLE_META_SNIFFER_PURE_IP = 1
-
 ENABLE_TCP_CONCURRENT = 1
 ENABLE_UNIFIED_DELAY = 1
 
-# 订阅信息
+# 订阅信息展示
 {% if provider_count == 1 %}
 SUB_INFO_URL = $EN_KEY
 {% else %}
-{%- for env_var in env_variables %}
-SUB_INFO_URL{{ loop.index }} = ${{ env_var }}
-{%- endfor %}
+{% for i in range(1, provider_count + 1) %}
+SUB_INFO_URL{{ i }} = $EN_KEY{{ i }}
+{% endfor %}
 {% endif %}
 
-# 下载精简后的 YAML
-DOWNLOAD_FILE = url={{ yaml_download_url }}, path=/etc/openclash/config/{{ config_name }}.yaml, cron=0 6 * * *, force=true
+# 自动下载精简配置（每天凌晨6点更新）
+DOWNLOAD_FILE = url={{ yaml_url }}, path=/etc/openclash/config/{{ config_name }}.yaml, cron=0 6 * * *, force=true
 
+# 配置更新后重启
 RESTART = true
 
-# 覆写规则
 [Overwrite]
+# 更新 Proxy Provider 订阅链接
 {% if provider_count == 1 %}
 ruby_edit "$CONFIG_FILE" "['proxy-providers']['{{ proxy_providers[0].name }}']['url']" "$EN_KEY"
 {% else %}
-{%- for provider in proxy_providers %}
+{% for provider in proxy_providers %}
 ruby_edit "$CONFIG_FILE" "['proxy-providers']['{{ provider.name }}']['url']" "$EN_KEY{{ loop.index }}"
-{%- endfor %}
+{% endfor %}
 {% endif %}
