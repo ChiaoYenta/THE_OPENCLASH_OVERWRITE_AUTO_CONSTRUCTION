@@ -1,6 +1,101 @@
 # Processed: raw_configs/external/General_Config/Mitchell/config.yaml
 # Providers: 4 proxy, 30 rule
 
+rules:
+- RULE-SET,AWAvenue_Ads_Rule,REJECT
+- RULE-SET,blackmatrix7_ad,REJECT
+- RULE-SET,porn,REJECT
+- RULE-SET,cn_ip,DIRECTLY,no-resolve
+- RULE-SET,telegram_ip,Proxy,no-resolve
+- RULE-SET,Telegram_No_Resolve,Proxy,no-resolve
+- RULE-SET,geoip_cloudflare,AI,no-resolve
+- RULE-SET,geoip_cloudfront,DIRECTLY,no-resolve
+- RULE-SET,geoip_facebook,Proxy,no-resolve
+- RULE-SET,geoip_netflix,Proxy,no-resolve
+- RULE-SET,geoip_twitter,Proxy,no-resolve
+- DOMAIN-SUFFIX,julebu.co,DIRECTLY
+- RULE-SET,blackmatrix7_direct,DIRECTLY
+- RULE-SET,private_domain,DIRECTLY
+- RULE-SET,cn_domain,DIRECTLY
+- RULE-SET,apple_cn_domain,DIRECTLY
+- DOMAIN-SUFFIX,lingq.com,AI
+- DOMAIN-SUFFIX,youglish.com,AI
+- DOMAIN-SUFFIX,deepl.com,AI
+- DOMAIN-SUFFIX,chat.openai.com,AI
+- DOMAIN-SUFFIX,grammarly.com,AI
+- DOMAIN-KEYWORD,sci-hub,AI
+- RULE-SET,ai,AI
+- RULE-SET,youtube_domain,YouTube
+- RULE-SET,tiktok_domain,TikTok
+- RULE-SET,netflix_domain,Proxy
+- RULE-SET,disney_domain,Proxy
+- RULE-SET,onedrive_domain,OneDrive
+- RULE-SET,speedtest_domain,Speedtest
+- RULE-SET,telegram_domain,Proxy
+- RULE-SET,gfw_domain,Proxy
+- RULE-SET,geolocation-!cn,Proxy
+- RULE-SET,proxy,Proxy
+- RULE-SET,trackerslist,Trackerslist
+- MATCH,漏网之鱼
+proxy-providers:
+  1.p1:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: &id001
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 600
+      timeout: 5
+      lazy: true
+      expected-status: '204'
+      method: HEAD
+    smux: &id002
+      enabled: true
+      padding: true
+      protocol: smux
+    url: ''
+    path: ./proxy_provider/p1.yaml
+    override:
+      additional-prefix: p1 »
+  2.p2:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    smux: *id002
+    url: ''
+    path: ./proxy_provider/p2.yaml
+    override:
+      additional-prefix: p2 »
+  3.p3:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    smux: *id002
+    url: ''
+    path: ./proxy_provider/p3.yaml
+    override:
+      additional-prefix: p3 »
+  4.p4:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    smux: *id002
+    url: ''
+    path: ./proxy_provider/p4.yaml
+    override:
+      additional-prefix: p4 »
 proxy-groups:
 - name: Proxy
   type: select
@@ -26,7 +121,7 @@ proxy-groups:
   - AI_稳定节点
   - AI_自动优选
   icon: https://github.com/DustinWin/ruleset_geodata/releases/download/icons/ai.png
-- use: &id001
+- use: &id003
   - 2.p2
   - 3.p3
   - 4.p4
@@ -39,7 +134,7 @@ proxy-groups:
   lazy: true
   filter: p2 »🇺🇸 美国-03|p2 »🇸🇬 狮城-03|p2 »🇺🇸 美国-01
   icon: https://testingcf.jsdelivr.net/gh/aihdde/Rules@master/icon/ai.png
-- use: *id001
+- use: *id003
   name: AI_自动优选
   type: url-test
   url: https://cp.cloudflare.com/generate_204
@@ -48,7 +143,7 @@ proxy-groups:
   lazy: false
   filter: (?i)(🇺🇸|美国|美國|US|united\s?states|america|usa|洛杉矶|达拉斯|New\s?York|西雅图|🇸🇬|新加坡|狮城|SG|Singapore)
   icon: https://raw.githubusercontent.com/Mithcell-Ma/icon/refs/heads/main/ai_backup.png
-- use: *id001
+- use: *id003
   type: load-balance
   lazy: true
   interval: 600
@@ -57,7 +152,7 @@ proxy-groups:
   name: 香港均衡加速
   filter: (?i)(香港|hk|🇭🇰|hong\s?kong)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/release/icon/color/available.png
-- use: *id001
+- use: *id003
   type: load-balance
   lazy: true
   interval: 600
@@ -66,7 +161,7 @@ proxy-groups:
   name: 美国均衡加速
   filter: (?i)(🇺🇸|美国|美國|US|united\s?states|america|usa|洛杉矶|达拉斯|New\s?York|西雅图)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/release/icon/color/available.png
-- use: *id001
+- use: *id003
   type: load-balance
   lazy: true
   interval: 600
@@ -75,7 +170,7 @@ proxy-groups:
   name: 新加坡均衡加速
   filter: (?i)(🇸🇬|新加坡|狮城|SG|Singapore)
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
-- use: *id001
+- use: *id003
   type: fallback
   lazy: true
   interval: 900
@@ -84,7 +179,7 @@ proxy-groups:
   name: 香港故转
   filter: (?i)(香港|hk|🇭🇰|hong\s?kong)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/icon/color/asn.png
-- use: *id001
+- use: *id003
   type: fallback
   lazy: true
   interval: 900
@@ -93,7 +188,7 @@ proxy-groups:
   name: 美国故转
   filter: (?i)(🇺🇸|美国|美國|US|united\s?states|america|usa|洛杉矶|达拉斯|New\s?York|西雅图)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/icon/color/asn.png
-- use: *id001
+- use: *id003
   type: fallback
   lazy: true
   interval: 900
@@ -102,7 +197,7 @@ proxy-groups:
   name: 新加坡故转
   filter: (?i)(🇸🇬|新加坡|狮城|SG|Singapore)
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
-- use: *id001
+- use: *id003
   name: 香港自动
   type: url-test
   include-all: false
@@ -111,7 +206,7 @@ proxy-groups:
   lazy: true
   filter: (?i)(香港|hk|🇭🇰|hong\s?kong)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/release/icon/color/auto.png
-- use: *id001
+- use: *id003
   name: 美国自动
   type: url-test
   include-all: false
@@ -120,7 +215,7 @@ proxy-groups:
   lazy: true
   filter: (?i)(🇺🇸|美国|US|united\s?states|america|usa|洛杉矶|达拉斯|New\s?York|西雅图)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/release/icon/color/auto.png
-- use: *id001
+- use: *id003
   name: 新加坡自动
   type: url-test
   include-all: false
@@ -129,7 +224,7 @@ proxy-groups:
   lazy: true
   filter: (?i)(🇸🇬|新加坡|狮城|SG|Singapore)
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/release/icon/color/auto.png
-- use: *id001
+- use: *id003
   name: 自动选择
   type: url-test
   url: https://cp.cloudflare.com/generate_204
@@ -159,7 +254,7 @@ proxy-groups:
   - 全部节点
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png
 - type: select
-  proxies: &id003
+  proxies: &id005
   - Proxy
   - 香港故转
   - 美国故转
@@ -200,7 +295,7 @@ proxy-groups:
   - DIRECTLY
   - Proxy
   icon: https://github.com/DustinWin/ruleset_geodata/releases/download/icons/trackerslist.png
-- use: &id002
+- use: &id004
   - 1.p1
   - 2.p2
   - 3.p3
@@ -211,132 +306,37 @@ proxy-groups:
   include-all: true
   filter: (?i)(香港|hk|🇭🇰|hong\s?kong)
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
-- use: *id002
+- use: *id004
   name: 美国节点
   type: select
   skip-cert-verify: true
   include-all: true
   filter: (?i)(🇺🇸|美国|US|united\s?states|america|usa|洛杉矶|达拉斯|New\s?York|西雅图)
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
-- use: *id002
+- use: *id004
   name: 新加坡节点
   type: select
   skip-cert-verify: true
   include-all: true
   filter: (?i)(🇸🇬|新加坡|狮城|SG|Singapore)
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
-- use: *id002
+- use: *id004
   name: 日本节点
   type: select
   skip-cert-verify: true
   include-all: true
   filter: (?i)(🇯🇵|日本|東京|东京|JP|japan|tokyo|osaka)
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
-- use: *id002
+- use: *id004
   name: 全部节点
   type: select
   icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/World_Map.png
   include-all: true
   filter: (?i)^((?!(DIRECTLY|DIRECT|Proxy|Traffic|Expire|Expired|过期|剩余|流量|官网|超时|失效|Invalid|Test|测速|本地|Local)).)*$
 - type: select
-  proxies: *id003
+  proxies: *id005
   name: 漏网之鱼
   icon: https://testingcf.jsdelivr.net/gh/aihdde/Rules@master/icon/fish.png
-proxy-providers:
-  1.p1:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: &id004
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 600
-      timeout: 5
-      lazy: true
-      expected-status: '204'
-      method: HEAD
-    smux: &id005
-      enabled: true
-      padding: true
-      protocol: smux
-    url: ''
-    path: ./proxy_provider/p1.yaml
-    override:
-      additional-prefix: p1 »
-  2.p2:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id004
-    smux: *id005
-    url: ''
-    path: ./proxy_provider/p2.yaml
-    override:
-      additional-prefix: p2 »
-  3.p3:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id004
-    smux: *id005
-    url: ''
-    path: ./proxy_provider/p3.yaml
-    override:
-      additional-prefix: p3 »
-  4.p4:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id004
-    smux: *id005
-    url: ''
-    path: ./proxy_provider/p4.yaml
-    override:
-      additional-prefix: p4 »
-rules:
-- RULE-SET,AWAvenue_Ads_Rule,REJECT
-- RULE-SET,blackmatrix7_ad,REJECT
-- RULE-SET,porn,REJECT
-- RULE-SET,cn_ip,DIRECTLY,no-resolve
-- RULE-SET,telegram_ip,Proxy,no-resolve
-- RULE-SET,Telegram_No_Resolve,Proxy,no-resolve
-- RULE-SET,geoip_cloudflare,AI,no-resolve
-- RULE-SET,geoip_cloudfront,DIRECTLY,no-resolve
-- RULE-SET,geoip_facebook,Proxy,no-resolve
-- RULE-SET,geoip_netflix,Proxy,no-resolve
-- RULE-SET,geoip_twitter,Proxy,no-resolve
-- DOMAIN-SUFFIX,julebu.co,DIRECTLY
-- RULE-SET,blackmatrix7_direct,DIRECTLY
-- RULE-SET,private_domain,DIRECTLY
-- RULE-SET,cn_domain,DIRECTLY
-- RULE-SET,apple_cn_domain,DIRECTLY
-- DOMAIN-SUFFIX,lingq.com,AI
-- DOMAIN-SUFFIX,youglish.com,AI
-- DOMAIN-SUFFIX,deepl.com,AI
-- DOMAIN-SUFFIX,chat.openai.com,AI
-- DOMAIN-SUFFIX,grammarly.com,AI
-- DOMAIN-KEYWORD,sci-hub,AI
-- RULE-SET,ai,AI
-- RULE-SET,youtube_domain,YouTube
-- RULE-SET,tiktok_domain,TikTok
-- RULE-SET,netflix_domain,Proxy
-- RULE-SET,disney_domain,Proxy
-- RULE-SET,onedrive_domain,OneDrive
-- RULE-SET,speedtest_domain,Speedtest
-- RULE-SET,telegram_domain,Proxy
-- RULE-SET,gfw_domain,Proxy
-- RULE-SET,geolocation-!cn,Proxy
-- RULE-SET,proxy,Proxy
-- RULE-SET,trackerslist,Trackerslist
-- MATCH,漏网之鱼
 rule-providers:
   AWAvenue_Ads_Rule:
     type: http

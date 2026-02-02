@@ -1,9 +1,9 @@
-# General_Config/ClashConnectRules 覆写配置
+# cleaner_config 覆写配置
 
 ## 📍 来源
-- **路径**: `HenryChiao/mihomo_yamls/THEYAMLS/General_Config/ClashConnectRules`
-- **类型**: 外部自动同步
-- **用途**: 通用配置 - ClashConnectRules 作者维护
+- **路径**: `本地目录 cleaner_config`
+- **类型**: 本地手动维护
+- **用途**: 用户自定义配置
 
 ## 📁 文件说明
 
@@ -37,7 +37,7 @@ EN_DNS=223.5.5.5,114.114.114.114
 ```
 
 ## 📝 生成信息
-- 生成时间: 2026-02-02 14:15:50
+- 生成时间: 2026-02-02 14:15:56
 - 配置文件数: 9
 
 ---
