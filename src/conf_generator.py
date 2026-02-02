@@ -6,6 +6,7 @@ Conf Generator - 基于精简的 YAML 配置生成 OpenClash .conf 覆写文件
 
 import yaml
 import logging
+import sys
 from pathlib import Path
 from typing import Dict, List
 from jinja2 import Environment, FileSystemLoader
