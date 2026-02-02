@@ -236,78 +236,6 @@ proxy-groups:
   include-all-providers: true
   hidden: true
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Globefish.webp
-rules:
-- DST-PORT,5228-5230,FCM
-- RULE-SET,private_ip,DIRECT,no-resolve
-- RULE-SET,AWAvenue-Ads-Rule,AD
-- RULE-SET,private,DIRECT
-- RULE-SET,direct_domain,DIRECT
-- RULE-SET,category-speedtest,SPEEDTEST
-- RULE-SET,googlefcm,FCM
-- RULE-SET,verification,BOTTEST
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,meta,META
-- RULE-SET,twitter,TWITTER
-- RULE-SET,tiktok,TIKTOK
-- RULE-SET,netflix,NETFLIX
-- RULE-SET,spotify,SPOTIFY
-- RULE-SET,bilibili,BILIBILI
-- RULE-SET,biliintl,BILIBILI
-- RULE-SET,youtube,YOUTUBE
-- RULE-SET,category-ai-!cn,AI
-- RULE-SET,ai_add,AI
-- RULE-SET,pixiv,PIXIV
-- RULE-SET,github,GITHUB
-- DOMAIN-SUFFIX,sharepoint.com,ONEDRIVE-DL
-- DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,STEAM-CN
-- RULE-SET,steam@cn,STEAM-CN
-- RULE-SET,google,GOOGLE
-- RULE-SET,cn,DIRECT
-- RULE-SET,direct_ip,DIRECT
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,facebook_ip,META
-- RULE-SET,twitter_ip,TWITTER
-- RULE-SET,netflix_ip,NETFLIX
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,cn_ip,DIRECT
-- MATCH,PROXY
-proxy-providers:
-  link1:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    header: &id005
-      User-Agent:
-      - clash-verge/v2.4.4
-    health-check: &id006
-      enable: true
-      url: https://8.8.8.8/generate_204
-      expected-status: 204
-      interval: 600
-      timeout: 3000
-      max-failed-times: 2
-      lazy: false
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
-    url: 订阅链接1
-    path: ./providers/link1.yaml
-  link2:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    header: *id005
-    health-check: *id006
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
-    url: 订阅链接2
-    path: ./providers/link2.yaml
-  link3:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    header: *id005
-    health-check: *id006
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
-    url: 订阅链接3
-    path: ./providers/link3.yaml
 rule-providers:
   private_ip:
     type: http
@@ -557,3 +485,75 @@ rule-providers:
     format: mrs
     url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
     path: ./rules/cn_ip.mrs
+proxy-providers:
+  link1:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    header: &id005
+      User-Agent:
+      - clash-verge/v2.4.4
+    health-check: &id006
+      enable: true
+      url: https://8.8.8.8/generate_204
+      expected-status: 204
+      interval: 600
+      timeout: 3000
+      max-failed-times: 2
+      lazy: false
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
+    url: 订阅链接1
+    path: ./providers/link1.yaml
+  link2:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    header: *id005
+    health-check: *id006
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
+    url: 订阅链接2
+    path: ./providers/link2.yaml
+  link3:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    header: *id005
+    health-check: *id006
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
+    url: 订阅链接3
+    path: ./providers/link3.yaml
+rules:
+- DST-PORT,5228-5230,FCM
+- RULE-SET,private_ip,DIRECT,no-resolve
+- RULE-SET,AWAvenue-Ads-Rule,AD
+- RULE-SET,private,DIRECT
+- RULE-SET,direct_domain,DIRECT
+- RULE-SET,category-speedtest,SPEEDTEST
+- RULE-SET,googlefcm,FCM
+- RULE-SET,verification,BOTTEST
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,meta,META
+- RULE-SET,twitter,TWITTER
+- RULE-SET,tiktok,TIKTOK
+- RULE-SET,netflix,NETFLIX
+- RULE-SET,spotify,SPOTIFY
+- RULE-SET,bilibili,BILIBILI
+- RULE-SET,biliintl,BILIBILI
+- RULE-SET,youtube,YOUTUBE
+- RULE-SET,category-ai-!cn,AI
+- RULE-SET,ai_add,AI
+- RULE-SET,pixiv,PIXIV
+- RULE-SET,github,GITHUB
+- DOMAIN-SUFFIX,sharepoint.com,ONEDRIVE-DL
+- DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,STEAM-CN
+- RULE-SET,steam@cn,STEAM-CN
+- RULE-SET,google,GOOGLE
+- RULE-SET,cn,DIRECT
+- RULE-SET,direct_ip,DIRECT
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,facebook_ip,META
+- RULE-SET,twitter_ip,TWITTER
+- RULE-SET,netflix_ip,NETFLIX
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,cn_ip,DIRECT
+- MATCH,PROXY
