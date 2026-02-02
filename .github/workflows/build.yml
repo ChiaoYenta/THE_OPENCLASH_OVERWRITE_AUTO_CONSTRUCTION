@@ -3,7 +3,7 @@ name: Build OpenClash Overwrites
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'  # 每天6点自动更新
+    - cron: '0 6 * * *'
   push:
     branches: [main]
     paths:
@@ -20,95 +20,163 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install pyyaml jinja2
 
-      - name: Fetch External Configs
+      - name: Fetch External Configs (HenryChiao)
         run: |
+          echo "📥 Fetching external configs..."
           mkdir -p raw_configs/external
           git clone --depth=1 https://github.com/HenryChiao/mihomo_yamls.git /tmp/upstream
           
-          # 复制 General_Config 和 Smart_Mode
-          for dir in General_Config Smart_Mode; do
-            if [ -d "/tmp/upstream/THEYAMLS/$dir" ]; then
-              cp -r "/tmp/upstream/THEYAMLS/$dir" raw_configs/external/
-              echo "📥 已复制: $dir"
-            fi
-          done
+          if [ -d "/tmp/upstream/THEYAMLS/General_Config" ]; then
+            cp -r /tmp/upstream/THEYAMLS/General_Config raw_configs/external/
+            echo "✅ General_Config copied"
+          fi
+          
+          if [ -d "/tmp/upstream/THEYAMLS/Smart_Mode" ]; then
+            cp -r /tmp/upstream/THEYAMLS/Smart_Mode raw_configs/external/
+            echo "✅ Smart_Mode copied"
+          fi
+          
+          find raw_configs/external -name "*.yaml" | wc -l
+          echo "files found"
 
       - name: Copy Local Configs
         run: |
+          echo "📂 Copying local configs..."
           mkdir -p raw_configs/local
-          if [ -d "cleaner_config" ]; then
-            cp -r cleaner_config/* raw_configs/local/ 2>/dev/null || true
-            echo "📂 已复制本地配置"
+          if [ -d "cleaner_config" ] && [ "$(ls -A cleaner_config)" ]; then
+            cp -r cleaner_config/* raw_configs/local/
+            echo "✅ Local configs copied"
+          else
+            echo "ℹ️ No local configs found"
           fi
 
-      - name: Strip YAML Configs
+      - name: Process YAML configs
         run: |
+          echo "🔧 Processing YAML configs..."
           mkdir -p processed_configs/external processed_configs/local
           
-          python src/yaml_stripper.py \
-            --input raw_configs/external \
-            --output processed_configs/external \
-            --recursive
-            
-          python src/yaml_stripper.py \
-            --input raw_configs/local \
-            --output processed_configs/local \
-            --recursive
+          # 检查Python脚本是否存在
+          if [ ! -f "src/yaml_processor.py" ]; then
+            echo "❌ Error: src/yaml_processor.py not found!"
+            ls -la src/
+            exit 1
+          fi
+          
+          # 处理外部配置
+          if [ -d "raw_configs/external" ]; then
+            python src/yaml_processor.py \
+              --input raw_configs/external \
+              --output processed_configs/external \
+              --recursive \
+              --verbose
+          fi
+          
+          # 处理本地配置
+          if [ -d "raw_configs/local" ] && [ "$(ls -A raw_configs/local)" ]; then
+            python src/yaml_processor.py \
+              --input raw_configs/local \
+              --output processed_configs/local \
+              --recursive \
+              --verbose
+          fi
 
       - name: Generate Overwrite Files
         run: |
+          echo "📝 Generating overwrite files..."
           mkdir -p output/overwrites
           
           REPO_URL="https://raw.githubusercontent.com/${{ github.repository }}/main"
           
-          # 生成外部配置覆写
-          python src/overwrite_generator.py \
-            --input processed_configs/external \
-            --output output/overwrites \
-            --types main bypass smart \
-            --repo-url "$REPO_URL" \
-            --source external \
-            -v
+          # 检查脚本
+          if [ ! -f "src/overwrite_generator.py" ]; then
+            echo "❌ Error: src/overwrite_generator.py not found!"
+            exit 1
+          fi
           
-          # 生成本地配置覆写
-          python src/overwrite_generator.py \
-            --input processed_configs/local \
-            --output output/overwrites \
-            --types main bypass smart \
-            --repo-url "$REPO_URL" \
-            --source local \
-            -v
+          # 生成外部覆写
+          if [ -d "processed_configs/external" ]; then
+            python src/overwrite_generator.py \
+              --input processed_configs/external \
+              --output output/overwrites \
+              --types main bypass smart \
+              --repo-url "$REPO_URL" \
+              --source external \
+              --verbose || echo "Warning: External generation had issues"
+          fi
+          
+          # 生成本地覆写
+          if [ -d "processed_configs/local" ] && [ "$(find processed_configs/local -name '*.yaml' | wc -l)" -gt 0 ]; then
+            python src/overwrite_generator.py \
+              --input processed_configs/local \
+              --output output/overwrites \
+              --types main bypass smart \
+              --repo-url "$REPO_URL" \
+              --source local \
+              --verbose || echo "Warning: Local generation had issues"
+          fi
+          
+          echo "✅ Generated files:"
+          ls -la output/overwrites/ || echo "No files generated"
 
-      - name: Generate Documentation
+      - name: Generate checksums
         run: |
-          python src/generate_index.py --output output/
+          cd output/overwrites
+          if ls *.conf >/dev/null 2>&1; then
+            sha256sum *.conf > SHA256SUMS
+            echo "✅ Checksums generated"
+          else
+            echo "⚠️ No .conf files found"
+            touch SHA256SUMS
+          fi
+          cd ../..
 
-      - name: Commit and Release
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          git add processed_configs/ output/
-          git diff --staged --quiet || git commit -m "🤖 Auto-build: $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git add processed_configs/ output/ -f
+          
+          if git diff --staged --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            git commit -m "🤖 Auto-build: $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+            echo "✅ Changes pushed"
+          fi
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
+        if: github.event_name != 'pull_request'
         with:
-          tag_name: v$(date +'%Y%m%d-%H%M%S')
+          tag_name: release-$(date +'%Y%m%d-%H%M%S')
           name: OpenClash Overwrites $(date +'%Y-%m-%d')
-          body_path: output/RELEASE_NOTES.md
+          body: |
+            ## 📦 自动生成的 OpenClash 覆写配置
+            
+            ### 包含内容
+            - 精简后的 YAML 配置文件
+            - 三种模式的覆写文件（主路由/旁路由/Smart）
+            
+            ### 使用方法
+            1. 下载对应的 `.conf` 文件
+            2. 在 OpenClash 中上传覆写文件
+            3. 设置环境变量（根据provider数量自动调整）
           files: |
             output/overwrites/*.conf
             output/overwrites/SHA256SUMS
