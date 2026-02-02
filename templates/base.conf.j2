@@ -1,0 +1,94 @@
+{# 基础配置模板 - 所有配置文件的通用部分 #}
+{# ============================================================================ #}
+{# OpenClash 覆写配置文件 #}
+{# 自动生成于: {{ generated_date }} #}
+{# 配置类型: {{ config_type }} #}
+{# ============================================================================ #}
+
+[General]
+# ============================================================================
+# 基础配置
+# ============================================================================
+# CONFIG_FILE (原始配置文件路径)
+CONFIG_FILE = {{ openclash.config_file }}
+
+# CORE_TYPE (核心类型 Smart or Meta)
+CORE_TYPE = {{ openclash.core_type }}
+
+# ============================================================================
+# DNS 相关配置
+# ============================================================================
+# ENABLE_REDIRECT_DNS (DNS 重定向模式，0：禁用，1：Dnsmasq Redirect, 2：Firewall Redirect)
+ENABLE_REDIRECT_DNS = {{ openclash.dns.enable_redirect }}
+
+# ENABLE_CUSTOM_DNS (自定义 DNS, 0: 插件不覆写, 1: 启用，使用插件内置规则)
+ENABLE_CUSTOM_DNS = {{ openclash.dns.enable_custom }}
+
+# APPEND_DEFAULT_DNS (自动追加 default-nameserver DNS, 0: 插件不覆写, 1: 启用)
+APPEND_DEFAULT_DNS = {{ openclash.dns.append_default }}
+
+# APPEND_WAN_DNS (追加上游分配 DNS, 0: 插件不覆写, 1: 启用)
+APPEND_WAN_DNS = {{ openclash.dns.append_wan }}
+
+# STORE_FAKEIP (启用 fake-ip 缓存, 0: 插件不覆写, 1: 启用)
+STORE_FAKEIP = {{ openclash.dns.store_fakeip }}
+
+# CUSTOM_FAKEIP_FILTER (启用 Fake-IP-Filter, 0: 插件不覆写, 1: 启用，使用插件内置规则)
+CUSTOM_FAKEIP_FILTER = {{ openclash.dns.custom_fakeip_filter }}
+{% if openclash.dns.custom_fakeip_filter == 1 %}
+    # CUSTOM_FAKEIP_FILTER_MODE (Fake-IP 过滤模式, blacklist/whitelist)
+    CUSTOM_FAKEIP_FILTER_MODE = {{ openclash.dns.fakeip_filter_mode }}
+{% endif %}
+
+# FAKEIP_RANGE (自定义 Fake-IP 地址段, 如 198.18.0.1/16)
+FAKEIP_RANGE = {{ openclash.dns.fakeip_range }}
+
+# ENABLE_RESPECT_RULES (DNS 查询是否遵循规则, 0: 插件不覆写, 1: 启用)
+ENABLE_RESPECT_RULES = {{ openclash.dns.enable_respect_rules }}
+
+# CUSTOM_NAME_POLICY (自定义 Nameserver-Policy, 0: 插件不覆写, 1: 启用，使用插件内置规则)
+CUSTOM_NAME_POLICY = {{ openclash.dns.custom_name_policy }}
+
+# CUSTOM_HOST (自定义 Hosts, 0: 插件不覆写, 1: 启用，使用插件内置规则)
+CUSTOM_HOST = {{ openclash.dns.custom_host }}
+
+# CUSTOM_FALLBACK_FILTER (自定义 Fallback-Filter, 0: 插件不覆写, 1: 启用，使用插件内置规则)
+CUSTOM_FALLBACK_FILTER = {{ openclash.dns.custom_fallback_filter }}
+
+# ============================================================================
+# IPv6 相关配置
+# ============================================================================
+# IPV6_ENABLE (启用 IPv6，0: 禁用, 1: 启用)
+IPV6_ENABLE = {{ openclash.ipv6.enable }}
+
+# IPV6_DNS (启用 IPv6 DNS，0: 禁用, 1: 启用)
+IPV6_DNS = {{ openclash.ipv6.dns }}
+
+# IPV6_MODE (IPv6 代理模式, 0: TProxy Mode, 1: Redirect Mode, 2: TUN Mode, 3: Mix Mode)
+IPV6_MODE = {{ openclash.ipv6.mode }}
+
+# ENABLE_V6_UDP_PROXY (启用 IPv6 UDP 代理，0: 禁用, 1: 启用, only for Redirect Mode and Redirect Mode)
+ENABLE_V6_UDP_PROXY = {{ openclash.ipv6.enable_v6_udp_proxy }}
+
+# ============================================================================
+# 代理与模式
+# ============================================================================
+# EN_MODE (插件运行模式：fake-ip/fake-ip-tun/fake-ip-mix or redir-host/redir-host-tun/redir-host-mix)
+EN_MODE = {{ openclash.proxy.mode }}
+
+# ENABLE_UDP_PROXY (启用 UDP 代理, 0: 禁用, 1: 启用, only for EN_MODE_TUN is nil)
+ENABLE_UDP_PROXY = {{ openclash.proxy.enable_udp }}
+
+# DISABLE_UDP_QUIC (禁用 UDP QUIC, 0: 启用, 1: 禁用)
+DISABLE_UDP_QUIC = {{ openclash.proxy.disable_udp_quic }}
+
+# ROUTER_SELF_PROXY (路由器自身代理, 0: 禁用, 1: 启用)
+ROUTER_SELF_PROXY = {{ openclash.proxy.router_self_proxy }}
+
+# STACK_TYPE (TUN 网络栈类型, system/gvisor/mixed, default is system)
+{% if openclash.proxy.stack_type %}
+STACK_TYPE = {{ openclash.proxy.stack_type }}
+{% endif %}
+
+# PROXY_MODE (代理模式, rule/global/direct, default is rule)
+PROXY_MODE = {{ openclash.proxy.proxy_mode }}
