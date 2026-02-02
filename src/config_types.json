@@ -1,0 +1,85 @@
+{
+  "config_types": [
+    {
+      "name": "Overwrite",
+      "suffix": "",
+      "smart_mode": false,
+      "bypass_mode": false,
+      "enable_ipv6": true,
+      "enable_lgbm": false,
+      "description": "标准主路由模式，启用 IPv6"
+    },
+    {
+      "name": "Overwrite-noipv6",
+      "suffix": "-noipv6",
+      "smart_mode": false,
+      "bypass_mode": false,
+      "enable_ipv6": false,
+      "enable_lgbm": false,
+      "description": "标准主路由模式，禁用 IPv6"
+    },
+    {
+      "name": "Overwrite-bypass",
+      "suffix": "-bypass",
+      "smart_mode": false,
+      "bypass_mode": true,
+      "enable_ipv6": false,
+      "enable_lgbm": false,
+      "description": "旁路由模式，禁用 IPv6，需 EN_DNS"
+    },
+    {
+      "name": "Overwrite-smart",
+      "suffix": "-smart",
+      "smart_mode": true,
+      "bypass_mode": false,
+      "enable_ipv6": true,
+      "enable_lgbm": false,
+      "description": "Smart 模式，启用 IPv6"
+    },
+    {
+      "name": "Overwrite-smart-noipv6",
+      "suffix": "-smart-noipv6",
+      "smart_mode": true,
+      "bypass_mode": false,
+      "enable_ipv6": false,
+      "enable_lgbm": false,
+      "description": "Smart 模式，禁用 IPv6"
+    },
+    {
+      "name": "Overwrite-smart-LGBM",
+      "suffix": "-smart-LGBM",
+      "smart_mode": true,
+      "bypass_mode": false,
+      "enable_ipv6": true,
+      "enable_lgbm": true,
+      "description": "Smart 模式，启用 IPv6 和 LGBM 模型"
+    },
+    {
+      "name": "Overwrite-smart-noipv6-LGBM",
+      "suffix": "-smart-noipv6-LGBM",
+      "smart_mode": true,
+      "bypass_mode": false,
+      "enable_ipv6": false,
+      "enable_lgbm": true,
+      "description": "Smart 模式，禁用 IPv6，启用 LGBM 模型"
+    },
+    {
+      "name": "Overwrite-smart-bypass",
+      "suffix": "-smart-bypass",
+      "smart_mode": true,
+      "bypass_mode": true,
+      "enable_ipv6": false,
+      "enable_lgbm": false,
+      "description": "Smart 旁路由模式，禁用 IPv6，需 EN_DNS"
+    },
+    {
+      "name": "Overwrite-smart-bypass-LGBM",
+      "suffix": "-smart-bypass-LGBM",
+      "smart_mode": true,
+      "bypass_mode": true,
+      "enable_ipv6": false,
+      "enable_lgbm": true,
+      "description": "Smart 旁路由模式，禁用 IPv6，启用 LGBM 模型，需 EN_DNS"
+    }
+  ]
+}
