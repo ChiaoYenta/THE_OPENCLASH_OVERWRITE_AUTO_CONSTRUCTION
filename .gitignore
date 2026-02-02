@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.Python
+
+# Environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Project specific
+raw_configs/
+upstream/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
