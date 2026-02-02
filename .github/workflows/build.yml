@@ -3,7 +3,7 @@ name: Build OpenClash Overwrites
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'  # 每天早6点自动更新
+    - cron: '0 6 * * *'
   push:
     branches: [main]
     paths:
@@ -20,179 +20,262 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+      - uses: actions/checkout@v4
+      
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install pyyaml jinja2
-
-      - name: Fetch External Configs (HenryChiao)
+          sudo apt-get update && sudo apt-get install -y tree
+      
+      # ========== 外部配置 ==========
+      - name: Fetch External Configs
         run: |
           echo "📥 Fetching external configs..."
           mkdir -p raw_configs/external
+          
           git clone --depth=1 https://github.com/HenryChiao/mihomo_yamls.git /tmp/upstream
           
-          if [ -d "/tmp/upstream/THEYAMLS/General_Config" ]; then
-            cp -r /tmp/upstream/THEYAMLS/General_Config raw_configs/external/
-            echo "✅ General_Config copied"
-          fi
+          # 复制并保持目录结构
+          for dir in General_Config Smart_Mode; do
+            if [ -d "/tmp/upstream/THEYAMLS/$dir" ]; then
+              cp -r "/tmp/upstream/THEYAMLS/$dir" raw_configs/external/
+              echo "✅ Copied: $dir"
+            else
+              echo "⚠️  Directory not found: $dir"
+            fi
+          done
           
-          if [ -d "/tmp/upstream/THEYAMLS/Smart_Mode" ]; then
-            cp -r /tmp/upstream/THEYAMLS/Smart_Mode raw_configs/external/
-            echo "✅ Smart_Mode copied"
-          fi
-          
-          count=$(find raw_configs/external -name "*.yaml" | wc -l)
-          echo "📊 Found $count external YAML files"
-
-      - name: Copy Local Configs
+          # 显示结构
+          echo "📁 External structure:"
+          find raw_configs/external -type d
+      
+      - name: Validate External Configs
         run: |
-          echo "📂 Copying local configs..."
-          mkdir -p raw_configs/local
-          if [ -d "cleaner_config" ] && [ "$(ls -A cleaner_config 2>/dev/null)" ]; then
-            cp -r cleaner_config/* raw_configs/local/
-            echo "✅ Local configs copied"
-          else
-            echo "ℹ️ No local configs found, skipping..."
+          if [ ! -d "raw_configs/external" ]; then
+            echo "❌ External configs directory not found"
+            exit 1
           fi
-
-      - name: Process YAML configs
-        run: |
-          echo "🔧 Processing YAML configs..."
-          mkdir -p processed_configs/external processed_configs/local
           
-          # 处理外部配置
-          if [ -d "raw_configs/external" ] && [ "$(find raw_configs/external -name '*.yaml' | wc -l)" -gt 0 ]; then
+          yaml_count=$(find raw_configs/external -name "*.yaml" -o -name "*.yml" | wc -l)
+          echo "✅ Found $yaml_count YAML files"
+          
+          if [ "$yaml_count" -eq 0 ]; then
+            echo "⚠️  No YAML files found in external configs"
+            exit 1
+          fi
+      
+      - name: Process External YAMLs
+        run: |
+          mkdir -p processed_configs/external
+          
+          # 如果有 yaml_processor.py 就使用它
+          if [ -f "src/yaml_processor.py" ]; then
             python src/yaml_processor.py \
               --input raw_configs/external \
               --output processed_configs/external \
-              --recursive \
-              --verbose
+              --recursive
+          else
+            # 否则直接复制
+            echo "ℹ️  yaml_processor.py not found, copying files directly"
+            cp -r raw_configs/external/* processed_configs/external/
           fi
+      
+      - name: Generate External Overwrites
+        run: |
+          mkdir -p overwrite
           
-          # 处理本地配置
-          if [ -d "raw_configs/local" ] && [ "$(find raw_configs/local -name '*.yaml' | wc -l)" -gt 0 ]; then
+          python src/overwrite_generator.py \
+            --input processed_configs/external \
+            --output overwrite \
+            --repo-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}" \
+            --source external \
+            --verbose
+      
+      # ========== 本地配置 ==========
+      - name: Check Local Configs
+        id: check_local
+        run: |
+          if [ -d "cleaner_config" ] && [ "$(ls -A cleaner_config 2>/dev/null)" ]; then
+            echo "has_local=true" >> $GITHUB_OUTPUT
+            echo "✅ Local configs found"
+          else
+            echo "has_local=false" >> $GITHUB_OUTPUT
+            echo "ℹ️  No local configs"
+          fi
+      
+      - name: Process Local Configs
+        if: steps.check_local.outputs.has_local == 'true'
+        run: |
+          mkdir -p raw_configs/local processed_configs/local
+          cp -r cleaner_config/* raw_configs/local/
+          
+          # 处理
+          if [ -f "src/yaml_processor.py" ]; then
             python src/yaml_processor.py \
               --input raw_configs/local \
               --output processed_configs/local \
-              --recursive \
-              --verbose
-          fi
-
-      - name: Generate Overwrite Files
-        run: |
-          echo "📝 Generating overwrite files..."
-          mkdir -p overwrite
-          
-          REPO_URL="https://raw.githubusercontent.com/${{ github.repository }}/main"
-          
-          # 生成外部配置覆写
-          if [ -d "processed_configs/external" ]; then
-            echo "Generating external overwrites..."
-            python src/overwrite_generator.py \
-              --input processed_configs/external \
-              --output overwrite \
-              --types main bypass smart \
-              --repo-url "$REPO_URL" \
-              --source external \
-              --verbose
+              --recursive
+          else
+            cp -r raw_configs/local/* processed_configs/local/
           fi
           
-          # 生成本地配置覆写
-          if [ -d "processed_configs/local" ] && [ "$(find processed_configs/local -name '*.yaml' | wc -l)" -gt 0 ]; then
-            echo "Generating local overwrites..."
-            python src/overwrite_generator.py \
-              --input processed_configs/local \
-              --output overwrite \
-              --types main bypass smart \
-              --repo-url "$REPO_URL" \
-              --source local \
-              --verbose
-          fi
-          
-          echo "✅ Generated files:"
-          ls -la overwrite/
-
-      - name: Generate README for overwrite directory
+          # 生成覆写
+          python src/overwrite_generator.py \
+            --input processed_configs/local \
+            --output overwrite \
+            --repo-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}" \
+            --source local \
+            --verbose
+      
+      # ========== 生成总 README ==========
+      - name: Generate Main README
         run: |
           cat > overwrite/README.md << 'EOF'
-          # OpenClash 覆写配置文件
+          # OpenClash 覆写配置库
           
-          本目录包含自动生成的 OpenClash 覆写配置文件。
+          本目录按来源分类存放自动生成的覆写配置文件。
           
-          ## 文件命名规则
-          - `Overwrite-external-*`: 来自外部仓库(HenryChiao/mihomo_yamls)的配置
-          - `Overwrite-local-*`: 来自本仓库 cleaner_config/ 目录的本地配置
-          - `-main.conf`: 主路由标准模式(Url-test)
-          - `-bypass.conf`: 旁路由模式(需设置 EN_DNS)
-          - `-smart.conf`: Smart智能模式
+          ## 📂 目录结构
           
-          ## 使用方法
+          ```
+          overwrite/
+          ├── General_Config/     # 来自 HenryChiao 通用配置
+          │   ├── README.md       # 该分类说明
+          │   └── Overwrite-*.conf  # 9种配置变体
+          ├── Smart_Mode/         # 来自 HenryChiao Smart 配置
+          │   ├── README.md
+          │   └── Overwrite-*.conf
+          └── cleaner_config/     # 来自本地自定义配置
+              ├── README.md
+              └── Overwrite-*.conf
+          ```
           
-          1. **下载覆写文件**: 直接点击需要的 `.conf` 文件，点击右上角 "Raw" 获取原始链接
-          2. **在 OpenClash 中使用**:
-             - 进入 OpenClash 插件设置
-             - 找到 "覆写设置" -> "自定义覆写"
-             - 粘贴文件 URL 或上传文件
-          3. **设置环境变量**:
-             - 单订阅: `EN_KEY=https://your-sub-url`
-             - 多订阅: `EN_KEY1=https://sub1`, `EN_KEY2=https://sub2`...
-             - 旁路由模式额外需要: `EN_DNS=223.5.5.5`
+          ## 🚀 快速使用
           
-          ## 自动更新
+          1. 进入对应来源目录
+          2. 查看该目录的 README.md 了解配置详情
+          3. 选择适合的配置变体（标准/Smart/旁路由/LGBM/IPv6）
+          4. 在 OpenClash 中应用并设置环境变量
           
-          本目录文件每天自动从上游同步并重新生成，如需修改请编辑:
-          - 外部配置: 向 [HenryChiao/mihomo_yamls](https://github.com/HenryChiao/mihomo_yamls) 提交 PR
-          - 本地配置: 修改本仓库的 `cleaner_config/` 目录
+          ## 📝 配置变体说明
+          
+          每个原始 YAML 生成 9 种配置：
+          
+          | 后缀 | 模式 | IPv6 | LGBM | 特殊要求 |
+          |------|------|------|------|----------|
+          | 无 | 标准 | ✅ | ❌ | 无 |
+          | `-noipv6` | 标准 | ❌ | ❌ | 无 |
+          | `-bypass` | 标准 | ❌ | ❌ | **需 EN_DNS** |
+          | `-smart` | Smart | ✅ | ❌ | 无 |
+          | `-smart-noipv6` | Smart | ❌ | ❌ | 无 |
+          | `-smart-LGBM` | Smart | ✅ | ✅ | 无 |
+          | `-smart-noipv6-LGBM` | Smart | ❌ | ✅ | 无 |
+          | `-smart-bypass` | Smart | ❌ | ❌ | **需 EN_DNS** |
+          | `-smart-bypass-LGBM` | Smart | ❌ | ✅ | **需 EN_DNS** |
+          
+          ## 🔧 环境变量设置
+          
+          ### 基础变量（所有配置必需）
+          
+          ```bash
+          # 单个订阅
+          EN_KEY=https://your-subscription-url
+          
+          # 多个订阅（使用分号分隔）
+          EN_KEY1=https://subscription1;EN_KEY2=https://subscription2
+          ```
+          
+          ### 旁路由专用变量
+          
+          使用 `-bypass` 系列配置时必须设置：
+          
+          ```bash
+          EN_DNS=223.5.5.5,114.114.114.114
+          ```
+          
+          ### 在 OpenClash 中设置环境变量
+          
+          1. 打开 OpenClash 插件配置页面
+          2. 找到「覆写设置」→「环境变量」
+          3. 添加上述对应的变量
+          4. 保存并应用配置
+          
+          ## ⏰ 自动更新
+          
+          - **外部配置**: 每日 06:00 UTC 自动同步 HenryChiao 仓库
+          - **本地配置**: 推送到 `cleaner_config/` 时自动重新生成
+          
+          ## 📊 构建信息
+          
+          - 最后更新: REPLACE_WITH_TIMESTAMP
+          - 仓库: https://github.com/${{ github.repository }}
+          - 分支: ${{ github.ref_name }}
           
           EOF
           
-          echo "✅ README generated"
-
-      - name: Commit and Push Changes
+          # 替换时间戳
+          sed -i "s/REPLACE_WITH_TIMESTAMP/$(date +'%Y-%m-%d %H:%M:%S UTC')/" overwrite/README.md
+      
+      - name: Validate Generated Files
+        run: |
+          conf_count=$(find overwrite -name "*.conf" | wc -l)
+          readme_count=$(find overwrite -name "README.md" | wc -l)
+          
+          echo "✅ Generated $conf_count .conf files"
+          echo "✅ Generated $readme_count README files"
+          
+          if [ "$conf_count" -eq 0 ]; then
+            echo "❌ No .conf files generated!"
+            exit 1
+          fi
+      
+      - name: Commit Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 添加所有生成的文件
-          git add processed_configs/ overwrite/ -f
+          git add processed_configs/ overwrite/
           
-          # 检查是否有变更
           if git diff --staged --quiet; then
-            echo "ℹ️ No changes to commit"
+            echo "ℹ️  No changes to commit"
           else
             git commit -m "🤖 Auto-build: $(date +'%Y-%m-%d %H:%M:%S')
-            
-            - Sync external configs from HenryChiao/mihomo_yamls
-            - Process local configs from cleaner_config/
-            - Generate overwrite files"
-            git push
-            echo "✅ Changes pushed to repository"
-          fi
 
+          - Sync external configs from HenryChiao/mihomo_yamls
+          - Process local configs from cleaner_config/
+          - Generate categorized overwrites with READMEs
+          
+          Build info:
+          - Workflow: ${{ github.workflow }}
+          - Run: ${{ github.run_number }}
+          - Trigger: ${{ github.event_name }}"
+            
+            git push
+          fi
+      
       - name: Summary
         if: always()
         run: |
-          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🎉 Build Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ -d "overwrite" ]; then
-            count=$(ls overwrite/*.conf 2>/dev/null | wc -l)
-            echo "- ✅ Generated $count overwrite files" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Generated Files:" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            ls -1 overwrite/*.conf 2>/dev/null | head -20 >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-          else
-            echo "- ⚠️ No files generated" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "### 📊 Statistics" >> $GITHUB_STEP_SUMMARY
+          conf_count=$(find overwrite -name "*.conf" 2>/dev/null | wc -l)
+          echo "- **Generated Configs**: $conf_count" >> $GITHUB_STEP_SUMMARY
+          echo "- **Categories**: $(find overwrite -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "### 📁 Directory Structure" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          tree -L 2 overwrite/ 2>/dev/null || find overwrite -maxdepth 2 -type d
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "### 🔗 Quick Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [View Overwrites](https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}/overwrite)" >> $GITHUB_STEP_SUMMARY
+          echo "- [View Processed Configs](https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}/processed_configs)" >> $GITHUB_STEP_SUMMARY
