@@ -1,6 +1,22 @@
 # Processed: raw_configs/external/General_Config/liuran001/config.yaml
 # Providers: 2 proxy, 1 rule
 
+proxy-providers:
+  订阅一:
+    type: http
+    interval: 3600
+    health-check: &id001
+      enable: true
+      url: https://cp.cloudflare.com
+      interval: 300
+      timeout: 1000
+      tolerance: 100
+    url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
+  订阅二:
+    type: http
+    interval: 3600
+    health-check: *id001
+    url: https://example.com/api/v1/client/subscribe?token=ilovechina
 rules:
 - RULE-SET,AWAvenue-Ads,广告拦截
 - GEOSITE,category-scholar-!cn,境外AI
@@ -35,30 +51,6 @@ rules:
 - IP-CIDR,100.64.0.0/10,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT
 - MATCH,其他
-proxy-providers:
-  订阅一:
-    type: http
-    interval: 3600
-    health-check: &id001
-      enable: true
-      url: https://cp.cloudflare.com
-      interval: 300
-      timeout: 1000
-      tolerance: 100
-    url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
-  订阅二:
-    type: http
-    interval: 3600
-    health-check: *id001
-    url: https://example.com/api/v1/client/subscribe?token=ilovechina
-rule-providers:
-  AWAvenue-Ads:
-    type: http
-    behavior: domain
-    format: yaml
-    path: ./rule_provider/AWAvenue-Ads.yaml
-    url: https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
-    interval: 600
 proxy-groups:
 - name: 节点选择
   type: select
@@ -188,3 +180,11 @@ proxy-groups:
   use: *id003
   name: 自动选择
   tolerance: 2
+rule-providers:
+  AWAvenue-Ads:
+    type: http
+    behavior: domain
+    format: yaml
+    path: ./rule_provider/AWAvenue-Ads.yaml
+    url: https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
+    interval: 600
