@@ -1,6 +1,231 @@
 # Processed: raw_configs/external/Smart_Mode/echs-top/mihomo_smart.yaml
-# Providers: 3 proxy, 31 rule
+# Providers: 3 proxy, 28 rule
 
+rule-providers:
+  private_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/privateip.mrs
+    path: ./rules/private_ip.mrs
+  AWAvenue-Ads:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/AWAvenue-Ads_domain.mrs
+    path: ./rules/AWAvenue-Ads.mrs
+  private:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs
+    path: ./rules/private.mrs
+  connectivity-check:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/connectivity-check.mrs
+    path: ./rules/connectivity-check.mrs
+  googlefcm:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.mrs
+    path: ./rules/googlefcm.mrs
+  bilibili:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/bilibili.mrs
+    path: ./rules/bilibili.mrs
+  telegram:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+    path: ./rules/telegram.mrs
+  meta:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.mrs
+    path: ./rules/meta.mrs
+  twitter:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs
+    path: ./rules/twitter.mrs
+  tiktok:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/tiktok.mrs
+    path: ./rules/tiktok.mrs
+  netflix:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
+    path: ./rules/netflix.mrs
+  spotify:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/spotify.mrs
+    path: ./rules/spotify.mrs
+  ai:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.mrs
+    path: ./rules/ai.mrs
+  google:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+    path: ./rules/google.mrs
+  apple-cn:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/apple-cn.mrs
+    path: ./rules/apple-cn.mrs
+  microsoft-cn:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/microsoft-cn.mrs
+    path: ./rules/microsoft-cn.mrs
+  games-cn:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/games-cn.mrs
+    path: ./rules/games-cn.mrs
+  direct_domain:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/direct_domain.mrs
+    path: ./rules/direct_domain.mrs
+  proxy:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/proxy.mrs
+    path: ./rules/proxy.mrs
+  cn:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: domain
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/cn_domain.mrs
+    path: ./rules/cn.mrs
+  telegram_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/telegram_ip.mrs
+    path: ./rules/telegram_ip.mrs
+  facebook_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs
+    path: ./rules/facebook_ip.mrs
+  twitter_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs
+    path: ./rules/twitter_ip.mrs
+  netflix_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs
+    path: ./rules/netflix_ip.mrs
+  google_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+    path: ./rules/google_ip.mrs
+  enhanced-FaaS-in-China_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/enhanced-FaaS-in-China_ip.mrs
+    path: ./rules/enhanced-FaaS-in-China_ip.mrs
+  direct_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/direct_ip.mrs
+    path: ./rules/direct_ip.mrs
+  cn_ip:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    behavior: ipcidr
+    format: mrs
+    url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs
+    path: ./rules/cn_ip.mrs
 proxy-providers:
   link1:
     type: http
@@ -38,401 +263,122 @@ proxy-providers:
     exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
     url: 订阅链接3
     path: ./providers/link3.yaml
-rule-providers:
-  private_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs
-    path: ./rules/private_ip.mrs
-  AWAvenue-Ads-Rule:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/AWAvenue-Ads-Rule.mrs
-    path: ./rules/AWAvenue-Ads-Rule.mrs
-  private:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
-    path: ./rules/private.mrs
-  fake-ip_add:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/fake-ip_add_domain.mrs
-    path: ./rules/fake-ip_add.mrs
-  direct_domain:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/direct_domain.mrs
-    path: ./rules/direct_domain.mrs
-  category-speedtest:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs
-    path: ./rules/category-speedtest.mrs
-  googlefcm:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.mrs
-    path: ./rules/googlefcm.mrs
-  verification:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/verification_domain.mrs
-    path: ./rules/verification.mrs
-  telegram:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
-    path: ./rules/telegram.mrs
-  meta:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/meta.mrs
-    path: ./rules/meta.mrs
-  twitter:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs
-    path: ./rules/twitter.mrs
-  tiktok:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs
-    path: ./rules/tiktok.mrs
-  netflix:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
-    path: ./rules/netflix.mrs
-  spotify:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs
-    path: ./rules/spotify.mrs
-  bilibili:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs
-    path: ./rules/bilibili.mrs
-  biliintl:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/biliintl.mrs
-    path: ./rules/biliintl.mrs
-  youtube:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
-    path: ./rules/youtube.mrs
-  category-ai-!cn:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
-    path: ./rules/category-ai-!cn.mrs
-  ai_add:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/ai_add_domain.mrs
-    path: ./rules/ai_add.mrs
-  pixiv:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pixiv.mrs
-    path: ./rules/pixiv.mrs
-  github:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
-    path: ./rules/github.mrs
-  steam@cn:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs
-    path: ./rules/steam@cn.mrs
-  google:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
-    path: ./rules/google.mrs
-  cn:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: domain
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
-    path: ./rules/cn.mrs
-  direct_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/direct_ip.mrs
-    path: ./rules/direct_ip.mrs
-  telegram_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
-    path: ./rules/telegram_ip.mrs
-  facebook_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs
-    path: ./rules/facebook_ip.mrs
-  twitter_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs
-    path: ./rules/twitter_ip.mrs
-  netflix_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs
-    path: ./rules/netflix_ip.mrs
-  google_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
-    path: ./rules/google_ip.mrs
-  cn_ip:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
-    path: ./rules/cn_ip.mrs
+rules:
+- DST-PORT,5228-5230,FCM
+- RULE-SET,private_ip,DIRECT,no-resolve
+- RULE-SET,AWAvenue-Ads,REJECT
+- RULE-SET,private,DIRECT
+- RULE-SET,googlefcm,FCM
+- RULE-SET,bilibili,BILIBILI
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,meta,META
+- RULE-SET,twitter,TWITTER
+- RULE-SET,tiktok,TIKTOK
+- RULE-SET,netflix,NETFLIX
+- RULE-SET,spotify,SPOTIFY
+- RULE-SET,ai,AI
+- RULE-SET,google,GOOGLE
+- RULE-SET,apple-cn,DIRECT
+- RULE-SET,microsoft-cn,DIRECT
+- RULE-SET,games-cn,DIRECT
+- RULE-SET,direct_domain,DIRECT
+- RULE-SET,proxy,PROXY
+- RULE-SET,cn,DIRECT
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,facebook_ip,META
+- RULE-SET,twitter_ip,TWITTER
+- RULE-SET,netflix_ip,NETFLIX
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,enhanced-FaaS-in-China_ip,DIRECT
+- RULE-SET,direct_ip,DIRECT
+- RULE-SET,cn_ip,DIRECT
+- MATCH,PROXY
 proxy-groups:
-- use: &id003
-  - link3
-  name: PROXY
+- name: PROXY
   type: select
   proxies:
-  - URLTEST
-  - 港澳台|SMART
+  - 国外|SMART
   - 香港|SMART
   - 台湾|SMART
-  - 日本|SMART
   - 新加坡|SMART
+  - 日本|SMART
   - 美国|SMART
-  - 德国|SMART
-  - 英国|SMART
-  - 荷兰|SMART
+  include-all-providers: true
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Global.webp
-- use: *id003
-  type: select
+- type: select
   proxies: &id004
   - PROXY
   - DIRECT
-  - URLTEST
-  - 港澳台|SMART
+  - 国外|SMART
   - 香港|SMART
   - 台湾|SMART
-  - 日本|SMART
   - 新加坡|SMART
+  - 日本|SMART
   - 美国|SMART
-  - 德国|SMART
-  - 英国|SMART
-  - 荷兰|SMART
+  include-all-providers: true
   name: PROXYDNS
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Server.webp
-- name: AD
-  type: select
-  proxies:
-  - PASS
-  - REJECT
-  - REJECT-DROP
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Forbidden.webp
-- name: SPEEDTEST
-  type: select
-  include-all-providers: true
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/SpeedTest.webp
-- use: *id003
-  type: select
-  proxies: &id005
+- type: select
+  proxies: &id003
   - DIRECT
   - PROXY
-  - URLTEST
-  - 港澳台|SMART
+  - 国外|SMART
   - 香港|SMART
   - 台湾|SMART
-  - 日本|SMART
   - 新加坡|SMART
+  - 日本|SMART
   - 美国|SMART
-  - 德国|SMART
-  - 英国|SMART
-  - 荷兰|SMART
+  include-all-providers: true
   name: FCM
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/FCM_Firebase_Cloud_Messaging.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: BOTTEST
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/CloudFlare.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: TELEGRAM
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Telegram.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: META
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Meta_1.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: TWITTER
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/X.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: TIKTOK
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/TikTok.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: NETFLIX
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Netflix.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: SPOTIFY
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Spotify.webp
-- use: *id003
-  type: select
-  proxies: *id005
+- type: select
+  proxies: *id003
+  include-all-providers: true
   name: BILIBILI
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Bilibili.webp
-- use: *id003
-  type: select
+- type: select
   proxies: *id004
-  name: YOUTUBE
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/YouTube.webp
-- use: *id003
-  type: select
+  include-all-providers: true
+  name: TELEGRAM
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Telegram.webp
+- type: select
   proxies: *id004
+  include-all-providers: true
+  name: META
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Meta_1.webp
+- type: select
+  proxies: *id004
+  include-all-providers: true
+  name: TWITTER
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/X.webp
+- type: select
+  proxies: *id004
+  include-all-providers: true
+  name: TIKTOK
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/TikTok.webp
+- type: select
+  proxies: *id004
+  include-all-providers: true
+  name: NETFLIX
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Netflix.webp
+- type: select
+  proxies: *id004
+  include-all-providers: true
+  name: SPOTIFY
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Spotify.webp
+- type: select
+  proxies: *id004
+  include-all-providers: true
   name: AI
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/AI.webp
-- use: *id003
-  type: select
+- type: select
   proxies: *id004
-  name: PIXIV
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Pixiv.webp
-- use: *id003
-  type: select
-  proxies: *id004
-  name: GITHUB
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/GitHub.webp
-- use: *id003
-  type: select
-  proxies: *id005
-  name: ONEDRIVE-DL
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/OneDrive.webp
-- use: *id003
-  type: select
-  proxies: *id005
-  name: STEAM-CN
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Steam.webp
-- use: *id003
-  type: select
-  proxies: *id004
+  include-all-providers: true
   name: GOOGLE
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Google.webp
-- use: &id006
+- use: &id005
   - link1
   - link2
-  type: url-test
-  tolerance: 20
-  hidden: true
-  name: URLTEST
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Fast.webp
-- use: *id006
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -440,10 +386,11 @@ proxy-groups:
   sample-rate: 1
   prefer-asn: true
   hidden: true
-  name: 港澳台|SMART
-  filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b|🇲🇴|澳门|\bMO\b|\bmacau\b|\bmacao\b|🇹🇼|台湾|\bTW\b|\btaiwan\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg
-- use: *id006
+  name: 国外|SMART
+  exclude-filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b|🇲🇴|澳门|\bMO\b|\bmacau\b|\bmacao\b|🇹🇼|台湾|\bTW\b|\btaiwan\b
+  policy-priority: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b|🇯🇵|日本|\bJP\b|\bjapan\b|🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b:2
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/un.svg
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -454,7 +401,7 @@ proxy-groups:
   name: 香港|SMART
   filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/hk.svg
-- use: *id006
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -465,18 +412,7 @@ proxy-groups:
   name: 台湾|SMART
   filter: (?i)🇹🇼|台湾|\bTW\b|\btaiwan\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg
-- use: *id006
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 日本|SMART
-  filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg
-- use: *id006
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -487,7 +423,18 @@ proxy-groups:
   name: 新加坡|SMART
   filter: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/sg.svg
-- use: *id006
+- use: *id005
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 日本|SMART
+  filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -498,107 +445,27 @@ proxy-groups:
   name: 美国|SMART
   filter: (?i)🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg
-- use: *id006
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 德国|SMART
-  filter: (?i)🇩🇪|德国|\bDE\b|\bgermany\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg
-- use: *id006
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 英国|SMART
-  filter: (?i)🇬🇧|英国|\bUK\b|\bGB\b|\bunitedkingdom\b|\bunited\s?kingdom\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg
-- use: *id006
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 荷兰|SMART
-  filter: (?i)🇳🇱|荷兰|\bNL\b|\bnetherlands?\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/nl.svg
 - name: GLOBAL
   type: select
   proxies:
   - PROXY
   - PROXYDNS
-  - AD
-  - SPEEDTEST
   - FCM
-  - BOTTEST
+  - BILIBILI
   - TELEGRAM
   - META
   - TWITTER
   - TIKTOK
   - NETFLIX
   - SPOTIFY
-  - BILIBILI
-  - YOUTUBE
   - AI
-  - PIXIV
-  - GITHUB
-  - ONEDRIVE-DL
-  - STEAM-CN
   - GOOGLE
-  - URLTEST
-  - 港澳台|SMART
+  - 国外|SMART
   - 香港|SMART
   - 台湾|SMART
-  - 日本|SMART
   - 新加坡|SMART
+  - 日本|SMART
   - 美国|SMART
-  - 德国|SMART
-  - 英国|SMART
-  - 荷兰|SMART
   include-all-providers: true
   hidden: true
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Globefish.webp
-rules:
-- DST-PORT,5228-5230,FCM
-- RULE-SET,private_ip,DIRECT,no-resolve
-- RULE-SET,AWAvenue-Ads-Rule,AD
-- RULE-SET,private,DIRECT
-- RULE-SET,direct_domain,DIRECT
-- RULE-SET,category-speedtest,SPEEDTEST
-- RULE-SET,googlefcm,FCM
-- RULE-SET,verification,BOTTEST
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,meta,META
-- RULE-SET,twitter,TWITTER
-- RULE-SET,tiktok,TIKTOK
-- RULE-SET,netflix,NETFLIX
-- RULE-SET,spotify,SPOTIFY
-- RULE-SET,bilibili,BILIBILI
-- RULE-SET,biliintl,BILIBILI
-- RULE-SET,youtube,YOUTUBE
-- RULE-SET,category-ai-!cn,AI
-- RULE-SET,ai_add,AI
-- RULE-SET,pixiv,PIXIV
-- RULE-SET,github,GITHUB
-- DOMAIN-SUFFIX,sharepoint.com,ONEDRIVE-DL
-- DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,STEAM-CN
-- RULE-SET,steam@cn,STEAM-CN
-- RULE-SET,google,GOOGLE
-- RULE-SET,cn,DIRECT
-- RULE-SET,direct_ip,DIRECT
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,facebook_ip,META
-- RULE-SET,twitter_ip,TWITTER
-- RULE-SET,netflix_ip,NETFLIX
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,cn_ip,DIRECT
-- MATCH,PROXY
