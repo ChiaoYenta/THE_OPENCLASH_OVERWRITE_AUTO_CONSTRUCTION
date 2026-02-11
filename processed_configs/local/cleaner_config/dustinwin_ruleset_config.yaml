@@ -1,6 +1,27 @@
 # Processed: raw_configs/local/cleaner_config/dustinwin_ruleset_config.yaml
 # Providers: 2 proxy, 14 rule
 
+proxy-providers:
+  🛫 机场订阅:
+    type: http
+    url: https://example.com/xxx/xxx&flag=clash
+    path: ./proxies/airport.yaml
+    interval: 86400
+    filter: (?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united
+      states)
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  🆓 免费订阅:
+    type: http
+    url: https://example.com/xxx/xxx&flag=clash
+    path: ./proxies/free.yaml
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
 rule-providers:
   ads:
     type: http
@@ -100,27 +121,21 @@ rule-providers:
     path: ./ruleset/telegramip.mrs
     url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/telegramip.mrs
     interval: 86400
-proxy-providers:
-  🛫 机场订阅:
-    type: http
-    url: https://example.com/xxx/xxx&flag=clash
-    path: ./proxies/airport.yaml
-    interval: 86400
-    filter: (?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united
-      states)
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  🆓 免费订阅:
-    type: http
-    url: https://example.com/xxx/xxx&flag=clash
-    path: ./proxies/free.yaml
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
+rules:
+- RULE-SET,private,私有网络
+- RULE-SET,trackerslist,Trackerslist
+- RULE-SET,microsoft-cn,微软服务
+- RULE-SET,apple-cn,苹果服务
+- RULE-SET,google-cn,谷歌服务
+- RULE-SET,games-cn,游戏服务
+- RULE-SET,ai,AI 平台
+- RULE-SET,networktest,网络测试
+- RULE-SET,proxy,代理域名
+- RULE-SET,cn,直连域名
+- RULE-SET,privateip,私有网络,no-resolve
+- RULE-SET,cnip,直连 IP
+- RULE-SET,telegramip,电报消息,no-resolve
+- MATCH,漏网之鱼
 proxy-groups:
 - name: 节点选择
   type: select
@@ -284,18 +299,3 @@ proxy-groups:
   use:
   - 🆓 免费订阅
   icon: https://github.com/DustinWin/ruleset_geodata/releases/download/icons/free.png
-rules:
-- RULE-SET,private,私有网络
-- RULE-SET,trackerslist,Trackerslist
-- RULE-SET,microsoft-cn,微软服务
-- RULE-SET,apple-cn,苹果服务
-- RULE-SET,google-cn,谷歌服务
-- RULE-SET,games-cn,游戏服务
-- RULE-SET,ai,AI 平台
-- RULE-SET,networktest,网络测试
-- RULE-SET,proxy,代理域名
-- RULE-SET,cn,直连域名
-- RULE-SET,privateip,私有网络,no-resolve
-- RULE-SET,cnip,直连 IP
-- RULE-SET,telegramip,电报消息,no-resolve
-- MATCH,漏网之鱼

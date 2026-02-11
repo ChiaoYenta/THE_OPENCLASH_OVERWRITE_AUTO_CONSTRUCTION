@@ -1,6 +1,212 @@
 # Processed: raw_configs/external/Smart_Mode/echs-top/mihomo_smart.yaml
 # Providers: 3 proxy, 28 rule
 
+proxy-groups:
+- name: PROXY
+  type: select
+  proxies:
+  - 国外|SMART
+  - 香港|SMART
+  - 台湾|SMART
+  - 新加坡|SMART
+  - 日本|SMART
+  - 美国|SMART
+  include-all-providers: true
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Global.webp
+- type: select
+  proxies: &id002
+  - PROXY
+  - DIRECT
+  - 国外|SMART
+  - 香港|SMART
+  - 台湾|SMART
+  - 新加坡|SMART
+  - 日本|SMART
+  - 美国|SMART
+  include-all-providers: true
+  name: PROXYDNS
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Server.webp
+- type: select
+  proxies: &id001
+  - DIRECT
+  - PROXY
+  - 国外|SMART
+  - 香港|SMART
+  - 台湾|SMART
+  - 新加坡|SMART
+  - 日本|SMART
+  - 美国|SMART
+  include-all-providers: true
+  name: FCM
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/FCM_Firebase_Cloud_Messaging.webp
+- type: select
+  proxies: *id001
+  include-all-providers: true
+  name: BILIBILI
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Bilibili.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: TELEGRAM
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Telegram.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: META
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Meta_1.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: TWITTER
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/X.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: TIKTOK
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/TikTok.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: NETFLIX
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Netflix.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: SPOTIFY
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Spotify.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: AI
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/AI.webp
+- type: select
+  proxies: *id002
+  include-all-providers: true
+  name: GOOGLE
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Google.webp
+- use: &id003
+  - link1
+  - link2
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 国外|SMART
+  exclude-filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b|🇲🇴|澳门|\bMO\b|\bmacau\b|\bmacao\b|🇹🇼|台湾|\bTW\b|\btaiwan\b
+  policy-priority: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b|🇯🇵|日本|\bJP\b|\bjapan\b|🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b:2
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/un.svg
+- use: *id003
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 香港|SMART
+  filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/hk.svg
+- use: *id003
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 台湾|SMART
+  filter: (?i)🇹🇼|台湾|\bTW\b|\btaiwan\b
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg
+- use: *id003
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 新加坡|SMART
+  filter: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/sg.svg
+- use: *id003
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 日本|SMART
+  filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg
+- use: *id003
+  type: smart
+  strategy: sticky-sessions
+  uselightgbm: true
+  collectdata: false
+  sample-rate: 1
+  prefer-asn: true
+  hidden: true
+  name: 美国|SMART
+  filter: (?i)🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg
+- name: GLOBAL
+  type: select
+  proxies:
+  - PROXY
+  - PROXYDNS
+  - FCM
+  - BILIBILI
+  - TELEGRAM
+  - META
+  - TWITTER
+  - TIKTOK
+  - NETFLIX
+  - SPOTIFY
+  - AI
+  - GOOGLE
+  - 国外|SMART
+  - 香港|SMART
+  - 台湾|SMART
+  - 新加坡|SMART
+  - 日本|SMART
+  - 美国|SMART
+  include-all-providers: true
+  hidden: true
+  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Globefish.webp
+rules:
+- DST-PORT,5228-5230,FCM
+- RULE-SET,private_ip,DIRECT,no-resolve
+- RULE-SET,AWAvenue-Ads,REJECT
+- RULE-SET,private,DIRECT
+- RULE-SET,googlefcm,FCM
+- RULE-SET,bilibili,BILIBILI
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,meta,META
+- RULE-SET,twitter,TWITTER
+- RULE-SET,tiktok,TIKTOK
+- RULE-SET,netflix,NETFLIX
+- RULE-SET,spotify,SPOTIFY
+- RULE-SET,ai,AI
+- RULE-SET,google,GOOGLE
+- RULE-SET,apple-cn,DIRECT
+- RULE-SET,microsoft-cn,DIRECT
+- RULE-SET,games-cn,DIRECT
+- RULE-SET,direct_domain,DIRECT
+- RULE-SET,proxy,PROXY
+- RULE-SET,cn,DIRECT
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,facebook_ip,META
+- RULE-SET,twitter_ip,TWITTER
+- RULE-SET,netflix_ip,NETFLIX
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,enhanced-FaaS-in-China_ip,DIRECT
+- RULE-SET,direct_ip,DIRECT
+- RULE-SET,cn_ip,DIRECT
+- MATCH,PROXY
 rule-providers:
   private_ip:
     type: http
@@ -231,10 +437,10 @@ proxy-providers:
     type: http
     interval: 86400
     proxy: DIRECT
-    header: &id001
+    header: &id004
       User-Agent:
       - clash-verge/v2.4.4
-    health-check: &id002
+    health-check: &id005
       enable: true
       url: https://8.8.8.8/generate_204
       expected-status: 204
@@ -249,8 +455,8 @@ proxy-providers:
     type: http
     interval: 86400
     proxy: DIRECT
-    header: *id001
-    health-check: *id002
+    header: *id004
+    health-check: *id005
     exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
     url: 订阅链接2
     path: ./providers/link2.yaml
@@ -258,214 +464,8 @@ proxy-providers:
     type: http
     interval: 86400
     proxy: DIRECT
-    header: *id001
-    health-check: *id002
+    header: *id004
+    health-check: *id005
     exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外
     url: 订阅链接3
     path: ./providers/link3.yaml
-rules:
-- DST-PORT,5228-5230,FCM
-- RULE-SET,private_ip,DIRECT,no-resolve
-- RULE-SET,AWAvenue-Ads,REJECT
-- RULE-SET,private,DIRECT
-- RULE-SET,googlefcm,FCM
-- RULE-SET,bilibili,BILIBILI
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,meta,META
-- RULE-SET,twitter,TWITTER
-- RULE-SET,tiktok,TIKTOK
-- RULE-SET,netflix,NETFLIX
-- RULE-SET,spotify,SPOTIFY
-- RULE-SET,ai,AI
-- RULE-SET,google,GOOGLE
-- RULE-SET,apple-cn,DIRECT
-- RULE-SET,microsoft-cn,DIRECT
-- RULE-SET,games-cn,DIRECT
-- RULE-SET,direct_domain,DIRECT
-- RULE-SET,proxy,PROXY
-- RULE-SET,cn,DIRECT
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,facebook_ip,META
-- RULE-SET,twitter_ip,TWITTER
-- RULE-SET,netflix_ip,NETFLIX
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,enhanced-FaaS-in-China_ip,DIRECT
-- RULE-SET,direct_ip,DIRECT
-- RULE-SET,cn_ip,DIRECT
-- MATCH,PROXY
-proxy-groups:
-- name: PROXY
-  type: select
-  proxies:
-  - 国外|SMART
-  - 香港|SMART
-  - 台湾|SMART
-  - 新加坡|SMART
-  - 日本|SMART
-  - 美国|SMART
-  include-all-providers: true
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Global.webp
-- type: select
-  proxies: &id004
-  - PROXY
-  - DIRECT
-  - 国外|SMART
-  - 香港|SMART
-  - 台湾|SMART
-  - 新加坡|SMART
-  - 日本|SMART
-  - 美国|SMART
-  include-all-providers: true
-  name: PROXYDNS
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Server.webp
-- type: select
-  proxies: &id003
-  - DIRECT
-  - PROXY
-  - 国外|SMART
-  - 香港|SMART
-  - 台湾|SMART
-  - 新加坡|SMART
-  - 日本|SMART
-  - 美国|SMART
-  include-all-providers: true
-  name: FCM
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/FCM_Firebase_Cloud_Messaging.webp
-- type: select
-  proxies: *id003
-  include-all-providers: true
-  name: BILIBILI
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Bilibili.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: TELEGRAM
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Telegram.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: META
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Meta_1.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: TWITTER
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/X.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: TIKTOK
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/TikTok.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: NETFLIX
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Netflix.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: SPOTIFY
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Spotify.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: AI
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/AI.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: GOOGLE
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Google.webp
-- use: &id005
-  - link1
-  - link2
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 国外|SMART
-  exclude-filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b|🇲🇴|澳门|\bMO\b|\bmacau\b|\bmacao\b|🇹🇼|台湾|\bTW\b|\btaiwan\b
-  policy-priority: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b|🇯🇵|日本|\bJP\b|\bjapan\b|🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b:2
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/un.svg
-- use: *id005
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 香港|SMART
-  filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/hk.svg
-- use: *id005
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 台湾|SMART
-  filter: (?i)🇹🇼|台湾|\bTW\b|\btaiwan\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg
-- use: *id005
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 新加坡|SMART
-  filter: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/sg.svg
-- use: *id005
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 日本|SMART
-  filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg
-- use: *id005
-  type: smart
-  strategy: sticky-sessions
-  uselightgbm: true
-  collectdata: false
-  sample-rate: 1
-  prefer-asn: true
-  hidden: true
-  name: 美国|SMART
-  filter: (?i)🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg
-- name: GLOBAL
-  type: select
-  proxies:
-  - PROXY
-  - PROXYDNS
-  - FCM
-  - BILIBILI
-  - TELEGRAM
-  - META
-  - TWITTER
-  - TIKTOK
-  - NETFLIX
-  - SPOTIFY
-  - AI
-  - GOOGLE
-  - 国外|SMART
-  - 香港|SMART
-  - 台湾|SMART
-  - 新加坡|SMART
-  - 日本|SMART
-  - 美国|SMART
-  include-all-providers: true
-  hidden: true
-  icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Globefish.webp
