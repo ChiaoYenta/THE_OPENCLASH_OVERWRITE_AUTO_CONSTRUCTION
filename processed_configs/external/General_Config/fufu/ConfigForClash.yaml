@@ -1,6 +1,69 @@
 # Processed: raw_configs/external/General_Config/fufu/ConfigForClash.yaml
 # Providers: 1 proxy, 59 rule
 
+rules:
+- IP-CIDR, 198.18.0.1/16, REJECT, no-resolve
+- RULE-SET, Lan, 🎯 全球直连
+- RULE-SET, UnBan, 🎯 全球直连
+- RULE-SET, BanAD, 🚫 全球拦截
+- RULE-SET, BanProgramAD, 🚫 全球拦截
+- RULE-SET, Emby, 📀 媒体影院
+- RULE-SET, Speedtest, ⚡ 速度测试
+- RULE-SET, GoogleFCM, 📢 谷歌推送
+- RULE-SET, WeChat, 🎯 全球直连
+- RULE-SET, Telegram, 📲 电报消息
+- RULE-SET, Discord, 🎙 语音社群
+- RULE-SET, AppleNews, 🍎 苹果新闻
+- RULE-SET, Twitter, 📮 推特推特
+- RULE-SET, Instagram, 🌈 晒照片墙
+- RULE-SET, OpenAI, ✨ ChatGPT
+- RULE-SET, Claude, ✨ Claude
+- RULE-SET, Gemini, ✨ Gemini
+- RULE-SET, Copilot, ✨ Copilot
+- RULE-SET, A_AIGC, 🎨 语言模型
+- RULE-SET, AppleMusic, 🎯 全球直连
+- RULE-SET, Spotify, 🎶 声田音乐
+- RULE-SET, YouTubeMusic, 🎶 油管音乐
+- RULE-SET, TikTok, 📸 抖音国际
+- RULE-SET, Twitch, 👾 推趣直播
+- RULE-SET, BiliBiliIntl, 🧸 哔哩哔哩
+- RULE-SET, Bilibili, 🧸 哔哩哔哩
+- RULE-SET, YouTube, 🎀 油管视频
+- RULE-SET, AppleTV, 📺 苹果电视
+- RULE-SET, Netflix, 🎥 奈飞视频
+- RULE-SET, Disney, 🏰 迪士尼加
+- RULE-SET, HBO, 🧿 麦克斯斯
+- RULE-SET, PrimeVideo, 🥽 亚马逊逊
+- RULE-SET, GlobalMedia, 🎬 流媒体集
+- RULE-SET, ChinaMedia, 🎯 全球直连
+- RULE-SET, Tencent, 🎯 全球直连
+- RULE-SET, TeamViewer, 🎯 全球直连
+- RULE-SET, GitHub, 🎓 开源托管
+- RULE-SET, Cloudflarecn, 🎯 全球直连
+- RULE-SET, Cloudflare, 🥟 云端防护
+- RULE-SET, Apple, 🍎 苹果服务
+- RULE-SET, OneDrive, 📂 下载服务
+- RULE-SET, Microsoft, 🍀 微软服务
+- RULE-SET, GoogleDrive, 📂 下载服务
+- RULE-SET, Google, ❄ 谷歌服务
+- RULE-SET, SteamCN, 🎯 全球直连
+- RULE-SET, GameDownloadCN, 🎯 全球直连
+- RULE-SET, GameDownload, 📂 下载服务
+- RULE-SET, Steam, 🎮 游戏服务
+- RULE-SET, Epic, 🎮 游戏服务
+- RULE-SET, Origin, 🎮 游戏服务
+- RULE-SET, Sony, 🎮 游戏服务
+- RULE-SET, Nintendo, 🎮 游戏服务
+- RULE-SET, Xbox, 🎮 游戏服务
+- RULE-SET, Game, 🎮 游戏服务
+- RULE-SET, Download, 🎯 全球直连
+- RULE-SET, PrivateTracker, 🎯 全球直连
+- RULE-SET, Proxy, 🚀 默认代理
+- RULE-SET, Global, 🚀 默认代理
+- RULE-SET, China, 🎯 全球直连
+- RULE-SET, ChinaIPs, 🎯 全球直连
+- GEOIP, CN, 🎯 全球直连
+- MATCH, 🐟 漏网之鱼
 proxy-groups:
 - name: 🚀 默认代理
   type: select
@@ -528,69 +591,6 @@ proxy-groups:
   include-all: true
   name: 🍟 节点集合
   icon: https://raw.githubusercontent.com/sunfing/iNg/main/Icons/GeneralIcons/Available.png
-rules:
-- IP-CIDR, 198.18.0.1/16, REJECT, no-resolve
-- RULE-SET, Lan, 🎯 全球直连
-- RULE-SET, UnBan, 🎯 全球直连
-- RULE-SET, BanAD, 🚫 全球拦截
-- RULE-SET, BanProgramAD, 🚫 全球拦截
-- RULE-SET, Emby, 📀 媒体影院
-- RULE-SET, Speedtest, ⚡ 速度测试
-- RULE-SET, GoogleFCM, 📢 谷歌推送
-- RULE-SET, WeChat, 🎯 全球直连
-- RULE-SET, Telegram, 📲 电报消息
-- RULE-SET, Discord, 🎙 语音社群
-- RULE-SET, AppleNews, 🍎 苹果新闻
-- RULE-SET, Twitter, 📮 推特推特
-- RULE-SET, Instagram, 🌈 晒照片墙
-- RULE-SET, OpenAI, ✨ ChatGPT
-- RULE-SET, Claude, ✨ Claude
-- RULE-SET, Gemini, ✨ Gemini
-- RULE-SET, Copilot, ✨ Copilot
-- RULE-SET, A_AIGC, 🎨 语言模型
-- RULE-SET, AppleMusic, 🎯 全球直连
-- RULE-SET, Spotify, 🎶 声田音乐
-- RULE-SET, YouTubeMusic, 🎶 油管音乐
-- RULE-SET, TikTok, 📸 抖音国际
-- RULE-SET, Twitch, 👾 推趣直播
-- RULE-SET, BiliBiliIntl, 🧸 哔哩哔哩
-- RULE-SET, Bilibili, 🧸 哔哩哔哩
-- RULE-SET, YouTube, 🎀 油管视频
-- RULE-SET, AppleTV, 📺 苹果电视
-- RULE-SET, Netflix, 🎥 奈飞视频
-- RULE-SET, Disney, 🏰 迪士尼加
-- RULE-SET, HBO, 🧿 麦克斯斯
-- RULE-SET, PrimeVideo, 🥽 亚马逊逊
-- RULE-SET, GlobalMedia, 🎬 流媒体集
-- RULE-SET, ChinaMedia, 🎯 全球直连
-- RULE-SET, Tencent, 🎯 全球直连
-- RULE-SET, TeamViewer, 🎯 全球直连
-- RULE-SET, GitHub, 🎓 开源托管
-- RULE-SET, Cloudflarecn, 🎯 全球直连
-- RULE-SET, Cloudflare, 🥟 云端防护
-- RULE-SET, Apple, 🍎 苹果服务
-- RULE-SET, OneDrive, 📂 下载服务
-- RULE-SET, Microsoft, 🍀 微软服务
-- RULE-SET, GoogleDrive, 📂 下载服务
-- RULE-SET, Google, ❄ 谷歌服务
-- RULE-SET, SteamCN, 🎯 全球直连
-- RULE-SET, GameDownloadCN, 🎯 全球直连
-- RULE-SET, GameDownload, 📂 下载服务
-- RULE-SET, Steam, 🎮 游戏服务
-- RULE-SET, Epic, 🎮 游戏服务
-- RULE-SET, Origin, 🎮 游戏服务
-- RULE-SET, Sony, 🎮 游戏服务
-- RULE-SET, Nintendo, 🎮 游戏服务
-- RULE-SET, Xbox, 🎮 游戏服务
-- RULE-SET, Game, 🎮 游戏服务
-- RULE-SET, Download, 🎯 全球直连
-- RULE-SET, PrivateTracker, 🎯 全球直连
-- RULE-SET, Proxy, 🚀 默认代理
-- RULE-SET, Global, 🚀 默认代理
-- RULE-SET, China, 🎯 全球直连
-- RULE-SET, ChinaIPs, 🎯 全球直连
-- GEOIP, CN, 🎯 全球直连
-- MATCH, 🐟 漏网之鱼
 rule-providers:
   Lan:
     type: http
