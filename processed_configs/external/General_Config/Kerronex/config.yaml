@@ -1,44 +1,6 @@
 # Processed: raw_configs/external/General_Config/Kerronex/config.yaml
 # Providers: 2 proxy, 24 rule
 
-rules:
-- AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT
-- AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,CN))),REJECT
-- DOMAIN-SUFFIX,2022822.xyz,DIRECTLY
-- DOMAIN-SUFFIX,download.nvidia.com,DIRECTLY
-- RULE-SET,AWAvenue_Ads_Rule,REJECT
-- RULE-SET,telegram_ip,Proxy,no-resolve
-- RULE-SET,Telegram_No_Resolve,Proxy,no-resolve
-- PROCESS-NAME-REGEX,.*telegram.*,Proxy
-- RULE-SET,telegram_domain,Proxy
-- GEOSITE,private,DIRECT
-- GEOSITE,category-public-tracker,DIRECT
-- GEOSITE,category-games@cn,DIRECT
-- GEOSITE,apple@cn,DIRECT
-- GEOSITE,icloud,DIRECT
-- GEOSITE,microsoft@cn,DIRECT
-- GEOSITE,onedrive,DIRECT
-- GEOSITE,microsoft,Proxy
-- GEOSITE,telegram,Proxy
-- GEOSITE,category-ai-!cn,AI
-- GEOIP,telegram,Proxy,no-resolve
-- GEOIP,private,DIRECT,no-resolve
-- RULE-SET,ai,AI
-- RULE-SET,youtube_domain,YouTube
-- RULE-SET,speedtest_domain,Speedtest
-- RULE-SET,global_non_ip,Proxy
-- RULE-SET,skk_direct,DIRECT
-- RULE-SET,domestic_non_ip,DIRECT
-- RULE-SET,domestic_ip,DIRECT,no-resolve
-- RULE-SET,china_ip,DIRECT,no-resolve
-- RULE-SET,china_ip_ipv6,DIRECT,no-resolve
-- RULE-SET,proxy,Proxy
-- RULE-SET,gfw_domain,Proxy
-- DOMAIN-SUFFIX,cn,DIRECT
-- RULE-SET,blackmatrix7_direct,DIRECTLY
-- RULE-SET,trackerslist,Trackerslist
-- GEOIP,CN,DIRECT
-- MATCH,漏网之鱼
 proxy-groups:
 - name: Proxy
   type: select
@@ -153,6 +115,74 @@ proxy-groups:
   - DIRECTLY
   - Proxy
   icon: https://testingcf.jsdelivr.net/gh/aihdde/Rules@master/icon/fish.png
+proxy-providers:
+  s1:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: &id003
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      timeout: 5
+      lazy: true
+      expected-status: '204'
+      method: HEAD
+    url: ''
+    path: ./proxy_provider/s1.yaml
+    override:
+      additional-prefix: s1 »
+  s2:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id003
+    url: ''
+    path: ./proxy_provider/s2.yaml
+    override:
+      additional-prefix: s2 »
+rules:
+- AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT
+- AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,CN))),REJECT
+- DOMAIN-SUFFIX,2022822.xyz,DIRECTLY
+- DOMAIN-SUFFIX,download.nvidia.com,DIRECTLY
+- RULE-SET,AWAvenue_Ads_Rule,REJECT
+- RULE-SET,telegram_ip,Proxy,no-resolve
+- RULE-SET,Telegram_No_Resolve,Proxy,no-resolve
+- PROCESS-NAME-REGEX,.*telegram.*,Proxy
+- RULE-SET,telegram_domain,Proxy
+- GEOSITE,private,DIRECT
+- GEOSITE,category-public-tracker,DIRECT
+- GEOSITE,category-games@cn,DIRECT
+- GEOSITE,apple@cn,DIRECT
+- GEOSITE,icloud,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOSITE,onedrive,DIRECT
+- GEOSITE,microsoft,Proxy
+- GEOSITE,telegram,Proxy
+- GEOSITE,category-ai-!cn,AI
+- GEOIP,telegram,Proxy,no-resolve
+- GEOIP,private,DIRECT,no-resolve
+- RULE-SET,ai,AI
+- RULE-SET,youtube_domain,YouTube
+- RULE-SET,speedtest_domain,Speedtest
+- RULE-SET,global_non_ip,Proxy
+- RULE-SET,skk_direct,DIRECT
+- RULE-SET,domestic_non_ip,DIRECT
+- RULE-SET,domestic_ip,DIRECT,no-resolve
+- RULE-SET,china_ip,DIRECT,no-resolve
+- RULE-SET,china_ip_ipv6,DIRECT,no-resolve
+- RULE-SET,proxy,Proxy
+- RULE-SET,gfw_domain,Proxy
+- DOMAIN-SUFFIX,cn,DIRECT
+- RULE-SET,blackmatrix7_direct,DIRECTLY
+- RULE-SET,trackerslist,Trackerslist
+- GEOIP,CN,DIRECT
+- MATCH,漏网之鱼
 rule-providers:
   AWAvenue_Ads_Rule:
     type: http
@@ -322,33 +352,3 @@ rule-providers:
     format: mrs
     path: ./ruleset/speedtest_domain.mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
-proxy-providers:
-  s1:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: &id003
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      timeout: 5
-      lazy: true
-      expected-status: '204'
-      method: HEAD
-    url: ''
-    path: ./proxy_provider/s1.yaml
-    override:
-      additional-prefix: s1 »
-  s2:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id003
-    url: ''
-    path: ./proxy_provider/s2.yaml
-    override:
-      additional-prefix: s2 »

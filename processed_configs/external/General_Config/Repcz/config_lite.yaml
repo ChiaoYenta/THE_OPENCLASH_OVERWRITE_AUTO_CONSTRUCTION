@@ -1,6 +1,21 @@
 # Processed: raw_configs/external/General_Config/Repcz/config_lite.yaml
 # Providers: 1 proxy, 0 rule
 
+proxy-groups:
+- type: select
+  include-all: true
+  name: Proxy
+  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
+proxy-providers:
+  Subscribe:
+  - url: http://your-service-provider
+  - type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://1.1.1.1/generate_204
+      interval: 1800
+      timeout: 5000
 rules:
 - GEOSITE,openai,Proxy
 - GEOSITE,category-games,Proxy
@@ -18,18 +33,3 @@ rules:
 - GEOIP,private,DIRECT
 - GEOIP,cn,DIRECT
 - MATCH,Proxy
-proxy-groups:
-- type: select
-  include-all: true
-  name: Proxy
-  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
-proxy-providers:
-  Subscribe:
-  - url: http://your-service-provider
-  - type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://1.1.1.1/generate_204
-      interval: 1800
-      timeout: 5000

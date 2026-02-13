@@ -1,117 +1,6 @@
 # Processed: raw_configs/external/Smart_Mode/edison/OneSmartProMCX.yaml
 # Providers: 4 proxy, 84 rule
 
-rules:
-- AND,((NETWORK,UDP),(DST-PORT,443),(RULE-SET,China)),国内直连
-- AND,((NETWORK,UDP),(DST-PORT,443),(RULE-SET,China-IP)),国内直连
-- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
-- RULE-SET,Private,国内直连
-- RULE-SET,Private-IP,国内直连,no-resolve
-- RULE-SET,HTTPDNS-CN,国内直连
-- DOMAIN,access.mypikpak.com,REJECT
-- DOMAIN,access.mypikpak.net,REJECT
-- DOMAIN,access.pikpak.me,REJECT
-- DOMAIN,access.pikpakdrive.com,REJECT
-- DOMAIN-KEYWORD,dl-a10b-,国内直连
-- DOMAIN-KEYWORD,dl-z01a-,国内直连
-- DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,国内直连
-- DOMAIN-KEYWORD,bittorrent,Tracker
-- DOMAIN-KEYWORD,torrent,Tracker
-- DOMAIN-KEYWORD,tracker,Tracker
-- DOMAIN-KEYWORD,ipv6tracker,Tracker
-- RULE-SET,Trackers,Tracker
-- RULE-SET,Trackers-IP,Tracker,no-resolve
-- RULE-SET,PublicTracker,Tracker
-- RULE-SET,SteamCN,国内直连
-- RULE-SET,EpicCN,国内直连
-- RULE-SET,UbisoftCN,国内直连
-- RULE-SET,XboxCN,国内直连
-- RULE-SET,NintendoCN,国内直连
-- RULE-SET,GOGCN,国内直连
-- RULE-SET,GameDownload,国内直连
-- RULE-SET,Accelerator,国内直连
-- RULE-SET,GamesCN,国内直连
-- RULE-SET,Ubisoft,国内直连
-- RULE-SET,Blizzard,国内直连
-- RULE-SET,Steam,ProxyGame
-- RULE-SET,Xbox,ProxyGame
-- RULE-SET,PlayStation,ProxyGame
-- RULE-SET,Epic,ProxyGame
-- RULE-SET,Nintendo,ProxyGame
-- RULE-SET,EA,ProxyGame
-- RULE-SET,GOG,ProxyGame
-- RULE-SET,Origin,ProxyGame
-- RULE-SET,GamesGlobal,ProxyGame
-- DOMAIN-SUFFIX,copilot.microsoft.com,AI
-- DOMAIN-SUFFIX,copilot.azure.com,AI
-- DOMAIN,sydney.bing.com,AI
-- DOMAIN,edgeservices.bing.com,AI
-- DOMAIN-SUFFIX,openai.azure.com,AI
-- DOMAIN-SUFFIX,api.microsoftapp.net,AI
-- DOMAIN,img.bing.com,AI
-- RULE-SET,Teams,国内直连
-- RULE-SET,Bing,Proxy
-- RULE-SET,MSN,Proxy
-- RULE-SET,Crypto,Crypto
-- RULE-SET,Emby,Emby
-- RULE-SET,AI,AI
-- RULE-SET,GlobalAI,AI
-- RULE-SET,TikTok-MCX,TikTok
-- RULE-SET,TikTok-b7,TikTok
-- RULE-SET,AppleTV,Streaming
-- RULE-SET,PrimeVideo,Streaming
-- RULE-SET,HBO,Streaming
-- RULE-SET,Hulu,Streaming
-- RULE-SET,Netflix,Streaming
-- RULE-SET,Netflix-IP,Streaming,no-resolve
-- RULE-SET,Disney,Streaming
-- RULE-SET,Spotify,Streaming
-- RULE-SET,YouTube,Streaming
-- DOMAIN-SUFFIX,googleapis.cn,Google
-- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Google
-- RULE-SET,Google,Google
-- RULE-SET,Google-IP,Google,no-resolve
-- RULE-SET,GoogleFCM,Google
-- RULE-SET,Google,Google
-- RULE-SET,Google-IP,Google,no-resolve
-- RULE-SET,GoogleFCM,Google
-- RULE-SET,Telegram,Proxy
-- RULE-SET,Telegram-IP,Proxy,no-resolve
-- RULE-SET,Twitter,Proxy
-- RULE-SET,Twitter-IP,Proxy,no-resolve
-- RULE-SET,Meta,Proxy
-- RULE-SET,Facebook-IP,Proxy,no-resolve
-- RULE-SET,Tumblr,Proxy
-- RULE-SET,Docker,Proxy
-- RULE-SET,Pixiv,Proxy
-- RULE-SET,Reddit,Proxy
-- RULE-SET,GitHub,Proxy
-- RULE-SET,Speedtest,Proxy
-- RULE-SET,Communication,Proxy
-- RULE-SET,SocialMedia,Proxy
-- RULE-SET,Ecommerce,Proxy
-- RULE-SET,Scholar,Proxy
-- RULE-SET,MicrosoftCN,国内直连
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,Apple,Apple
-- RULE-SET,Apple-IP,Apple,no-resolve
-- RULE-SET,AI-CN,国内直连
-- RULE-SET,Xunlei,国内直连
-- RULE-SET,Netease,国内直连
-- RULE-SET,Bilibili,国内直连
-- RULE-SET,Bilibili2,国内直连
-- RULE-SET,Baidu,国内直连
-- RULE-SET,JD,国内直连
-- RULE-SET,Alibaba,国内直连
-- RULE-SET,Tencent,国内直连
-- RULE-SET,Netdisk-CN,国内直连
-- RULE-SET,Bank-CN,国内直连
-- RULE-SET,Social-CN,国内直连
-- RULE-SET,Media-CN,国内直连
-- RULE-SET,Geo-!CN,Proxy
-- RULE-SET,China,国内直连
-- RULE-SET,China-IP,国内直连,no-resolve
-- MATCH,漏网之鱼
 proxy-groups:
 - type: select
   proxies: &id001
@@ -338,6 +227,158 @@ proxy-groups:
   name: 冷门节点-智能
   include-all: true
   policy-priority: 优:3;中:2;次:1;备:0.5
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: &id003
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+    header: &id004
+      User-Agent:
+      - clash.meta
+      - mihomo/1.18.3
+    override:
+      additional-suffix: ' [优]'
+    url: 你的优质机场订阅链接
+  次优服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [次]'
+    url: 你的次优质机场订阅链接
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [备]'
+    url: 你的备用机场订阅链接
+  落地服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [中]'
+      dialer-proxy: 中转服务
+    url: 落地订阅源地址
+rules:
+- AND,((NETWORK,UDP),(DST-PORT,443),(RULE-SET,China)),国内直连
+- AND,((NETWORK,UDP),(DST-PORT,443),(RULE-SET,China-IP)),国内直连
+- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- RULE-SET,Private,国内直连
+- RULE-SET,Private-IP,国内直连,no-resolve
+- RULE-SET,HTTPDNS-CN,国内直连
+- DOMAIN,access.mypikpak.com,REJECT
+- DOMAIN,access.mypikpak.net,REJECT
+- DOMAIN,access.pikpak.me,REJECT
+- DOMAIN,access.pikpakdrive.com,REJECT
+- DOMAIN-KEYWORD,dl-a10b-,国内直连
+- DOMAIN-KEYWORD,dl-z01a-,国内直连
+- DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,国内直连
+- DOMAIN-KEYWORD,bittorrent,Tracker
+- DOMAIN-KEYWORD,torrent,Tracker
+- DOMAIN-KEYWORD,tracker,Tracker
+- DOMAIN-KEYWORD,ipv6tracker,Tracker
+- RULE-SET,Trackers,Tracker
+- RULE-SET,Trackers-IP,Tracker,no-resolve
+- RULE-SET,PublicTracker,Tracker
+- RULE-SET,SteamCN,国内直连
+- RULE-SET,EpicCN,国内直连
+- RULE-SET,UbisoftCN,国内直连
+- RULE-SET,XboxCN,国内直连
+- RULE-SET,NintendoCN,国内直连
+- RULE-SET,GOGCN,国内直连
+- RULE-SET,GameDownload,国内直连
+- RULE-SET,Accelerator,国内直连
+- RULE-SET,GamesCN,国内直连
+- RULE-SET,Ubisoft,国内直连
+- RULE-SET,Blizzard,国内直连
+- RULE-SET,Steam,ProxyGame
+- RULE-SET,Xbox,ProxyGame
+- RULE-SET,PlayStation,ProxyGame
+- RULE-SET,Epic,ProxyGame
+- RULE-SET,Nintendo,ProxyGame
+- RULE-SET,EA,ProxyGame
+- RULE-SET,GOG,ProxyGame
+- RULE-SET,Origin,ProxyGame
+- RULE-SET,GamesGlobal,ProxyGame
+- DOMAIN-SUFFIX,copilot.microsoft.com,AI
+- DOMAIN-SUFFIX,copilot.azure.com,AI
+- DOMAIN,sydney.bing.com,AI
+- DOMAIN,edgeservices.bing.com,AI
+- DOMAIN-SUFFIX,openai.azure.com,AI
+- DOMAIN-SUFFIX,api.microsoftapp.net,AI
+- DOMAIN,img.bing.com,AI
+- RULE-SET,Teams,国内直连
+- RULE-SET,Bing,Proxy
+- RULE-SET,MSN,Proxy
+- RULE-SET,Crypto,Crypto
+- RULE-SET,Emby,Emby
+- RULE-SET,AI,AI
+- RULE-SET,GlobalAI,AI
+- RULE-SET,TikTok-MCX,TikTok
+- RULE-SET,TikTok-b7,TikTok
+- RULE-SET,AppleTV,Streaming
+- RULE-SET,PrimeVideo,Streaming
+- RULE-SET,HBO,Streaming
+- RULE-SET,Hulu,Streaming
+- RULE-SET,Netflix,Streaming
+- RULE-SET,Netflix-IP,Streaming,no-resolve
+- RULE-SET,Disney,Streaming
+- RULE-SET,Spotify,Streaming
+- RULE-SET,YouTube,Streaming
+- DOMAIN-SUFFIX,googleapis.cn,Google
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Google
+- RULE-SET,Google,Google
+- RULE-SET,Google-IP,Google,no-resolve
+- RULE-SET,GoogleFCM,Google
+- RULE-SET,Telegram,Proxy
+- RULE-SET,Telegram-IP,Proxy,no-resolve
+- RULE-SET,Twitter,Proxy
+- RULE-SET,Twitter-IP,Proxy,no-resolve
+- RULE-SET,Meta,Proxy
+- RULE-SET,Facebook-IP,Proxy,no-resolve
+- RULE-SET,Tumblr,Proxy
+- RULE-SET,Docker,Proxy
+- RULE-SET,Pixiv,Proxy
+- RULE-SET,Reddit,Proxy
+- RULE-SET,GitHub,Proxy
+- RULE-SET,Speedtest,Proxy
+- RULE-SET,Communication,Proxy
+- RULE-SET,SocialMedia,Proxy
+- RULE-SET,Ecommerce,Proxy
+- RULE-SET,Scholar,Proxy
+- RULE-SET,MicrosoftCN,国内直连
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Apple,Apple
+- RULE-SET,Apple-IP,Apple,no-resolve
+- RULE-SET,AI-CN,国内直连
+- RULE-SET,Xunlei,国内直连
+- RULE-SET,Netease,国内直连
+- RULE-SET,Bilibili,国内直连
+- RULE-SET,Bilibili2,国内直连
+- RULE-SET,Baidu,国内直连
+- RULE-SET,JD,国内直连
+- RULE-SET,Alibaba,国内直连
+- RULE-SET,Tencent,国内直连
+- RULE-SET,Netdisk-CN,国内直连
+- RULE-SET,Bank-CN,国内直连
+- RULE-SET,Social-CN,国内直连
+- RULE-SET,Media-CN,国内直连
+- RULE-SET,Geo-!CN,Proxy
+- RULE-SET,China,国内直连
+- RULE-SET,China-IP,国内直连,no-resolve
+- MATCH,漏网之鱼
 rule-providers:
   Private:
     type: http
@@ -927,47 +968,3 @@ rule-providers:
     interval: 86400
     url: https://raw.githubusercontent.com/yhlh9982/clash-rules/master/trackers_ip.yaml
     path: ./ruleset/trackers_ip.yaml
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: &id003
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 300
-    header: &id004
-      User-Agent:
-      - clash.meta
-      - mihomo/1.18.3
-    override:
-      additional-suffix: ' [优]'
-    url: 你的优质机场订阅链接
-  次优服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id003
-    header: *id004
-    override:
-      additional-suffix: ' [次]'
-    url: 你的次优质机场订阅链接
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id003
-    header: *id004
-    override:
-      additional-suffix: ' [备]'
-    url: 你的备用机场订阅链接
-  落地服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id003
-    header: *id004
-    override:
-      additional-suffix: ' [中]'
-      dialer-proxy: 中转服务
-    url: 落地订阅源地址
