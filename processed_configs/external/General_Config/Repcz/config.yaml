@@ -1,115 +1,6 @@
 # Processed: raw_configs/external/General_Config/Repcz/config.yaml
 # Providers: 1 proxy, 24 rule
 
-proxy-groups:
-- name: 手动切换
-  type: select
-  include-all: true
-  proxies:
-  - 香港节点
-  - 美国节点
-  - 狮城节点
-  - 日本节点
-  - 台湾节点
-  - DIRECT
-  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
-- type: select
-  proxies: &id001
-  - 手动切换
-  - 香港节点
-  - 美国节点
-  - 狮城节点
-  - 日本节点
-  - 台湾节点
-  - DIRECT
-  name: 国外网站
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
-- type: select
-  proxies: *id001
-  name: 国际媒体
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-- type: select
-  proxies: *id001
-  name: 苹果服务
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
-- type: select
-  proxies: *id001
-  name: 微软服务
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-- type: select
-  proxies: *id001
-  name: 谷歌服务
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-- type: select
-  proxies: *id001
-  name: 电报消息
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-- type: select
-  proxies: *id001
-  name: 推特消息
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
-- type: select
-  proxies: *id001
-  name: AI
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
-- type: select
-  proxies: *id001
-  name: 游戏平台
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
-- type: select
-  proxies: *id001
-  name: Emby
-  include-all: true
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
-- type: select
-  proxies: *id001
-  name: Spotify
-  include-all: true
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-- type: select
-  proxies: *id001
-  name: 兜底分流
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
-- type: url-test
-  url: http://1.1.1.1/generate_204
-  interval: 300
-  tolerance: 0
-  include-all: true
-  name: 香港节点
-  filter: "(?i)\U0001F1ED\U0001F1F0|香港|(\b(HK|Hong)\b)"
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-- type: url-test
-  url: http://1.1.1.1/generate_204
-  interval: 300
-  tolerance: 0
-  include-all: true
-  name: 美国节点
-  filter: "(?i)\U0001F1FA\U0001F1F8|美国|洛杉矶|圣何塞|(\b(US|United States)\b)"
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-- type: url-test
-  url: http://1.1.1.1/generate_204
-  interval: 300
-  tolerance: 0
-  include-all: true
-  name: 狮城节点
-  filter: "(?i)\U0001F1F8\U0001F1EC|新加坡|狮|(\b(SG|Singapore)\b)"
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-- type: url-test
-  url: http://1.1.1.1/generate_204
-  interval: 300
-  tolerance: 0
-  include-all: true
-  name: 日本节点
-  filter: "(?i)\U0001F1EF\U0001F1F5|日本|东京|(\b(JP|Japan)\b)"
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-- type: url-test
-  url: http://1.1.1.1/generate_204
-  interval: 300
-  tolerance: 0
-  include-all: true
-  name: 台湾节点
-  filter: "(?i)\U0001F1E8\U0001F1F3|\U0001F1F9\U0001F1FC|台湾|(\b(TW|Tai|Taiwan)\b)"
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
 proxy-providers:
   Subscribe:
     type: http
@@ -120,33 +11,6 @@ proxy-providers:
       interval: 1800
       timeout: 5000
     url: http://your-service-provider
-rules:
-- RULE-SET,Direct,DIRECT
-- RULE-SET,Reject,REJECT
-- RULE-SET,AI,AI
-- RULE-SET,Github,微软服务
-- RULE-SET,OneDrive,微软服务
-- RULE-SET,Microsoft,微软服务
-- RULE-SET,YouTube,谷歌服务
-- RULE-SET,Google,谷歌服务
-- RULE-SET,Twitter,推特消息
-- RULE-SET,Telegram,电报消息
-- RULE-SET,Steam,游戏平台
-- RULE-SET,Epic,游戏平台
-- RULE-SET,Emby,Emby
-- RULE-SET,Bahamut,国际媒体
-- RULE-SET,Netflix,国际媒体
-- RULE-SET,Disney,国际媒体
-- RULE-SET,PrimeVideo,国际媒体
-- RULE-SET,HBO,国际媒体
-- RULE-SET,TikTok,国际媒体
-- RULE-SET,Spotify,Spotify
-- RULE-SET,Proxy,国外网站
-- RULE-SET,AppleCN,DIRECT
-- RULE-SET,AppleProxy,香港节点
-- RULE-SET,Lan,DIRECT
-- GEOIP,CN,DIRECT
-- MATCH,兜底分流
 rule-providers:
   Direct:
     type: http
@@ -292,3 +156,139 @@ rule-providers:
     format: text
     interval: 86400
     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Proxy.list
+proxy-groups:
+- name: 手动切换
+  type: select
+  include-all: true
+  proxies:
+  - 香港节点
+  - 美国节点
+  - 狮城节点
+  - 日本节点
+  - 台湾节点
+  - DIRECT
+  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
+- type: select
+  proxies: &id001
+  - 手动切换
+  - 香港节点
+  - 美国节点
+  - 狮城节点
+  - 日本节点
+  - 台湾节点
+  - DIRECT
+  name: 国外网站
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+- type: select
+  proxies: *id001
+  name: 国际媒体
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+- type: select
+  proxies: *id001
+  name: 苹果服务
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
+- type: select
+  proxies: *id001
+  name: 微软服务
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+- type: select
+  proxies: *id001
+  name: 谷歌服务
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+- type: select
+  proxies: *id001
+  name: 电报消息
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+- type: select
+  proxies: *id001
+  name: 推特消息
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
+- type: select
+  proxies: *id001
+  name: AI
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+- type: select
+  proxies: *id001
+  name: 游戏平台
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
+- type: select
+  proxies: *id001
+  name: Emby
+  include-all: true
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+- type: select
+  proxies: *id001
+  name: Spotify
+  include-all: true
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+- type: select
+  proxies: *id001
+  name: 兜底分流
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+- type: url-test
+  url: http://1.1.1.1/generate_204
+  interval: 300
+  tolerance: 0
+  include-all: true
+  name: 香港节点
+  filter: "(?i)\U0001F1ED\U0001F1F0|香港|(\b(HK|Hong)\b)"
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+- type: url-test
+  url: http://1.1.1.1/generate_204
+  interval: 300
+  tolerance: 0
+  include-all: true
+  name: 美国节点
+  filter: "(?i)\U0001F1FA\U0001F1F8|美国|洛杉矶|圣何塞|(\b(US|United States)\b)"
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+- type: url-test
+  url: http://1.1.1.1/generate_204
+  interval: 300
+  tolerance: 0
+  include-all: true
+  name: 狮城节点
+  filter: "(?i)\U0001F1F8\U0001F1EC|新加坡|狮|(\b(SG|Singapore)\b)"
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+- type: url-test
+  url: http://1.1.1.1/generate_204
+  interval: 300
+  tolerance: 0
+  include-all: true
+  name: 日本节点
+  filter: "(?i)\U0001F1EF\U0001F1F5|日本|东京|(\b(JP|Japan)\b)"
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+- type: url-test
+  url: http://1.1.1.1/generate_204
+  interval: 300
+  tolerance: 0
+  include-all: true
+  name: 台湾节点
+  filter: "(?i)\U0001F1E8\U0001F1F3|\U0001F1F9\U0001F1FC|台湾|(\b(TW|Tai|Taiwan)\b)"
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+rules:
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
+- RULE-SET,AI,AI
+- RULE-SET,Github,微软服务
+- RULE-SET,OneDrive,微软服务
+- RULE-SET,Microsoft,微软服务
+- RULE-SET,YouTube,谷歌服务
+- RULE-SET,Google,谷歌服务
+- RULE-SET,Twitter,推特消息
+- RULE-SET,Telegram,电报消息
+- RULE-SET,Steam,游戏平台
+- RULE-SET,Epic,游戏平台
+- RULE-SET,Emby,Emby
+- RULE-SET,Bahamut,国际媒体
+- RULE-SET,Netflix,国际媒体
+- RULE-SET,Disney,国际媒体
+- RULE-SET,PrimeVideo,国际媒体
+- RULE-SET,HBO,国际媒体
+- RULE-SET,TikTok,国际媒体
+- RULE-SET,Spotify,Spotify
+- RULE-SET,Proxy,国外网站
+- RULE-SET,AppleCN,DIRECT
+- RULE-SET,AppleProxy,香港节点
+- RULE-SET,Lan,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,兜底分流
