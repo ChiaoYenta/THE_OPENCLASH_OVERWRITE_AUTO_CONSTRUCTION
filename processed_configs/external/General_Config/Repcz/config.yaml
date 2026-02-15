@@ -11,6 +11,33 @@ proxy-providers:
       interval: 1800
       timeout: 5000
     url: http://your-service-provider
+rules:
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
+- RULE-SET,AI,AI
+- RULE-SET,Github,微软服务
+- RULE-SET,OneDrive,微软服务
+- RULE-SET,Microsoft,微软服务
+- RULE-SET,YouTube,谷歌服务
+- RULE-SET,Google,谷歌服务
+- RULE-SET,Twitter,推特消息
+- RULE-SET,Telegram,电报消息
+- RULE-SET,Steam,游戏平台
+- RULE-SET,Epic,游戏平台
+- RULE-SET,Emby,Emby
+- RULE-SET,Bahamut,国际媒体
+- RULE-SET,Netflix,国际媒体
+- RULE-SET,Disney,国际媒体
+- RULE-SET,PrimeVideo,国际媒体
+- RULE-SET,HBO,国际媒体
+- RULE-SET,TikTok,国际媒体
+- RULE-SET,Spotify,Spotify
+- RULE-SET,Proxy,国外网站
+- RULE-SET,AppleCN,DIRECT
+- RULE-SET,AppleProxy,香港节点
+- RULE-SET,Lan,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,兜底分流
 rule-providers:
   Direct:
     type: http
@@ -265,30 +292,3 @@ proxy-groups:
   name: 台湾节点
   filter: "(?i)\U0001F1E8\U0001F1F3|\U0001F1F9\U0001F1FC|台湾|(\b(TW|Tai|Taiwan)\b)"
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
-rules:
-- RULE-SET,Direct,DIRECT
-- RULE-SET,Reject,REJECT
-- RULE-SET,AI,AI
-- RULE-SET,Github,微软服务
-- RULE-SET,OneDrive,微软服务
-- RULE-SET,Microsoft,微软服务
-- RULE-SET,YouTube,谷歌服务
-- RULE-SET,Google,谷歌服务
-- RULE-SET,Twitter,推特消息
-- RULE-SET,Telegram,电报消息
-- RULE-SET,Steam,游戏平台
-- RULE-SET,Epic,游戏平台
-- RULE-SET,Emby,Emby
-- RULE-SET,Bahamut,国际媒体
-- RULE-SET,Netflix,国际媒体
-- RULE-SET,Disney,国际媒体
-- RULE-SET,PrimeVideo,国际媒体
-- RULE-SET,HBO,国际媒体
-- RULE-SET,TikTok,国际媒体
-- RULE-SET,Spotify,Spotify
-- RULE-SET,Proxy,国外网站
-- RULE-SET,AppleCN,DIRECT
-- RULE-SET,AppleProxy,香港节点
-- RULE-SET,Lan,DIRECT
-- GEOIP,CN,DIRECT
-- MATCH,兜底分流

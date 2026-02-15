@@ -1,0 +1,354 @@
+# Processed: raw_configs/external/General_Config/SHICHUNHUI88/Clash-Airport.yaml
+# Providers: 1 proxy, 25 rule
+
+proxy-providers:
+  机场:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
+rules:
+- DOMAIN,report-v2.samsung.japps.cn,🌍全球加速
+- RULE-SET,advertising,REJECT
+- RULE-SET,reject,REJECT
+- GEOSITE,category-ads-all,REJECT
+- RULE-SET,douyin-zj,🎷抖音
+- RULE-SET,Google-zj,🌐Google服务
+- RULE-SET,OpenAI-zj,🧠OpenAI
+- RULE-SET,Telegram-zj,💻Telegram
+- RULE-SET,GitHub-zj,😊微软服务
+- RULE-SET,Microsoft,😊微软服务
+- RULE-SET,TikTok-zj,🎬TikTok
+- RULE-SET,YouTube,🌐Google服务
+- RULE-SET,Facebook-zj,📺国际流媒体
+- RULE-SET,Netflix,📺国际流媒体
+- RULE-SET,WildRift-zj,🎮国际游戏
+- RULE-SET,games,🎮国际游戏
+- RULE-SET,abroad_dns_cdn,🌍全球加速
+- RULE-SET,proxy,🌍全球加速
+- RULE-SET,tld-not-cn,🌍全球加速
+- RULE-SET,gfw,🌍全球加速
+- GEOSITE,douyin,🎷抖音
+- GEOSITE,category-games-!cn,🎮国际游戏
+- GEOSITE,google,🌐Google服务
+- GEOSITE,openai,🧠OpenAI
+- GEOSITE,telegram,💻Telegram
+- GEOSITE,gitHub,😊微软服务
+- GEOSITE,microsoft,😊微软服务
+- GEOSITE,tiktok,🎬TikTok
+- GEOSITE,facebook,📺国际流媒体
+- GEOSITE,instagram,📺国际流媒体
+- GEOSITE,whatsapp,📺国际流媒体
+- GEOSITE,twitter,🌍全球加速
+- GEOSITE,greatfire,🌍全球加速
+- GEOSITE,gfw,🌍全球加速
+- GEOSITE,geolocation-!cn,🌍全球加速
+- GEOIP,telegram,💻Telegram,no-resolve
+- GEOIP,google,🌐Google服务,no-resolve
+- GEOIP,cloudflare,🌍全球加速,no-resolve
+- GEOIP,cloudfront,🌍全球加速,no-resolve
+- GEOIP,fastly,🌍全球加速,no-resolve
+- IP-ASN,15169,🌐Google服务,no-resolve
+- IP-ASN,396982,🌐Google服务,no-resolve
+- IP-ASN,8075,😊微软服务,no-resolve
+- IP-ASN,8070,😊微软服务,no-resolve
+- GEOIP,!cn,🌍全球加速
+- RULE-SET,cn_dns_cdn,🎯直连
+- RULE-SET,private,🎯直连
+- RULE-SET,direct,🎯直连
+- RULE-SET,applications,🎯直连
+- RULE-SET,Agora-zj,🎯直连
+- GEOSITE,category-games-cn,🎯直连
+- GEOSITE,alibaba,⛩️国内网站
+- GEOSITE,tencent,⛩️国内网站
+- GEOSITE,cn,🎯直连
+- GEOIP,private,🎯直连,no-resolve
+- GEOIP,cn,🎯直连,no-resolve
+- MATCH,🤡漏网之鱼
+rule-providers:
+  advertising:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-AdvertisingLite_ipcidr.mrs
+  reject:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-reject_domain.mrs
+  douyin-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/douyin.yaml
+  TikTok-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/TikTok.yaml
+  Telegram-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Telegram.yaml
+  OpenAI-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/OpenAI.yaml
+  Facebook-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Facebook.yaml
+  Google-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Google.yaml
+  WildRift-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Wildrift.yaml
+  Agora-zj:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/agora.yaml
+  GitHub-zj:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/GitHub.yaml
+  icloud:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-icloud_domain.mrs
+  Apple:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-Apple_domain.mrs
+  Microsoft:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-Microsoft_domain.mrs
+  YouTube:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-YouTube_domain.mrs
+  Netflix:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-Netflix_domain.mrs
+  games:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-games_domain.mrs
+  abroad_dns_cdn:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/abroad_dns_cdn.yaml
+  proxy:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-proxy_domain.mrs
+  gfw:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-gfw_domain.mrs
+  tld-not-cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-tld-not-cn_domain.mrs
+  cn_dns_cdn:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/cn_dns_cdn.yaml
+  direct:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-direct_domain.mrs
+  private:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-private_domain.mrs
+  applications:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: text
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
+proxy-groups:
+- name: 🌍全球加速
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+  proxies:
+  - ♻️随机
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+  url: https://www.gstatic.com/generate_204
+  interval: 120
+  timeout: 5000
+- name: ♻️随机
+  type: url-test
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Bypass.png
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+  url: https://www.gstatic.com/generate_204
+  interval: 120
+  tolerance: 30
+  timeout: 5000
+  hidden: true
+- name: 🎷抖音
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 🎬TikTok
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok_2.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 🎮国际游戏
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Game.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(🇭🇰|香港|🇯🇵|日本|🇸🇬|新加坡|🇰🇷|韩国|🇹🇼|台湾|🇻🇳|越南)
+- name: 💻Telegram
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Telegram.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 🧠OpenAI
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 😊微软服务
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Microsoft.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 🌐Google服务
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Google_Search.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 📺国际流媒体
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: 🍎苹果服务
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: ^(.*)
+- name: ⛩️国内网站
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China.png
+  proxies:
+  - 🎯直连
+  - 🌍全球加速
+- name: 🎯直连
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China_Map.png
+  proxies:
+  - DIRECT
+  - 🌍全球加速
+  url: http://connect.rom.miui.com/generate_204
+- name: 🤡漏网之鱼
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png
+  proxies:
+  - 🌍全球加速
+  - 🎯直连

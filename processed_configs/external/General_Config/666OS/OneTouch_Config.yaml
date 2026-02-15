@@ -23,6 +23,30 @@ proxy-providers:
     url: 备用订阅源地址
     override:
       additional-prefix: '[备] '
+rules:
+- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT
+- RULE-SET,Private,直接连接
+- RULE-SET,Direct,直接连接
+- RULE-SET,AppleCN,直接连接
+- RULE-SET,Download,直接连接
+- RULE-SET,XPTV,直接连接
+- RULE-SET,AI,人工智能
+- RULE-SET,Telegram,社交平台
+- RULE-SET,SocialMedia,社交平台
+- RULE-SET,YouTube,国际媒体
+- RULE-SET,Spotify,国际媒体
+- RULE-SET,Netflix,国际媒体
+- RULE-SET,Disney,国际媒体
+- RULE-SET,HBO,国际媒体
+- RULE-SET,Proxy,一键连
+- RULE-SET,China,国内流量
+- RULE-SET,PrivateIP,直接连接,no-resolve
+- RULE-SET,TelegramIP,社交平台,no-resolve
+- RULE-SET,SocialMediaIP,社交平台,no-resolve
+- RULE-SET,NetflixIP,国际媒体,no-resolve
+- RULE-SET,ProxyIP,一键连,no-resolve
+- RULE-SET,ChinaIP,国内流量
+- MATCH,一键连
 rule-providers:
   Private:
     type: http
@@ -300,27 +324,3 @@ proxy-groups:
   filter: ^(?=.*(?i)(奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU))(?!.*(排除1|排除2|5x)).*$
   include-all: true
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png
-rules:
-- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT
-- RULE-SET,Private,直接连接
-- RULE-SET,Direct,直接连接
-- RULE-SET,AppleCN,直接连接
-- RULE-SET,Download,直接连接
-- RULE-SET,XPTV,直接连接
-- RULE-SET,AI,人工智能
-- RULE-SET,Telegram,社交平台
-- RULE-SET,SocialMedia,社交平台
-- RULE-SET,YouTube,国际媒体
-- RULE-SET,Spotify,国际媒体
-- RULE-SET,Netflix,国际媒体
-- RULE-SET,Disney,国际媒体
-- RULE-SET,HBO,国际媒体
-- RULE-SET,Proxy,一键连
-- RULE-SET,China,国内流量
-- RULE-SET,PrivateIP,直接连接,no-resolve
-- RULE-SET,TelegramIP,社交平台,no-resolve
-- RULE-SET,SocialMediaIP,社交平台,no-resolve
-- RULE-SET,NetflixIP,国际媒体,no-resolve
-- RULE-SET,ProxyIP,一键连,no-resolve
-- RULE-SET,ChinaIP,国内流量
-- MATCH,一键连
