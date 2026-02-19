@@ -1,6 +1,27 @@
 # Processed: raw_configs/external/General_Config/echs-top/mihomo.yaml
 # Providers: 3 proxy, 20 rule
 
+rules:
+- DST-PORT,5228-5230,FCM
+- RULE-SET,private_ip,DIRECT,no-resolve
+- RULE-SET,AWAvenue-Ads,REJECT
+- RULE-SET,private,DIRECT
+- RULE-SET,googlefcm,FCM
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,ai,AI
+- RULE-SET,google,GOOGLE
+- RULE-SET,apple-cn,DIRECT
+- RULE-SET,microsoft-cn,DIRECT
+- RULE-SET,games-cn,DIRECT
+- RULE-SET,direct_domain,DIRECT
+- RULE-SET,proxy,PROXY
+- RULE-SET,cn,DIRECT
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,enhanced-FaaS-in-China_ip,DIRECT
+- RULE-SET,direct_ip,DIRECT
+- RULE-SET,cn_ip,DIRECT
+- MATCH,PROXY
 proxy-groups:
 - name: PROXY
   type: select
@@ -307,24 +328,3 @@ rule-providers:
     format: mrs
     url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs
     path: ./rules/cn_ip.mrs
-rules:
-- DST-PORT,5228-5230,FCM
-- RULE-SET,private_ip,DIRECT,no-resolve
-- RULE-SET,AWAvenue-Ads,REJECT
-- RULE-SET,private,DIRECT
-- RULE-SET,googlefcm,FCM
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,ai,AI
-- RULE-SET,google,GOOGLE
-- RULE-SET,apple-cn,DIRECT
-- RULE-SET,microsoft-cn,DIRECT
-- RULE-SET,games-cn,DIRECT
-- RULE-SET,direct_domain,DIRECT
-- RULE-SET,proxy,PROXY
-- RULE-SET,cn,DIRECT
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,enhanced-FaaS-in-China_ip,DIRECT
-- RULE-SET,direct_ip,DIRECT
-- RULE-SET,cn_ip,DIRECT
-- MATCH,PROXY
