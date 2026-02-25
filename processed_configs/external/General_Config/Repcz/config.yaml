@@ -28,16 +28,6 @@ rules:
 - RULE-SET,Lan,DIRECT
 - GEOIP,CN,DIRECT
 - MATCH,兜底分流
-proxy-providers:
-  Subscribe:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://1.1.1.1/generate_204
-      interval: 1800
-      timeout: 5000
-    url: http://your-service-provider
 proxy-groups:
 - name: 手动切换
   type: select
@@ -147,6 +137,16 @@ proxy-groups:
   name: 台湾节点
   filter: "(?i)\U0001F1E8\U0001F1F3|\U0001F1F9\U0001F1FC|台湾|(\b(TW|Tai|Taiwan)\b)"
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+proxy-providers:
+  Subscribe:
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://1.1.1.1/generate_204
+      interval: 1800
+      timeout: 5000
+    url: http://your-service-provider
 rule-providers:
   Direct:
     type: http

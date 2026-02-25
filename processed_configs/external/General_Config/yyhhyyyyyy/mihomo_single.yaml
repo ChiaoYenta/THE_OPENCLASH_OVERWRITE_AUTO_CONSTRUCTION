@@ -24,16 +24,6 @@ rules:
 - RULE-SET,domestic_ip,DIRECT
 - RULE-SET,china_ip,DIRECT
 - MATCH,🎯 节点选择
-proxy-providers:
-  Node:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://connectivitycheck.platform.hicloud.com/generate_204
-      interval: 300
-    url: 替换订阅链接
-    path: ./proxy_provider/providers.yaml
 proxy-groups:
 - name: 🎯 节点选择
   type: select
@@ -569,6 +559,16 @@ proxy-groups:
   include-all: true
   name: AllIn - 自动选择
   filter: ^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$
+proxy-providers:
+  Node:
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://connectivitycheck.platform.hicloud.com/generate_204
+      interval: 300
+    url: 替换订阅链接
+    path: ./proxy_provider/providers.yaml
 rule-providers:
   cdn_domainset:
     type: http

@@ -109,53 +109,9 @@ rules:
 - RULE-SET,China,国内直连
 - RULE-SET,China-IP,国内直连,no-resolve
 - MATCH,漏网之鱼
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: &id001
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 300
-    header: &id002
-      User-Agent:
-      - clash.meta
-      - mihomo/1.18.3
-    override:
-      additional-suffix: ' [优]'
-    url: 你的优质机场订阅链接
-  次优服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id001
-    header: *id002
-    override:
-      additional-suffix: ' [次]'
-    url: 你的次优质机场订阅链接
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id001
-    header: *id002
-    override:
-      additional-suffix: ' [备]'
-    url: 你的备用机场订阅链接
-  落地服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id001
-    header: *id002
-    override:
-      additional-suffix: ' [中]'
-      dialer-proxy: 中转服务
-    url: 落地订阅源地址
 proxy-groups:
 - type: select
-  proxies: &id003
+  proxies: &id001
   - 香港-智能
   - 香港-故转
   - 日本-智能
@@ -173,45 +129,45 @@ proxy-groups:
   name: Proxy
   icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: AI
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/AI.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: ProxyGame
   icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Game.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: Streaming
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/DomesticMedia.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: Google
   icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: Microsoft
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Microsoft.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: TikTok
   icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok_1.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: Crypto
   icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency_3.png
 - type: select
-  proxies: *id003
+  proxies: *id001
   name: 漏网之鱼
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Final.png
 - type: select
-  proxies: &id004
+  proxies: &id002
   - 国内直连
   - 低倍率节点
   name: Emby
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Emby.png
 - type: select
-  proxies: *id004
+  proxies: *id002
   name: Tracker
   icon: https://git.imee.me/https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Download.png
 - type: select
@@ -379,6 +335,50 @@ proxy-groups:
   name: 冷门节点-智能
   include-all: true
   policy-priority: 优:3;中:2;次:1;备:0.5
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: &id003
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+    header: &id004
+      User-Agent:
+      - clash.meta
+      - mihomo/1.18.3
+    override:
+      additional-suffix: ' [优]'
+    url: 你的优质机场订阅链接
+  次优服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [次]'
+    url: 你的次优质机场订阅链接
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [备]'
+    url: 你的备用机场订阅链接
+  落地服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [中]'
+      dialer-proxy: 中转服务
+    url: 落地订阅源地址
 rule-providers:
   Private:
     type: http
