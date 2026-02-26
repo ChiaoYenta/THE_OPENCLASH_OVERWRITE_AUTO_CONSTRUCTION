@@ -1,6 +1,14 @@
 # Processed: raw_configs/external/General_Config/liuran001/config.yaml
 # Providers: 2 proxy, 1 rule
 
+rule-providers:
+  AWAvenue-Ads:
+    type: http
+    behavior: domain
+    format: yaml
+    path: ./rule_provider/AWAvenue-Ads.yaml
+    url: https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
+    interval: 600
 rules:
 - RULE-SET,AWAvenue-Ads,广告拦截
 - GEOSITE,category-scholar-!cn,境外AI
@@ -35,6 +43,22 @@ rules:
 - IP-CIDR,100.64.0.0/10,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT
 - MATCH,其他
+proxy-providers:
+  订阅一:
+    type: http
+    interval: 3600
+    health-check: &id001
+      enable: true
+      url: https://cp.cloudflare.com
+      interval: 300
+      timeout: 1000
+      tolerance: 100
+    url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
+  订阅二:
+    type: http
+    interval: 3600
+    health-check: *id001
+    url: https://example.com/api/v1/client/subscribe?token=ilovechina
 proxy-groups:
 - name: 节点选择
   type: select
@@ -49,7 +73,7 @@ proxy-groups:
   - 其它地区
   - DIRECT
 - type: select
-  proxies: &id001
+  proxies: &id002
   - 节点选择
   - 香港
   - 台湾
@@ -68,52 +92,52 @@ proxy-groups:
   - DIRECT
   - 节点选择
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: 境外AI
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Apple
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Google
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Telegram
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Twitter
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Pixiv
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: ehentai
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: 巴哈姆特
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: YouTube
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: NETFLIX
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: TikTok
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Spotify
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Github
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Steam
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: OneDrive
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: 微软服务
 - name: 国内
   type: select
@@ -129,62 +153,38 @@ proxy-groups:
   - 全部节点
   - 自动选择
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: 其他
 - type: url-test
-  use: &id002
+  use: &id003
   - 订阅一
   - 订阅二
   name: 香港
   filter: (?i)港|hk|hongkong|hong kong
 - type: url-test
-  use: *id002
+  use: *id003
   name: 台湾
   filter: (?i)台|tw|taiwan
 - type: url-test
-  use: *id002
+  use: *id003
   name: 日本
   filter: (?i)日本|jp|japan
 - type: url-test
-  use: *id002
+  use: *id003
   name: 美国
   filter: (?i)美|us|unitedstates|united states
 - type: url-test
-  use: *id002
+  use: *id003
   name: 新加坡
   filter: (?i)(新|sg|singapore)
 - type: url-test
-  use: *id002
+  use: *id003
   name: 其它地区
   filter: (?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*
 - type: url-test
-  use: *id002
+  use: *id003
   name: 全部节点
 - type: url-test
-  use: *id002
+  use: *id003
   name: 自动选择
   tolerance: 2
-proxy-providers:
-  订阅一:
-    type: http
-    interval: 3600
-    health-check: &id003
-      enable: true
-      url: https://cp.cloudflare.com
-      interval: 300
-      timeout: 1000
-      tolerance: 100
-    url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
-  订阅二:
-    type: http
-    interval: 3600
-    health-check: *id003
-    url: https://example.com/api/v1/client/subscribe?token=ilovechina
-rule-providers:
-  AWAvenue-Ads:
-    type: http
-    behavior: domain
-    format: yaml
-    path: ./rule_provider/AWAvenue-Ads.yaml
-    url: https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
-    interval: 600
