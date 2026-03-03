@@ -1,47 +1,6 @@
 # Processed: raw_configs/external/General_Config/Seven1echo/Seven1_fallback_Rule-Set.yaml
 # Providers: 1 proxy, 26 rule
 
-rules:
-- RULE-SET,private_ip,DIRECT,no-resolve
-- RULE-SET,private_domain,DIRECT
-- RULE-SET,speedtest_domain,Speedtest
-- RULE-SET,ai,ChatGPT
-- RULE-SET,github_domain,GitHub
-- RULE-SET,youtube_domain,YouTube
-- RULE-SET,google_domain,Google
-- RULE-SET,onedrive_domain,OneDrive
-- RULE-SET,microsoft_domain,Microsoft
-- RULE-SET,appletv_domain,AppleTV
-- RULE-SET,apple_domain,Apple
-- RULE-SET,tiktok_domain,TikTok
-- RULE-SET,twitter_domain,Twitter
-- RULE-SET,telegram_domain,Telegram
-- RULE-SET,netflix_domain,Netflix
-- RULE-SET,disney_domain,Disney
-- RULE-SET,spotify_domain,Spotify
-- RULE-SET,paypal_domain,PayPal
-- RULE-SET,geolocation-!cn,一键代理
-- RULE-SET,google_ip,Google,no-resolve
-- RULE-SET,apple_ip,Apple,no-resolve
-- RULE-SET,netflix_ip,Netflix,no-resolve
-- RULE-SET,telegram_ip,Telegram,no-resolve
-- RULE-SET,twitter_ip,Twitter,no-resolve
-- RULE-SET,cn_domain,DIRECT
-- RULE-SET,cn_ip,DIRECT,no-resolve
-- MATCH,漏网之鱼
-proxy-providers:
-  机场名:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.g.cn/generate_204
-      interval: 300
-    filter: ^(?!.*(到期|过期|剩余|网址|官网|邮箱|订阅|套餐|流量|说明|重置)).*$
-    url: 订阅链接
-    override:
-      additional-prefix: '[机场名] '
 rule-providers:
   private_domain:
     type: http
@@ -199,6 +158,47 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+proxy-providers:
+  机场名:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.g.cn/generate_204
+      interval: 300
+    filter: ^(?!.*(到期|过期|剩余|网址|官网|邮箱|订阅|套餐|流量|说明|重置)).*$
+    url: 订阅链接
+    override:
+      additional-prefix: '[机场名] '
+rules:
+- RULE-SET,private_ip,DIRECT,no-resolve
+- RULE-SET,private_domain,DIRECT
+- RULE-SET,speedtest_domain,Speedtest
+- RULE-SET,ai,ChatGPT
+- RULE-SET,github_domain,GitHub
+- RULE-SET,youtube_domain,YouTube
+- RULE-SET,google_domain,Google
+- RULE-SET,onedrive_domain,OneDrive
+- RULE-SET,microsoft_domain,Microsoft
+- RULE-SET,appletv_domain,AppleTV
+- RULE-SET,apple_domain,Apple
+- RULE-SET,tiktok_domain,TikTok
+- RULE-SET,twitter_domain,Twitter
+- RULE-SET,telegram_domain,Telegram
+- RULE-SET,netflix_domain,Netflix
+- RULE-SET,disney_domain,Disney
+- RULE-SET,spotify_domain,Spotify
+- RULE-SET,paypal_domain,PayPal
+- RULE-SET,geolocation-!cn,一键代理
+- RULE-SET,google_ip,Google,no-resolve
+- RULE-SET,apple_ip,Apple,no-resolve
+- RULE-SET,netflix_ip,Netflix,no-resolve
+- RULE-SET,telegram_ip,Telegram,no-resolve
+- RULE-SET,twitter_ip,Twitter,no-resolve
+- RULE-SET,cn_domain,DIRECT
+- RULE-SET,cn_ip,DIRECT,no-resolve
+- MATCH,漏网之鱼
 proxy-groups:
 - name: 一键代理
   type: select
