@@ -1,19 +1,17 @@
 # Processed: raw_configs/external/General_Config/SHICHUNHUI88/Clash-Airport.yaml
-# Providers: 1 proxy, 28 rule
+# Providers: 1 proxy, 26 rule
 
+proxy-providers:
+  机场:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 rule-providers:
-  advertising:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-AdvertisingLite_ipcidr.mrs
-  reject:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-reject_domain.mrs
   douyin-zj:
     type: http
     behavior: classical
@@ -302,19 +300,7 @@ proxy-groups:
   proxies:
   - 🌍全球加速
   - 🎯直连
-proxy-providers:
-  机场:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 rules:
-- RULE-SET,advertising,REJECT
-- RULE-SET,reject,REJECT
 - GEOSITE,category-ads-all,REJECT
 - RULE-SET,douyin-zj,🎷抖音
 - RULE-SET,Google-zj,🌐Google服务
@@ -353,8 +339,6 @@ rules:
 - GEOIP,cloudflare,🌍全球加速,no-resolve
 - GEOIP,cloudfront,🌍全球加速,no-resolve
 - GEOIP,fastly,🌍全球加速,no-resolve
-- IP-ASN,15169,🌐Google服务,no-resolve
-- IP-ASN,396982,🌐Google服务,no-resolve
 - IP-ASN,8075,😊微软服务,no-resolve
 - IP-ASN,8070,😊微软服务,no-resolve
 - RULE-SET,cn_dns_cdn,🎯直连

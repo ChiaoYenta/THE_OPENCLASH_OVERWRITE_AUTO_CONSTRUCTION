@@ -1,6 +1,16 @@
 # Processed: raw_configs/external/General_Config/ClashConnectRules/Clash.yaml
 # Providers: 1 proxy, 66 rule
 
+proxy-providers:
+  all-proxies:
+    type: http
+    url: https://example.com/your-subscription-url
+    interval: 3600
+    path: ./providers/all-proxies.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 rule-providers:
   AdBlock:
     type: http
@@ -666,16 +676,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - 🚀 手动切换
-proxy-providers:
-  all-proxies:
-    type: http
-    url: https://example.com/your-subscription-url
-    interval: 3600
-    path: ./providers/all-proxies.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
 rules:
 - RULE-SET,AdBlock,🚫 国外广告
 - RULE-SET,HTTPDNS,🚫 国外广告

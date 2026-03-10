@@ -1,6 +1,43 @@
 # Processed: raw_configs/external/General_Config/Lanlan13-14/configfull_lite.yaml
 # Providers: 3 proxy, 4 rule
 
+proxy-providers:
+  Airport_01:
+    type: http
+    interval: 86400
+    health-check: &id001
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接1
+    override:
+      additional-prefix: '[机场名称1]'
+      skip-cert-verify: true
+      udp: true
+  Airport_02:
+    type: http
+    interval: 86400
+    health-check: *id001
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接2
+    override:
+      additional-prefix: '[机场名称2]'
+      skip-cert-verify: true
+      udp: true
+  Airport_03:
+    type: http
+    interval: 86400
+    health-check: *id001
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接3
+    override:
+      additional-prefix: '[机场名称3]'
+      skip-cert-verify: true
+      udp: true
 rule-providers:
   emby_domain:
     type: http
@@ -41,7 +78,7 @@ proxy-groups:
   - 故障转移
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png
 - type: select
-  proxies: &id001
+  proxies: &id002
   - 节点选择
   - 香港节点
   - 新加坡节点
@@ -55,15 +92,15 @@ proxy-groups:
   name: YouTube
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/youtube.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Google
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/google.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Meta
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/meta.png
 - type: select
-  proxies: &id002
+  proxies: &id003
   - 节点选择
   - 香港节点
   - 新加坡节点
@@ -79,39 +116,39 @@ proxy-groups:
   name: AI
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/ai.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: GitHub
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/github.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: OneDrive
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/onedrive.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Microsoft
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/microsoft.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Telegram
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/telegram.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: TikTok
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/tiktok.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: NETFLIX
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netflix.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: DisneyPlus
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disney.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: HBO
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/hbo.png
 - type: select
-  proxies: &id003
+  proxies: &id004
   - 全球直连
   - 节点选择
   - 香港节点
@@ -125,13 +162,13 @@ proxy-groups:
   name: Apple
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/apple.png
 - type: select
-  proxies: *id002
+  proxies: *id003
   include-all: true
   exclude-filter: (?i)(🟢 直连)
   name: Emby
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/emby.png
 - type: select
-  proxies: *id003
+  proxies: *id004
   name: 哔哩哔哩
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bilibili.png
 - name: 哔哩东南亚
@@ -149,15 +186,15 @@ proxy-groups:
   - 台湾节点
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bahamut.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Spotify
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/spotify.png
 - type: select
-  proxies: *id003
+  proxies: *id004
   name: 国内媒体
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Chinese_media.png
 - type: select
-  proxies: *id002
+  proxies: *id003
   include-all: true
   exclude-filter: (?i)(🟢 直连)
   name: STEAM
@@ -178,7 +215,7 @@ proxy-groups:
   - 🔗 代理
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/block.png
 - type: select
-  proxies: *id002
+  proxies: *id003
   include-all: true
   exclude-filter: (?i)(🟢 直连)
   name: Final
@@ -262,7 +299,7 @@ proxy-groups:
   name: 新加坡自动
   filter: (?=.*(?i)(新|🇸🇬|SG|Singapore))
   exclude-filter: (?=.*(?i)(The_SG_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus|新西兰))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/sg_automatic_selection.png
 - type: url-test
   include-all: true
   tolerance: 20
@@ -272,7 +309,7 @@ proxy-groups:
   name: 日本自动
   filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
   exclude-filter: (?=.*(?i)(The_JP_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/jp_automatic_selection.png
 - type: url-test
   include-all: true
   tolerance: 20
@@ -282,7 +319,7 @@ proxy-groups:
   name: 台湾自动
   filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
   exclude-filter: (?=.*(?i)(The_TW_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/tw_automatic_selection.png
 - type: url-test
   include-all: true
   tolerance: 20
@@ -292,7 +329,7 @@ proxy-groups:
   name: 美国自动
   filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))
   exclude-filter: (?=.*(?i)(The_US_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|russia|austria|plus|traffic|Australia|rus|aus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/usa_automatic_selection.png
 - name: 香港均衡
   type: load-balance
   include-all: true
@@ -402,58 +439,21 @@ proxy-groups:
   - 故障转移
   exclude-filter: (?i)(🟢 直连)
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png
-proxy-providers:
-  Airport_01:
-    type: http
-    interval: 86400
-    health-check: &id004
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接1
-    override:
-      additional-prefix: '[机场名称1]'
-      skip-cert-verify: true
-      udp: true
-  Airport_02:
-    type: http
-    interval: 86400
-    health-check: *id004
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接2
-    override:
-      additional-prefix: '[机场名称2]'
-      skip-cert-verify: true
-      udp: true
-  Airport_03:
-    type: http
-    interval: 86400
-    health-check: *id004
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接3
-    override:
-      additional-prefix: '[机场名称3]'
-      skip-cert-verify: true
-      udp: true
 rules:
 - GEOSITE,category-ads-all,隐私拦截
 - GEOSITE,private,全球直连
 - GEOIP,private,全球直连,no-resolve
 - GEOSITE,category-games@cn,全球直连
 - GEOSITE,category-public-tracker,全球直连
-- GEOSITE,openai,AI
-- GEOSITE,category-ai-!cn,AI
-- RULE-SET,ai_domain,AI
 - GEOSITE,youtube,YouTube
 - GEOSITE,google,Google
 - GEOIP,google,Google,no-resolve
 - GEOSITE,github,GitHub
 - GEOSITE,onedrive,OneDrive
 - GEOSITE,microsoft,Microsoft
+- GEOSITE,openai,AI
+- GEOSITE,category-ai-!cn,AI
+- RULE-SET,ai_domain,AI
 - GEOSITE,apple,Apple
 - GEOSITE,telegram,Telegram
 - GEOIP,telegram,Telegram,no-resolve

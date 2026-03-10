@@ -1,6 +1,16 @@
 # Processed: raw_configs/external/Smart_Mode/qichiyuhub/smart.yaml
 # Providers: 1 proxy, 23 rule
 
+proxy-providers:
+  Airport1:
+    url: 机场订阅1
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
 rule-providers:
   fakeipfilter_domain:
     type: http
@@ -449,16 +459,6 @@ proxy-groups:
 - name: 🌐 全部节点
   type: select
   include-all: true
-proxy-providers:
-  Airport1:
-    url: 机场订阅1
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
 rules:
 - RULE-SET,private_ip,直连,no-resolve
 - RULE-SET,private_domain,直连
