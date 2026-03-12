@@ -1,6 +1,65 @@
 # Processed: raw_configs/external/General_Config/Mitchell/config.yaml
 # Providers: 4 proxy, 30 rule
 
+proxy-providers:
+  1.p1:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: &id001
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 600
+      timeout: 5
+      lazy: true
+      expected-status: '204'
+      method: HEAD
+    smux: &id002
+      enabled: true
+      padding: true
+      protocol: smux
+    url: ''
+    path: ./proxy_provider/p1.yaml
+    override:
+      additional-prefix: p1 »
+  2.p2:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    smux: *id002
+    url: ''
+    path: ./proxy_provider/p2.yaml
+    override:
+      additional-prefix: p2 »
+  3.p3:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    smux: *id002
+    url: ''
+    path: ./proxy_provider/p3.yaml
+    override:
+      additional-prefix: p3 »
+  4.p4:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    smux: *id002
+    url: ''
+    path: ./proxy_provider/p4.yaml
+    override:
+      additional-prefix: p4 »
 rules:
 - RULE-SET,AWAvenue_Ads_Rule,REJECT
 - RULE-SET,blackmatrix7_ad,REJECT
@@ -248,65 +307,6 @@ rule-providers:
     format: mrs
     path: ./ruleset/geoip_cloudfront.mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cloudfront.mrs
-proxy-providers:
-  1.p1:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: &id001
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 600
-      timeout: 5
-      lazy: true
-      expected-status: '204'
-      method: HEAD
-    smux: &id002
-      enabled: true
-      padding: true
-      protocol: smux
-    url: ''
-    path: ./proxy_provider/p1.yaml
-    override:
-      additional-prefix: p1 »
-  2.p2:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id001
-    smux: *id002
-    url: ''
-    path: ./proxy_provider/p2.yaml
-    override:
-      additional-prefix: p2 »
-  3.p3:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id001
-    smux: *id002
-    url: ''
-    path: ./proxy_provider/p3.yaml
-    override:
-      additional-prefix: p3 »
-  4.p4:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id001
-    smux: *id002
-    url: ''
-    path: ./proxy_provider/p4.yaml
-    override:
-      additional-prefix: p4 »
 proxy-groups:
 - name: Proxy
   type: select

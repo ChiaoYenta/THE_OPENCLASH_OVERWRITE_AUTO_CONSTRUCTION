@@ -1,6 +1,16 @@
 # Processed: raw_configs/external/General_Config/liandu2024/clash-fallback-std.yaml
 # Providers: 1 proxy, 42 rule
 
+proxy-providers:
+  机场名称:
+    url: 机场订阅地址
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
 rules:
 - RULE-SET,TEST / Domain,Test
 - RULE-SET,Block / Domain,Block
@@ -298,16 +308,6 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     url: https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs
-proxy-providers:
-  机场名称:
-    url: 机场订阅地址
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
 proxy-groups:
 - type: select
   proxies: &id001

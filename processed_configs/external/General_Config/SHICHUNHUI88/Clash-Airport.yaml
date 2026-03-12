@@ -1,6 +1,16 @@
 # Processed: raw_configs/external/General_Config/SHICHUNHUI88/Clash-Airport.yaml
 # Providers: 1 proxy, 26 rule
 
+proxy-providers:
+  机场:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 rules:
 - GEOSITE,category-ads-all,REJECT
 - RULE-SET,douyin-zj,🎷抖音
@@ -214,16 +224,6 @@ rule-providers:
     interval: 86400
     format: text
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
-proxy-providers:
-  机场:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 proxy-groups:
 - name: 🌍全球加速
   type: select

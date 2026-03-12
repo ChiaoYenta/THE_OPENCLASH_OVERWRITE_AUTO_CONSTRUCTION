@@ -1,6 +1,30 @@
 # Processed: raw_configs/external/General_Config/wanswu/config.yaml
 # Providers: 2 proxy, 29 rule
 
+proxy-providers:
+  main:
+    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
+    type: http
+    interval: 86400
+    health-check: &id001
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+    url: https://al121.cc/#/register?code=R7vdKxbE
+    path: ./proxy_provider/p1.yaml
+    override:
+      udp: true
+      additional-prefix: 主-
+  prepare:
+    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
+    type: http
+    interval: 86400
+    health-check: *id001
+    url: https://al121.cc/#/register?code=R7vdKxbE
+    path: ./proxy_provider/p2.yaml
+    override:
+      udp: true
+      additional-prefix: 备-
 rules:
 - DOMAIN-SUFFIX,browserleaks.com,手动选择
 - AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,ChinaIP)))),REJECT
@@ -208,30 +232,6 @@ rule-providers:
     format: mrs
     behavior: ipcidr
     url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs
-proxy-providers:
-  main:
-    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
-    type: http
-    interval: 86400
-    health-check: &id001
-      enable: true
-      url: https://www.google.com/generate_204
-      interval: 300
-    url: https://al121.cc/#/register?code=R7vdKxbE
-    path: ./proxy_provider/p1.yaml
-    override:
-      udp: true
-      additional-prefix: 主-
-  prepare:
-    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
-    type: http
-    interval: 86400
-    health-check: *id001
-    url: https://al121.cc/#/register?code=R7vdKxbE
-    path: ./proxy_provider/p2.yaml
-    override:
-      udp: true
-      additional-prefix: 备-
 proxy-groups:
 - type: select
   proxies:
