@@ -1,28 +1,6 @@
 # Processed: raw_configs/external/General_Config/666OS/MihomoPro_Config.yaml
 # Providers: 2 proxy, 39 rule
 
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: &id001
-      enable: true
-      url: https://www.google.com/generate_204
-      interval: 300
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 优质订阅源地址
-    override:
-      additional-prefix: '[优] '
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: *id001
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 备用订阅源地址
-    override:
-      additional-prefix: '[备] '
 rule-providers:
   Tracking:
     type: http
@@ -258,6 +236,69 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/666OS/rules/raw/release/mihomo/ip/China.mrs
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: &id001
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 优质订阅源地址
+    override:
+      additional-prefix: '[优] '
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: *id001
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 备用订阅源地址
+    override:
+      additional-prefix: '[备] '
+rules:
+- RULE-SET,Tracking,REJECT
+- RULE-SET,Advertising,REJECT
+- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT
+- RULE-SET,LocationDKS,抖快书定位
+- RULE-SET,Private,直接连接
+- RULE-SET,Direct,直接连接
+- RULE-SET,XPTV,直接连接
+- RULE-SET,Download,直接连接
+- RULE-SET,AppleCN,直接连接
+- RULE-SET,AI,人工智能
+- DOMAIN-KEYWORD,speedtest,网络测试
+- RULE-SET,Speedtest,网络测试
+- RULE-SET,Twitter,推特社交
+- RULE-SET,Telegram,电报消息
+- RULE-SET,SocialMedia,社交平台
+- RULE-SET,NewsMedia,新闻媒体
+- RULE-SET,Games,游戏平台
+- RULE-SET,Crypto,货币平台
+- RULE-SET,Emby,Emby服
+- RULE-SET,Netflix,奈飞视频
+- RULE-SET,YouTube,油管视频
+- RULE-SET,Streaming,国际媒体
+- RULE-SET,Apple,苹果服务
+- RULE-SET,Google,谷歌服务
+- RULE-SET,Microsoft,微软服务
+- RULE-SET,Proxy,国外流量
+- RULE-SET,China,国内流量
+- RULE-SET,AdvertisingIP,REJECT,no-resolve
+- RULE-SET,PrivateIP,直接连接,no-resolve
+- RULE-SET,XPTVIP,直接连接,no-resolve
+- RULE-SET,AIIP,人工智能,no-resolve
+- RULE-SET,TelegramIP,电报消息,no-resolve
+- RULE-SET,SocialMediaIP,社交平台,no-resolve
+- RULE-SET,EmbyIP,Emby服,no-resolve
+- RULE-SET,NetflixIP,奈飞视频,no-resolve
+- RULE-SET,StreamingIP,国际媒体,no-resolve
+- RULE-SET,GoogleIP,谷歌服务,no-resolve
+- RULE-SET,ProxyIP,国外流量,no-resolve
+- RULE-SET,ChinaIP,国内流量
+- MATCH,兜底流量
 proxy-groups:
 - type: select
   proxies:
@@ -707,44 +748,3 @@ proxy-groups:
   include-all: true
   filter: ^(?=.*(?i)(奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU))(?!.*(排除1|排除2|5x)).*$
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png
-rules:
-- RULE-SET,Tracking,REJECT
-- RULE-SET,Advertising,REJECT
-- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT
-- RULE-SET,LocationDKS,抖快书定位
-- RULE-SET,Private,直接连接
-- RULE-SET,Direct,直接连接
-- RULE-SET,XPTV,直接连接
-- RULE-SET,Download,直接连接
-- RULE-SET,AppleCN,直接连接
-- RULE-SET,AI,人工智能
-- DOMAIN-KEYWORD,speedtest,网络测试
-- RULE-SET,Speedtest,网络测试
-- RULE-SET,Twitter,推特社交
-- RULE-SET,Telegram,电报消息
-- RULE-SET,SocialMedia,社交平台
-- RULE-SET,NewsMedia,新闻媒体
-- RULE-SET,Games,游戏平台
-- RULE-SET,Crypto,货币平台
-- RULE-SET,Emby,Emby服
-- RULE-SET,Netflix,奈飞视频
-- RULE-SET,YouTube,油管视频
-- RULE-SET,Streaming,国际媒体
-- RULE-SET,Apple,苹果服务
-- RULE-SET,Google,谷歌服务
-- RULE-SET,Microsoft,微软服务
-- RULE-SET,Proxy,国外流量
-- RULE-SET,China,国内流量
-- RULE-SET,AdvertisingIP,REJECT,no-resolve
-- RULE-SET,PrivateIP,直接连接,no-resolve
-- RULE-SET,XPTVIP,直接连接,no-resolve
-- RULE-SET,AIIP,人工智能,no-resolve
-- RULE-SET,TelegramIP,电报消息,no-resolve
-- RULE-SET,SocialMediaIP,社交平台,no-resolve
-- RULE-SET,EmbyIP,Emby服,no-resolve
-- RULE-SET,NetflixIP,奈飞视频,no-resolve
-- RULE-SET,StreamingIP,国际媒体,no-resolve
-- RULE-SET,GoogleIP,谷歌服务,no-resolve
-- RULE-SET,ProxyIP,国外流量,no-resolve
-- RULE-SET,ChinaIP,国内流量
-- MATCH,兜底流量
