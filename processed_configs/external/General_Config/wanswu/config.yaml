@@ -1,6 +1,39 @@
 # Processed: raw_configs/external/General_Config/wanswu/config.yaml
-# Providers: 2 proxy, 29 rule
+# Providers: 2 proxy, 31 rule
 
+rules:
+- RULE-SET,DNSLeak,手动选择
+- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,ChinaIP))),(NOT,((RULE-SET,China)))),REJECT
+- RULE-SET,ChinaAPP,DIRECT
+- RULE-SET,Advertising,REJECT
+- RULE-SET,spotify-ads,REJECT
+- RULE-SET,google-ads,REJECT
+- RULE-SET,Github,Github
+- RULE-SET,OpenAI,OpenAI
+- RULE-SET,Gemini,Gemini
+- RULE-SET,Google,Google
+- RULE-SET,Apple,Apple
+- RULE-SET,Claude,Claude
+- RULE-SET,Twitter,Twitter(X)
+- RULE-SET,Telegram,Telegram
+- RULE-SET,Spotify,Spotify
+- RULE-SET,YouTube,YouTube
+- RULE-SET,TikTok,TikTok
+- RULE-SET,WhatsApp,WhatsApp
+- RULE-SET,OneDrive,OneDrive
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Netflix,Netflix
+- RULE-SET,Disney,Disney
+- RULE-SET,Steam,Steam
+- RULE-SET,Emby,Emby
+- RULE-SET,Lan,DIRECT
+- RULE-SET,China,DIRECT
+- RULE-SET,LanIP,DIRECT
+- RULE-SET,ChinaIP,DIRECT
+- RULE-SET,GoogleIP,Google,no-resolve
+- RULE-SET,TelegramIP,Telegram,no-resolve
+- RULE-SET,TwitterIP,Twitter(X),no-resolve
+- MATCH,手动选择
 rule-providers:
   Advertising:
     type: http
@@ -140,6 +173,12 @@ rule-providers:
     format: mrs
     behavior: domain
     url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs
+  DNSLeak:
+    type: http
+    interval: 86400
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/DNSLeak.mrs
   ChinaIP:
     type: http
     interval: 86400
@@ -176,6 +215,12 @@ rule-providers:
     format: mrs
     behavior: ipcidr
     url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs
+  ChinaAPP:
+    type: http
+    interval: 86400
+    format: yaml
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/ChinaAPP.yaml
 proxy-providers:
   main:
     exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
@@ -200,38 +245,6 @@ proxy-providers:
     override:
       udp: true
       additional-prefix: 备-
-rules:
-- DOMAIN-SUFFIX,browserleaks.com,手动选择
-- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,ChinaIP)))),REJECT
-- RULE-SET,Advertising,REJECT
-- RULE-SET,spotify-ads,REJECT
-- RULE-SET,google-ads,REJECT
-- RULE-SET,Github,Github
-- RULE-SET,OpenAI,OpenAI
-- RULE-SET,Gemini,Gemini
-- RULE-SET,Google,Google
-- RULE-SET,Apple,Apple
-- RULE-SET,Claude,Claude
-- RULE-SET,Twitter,Twitter(X)
-- RULE-SET,Telegram,Telegram
-- RULE-SET,Spotify,Spotify
-- RULE-SET,YouTube,YouTube
-- RULE-SET,TikTok,TikTok
-- RULE-SET,WhatsApp,WhatsApp
-- RULE-SET,OneDrive,OneDrive
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,Netflix,Netflix
-- RULE-SET,Disney,Disney
-- RULE-SET,Steam,Steam
-- RULE-SET,Emby,Emby
-- RULE-SET,Lan,DIRECT
-- RULE-SET,China,DIRECT
-- RULE-SET,LanIP,DIRECT
-- RULE-SET,ChinaIP,DIRECT
-- RULE-SET,GoogleIP,Google,no-resolve
-- RULE-SET,TelegramIP,Telegram,no-resolve
-- RULE-SET,TwitterIP,Twitter(X),no-resolve
-- MATCH,手动选择
 proxy-groups:
 - type: select
   proxies:
@@ -259,7 +272,7 @@ proxy-groups:
   - REJECT
   include-all: true
   name: 手动选择
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Rocket.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Rocket.png
 - type: select
   proxies: &id002
   - 手动选择
@@ -344,19 +357,19 @@ proxy-groups:
 - type: select
   proxies: *id002
   name: Apple
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Apple.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Apple.png
 - type: select
   proxies: *id002
   name: Disney
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Disney.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Disney.png
 - type: select
   proxies: *id002
   name: Netflix
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Netflix.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Netflix.png
 - type: select
   proxies: *id002
   name: Spotify
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Spotify.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Spotify.png
 - type: select
   proxies:
   - 台湾
@@ -383,47 +396,47 @@ proxy-groups:
   - REJECT
   - 手动选择
   name: TikTok
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/TikTok.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/TikTok.png
 - type: select
   proxies: *id002
   name: YouTube
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/YouTube.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/YouTube.png
 - type: select
   proxies: *id002
   name: Emby
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Emby.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Emby.png
 - type: select
   proxies: *id002
   name: Github
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/GitHub.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/GitHub.png
 - type: select
   proxies: *id002
   name: Google
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Google_Search.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Google_Search.png
 - type: select
   proxies: *id002
   name: Microsoft
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Microsoft.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Microsoft.png
 - type: select
   proxies: *id002
   name: OneDrive
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/OneDrive.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/OneDrive.png
 - type: select
   proxies: *id002
   name: Twitter(X)
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Twitter(X).png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Twitter(X).png
 - type: select
   proxies: *id002
   name: Telegram
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Telegram.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Telegram.png
 - type: select
   proxies: *id002
   name: WhatsApp
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/WhatsApp.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/WhatsApp.png
 - type: select
   proxies: *id002
   name: Steam
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Steam.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Steam.png
 - type: select
   lazy: true
   include-all: true
@@ -435,7 +448,7 @@ proxy-groups:
   - 香港-回退
   - 香港均衡-散列
   - 香港均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Hong_Kong.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 - type: select
   lazy: true
   include-all: true
@@ -447,7 +460,7 @@ proxy-groups:
   - 台湾-回退
   - 台湾均衡-散列
   - 台湾均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Taiwan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 - type: select
   lazy: true
   include-all: true
@@ -459,7 +472,7 @@ proxy-groups:
   - 澳门-回退
   - 澳门均衡-散列
   - 澳门均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Macao.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Macao.png
 - type: select
   lazy: true
   include-all: true
@@ -471,7 +484,7 @@ proxy-groups:
   - 狮城-回退
   - 狮城均衡-散列
   - 狮城均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Singapore.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 - type: select
   lazy: true
   include-all: true
@@ -483,7 +496,7 @@ proxy-groups:
   - 日本-回退
   - 日本均衡-散列
   - 日本均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Japan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 - type: select
   lazy: true
   include-all: true
@@ -495,7 +508,7 @@ proxy-groups:
   - 韩国-回退
   - 韩国均衡-散列
   - 韩国均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Korea.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 - type: select
   lazy: true
   include-all: true
@@ -508,7 +521,7 @@ proxy-groups:
   - 美国-回退
   - 美国均衡-散列
   - 美国均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_States.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 - type: select
   lazy: true
   include-all: true
@@ -520,7 +533,7 @@ proxy-groups:
   - 英国-回退
   - 英国均衡-散列
   - 英国均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_Kingdom.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 - type: select
   lazy: true
   include-all: true
@@ -532,7 +545,7 @@ proxy-groups:
   - 德国-回退
   - 德国均衡-散列
   - 德国均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Germany.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Germany.png
 - type: select
   lazy: true
   include-all: true
@@ -544,7 +557,7 @@ proxy-groups:
   - 法国-回退
   - 法国均衡-散列
   - 法国均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/France.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/France.png
 - type: select
   lazy: true
   include-all: true
@@ -556,7 +569,7 @@ proxy-groups:
   - 印度-回退
   - 印度均衡-散列
   - 印度均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/India.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/India.png
 - type: select
   lazy: true
   include-all: true
@@ -568,7 +581,7 @@ proxy-groups:
   - 印尼-回退
   - 印尼均衡-散列
   - 印尼均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Indonesia.webp
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Indonesia.webp
 - type: select
   lazy: true
   include-all: true
@@ -580,7 +593,7 @@ proxy-groups:
   - 越南-回退
   - 越南均衡-散列
   - 越南均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Vietnam.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Vietnam.png
 - type: select
   lazy: true
   include-all: true
@@ -592,7 +605,7 @@ proxy-groups:
   - 泰国-回退
   - 泰国均衡-散列
   - 泰国均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Thailand.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Thailand.png
 - type: select
   lazy: true
   include-all: true
@@ -604,7 +617,7 @@ proxy-groups:
   - 澳洲-回退
   - 澳洲均衡-散列
   - 澳洲均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Australia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Australia.png
 - type: select
   lazy: true
   include-all: true
@@ -616,7 +629,7 @@ proxy-groups:
   - 巴西-回退
   - 巴西均衡-散列
   - 巴西均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Brazil.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Brazil.png
 - type: select
   lazy: true
   include-all: true
@@ -628,7 +641,7 @@ proxy-groups:
   - 荷兰-回退
   - 荷兰均衡-散列
   - 荷兰均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Netherlands.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Netherlands.png
 - type: select
   lazy: true
   include-all: true
@@ -640,7 +653,7 @@ proxy-groups:
   - 土耳其-回退
   - 土耳其均衡-散列
   - 土耳其均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Turkey.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Turkey.png
 - type: select
   lazy: true
   include-all: true
@@ -652,7 +665,7 @@ proxy-groups:
   - 阿根廷-回退
   - 阿根廷均衡-散列
   - 阿根廷均衡-轮询
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Argentina.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Argentina.png
 - type: url-test
   interval: 300
   lazy: true
@@ -661,7 +674,7 @@ proxy-groups:
   include-all: true
   name: 冷门节点
   filter: (?i)^(?!.*(香港|台湾|日本|韩国|新加坡|美国|英国|德国|法国|印度|泰国|越南|印度|澳大利亚|巴西|港|台|日|韩|新|美|英|德|法|印|泰|越|尼|澳|巴|hk|tw|jp|kr|sg|us|uk|de|fr|in|th|vn|id|au|br)).*
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Global.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Global.png
 - type: url-test
   interval: 300
   lazy: true
@@ -670,7 +683,7 @@ proxy-groups:
   include-all: true
   name: 香港自动
   filter: (?i)(?=.*(🇭🇰|香港|港|hk|hkg|hong ?kong))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Hong_Kong.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 - type: url-test
   interval: 300
   lazy: true
@@ -679,7 +692,7 @@ proxy-groups:
   include-all: true
   name: 台湾自动
   filter: (?i)(?=.*(🇹🇼|台湾|台|TW|TWN|taiwan|taipei))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Taiwan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 - type: url-test
   interval: 300
   lazy: true
@@ -688,7 +701,7 @@ proxy-groups:
   include-all: true
   name: 澳门自动
   filter: (?i)(?=.*(🇲🇴|澳门|门|MO|macao))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Macao.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Macao.png
 - type: url-test
   interval: 300
   lazy: true
@@ -697,7 +710,7 @@ proxy-groups:
   include-all: true
   name: 狮城自动
   filter: (?i)(?=.*(🇸🇬|新加坡|狮城|新|SG|SGP|singapore))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Singapore.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 - type: url-test
   interval: 300
   lazy: true
@@ -706,7 +719,7 @@ proxy-groups:
   include-all: true
   name: 日本自动
   filter: (?i)(?=.*(🇯🇵|日本|日|JP|JPN|japan|tokyo|osaka))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Japan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 - type: url-test
   interval: 300
   lazy: true
@@ -715,7 +728,7 @@ proxy-groups:
   include-all: true
   name: 韩国自动
   filter: (?i)(?=.*(🇰🇷|韩国|韩|KR|KOR|korea|seoul))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Korea.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 - type: url-test
   interval: 300
   lazy: true
@@ -725,7 +738,7 @@ proxy-groups:
   name: 美国自动
   filter: (?i)(?=.*(🇺🇸|美国|美|US|USA|united ?states|america|los angeles|san jose|silicon
     valley))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_States.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 - type: url-test
   interval: 300
   lazy: true
@@ -734,7 +747,7 @@ proxy-groups:
   include-all: true
   name: 英国自动
   filter: (?i)(?=.*(🇬🇧|英国|英|GBR|UK|united ?kingdom|london))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_Kingdom.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 - type: url-test
   interval: 300
   lazy: true
@@ -743,7 +756,7 @@ proxy-groups:
   include-all: true
   name: 德国自动
   filter: (?i)(?=.*(🇩🇪|德国|德|DE|DEU|germany|frankfurt))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Germany.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Germany.png
 - type: url-test
   interval: 300
   lazy: true
@@ -752,7 +765,7 @@ proxy-groups:
   include-all: true
   name: 法国自动
   filter: (?i)(?=.*(🇫🇷|法国|法|FR|france|paris))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/France.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/France.png
 - type: url-test
   interval: 300
   lazy: true
@@ -761,7 +774,7 @@ proxy-groups:
   include-all: true
   name: 印度自动
   filter: (?i)(?=.*(🇮🇳|印度|IN|IND|india|mumbai))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/India.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/India.png
 - type: url-test
   interval: 300
   lazy: true
@@ -770,7 +783,7 @@ proxy-groups:
   include-all: true
   name: 印尼自动
   filter: (?i)(?=.*(🇮🇩|印尼|印度尼西亚|ID|indonesia|jakarta))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Indonesia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Indonesia.png
 - type: url-test
   interval: 300
   lazy: true
@@ -779,7 +792,7 @@ proxy-groups:
   include-all: true
   name: 越南自动
   filter: (?i)(?=.*(🇻🇳|越南|VN|vietnam))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Vietnam.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Vietnam.png
 - type: url-test
   interval: 300
   lazy: true
@@ -788,7 +801,7 @@ proxy-groups:
   include-all: true
   name: 泰国自动
   filter: (?i)(?=.*(🇹🇭|泰国|TH|thailand|bangkok))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Thailand.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Thailand.png
 - type: url-test
   interval: 300
   lazy: true
@@ -797,7 +810,7 @@ proxy-groups:
   include-all: true
   name: 澳洲自动
   filter: (?i)(?=.*(🇦🇺|澳洲|澳大利亚|AU|AUS|australia|sydney))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Australia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Australia.png
 - type: url-test
   interval: 300
   lazy: true
@@ -806,7 +819,7 @@ proxy-groups:
   include-all: true
   name: 巴西自动
   filter: (?i)(?=.*(🇧🇷|巴西|BRA|brazil))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Brazil.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Brazil.png
 - type: url-test
   interval: 300
   lazy: true
@@ -815,7 +828,7 @@ proxy-groups:
   include-all: true
   name: 荷兰自动
   filter: (?i)(?=.*(🇳🇱|荷兰|NL|NLD))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Netherlands.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Netherlands.png
 - type: url-test
   interval: 300
   lazy: true
@@ -824,7 +837,7 @@ proxy-groups:
   include-all: true
   name: 土耳其自动
   filter: (?i)(?=.*(🇹🇷|土耳其|TUR|turkey))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Turkey.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Turkey.png
 - type: url-test
   interval: 300
   lazy: true
@@ -833,7 +846,7 @@ proxy-groups:
   include-all: true
   name: 阿根廷自动
   filter: (?i)(?=.*(🇦🇷|阿根廷|ARG|argentina))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Argentina.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Argentina.png
 - type: fallback
   interval: 300
   lazy: true
@@ -842,7 +855,7 @@ proxy-groups:
   include-all: true
   name: 香港-回退
   filter: (?i)(?=.*(🇭🇰|香港|港|hk|hkg|hong ?kong))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Hong_Kong.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 - type: fallback
   interval: 300
   lazy: true
@@ -851,7 +864,7 @@ proxy-groups:
   include-all: true
   name: 台湾-回退
   filter: (?i)(?=.*(🇹🇼|台湾|台|TW|TWN|taiwan|taipei))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Taiwan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 - type: fallback
   interval: 300
   lazy: true
@@ -860,7 +873,7 @@ proxy-groups:
   include-all: true
   name: 澳门-回退
   filter: (?i)(?=.*(🇲🇴|澳门|门|MO|macao))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Macao.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Macao.png
 - type: fallback
   interval: 300
   lazy: true
@@ -869,7 +882,7 @@ proxy-groups:
   include-all: true
   name: 狮城-回退
   filter: (?i)(?=.*(🇸🇬|新加坡|狮城|新|SG|SGP|singapore))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Singapore.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 - type: fallback
   interval: 300
   lazy: true
@@ -878,7 +891,7 @@ proxy-groups:
   include-all: true
   name: 日本-回退
   filter: (?i)(?=.*(🇯🇵|日本|日|JP|JPN|japan|tokyo|osaka))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Japan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 - type: fallback
   interval: 300
   lazy: true
@@ -887,7 +900,7 @@ proxy-groups:
   include-all: true
   name: 韩国-回退
   filter: (?i)(?=.*(🇰🇷|韩国|韩|KR|KOR|korea|seoul))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Korea.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 - type: fallback
   interval: 300
   lazy: true
@@ -897,7 +910,7 @@ proxy-groups:
   name: 美国-回退
   filter: (?i)(?=.*(🇺🇸|美国|美|US|USA|united ?states|america|los angeles|san jose|silicon
     valley))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_States.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 - type: fallback
   interval: 300
   lazy: true
@@ -906,7 +919,7 @@ proxy-groups:
   include-all: true
   name: 英国-回退
   filter: (?i)(?=.*(🇬🇧|英国|英|GBR|UK|united ?kingdom|london))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_Kingdom.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 - type: fallback
   interval: 300
   lazy: true
@@ -915,7 +928,7 @@ proxy-groups:
   include-all: true
   name: 德国-回退
   filter: (?i)(?=.*(🇩🇪|德国|德|DE|DEU|germany|frankfurt))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Germany.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Germany.png
 - type: fallback
   interval: 300
   lazy: true
@@ -924,7 +937,7 @@ proxy-groups:
   include-all: true
   name: 法国-回退
   filter: (?i)(?=.*(🇫🇷|法国|法|FR|france|paris))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/France.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/France.png
 - type: fallback
   interval: 300
   lazy: true
@@ -933,7 +946,7 @@ proxy-groups:
   include-all: true
   name: 印度-回退
   filter: (?i)(?=.*(🇮🇳|印度|IN|IND|india|mumbai))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/India.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/India.png
 - type: fallback
   interval: 300
   lazy: true
@@ -942,7 +955,7 @@ proxy-groups:
   include-all: true
   name: 印尼-回退
   filter: (?i)(?=.*(🇮🇩|印尼|印度尼西亚|ID|indonesia|jakarta))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Indonesia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Indonesia.png
 - type: fallback
   interval: 300
   lazy: true
@@ -951,7 +964,7 @@ proxy-groups:
   include-all: true
   name: 越南-回退
   filter: (?i)(?=.*(🇻🇳|越南|VN|vietnam))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Vietnam.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Vietnam.png
 - type: fallback
   interval: 300
   lazy: true
@@ -960,7 +973,7 @@ proxy-groups:
   include-all: true
   name: 泰国-回退
   filter: (?i)(?=.*(🇹🇭|泰国|TH|thailand|bangkok))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Thailand.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Thailand.png
 - type: fallback
   interval: 300
   lazy: true
@@ -969,7 +982,7 @@ proxy-groups:
   include-all: true
   name: 澳洲-回退
   filter: (?i)(?=.*(🇦🇺|澳洲|澳大利亚|AU|AUS|australia|sydney))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Australia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Australia.png
 - type: fallback
   interval: 300
   lazy: true
@@ -978,7 +991,7 @@ proxy-groups:
   include-all: true
   name: 巴西-回退
   filter: (?i)(?=.*(🇧🇷|巴西|BRA|brazil))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Brazil.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Brazil.png
 - type: fallback
   interval: 300
   lazy: true
@@ -987,7 +1000,7 @@ proxy-groups:
   include-all: true
   name: 荷兰-回退
   filter: (?i)(?=.*(🇳🇱|荷兰|NL|NLD))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Netherlands.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Netherlands.png
 - type: fallback
   interval: 300
   lazy: true
@@ -996,7 +1009,7 @@ proxy-groups:
   include-all: true
   name: 土耳其-回退
   filter: (?i)(?=.*(🇹🇷|土耳其|TUR|turkey))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Turkey.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Turkey.png
 - type: fallback
   interval: 300
   lazy: true
@@ -1005,7 +1018,7 @@ proxy-groups:
   include-all: true
   name: 阿根廷-回退
   filter: (?i)(?=.*(🇦🇷|阿根廷|ARG|argentina))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Argentina.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Argentina.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1015,7 +1028,7 @@ proxy-groups:
   include-all: true
   name: 香港均衡-散列
   filter: (?i)(?=.*(🇭🇰|香港|港|hk|hkg|hong ?kong))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Hong_Kong.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1025,7 +1038,7 @@ proxy-groups:
   include-all: true
   name: 台湾均衡-散列
   filter: (?i)(?=.*(🇹🇼|台湾|台|TW|TWN|taiwan|taipei))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Taiwan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1035,7 +1048,7 @@ proxy-groups:
   include-all: true
   name: 澳门均衡-散列
   filter: (?i)(?=.*(🇲🇴|澳门|门|MO|macao))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Macao.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Macao.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1045,7 +1058,7 @@ proxy-groups:
   include-all: true
   name: 狮城均衡-散列
   filter: (?i)(?=.*(🇸🇬|新加坡|狮城|新|SG|SGP|singapore))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Singapore.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1055,7 +1068,7 @@ proxy-groups:
   include-all: true
   name: 日本均衡-散列
   filter: (?i)(?=.*(🇯🇵|日本|日|JP|JPN|japan|tokyo|osaka))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Japan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1065,7 +1078,7 @@ proxy-groups:
   include-all: true
   name: 韩国均衡-散列
   filter: (?i)(?=.*(🇰🇷|韩国|韩|KR|KOR|korea|seoul))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Korea.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1076,7 +1089,7 @@ proxy-groups:
   name: 美国均衡-散列
   filter: (?i)(?=.*(🇺🇸|美国|美|US|USA|united ?states|america|los angeles|san jose|silicon
     valley))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_States.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1086,7 +1099,7 @@ proxy-groups:
   include-all: true
   name: 英国均衡-散列
   filter: (?i)(?=.*(🇬🇧|英国|英|GBR|UK|united ?kingdom|london))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_Kingdom.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1096,7 +1109,7 @@ proxy-groups:
   include-all: true
   name: 德国均衡-散列
   filter: (?i)(?=.*(🇩🇪|德国|德|DE|DEU|germany|frankfurt))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Germany.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Germany.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1106,7 +1119,7 @@ proxy-groups:
   include-all: true
   name: 法国均衡-散列
   filter: (?i)(?=.*(🇫🇷|法国|法|FR|france|paris))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/France.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/France.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1116,7 +1129,7 @@ proxy-groups:
   include-all: true
   name: 印度均衡-散列
   filter: (?i)(?=.*(🇮🇳|印度|IN|IND|india|mumbai))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/India.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/India.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1126,7 +1139,7 @@ proxy-groups:
   include-all: true
   name: 印尼均衡-散列
   filter: (?i)(?=.*(🇮🇩|印尼|印度尼西亚|ID|indonesia|jakarta))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Indonesia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Indonesia.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1136,7 +1149,7 @@ proxy-groups:
   include-all: true
   name: 越南均衡-散列
   filter: (?i)(?=.*(🇻🇳|越南|VN|vietnam))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Vietnam.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Vietnam.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1146,7 +1159,7 @@ proxy-groups:
   include-all: true
   name: 泰国均衡-散列
   filter: (?i)(?=.*(🇹🇭|泰国|TH|thailand|bangkok))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Thailand.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Thailand.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1156,7 +1169,7 @@ proxy-groups:
   include-all: true
   name: 澳洲均衡-散列
   filter: (?i)(?=.*(🇦🇺|澳洲|澳大利亚|AU|AUS|australia|sydney))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Australia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Australia.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1166,7 +1179,7 @@ proxy-groups:
   include-all: true
   name: 巴西均衡-散列
   filter: (?i)(?=.*(🇧🇷|巴西|BRA|brazil))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Brazil.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Brazil.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1176,7 +1189,7 @@ proxy-groups:
   include-all: true
   name: 荷兰均衡-散列
   filter: (?i)(?=.*(🇳🇱|荷兰|NL|NLD))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Netherlands.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Netherlands.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1186,7 +1199,7 @@ proxy-groups:
   include-all: true
   name: 土耳其均衡-散列
   filter: (?i)(?=.*(🇹🇷|土耳其|TUR|turkey))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Turkey.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Turkey.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1196,7 +1209,7 @@ proxy-groups:
   include-all: true
   name: 阿根廷均衡-散列
   filter: (?i)(?=.*(🇦🇷|阿根廷|ARG|argentina))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Argentina.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Argentina.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1206,7 +1219,7 @@ proxy-groups:
   include-all: true
   name: 香港均衡-轮询
   filter: (?i)(?=.*(🇭🇰|香港|港|hk|hkg|hong ?kong))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Hong_Kong.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1216,7 +1229,7 @@ proxy-groups:
   include-all: true
   name: 台湾均衡-轮询
   filter: (?i)(?=.*(🇹🇼|台湾|台|TW|TWN|taiwan|taipei))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Taiwan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1226,7 +1239,7 @@ proxy-groups:
   include-all: true
   name: 澳门均衡-轮询
   filter: (?i)(?=.*(🇲🇴|澳门|门|MO|macao))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Macao.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Macao.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1236,7 +1249,7 @@ proxy-groups:
   include-all: true
   name: 狮城均衡-轮询
   filter: (?i)(?=.*(🇸🇬|新加坡|狮城|新|SG|SGP|singapore))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Singapore.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1246,7 +1259,7 @@ proxy-groups:
   include-all: true
   name: 日本均衡-轮询
   filter: (?i)(?=.*(🇯🇵|日本|日|JP|JPN|japan|tokyo|osaka))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Japan.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1256,7 +1269,7 @@ proxy-groups:
   include-all: true
   name: 韩国均衡-轮询
   filter: (?i)(?=.*(🇰🇷|韩国|韩|KR|KOR|korea|seoul))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Korea.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1267,7 +1280,7 @@ proxy-groups:
   name: 美国均衡-轮询
   filter: (?i)(?=.*(🇺🇸|美国|美|US|USA|united ?states|america|los angeles|san jose|silicon
     valley))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_States.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1277,7 +1290,7 @@ proxy-groups:
   include-all: true
   name: 英国均衡-轮询
   filter: (?i)(?=.*(🇬🇧|英国|英|GBR|UK|united ?kingdom|london))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/United_Kingdom.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1287,7 +1300,7 @@ proxy-groups:
   include-all: true
   name: 德国均衡-轮询
   filter: (?i)(?=.*(🇩🇪|德国|德|DE|DEU|germany|frankfurt))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Germany.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Germany.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1297,7 +1310,7 @@ proxy-groups:
   include-all: true
   name: 法国均衡-轮询
   filter: (?i)(?=.*(🇫🇷|法国|法|FR|france|paris))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/France.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/France.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1307,7 +1320,7 @@ proxy-groups:
   include-all: true
   name: 印度均衡-轮询
   filter: (?i)(?=.*(🇮🇳|印度|IN|IND|india|mumbai))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/India.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/India.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1317,7 +1330,7 @@ proxy-groups:
   include-all: true
   name: 印尼均衡-轮询
   filter: (?i)(?=.*(🇮🇩|印尼|印度尼西亚|ID|indonesia|jakarta))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Indonesia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Indonesia.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1327,7 +1340,7 @@ proxy-groups:
   include-all: true
   name: 越南均衡-轮询
   filter: (?i)(?=.*(🇻🇳|越南|VN|vietnam))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Vietnam.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Vietnam.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1337,7 +1350,7 @@ proxy-groups:
   include-all: true
   name: 泰国均衡-轮询
   filter: (?i)(?=.*(🇹🇭|泰国|TH|thailand|bangkok))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Thailand.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Thailand.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1347,7 +1360,7 @@ proxy-groups:
   include-all: true
   name: 澳洲均衡-轮询
   filter: (?i)(?=.*(🇦🇺|澳洲|澳大利亚|AU|AUS|australia|sydney))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Australia.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Australia.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1357,7 +1370,7 @@ proxy-groups:
   include-all: true
   name: 巴西均衡-轮询
   filter: (?i)(?=.*(🇧🇷|巴西|BRA|brazil))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Brazil.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Brazil.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1367,7 +1380,7 @@ proxy-groups:
   include-all: true
   name: 荷兰均衡-轮询
   filter: (?i)(?=.*(🇳🇱|荷兰|NL|NLD))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Netherlands.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Netherlands.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1377,7 +1390,7 @@ proxy-groups:
   include-all: true
   name: 土耳其均衡-轮询
   filter: (?i)(?=.*(🇹🇷|土耳其|TUR|turkey))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Turkey.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Turkey.png
 - type: load-balance
   interval: 300
   lazy: true
@@ -1387,4 +1400,4 @@ proxy-groups:
   include-all: true
   name: 阿根廷均衡-轮询
   filter: (?i)(?=.*(🇦🇷|阿根廷|ARG|argentina))
-  icon: https://fastly.jsdelivr.net/gh/wanswu/Qure@master/IconSet/Color/Argentina.png
+  icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Argentina.png
