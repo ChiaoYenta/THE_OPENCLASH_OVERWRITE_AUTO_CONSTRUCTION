@@ -18,6 +18,11 @@ rules:
 - GEOIP,private,DIRECT
 - GEOIP,cn,DIRECT
 - MATCH,Proxy
+proxy-groups:
+- type: select
+  include-all: true
+  name: Proxy
+  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
 proxy-providers:
   Subscribe:
   - url: http://your-service-provider
@@ -28,8 +33,3 @@ proxy-providers:
       url: http://1.1.1.1/generate_204
       interval: 1800
       timeout: 5000
-proxy-groups:
-- type: select
-  include-all: true
-  name: Proxy
-  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
