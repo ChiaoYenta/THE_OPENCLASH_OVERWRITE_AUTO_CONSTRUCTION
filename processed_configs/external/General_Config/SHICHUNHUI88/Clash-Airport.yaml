@@ -11,6 +11,138 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
+proxy-groups:
+- name: 🌍全球加速
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+  proxies:
+  - ♻️随机
+  include-all: true
+  exclude-type: direct
+  filter: .*
+  url: https://www.gstatic.com/generate_204
+  interval: 120
+  timeout: 5000
+- name: ♻️随机
+  type: url-test
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Bypass.png
+  include-all: true
+  exclude-type: direct
+  filter: .*
+  url: https://www.gstatic.com/generate_204
+  interval: 120
+  tolerance: 30
+  timeout: 5000
+  hidden: true
+- name: 🎷抖音
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 🎬TikTok
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok_2.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 🎮国际游戏
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Game.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 💻Telegram
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Telegram.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 🧠OpenAI
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 🌐Google服务
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Google_Search.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 📺国际流媒体
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 😊微软服务
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Microsoft.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: 🍎苹果服务
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
+  proxies:
+  - 🌍全球加速
+  - ♻️随机
+  - 🎯直连
+  include-all: true
+  exclude-type: direct
+  filter: .*
+- name: ⛩️国内网站
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China.png
+  proxies:
+  - 🎯直连
+  - 🌍全球加速
+- name: 🎯直连
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China_Map.png
+  proxies:
+  - DIRECT
+  - 🌍全球加速
+  url: http://connect.rom.miui.com/generate_204
+- name: 🤡漏网之鱼
+  type: select
+  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png
+  proxies:
+  - 🌍全球加速
+  - 🎯直连
 rule-providers:
   douyin-zj:
     type: http
@@ -168,138 +300,6 @@ rule-providers:
     interval: 86400
     format: text
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
-proxy-groups:
-- name: 🌍全球加速
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
-  proxies:
-  - ♻️随机
-  include-all: true
-  exclude-type: direct
-  filter: .*
-  url: https://www.gstatic.com/generate_204
-  interval: 120
-  timeout: 5000
-- name: ♻️随机
-  type: url-test
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Bypass.png
-  include-all: true
-  exclude-type: direct
-  filter: .*
-  url: https://www.gstatic.com/generate_204
-  interval: 120
-  tolerance: 30
-  timeout: 5000
-  hidden: true
-- name: 🎷抖音
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 🎬TikTok
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok_2.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 🎮国际游戏
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Game.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 💻Telegram
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Telegram.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 🧠OpenAI
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 🌐Google服务
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Google_Search.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 📺国际流媒体
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 😊微软服务
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Microsoft.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: 🍎苹果服务
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
-  proxies:
-  - 🌍全球加速
-  - ♻️随机
-  - 🎯直连
-  include-all: true
-  exclude-type: direct
-  filter: .*
-- name: ⛩️国内网站
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China.png
-  proxies:
-  - 🎯直连
-  - 🌍全球加速
-- name: 🎯直连
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/China_Map.png
-  proxies:
-  - DIRECT
-  - 🌍全球加速
-  url: http://connect.rom.miui.com/generate_204
-- name: 🤡漏网之鱼
-  type: select
-  icon: https://cdn.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png
-  proxies:
-  - 🌍全球加速
-  - 🎯直连
 rules:
 - GEOSITE,category-ads-all,REJECT
 - RULE-SET,douyin-zj,🎷抖音
