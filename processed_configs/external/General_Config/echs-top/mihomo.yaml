@@ -1,47 +1,6 @@
 # Processed: raw_configs/external/General_Config/echs-top/mihomo.yaml
 # Providers: 3 proxy, 20 rule
 
-proxy-providers:
-  link1:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: &id001
-      User-Agent:
-      - clash-verge/v2.4.5
-    health-check: &id002
-      enable: true
-      url: https://dns.google/generate_204
-      expected-status: 204
-      interval: 600
-      timeout: 3000
-      max-failed-times: 2
-      lazy: false
-    override: &id003
-      ip-version: dual
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接1
-    path: ./providers/link1.yaml
-  link2:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id001
-    health-check: *id002
-    override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接2
-    path: ./providers/link2.yaml
-  link3:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id001
-    health-check: *id002
-    override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接3
-    path: ./providers/link3.yaml
 proxy-groups:
 - name: 代理连接
   type: select
@@ -68,7 +27,7 @@ proxy-groups:
   - ipv6-prefer
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/DIRECT.webp
 - type: select
-  proxies: &id004
+  proxies: &id001
   - 代理连接
   - 直接连接
   - 最低延迟
@@ -106,26 +65,26 @@ proxy-groups:
   name: FCM推送
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/FCM_Firebase_Cloud_Messaging.webp
 - type: select
-  proxies: *id004
+  proxies: *id001
   include-all-providers: true
   name: TELEGRAM
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Telegram.webp
 - type: select
-  proxies: *id004
+  proxies: *id001
   include-all-providers: true
   name: GITHUB
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/GitHub.webp
 - type: select
-  proxies: *id004
+  proxies: *id001
   include-all-providers: true
   name: 国外AI
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/echs-top/proxy/main/icon/AI.webp
 - type: select
-  proxies: *id004
+  proxies: *id001
   include-all-providers: true
   name: GOOGLE
   icon: https://cdn.gh-proxy.com/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Google.webp
-- use: &id005
+- use: &id002
   - link1
   - link2
   name: 最低延迟
@@ -133,72 +92,135 @@ proxy-groups:
   tolerance: 30
   hidden: true
   icon: https://cdn.gh-proxy.com/https://raw.githubusercontent.com/echs-top/proxy/main/icon/Fast.webp
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 香港|故障转移
   filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/hk.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 台湾|故障转移
   filter: (?i)🇹🇼|台湾|\bTW\b|\btaiwan\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 新加坡|故障转移
   filter: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/sg.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 日本|故障转移
   filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 韩国|故障转移
   filter: (?i)🇰🇷|韩国|\bKR\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 美国|故障转移
   filter: (?i)🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 加拿大|故障转移
   filter: (?i)🇨🇦|加拿大|\bCA\b|\bcanada\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/ca.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 德国|故障转移
   filter: (?i)🇩🇪|德国|\bDE\b|\bgermany\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 英国|故障转移
   filter: (?i)🇬🇧|英国|\bUK\b|\bGB\b|\bunitedkingdom\b|\bunited\s?kingdom\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 法国|故障转移
   filter: (?i)🇫🇷|法国|\bFR\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/fr.svg
-- use: *id005
+- use: *id002
   type: fallback
   hidden: true
   name: 荷兰|故障转移
   filter: (?i)🇳🇱|荷兰|\bNL\b|\bnetherlands?\b
   icon: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/nl.svg
+rules:
+- DST-PORT,5228-5230,FCM推送
+- RULE-SET,private_ip,直接连接,no-resolve
+- RULE-SET,AWAvenue-Ads,REJECT
+- RULE-SET,private,直接连接
+- RULE-SET,fcm,FCM推送
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,github,GITHUB
+- RULE-SET,ai,国外AI
+- RULE-SET,google,GOOGLE
+- RULE-SET,apple-cn,直接连接
+- RULE-SET,microsoft-cn,直接连接
+- RULE-SET,games-cn,直接连接
+- RULE-SET,direct_domain,直接连接
+- RULE-SET,proxy,代理连接
+- RULE-SET,cn,直接连接
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
+- RULE-SET,direct_ip,直接连接
+- RULE-SET,cn_ip,直接连接
+- MATCH,代理连接
+proxy-providers:
+  link1:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: &id003
+      User-Agent:
+      - clash-verge/v2.4.5
+    health-check: &id004
+      enable: true
+      url: https://dns.google/generate_204
+      expected-status: 204
+      interval: 600
+      timeout: 3000
+      max-failed-times: 2
+      lazy: false
+    override: &id005
+      ip-version: dual
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接1
+    path: ./providers/link1.yaml
+  link2:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id003
+    health-check: *id004
+    override: *id005
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接2
+    path: ./providers/link2.yaml
+  link3:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id003
+    health-check: *id004
+    override: *id005
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接3
+    path: ./providers/link3.yaml
 rule-providers:
   private_ip:
     type: http
@@ -360,25 +382,3 @@ rule-providers:
     format: mrs
     url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs
     path: ./rules/cn_ip.mrs
-rules:
-- DST-PORT,5228-5230,FCM推送
-- RULE-SET,private_ip,直接连接,no-resolve
-- RULE-SET,AWAvenue-Ads,REJECT
-- RULE-SET,private,直接连接
-- RULE-SET,fcm,FCM推送
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,github,GITHUB
-- RULE-SET,ai,国外AI
-- RULE-SET,google,GOOGLE
-- RULE-SET,apple-cn,直接连接
-- RULE-SET,microsoft-cn,直接连接
-- RULE-SET,games-cn,直接连接
-- RULE-SET,direct_domain,直接连接
-- RULE-SET,proxy,代理连接
-- RULE-SET,cn,直接连接
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
-- RULE-SET,direct_ip,直接连接
-- RULE-SET,cn_ip,直接连接
-- MATCH,代理连接
