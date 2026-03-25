@@ -34,6 +34,30 @@ rules:
 - RULE-SET,TelegramIP,Telegram,no-resolve
 - RULE-SET,TwitterIP,Twitter(X),no-resolve
 - MATCH,手动选择
+proxy-providers:
+  main:
+    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
+    type: http
+    interval: 86400
+    health-check: &id001
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+    url: https://al121.cc/#/register?code=R7vdKxbE
+    path: ./proxy_provider/p1.yaml
+    override:
+      udp: true
+      additional-prefix: 主-
+  prepare:
+    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
+    type: http
+    interval: 86400
+    health-check: *id001
+    url: https://al121.cc/#/register?code=R7vdKxbE
+    path: ./proxy_provider/p2.yaml
+    override:
+      udp: true
+      additional-prefix: 备-
 rule-providers:
   Advertising:
     type: http
@@ -221,30 +245,6 @@ rule-providers:
     format: yaml
     behavior: classical
     url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/ChinaAPP.yaml
-proxy-providers:
-  main:
-    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
-    type: http
-    interval: 86400
-    health-check: &id001
-      enable: true
-      url: https://www.google.com/generate_204
-      interval: 300
-    url: https://al121.cc/#/register?code=R7vdKxbE
-    path: ./proxy_provider/p1.yaml
-    override:
-      udp: true
-      additional-prefix: 主-
-  prepare:
-    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期
-    type: http
-    interval: 86400
-    health-check: *id001
-    url: https://al121.cc/#/register?code=R7vdKxbE
-    path: ./proxy_provider/p2.yaml
-    override:
-      udp: true
-      additional-prefix: 备-
 proxy-groups:
 - type: select
   proxies:

@@ -28,6 +28,16 @@ rules:
 - RULE-SET,Lan,DIRECT
 - GEOIP,CN,DIRECT
 - MATCH,兜底分流
+proxy-providers:
+  Subscribe:
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://1.1.1.1/generate_204
+      interval: 1800
+      timeout: 5000
+    url: http://your-service-provider
 rule-providers:
   Direct:
     type: http
@@ -173,16 +183,6 @@ rule-providers:
     format: text
     interval: 86400
     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Proxy.list
-proxy-providers:
-  Subscribe:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://1.1.1.1/generate_204
-      interval: 1800
-      timeout: 5000
-    url: http://your-service-provider
 proxy-groups:
 - name: 手动切换
   type: select
