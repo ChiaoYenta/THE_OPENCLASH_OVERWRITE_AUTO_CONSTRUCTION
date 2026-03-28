@@ -402,43 +402,6 @@ proxy-groups:
   - 故障转移
   exclude-filter: (?i)(🟢 直连)
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png
-proxy-providers:
-  Airport_01:
-    type: http
-    interval: 86400
-    health-check: &id004
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接1
-    override:
-      additional-prefix: '[机场名称1]'
-      skip-cert-verify: true
-      udp: true
-  Airport_02:
-    type: http
-    interval: 86400
-    health-check: *id004
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接2
-    override:
-      additional-prefix: '[机场名称2]'
-      skip-cert-verify: true
-      udp: true
-  Airport_03:
-    type: http
-    interval: 86400
-    health-check: *id004
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接3
-    override:
-      additional-prefix: '[机场名称3]'
-      skip-cert-verify: true
-      udp: true
 rules:
 - GEOSITE,category-ads-all,隐私拦截
 - GEOSITE,private,全球直连
@@ -478,3 +441,40 @@ rules:
 - GEOIP,private,全球直连,no-resolve
 - GEOIP,cn,全球直连,no-resolve
 - MATCH,Final
+proxy-providers:
+  Airport_01:
+    type: http
+    interval: 86400
+    health-check: &id004
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接1
+    override:
+      additional-prefix: '[机场名称1]'
+      skip-cert-verify: true
+      udp: true
+  Airport_02:
+    type: http
+    interval: 86400
+    health-check: *id004
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接2
+    override:
+      additional-prefix: '[机场名称2]'
+      skip-cert-verify: true
+      udp: true
+  Airport_03:
+    type: http
+    interval: 86400
+    health-check: *id004
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接3
+    override:
+      additional-prefix: '[机场名称3]'
+      skip-cert-verify: true
+      udp: true

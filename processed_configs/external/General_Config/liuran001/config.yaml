@@ -138,22 +138,6 @@ proxy-groups:
   use: *id002
   name: 自动选择
   tolerance: 2
-proxy-providers:
-  订阅一:
-    type: http
-    interval: 3600
-    health-check: &id003
-      enable: true
-      url: https://cp.cloudflare.com
-      interval: 300
-      timeout: 1000
-      tolerance: 100
-    url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
-  订阅二:
-    type: http
-    interval: 3600
-    health-check: *id003
-    url: https://example.com/api/v1/client/subscribe?token=ilovechina
 rules:
 - RULE-SET,AWAvenue-Ads,广告拦截
 - GEOSITE,category-scholar-!cn,境外AI
@@ -188,3 +172,19 @@ rules:
 - IP-CIDR,100.64.0.0/10,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT
 - MATCH,其他
+proxy-providers:
+  订阅一:
+    type: http
+    interval: 3600
+    health-check: &id003
+      enable: true
+      url: https://cp.cloudflare.com
+      interval: 300
+      timeout: 1000
+      tolerance: 100
+    url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
+  订阅二:
+    type: http
+    interval: 3600
+    health-check: *id003
+    url: https://example.com/api/v1/client/subscribe?token=ilovechina

@@ -449,16 +449,6 @@ proxy-groups:
 - name: 🌐 全部节点
   type: select
   include-all: true
-proxy-providers:
-  Airport1:
-    url: 机场订阅1
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
 rules:
 - RULE-SET,private_ip,直连,no-resolve
 - RULE-SET,private_domain,直连
@@ -483,3 +473,13 @@ rules:
 - RULE-SET,cn_domain,直连
 - RULE-SET,cn_ip,直连
 - MATCH,🐟 漏网之鱼
+proxy-providers:
+  Airport1:
+    url: 机场订阅1
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连

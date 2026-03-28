@@ -290,16 +290,6 @@ proxy-groups:
   proxies:
   - 🌍全球加速
   - 🎯直连
-proxy-providers:
-  机场:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 rules:
 - GEOSITE,category-ads-all,REJECT
 - RULE-SET,douyin-zj,🎷抖音
@@ -356,3 +346,13 @@ rules:
 - GEOIP,cn,🎯直连,no-resolve
 - GEOIP,!cn,🤡漏网之鱼
 - MATCH,🤡漏网之鱼
+proxy-providers:
+  机场:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
