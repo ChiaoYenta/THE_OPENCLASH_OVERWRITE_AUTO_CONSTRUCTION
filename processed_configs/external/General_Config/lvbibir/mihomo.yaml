@@ -248,6 +248,48 @@ proxy-groups:
   max-failed-times: 3
   name: ♻️ 香港自动
   filter: ^(?=.*?(?i)(\bHK\b|Hong.?Kong|香港|深港|广港|港区)).*(?<!(?i)(回国|过期|剩余|官网|网址|节点|订阅|机场|客服|校园|本土)).*$
+rules:
+- IP-CIDR,169.254.169.254/32,REJECT,no-resolve
+- DST-PORT,11434,REJECT
+- DOMAIN,t-ring-fdv2.msedge.net,REJECT,no-resolve
+- IP-CIDR,223.5.5.5/32,直连,no-resolve
+- IP-CIDR,223.6.6.6/32,直连,no-resolve
+- RULE-SET,custom_proxy,🚀 默认代理
+- RULE-SET,custom_direct,直连
+- RULE-SET,private_ip,直连,no-resolve
+- RULE-SET,private_domain,直连
+- RULE-SET,speedtest_domain,直连
+- RULE-SET,apple_domain,直连
+- RULE-SET,apple_ip,直连,no-resolve
+- RULE-SET,ai_domain,🤖 AIGC
+- RULE-SET,onedrive_domain,🐬 OneDrive
+- RULE-SET,steam_domain,🎮 Steam
+- RULE-SET,github_domain,👨🏿‍💻 GitHub
+- RULE-SET,x_domain,✖️ X
+- RULE-SET,telegram_ip,✈️ Telegram,no-resolve
+- RULE-SET,telegram_domain,✈️ Telegram
+- RULE-SET,sony_domain,🎧 Sony
+- RULE-SET,microsoft_domain,Ⓜ️ Microsoft
+- RULE-SET,youtube_domain,📹 YouTube
+- RULE-SET,google_domain,🍀 Google
+- RULE-SET,google_ip,🍀 Google,no-resolve
+- RULE-SET,cn_domain,直连
+- RULE-SET,cn_ip,直连,no-resolve
+- RULE-SET,geolocation-!cn_domain,🚀 默认代理
+- MATCH,🐟 漏网之鱼
+proxy-providers:
+  150G_Mouth:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '---'
+    path: ./proxy-providers/providers-1.yaml
+    override:
+      additional-prefix: '1. '
 rule-providers:
   custom_proxy:
     type: http
@@ -410,45 +452,3 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/telegram.mrs
     path: ./rule-providers/telegram_ip.mrs
-rules:
-- IP-CIDR,169.254.169.254/32,REJECT,no-resolve
-- DST-PORT,11434,REJECT
-- DOMAIN,t-ring-fdv2.msedge.net,REJECT,no-resolve
-- IP-CIDR,223.5.5.5/32,直连,no-resolve
-- IP-CIDR,223.6.6.6/32,直连,no-resolve
-- RULE-SET,custom_proxy,🚀 默认代理
-- RULE-SET,custom_direct,直连
-- RULE-SET,private_ip,直连,no-resolve
-- RULE-SET,private_domain,直连
-- RULE-SET,speedtest_domain,直连
-- RULE-SET,apple_domain,直连
-- RULE-SET,apple_ip,直连,no-resolve
-- RULE-SET,ai_domain,🤖 AIGC
-- RULE-SET,onedrive_domain,🐬 OneDrive
-- RULE-SET,steam_domain,🎮 Steam
-- RULE-SET,github_domain,👨🏿‍💻 GitHub
-- RULE-SET,x_domain,✖️ X
-- RULE-SET,telegram_ip,✈️ Telegram,no-resolve
-- RULE-SET,telegram_domain,✈️ Telegram
-- RULE-SET,sony_domain,🎧 Sony
-- RULE-SET,microsoft_domain,Ⓜ️ Microsoft
-- RULE-SET,youtube_domain,📹 YouTube
-- RULE-SET,google_domain,🍀 Google
-- RULE-SET,google_ip,🍀 Google,no-resolve
-- RULE-SET,cn_domain,直连
-- RULE-SET,cn_ip,直连,no-resolve
-- RULE-SET,geolocation-!cn_domain,🚀 默认代理
-- MATCH,🐟 漏网之鱼
-proxy-providers:
-  150G_Mouth:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '---'
-    path: ./proxy-providers/providers-1.yaml
-    override:
-      additional-prefix: '1. '
