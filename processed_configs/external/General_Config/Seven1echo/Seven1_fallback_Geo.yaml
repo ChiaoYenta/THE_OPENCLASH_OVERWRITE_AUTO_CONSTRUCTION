@@ -359,6 +359,13 @@ rules:
 - GEOSITE,cn,DIRECT
 - GEOIP,cn,DIRECT,no-resolve
 - MATCH,漏网之鱼
+rule-providers:
+  add_direct_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
 proxy-providers:
   机场名:
     type: http
@@ -372,10 +379,3 @@ proxy-providers:
     url: 订阅链接
     override:
       additional-prefix: '[机场名] '
-rule-providers:
-  add_direct_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs

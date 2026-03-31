@@ -180,47 +180,6 @@ rules:
 - RULE-SET,direct_ip,直接连接
 - RULE-SET,cn_ip,直接连接
 - MATCH,代理连接
-proxy-providers:
-  link1:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: &id003
-      User-Agent:
-      - clash-verge/v2.4.5
-    health-check: &id004
-      enable: true
-      url: https://dns.google/generate_204
-      expected-status: 204
-      interval: 600
-      timeout: 3000
-      max-failed-times: 2
-      lazy: false
-    override: &id005
-      ip-version: dual
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接1
-    path: ./providers/link1.yaml
-  link2:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id003
-    health-check: *id004
-    override: *id005
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接2
-    path: ./providers/link2.yaml
-  link3:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id003
-    health-check: *id004
-    override: *id005
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接3
-    path: ./providers/link3.yaml
 rule-providers:
   private_ip:
     type: http
@@ -382,3 +341,44 @@ rule-providers:
     format: mrs
     url: https://cdn.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs
     path: ./rules/cn_ip.mrs
+proxy-providers:
+  link1:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: &id003
+      User-Agent:
+      - clash-verge/v2.4.5
+    health-check: &id004
+      enable: true
+      url: https://dns.google/generate_204
+      expected-status: 204
+      interval: 600
+      timeout: 3000
+      max-failed-times: 2
+      lazy: false
+    override: &id005
+      ip-version: dual
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接1
+    path: ./providers/link1.yaml
+  link2:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id003
+    health-check: *id004
+    override: *id005
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接2
+    path: ./providers/link2.yaml
+  link3:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id003
+    health-check: *id004
+    override: *id005
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接3
+    path: ./providers/link3.yaml

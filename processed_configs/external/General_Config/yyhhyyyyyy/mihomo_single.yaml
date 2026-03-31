@@ -334,16 +334,6 @@ rules:
 - RULE-SET,domestic_ip,DIRECT
 - RULE-SET,china_ip,DIRECT
 - MATCH,🎯节点选择
-proxy-providers:
-  Node:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://connectivitycheck.platform.hicloud.com/generate_204
-      interval: 300
-    url: 替换订阅链接
-    path: ./proxy_provider/providers.yaml
 rule-providers:
   cdn_domainset:
     type: http
@@ -513,3 +503,13 @@ rule-providers:
     proxy: 🎯节点选择
     url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
     path: ./rule_set/sukkaw_ruleset/china_ip.txt
+proxy-providers:
+  Node:
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://connectivitycheck.platform.hicloud.com/generate_204
+      interval: 300
+    url: 替换订阅链接
+    path: ./proxy_provider/providers.yaml
