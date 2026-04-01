@@ -1,6 +1,173 @@
 # Processed: raw_configs/external/General_Config/SHICHUNHUI88/Clash-Airport.yaml
 # Providers: 1 proxy, 26 rule
 
+proxy-providers:
+  机场:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
+rule-providers:
+  douyin-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/douyin.yaml
+  TikTok-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/TikTok.yaml
+  Telegram-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Telegram.yaml
+  OpenAI-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/OpenAI.yaml
+  Facebook-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Facebook.yaml
+  Google-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Google.yaml
+  WildRift-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Wildrift.yaml
+  Agora-zj:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/agora_domain.mrs
+  GitHub-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/GitHub.yaml
+  Claude-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Claude.yaml
+  icloud:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-icloud_domain.mrs
+  Apple:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-Apple_domain.mrs
+  Microsoft:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-Microsoft_domain.mrs
+  YouTube:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-YouTube_domain.mrs
+  Netflix:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-Netflix_domain.mrs
+  games:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-games_domain.mrs
+  abroad_dns_cdn:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/abroad_dns_cdn.yaml
+  proxy:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-proxy_domain.mrs
+  gfw:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-gfw_domain.mrs
+  tld-not-cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-tld-not-cn_domain.mrs
+  Alibaba:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Alibaba.yaml
+  Tencent:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Tencent.yaml
+  cn_dns_cdn:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/cn_dns_cdn.yaml
+  direct:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-direct_domain.mrs
+  private:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-private_domain.mrs
+  applications:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: text
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
 proxy-groups:
 - name: 🌍全球加速
   type: select
@@ -189,170 +356,3 @@ rules:
 - GEOIP,cn,🎯直连,no-resolve
 - GEOIP,!cn,🤡漏网之鱼
 - MATCH,🤡漏网之鱼
-rule-providers:
-  douyin-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/douyin.yaml
-  TikTok-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/TikTok.yaml
-  Telegram-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Telegram.yaml
-  OpenAI-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/OpenAI.yaml
-  Facebook-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Facebook.yaml
-  Google-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Google.yaml
-  WildRift-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Wildrift.yaml
-  Agora-zj:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/agora_domain.mrs
-  GitHub-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/GitHub.yaml
-  Claude-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Claude.yaml
-  icloud:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-icloud_domain.mrs
-  Apple:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-Apple_domain.mrs
-  Microsoft:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-Microsoft_domain.mrs
-  YouTube:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-YouTube_domain.mrs
-  Netflix:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-Netflix_domain.mrs
-  games:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/bx7-games_domain.mrs
-  abroad_dns_cdn:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/abroad_dns_cdn.yaml
-  proxy:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-proxy_domain.mrs
-  gfw:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-gfw_domain.mrs
-  tld-not-cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-tld-not-cn_domain.mrs
-  Alibaba:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Alibaba.yaml
-  Tencent:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/Tencent.yaml
-  cn_dns_cdn:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/clash/cn_dns_cdn.yaml
-  direct:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-direct_domain.mrs
-  private:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/SHICHUNHUI88/vps-net-optimize@main/remote-mrs/Loy-private_domain.mrs
-  applications:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: text
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
-proxy-providers:
-  机场:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
