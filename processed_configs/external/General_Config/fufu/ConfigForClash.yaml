@@ -1,18 +1,6 @@
 # Processed: raw_configs/external/General_Config/fufu/ConfigForClash.yaml
 # Providers: 1 proxy, 59 rule
 
-proxy-providers:
-  机场一:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 3000
-    filter: (?i)^(?!.*(email|expire|test|total|traffic|use|used|版本|备用|不推荐|测试|到期|订阅|工单|官方|官网|官址|过期|获取|机场|客服|联系|流量|群|剩余|失联|套餐|网站|网址|下次|学术|已用|邮箱|有效))
-    url: 订阅链接
-    path: ./proxy_providers/Nodes.yaml
 proxy-groups:
 - name: 🚀 默认代理
   type: select
@@ -540,6 +528,18 @@ proxy-groups:
   include-all: true
   name: 🍟 节点集合
   icon: https://raw.githubusercontent.com/sunfing/iNg/main/Icons/GeneralIcons/Available.png
+proxy-providers:
+  机场一:
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 3000
+    filter: (?i)^(?!.*(email|expire|test|total|traffic|use|used|版本|备用|不推荐|测试|到期|订阅|工单|官方|官网|官址|过期|获取|机场|客服|联系|流量|群|剩余|失联|套餐|网站|网址|下次|学术|已用|邮箱|有效))
+    url: 订阅链接
+    path: ./proxy_providers/Nodes.yaml
 rules:
 - IP-CIDR, 198.18.0.1/16, REJECT, no-resolve
 - RULE-SET, Lan, 🎯 全球直连

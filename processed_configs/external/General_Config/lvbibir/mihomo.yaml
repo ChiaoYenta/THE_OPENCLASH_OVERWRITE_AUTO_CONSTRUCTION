@@ -1,19 +1,6 @@
 # Processed: raw_configs/external/General_Config/lvbibir/mihomo.yaml
 # Providers: 1 proxy, 23 rule
 
-proxy-providers:
-  150G_Mouth:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '---'
-    path: ./proxy-providers/providers-1.yaml
-    override:
-      additional-prefix: '1. '
 proxy-groups:
 - type: url-test
   url: https://www.gstatic.com/generate_204
@@ -261,6 +248,19 @@ proxy-groups:
   max-failed-times: 3
   name: ♻️ 香港自动
   filter: ^(?=.*?(?i)(\bHK\b|Hong.?Kong|香港|深港|广港|港区)).*(?<!(?i)(回国|过期|剩余|官网|网址|节点|订阅|机场|客服|校园|本土)).*$
+proxy-providers:
+  150G_Mouth:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '---'
+    path: ./proxy-providers/providers-1.yaml
+    override:
+      additional-prefix: '1. '
 rules:
 - IP-CIDR,169.254.169.254/32,REJECT,no-resolve
 - DST-PORT,11434,REJECT

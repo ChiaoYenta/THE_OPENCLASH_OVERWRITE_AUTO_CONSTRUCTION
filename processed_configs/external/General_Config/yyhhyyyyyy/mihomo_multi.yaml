@@ -1,26 +1,6 @@
 # Processed: raw_configs/external/General_Config/yyhhyyyyyy/mihomo_multi.yaml
 # Providers: 2 proxy, 21 rule
 
-proxy-providers:
-  Node-1:
-    type: http
-    interval: 86400
-    health-check: &id001
-      enable: true
-      url: http://connectivitycheck.platform.hicloud.com/generate_204
-      interval: 300
-    url: 替换订阅链接1
-    path: ./proxy_provider/providers-1.yaml
-    override:
-      additional-prefix: '[A] '
-  Node-2:
-    type: http
-    interval: 86400
-    health-check: *id001
-    url: 替换订阅链接2
-    path: ./proxy_provider/providers-2.yaml
-    override:
-      additional-prefix: '[B] '
 proxy-groups:
 - name: 🎯节点选择
   type: select
@@ -331,6 +311,26 @@ proxy-groups:
   hidden: false
   include-all: true
   name: 全部节点
+proxy-providers:
+  Node-1:
+    type: http
+    interval: 86400
+    health-check: &id001
+      enable: true
+      url: http://connectivitycheck.platform.hicloud.com/generate_204
+      interval: 300
+    url: 替换订阅链接1
+    path: ./proxy_provider/providers-1.yaml
+    override:
+      additional-prefix: '[A] '
+  Node-2:
+    type: http
+    interval: 86400
+    health-check: *id001
+    url: 替换订阅链接2
+    path: ./proxy_provider/providers-2.yaml
+    override:
+      additional-prefix: '[B] '
 rules:
 - RULE-SET,cdn_domainset,🎯节点选择
 - RULE-SET,cdn_non_ip,🎯节点选择
