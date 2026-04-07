@@ -96,7 +96,7 @@ EN_DNS=223.5.5.5,114.114.114.114
 
 ## 📊 构建信息
 
-- 最后更新: 2026-04-06 07:24:54 UTC
+- 最后更新: 2026-04-07 07:10:42 UTC
 - 仓库: https://github.com/ChiaoYenta/THE_OPENCLASH_OVERWRITE_AUTO_CONSTRUCTION
 - 分支: main
 
