@@ -1,444 +1,104 @@
 # Processed: raw_configs/external/General_Config/Lanlan13-14/configfull_NoAd.yaml
 # Providers: 3 proxy, 95 rule
 
-proxy-groups:
-- name: 节点选择
-  type: select
-  proxies:
-  - 香港节点
-  - 新加坡节点
-  - 日本节点
-  - 台湾节点
-  - 美国节点
-  - 欧洲节点
-  - 全部节点
-  - 自建/家宽节点
-  - 故障转移
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png
-- type: select
-  proxies: &id001
-  - 节点选择
-  - 香港节点
-  - 新加坡节点
-  - 日本节点
-  - 台湾节点
-  - 美国节点
-  - 欧洲节点
-  - 全部节点
-  - 自建/家宽节点
-  - 全球直连
-  name: YouTube
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/youtube.png
-- type: select
-  proxies: *id001
-  name: FCM
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fcm.png
-- type: select
-  proxies: *id001
-  name: GoogleVPN
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/googlevpn.png
-- type: select
-  proxies: *id001
-  name: Google
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/google.png
-- type: select
-  proxies: *id001
-  name: Meta
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/meta.png
-- type: select
-  proxies: &id002
-  - 节点选择
-  - 香港节点
-  - 新加坡节点
-  - 日本节点
-  - 台湾节点
-  - 美国节点
-  - 欧洲节点
-  - 全部节点
-  - 自建/家宽节点
-  - 全球直连
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: AI
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/ai.png
-- type: select
-  proxies: *id001
-  name: GitHub
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/github.png
-- type: select
-  proxies: *id001
-  name: OneDrive
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/onedrive.png
-- type: select
-  proxies: *id001
-  name: Microsoft
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/microsoft.png
-- type: select
-  proxies: *id001
-  name: Telegram
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/telegram.png
-- type: select
-  proxies: *id001
-  name: Discord
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/discord.png
-- type: select
-  proxies: *id001
-  name: Talkatone
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/talkatone.png
-- type: select
-  proxies: *id001
-  name: LINE
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/line.png
-- type: select
-  proxies: *id001
-  name: Signal
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/signal.png
-- type: select
-  proxies: *id001
-  name: TikTok
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/tiktok.png
-- type: select
-  proxies: *id001
-  name: NETFLIX
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netflix.png
-- type: select
-  proxies: *id001
-  name: DisneyPlus
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disney.png
-- type: select
-  proxies: *id001
-  name: HBO
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/hbo.png
-- type: select
-  proxies: *id001
-  name: Primevideo
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/primevideo.png
-- type: select
-  proxies: *id001
-  name: AppleTV
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/appletv.png
-- type: select
-  proxies: &id003
-  - 全球直连
-  - 节点选择
-  - 香港节点
-  - 新加坡节点
-  - 日本节点
-  - 台湾节点
-  - 美国节点
-  - 欧洲节点
-  - 全部节点
-  - 自建/家宽节点
-  name: Apple
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/apple.png
-- type: select
-  proxies: *id002
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: Emby
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/emby.png
-- type: select
-  proxies: *id003
-  name: 哔哩哔哩
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bilibili.png
-- name: 哔哩东南亚
-  type: select
-  proxies:
-  - 节点选择
-  - 新加坡节点
-  - 全部节点
-  - 自建/家宽节点
-  - 全球直连
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bilibilit.png
-- name: 巴哈姆特
-  type: select
-  proxies:
-  - 台湾节点
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bahamut.png
-- type: select
-  proxies: *id001
-  name: Spotify
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/spotify.png
-- type: select
-  proxies: *id003
-  name: 国内媒体
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Chinese_media.png
-- type: select
-  proxies: *id002
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: Global-TV
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global_tv.png
-- type: select
-  proxies: *id002
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: Global-Medial
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global_media.png
-- type: select
-  proxies: *id001
-  name: 游戏平台
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/game.png
-- type: select
-  proxies: *id002
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: Speedtest
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/speedtest.png
-- type: select
-  proxies: *id001
-  name: PayPal
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/paypal.png
-- type: select
-  proxies: *id001
-  name: Wise
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/wise.png
-- type: select
-  proxies: *id001
-  name: 国外电商
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/shopping.png
-- type: select
-  proxies: *id002
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: STEAM
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/steam.png
-- name: 全球直连
-  type: select
-  proxies:
-  - 🟢 直连
-  - 🔗 代理
-  - 全部节点
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png
-- type: select
-  proxies: *id002
-  include-all: true
-  exclude-filter: (?i)(🟢 直连)
-  name: Final
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png
-- name: 自建/家宽节点
-  type: select
-  include-all: true
-  filter: (?=.*(?i)(自建|CF|The_house|private|home|家宽|hgc|HKT|HKBN|icable|Hinet|att))
-  exclude-filter: (?=.*(?i)(Seattle))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png
-- name: 香港节点
-  type: select
-  proxies:
-  - 香港自动
-  - 香港均衡
-  include-all: true
-  filter: (?=.*(?i)(港|hk|hongkong|Hong Kong|🇭🇰))
-  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/Hongkong.png
-- name: 新加坡节点
-  type: select
-  proxies:
-  - 新加坡自动
-  - 新加坡均衡
-  include-all: true
-  filter: (?=.*(?i)(新|🇸🇬|SG|singapore))
-  exclude-filter: (?=.*(?i)(新西兰))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png
-- name: 日本节点
-  type: select
-  proxies:
-  - 日本自动
-  - 日本均衡
-  include-all: true
-  filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png
-- name: 台湾节点
-  type: select
-  proxies:
-  - 台湾自动
-  - 台湾均衡
-  include-all: true
-  filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Taiwan_China.png
-- name: 美国节点
-  type: select
-  proxies:
-  - 美国自动
-  - 美国均衡
-  include-all: true
-  filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))
-  exclude-filter: (?=.*(?i)(Australia|Russia|RUS))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/America.png
-- name: 欧洲节点
-  type: select
-  include-all: true
-  filter: (?=.*(?i)(🇦🇱|🇦🇩|🇦🇹|🇧🇾|🇧🇪|🇧🇦|🇧🇬|🇭🇷|🇨🇾|🇨🇿|🇩🇰|🇪🇪|🇫🇮|🇫🇷|🇩🇪|🇬🇷|🇭🇺|🇮🇸|🇮🇪|🇮🇹|🇽🇰|🇱🇻|🇱🇮|🇱🇹|🇱🇺|🇲🇹|🇲🇩|🇲🇨|🇲🇪|🇳🇱|🇲🇰|🇳🇴|🇵🇱|🇵🇹|🇷🇴|🇷🇺|🇸🇲|🇷🇸|🇸🇰|🇸🇮|🇪🇸|🇸🇪|🇨🇭|🇹🇷|🇺🇦|🇬🇧|🇻🇦))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/European.png
-- name: 全部节点
-  type: select
-  include-all: true
-  tolerance: 20
-  interval: 300
-  exclude-filter: (?i)(🟢 直连)
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/all.png
-- type: url-test
-  include-all: true
-  tolerance: 20
-  interval: 300
-  max-failed-times: 1
-  hidden: true
-  name: 香港自动
-  filter: (?=.*(?i)(香港|hk|hongkong|Hong Kong|🇭🇰))
-  exclude-filter: (?=.*(?i)(The_HK_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/hk_automatic_selection.png
-- type: url-test
-  include-all: true
-  tolerance: 20
-  interval: 300
-  max-failed-times: 1
-  hidden: true
-  name: 新加坡自动
-  filter: (?=.*(?i)(新|🇸🇬|SG|Singapore))
-  exclude-filter: (?=.*(?i)(The_SG_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus|新西兰))
-  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/sg_automatic_selection.png
-- type: url-test
-  include-all: true
-  tolerance: 20
-  interval: 300
-  max-failed-times: 1
-  hidden: true
-  name: 日本自动
-  filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
-  exclude-filter: (?=.*(?i)(The_JP_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/jp_automatic_selection.png
-- type: url-test
-  include-all: true
-  tolerance: 20
-  interval: 300
-  max-failed-times: 1
-  hidden: true
-  name: 台湾自动
-  filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
-  exclude-filter: (?=.*(?i)(The_TW_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/tw_automatic_selection.png
-- type: url-test
-  include-all: true
-  tolerance: 20
-  interval: 300
-  max-failed-times: 1
-  hidden: true
-  name: 美国自动
-  filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))
-  exclude-filter: (?=.*(?i)(The_US_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|russia|austria|plus|traffic|Australia|rus|aus))
-  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/usa_automatic_selection.png
-- name: 香港均衡
-  type: load-balance
-  include-all: true
-  strategy: consistent-hashing
-  hidden: true
-  filter: (?=.*(?i)(香港|hk|hongkong|Hong Kong|🇭🇰))
-  exclude-filter: (?=.*(?i)(The_HK_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
-- name: 新加坡均衡
-  type: load-balance
-  include-all: true
-  strategy: consistent-hashing
-  hidden: true
-  filter: (?=.*(?i)(新|🇸🇬|SG|Singapore))
-  exclude-filter: (?=.*(?i)(The_SG_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus|新西兰))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
-- name: 日本均衡
-  type: load-balance
-  include-all: true
-  strategy: consistent-hashing
-  hidden: true
-  filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
-  exclude-filter: (?=.*(?i)(The_JP_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
-- name: 台湾均衡
-  type: load-balance
-  include-all: true
-  strategy: consistent-hashing
-  hidden: true
-  filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
-  exclude-filter: (?=.*(?i)(The_TW_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
-- name: 美国均衡
-  type: load-balance
-  include-all: true
-  strategy: consistent-hashing
-  hidden: true
-  filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Ashburn|Kansas|Seattle))
-  exclude-filter: (?=.*(?i)(The_US_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|russia|austria|plus|traffic|Australia|rus|aus))
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
-- name: 🔗 代理
-  type: select
-  hidden: true
-  proxies:
-  - 节点选择
-- name: 故障转移
-  type: fallback
-  include-all: true
-  interval: 300
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fallback.png
-- name: GLOBAL
-  type: select
-  include-all: true
-  proxies:
-  - 节点选择
-  - YouTube
-  - GoogleVPN
-  - FCM
-  - Google
-  - Meta
-  - AI
-  - GitHub
-  - OneDrive
-  - Microsoft
-  - Telegram
-  - Discord
-  - Talkatone
-  - LINE
-  - Signal
-  - TikTok
-  - NETFLIX
-  - DisneyPlus
-  - HBO
-  - Primevideo
-  - AppleTV
-  - Apple
-  - Emby
-  - 哔哩哔哩
-  - 哔哩东南亚
-  - 巴哈姆特
-  - Spotify
-  - 国内媒体
-  - Global-TV
-  - Global-Medial
-  - 游戏平台
-  - Speedtest
-  - PayPal
-  - Wise
-  - 国外电商
-  - STEAM
-  - 全球直连
-  - Final
-  - 自建/家宽节点
-  - 香港节点
-  - 新加坡节点
-  - 日本节点
-  - 台湾节点
-  - 美国节点
-  - 欧洲节点
-  - 全部节点
-  - 香港自动
-  - 新加坡自动
-  - 日本自动
-  - 台湾自动
-  - 美国自动
-  - 香港均衡
-  - 新加坡均衡
-  - 日本均衡
-  - 台湾均衡
-  - 美国均衡
-  - 故障转移
-  exclude-filter: (?i)(🟢 直连)
-  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png
+rules:
+- RULE-SET,wechat_domain,全球直连
+- RULE-SET,wechat_asn,全球直连,no-resolve
+- RULE-SET,speedtest_domain,Speedtest
+- RULE-SET,Cloudflare_domain,节点选择
+- RULE-SET,Wise_domain,Wise
+- RULE-SET,paypal_domain,PayPal
+- RULE-SET,proxy_domain,节点选择
+- RULE-SET,biliintl_domain,哔哩东南亚
+- RULE-SET,bilibili_domain,哔哩哔哩
+- RULE-SET,bilibili_ip,哔哩哔哩,no-resolve
+- RULE-SET,bahamut_domain,巴哈姆特
+- RULE-SET,bank_cn_domain,全球直连
+- RULE-SET,ai_cn_domain,全球直连
+- RULE-SET,direct_domain,全球直连
+- RULE-SET,alibaba_domain,全球直连
+- RULE-SET,115_domain,全球直连
+- RULE-SET,aliyun_domain,全球直连
+- RULE-SET,github_domain,GitHub
+- RULE-SET,gitbook_domain,GitHub
+- RULE-SET,googlevpn_domain,GoogleVPN
+- RULE-SET,youtube_domain,YouTube
+- RULE-SET,fcm_domain,FCM
+- RULE-SET,google_domain,Google
+- RULE-SET,google_asn_cn,Google,no-resolve
+- RULE-SET,google_ip,Google,no-resolve
+- RULE-SET,onedrive_domain,OneDrive
+- RULE-SET,microsoft_domain,Microsoft
+- RULE-SET,ai!cn_domain,AI
+- RULE-SET,ai_domain,AI
+- RULE-SET,openai_domain,AI
+- RULE-SET,telegram_domain,Telegram
+- RULE-SET,telegram_ip,Telegram,no-resolve
+- RULE-SET,line_domain,LINE
+- RULE-SET,talkatone_domain,Talkatone
+- RULE-SET,talkatone_ip,Talkatone,no-resolve
+- RULE-SET,discord_domain,Discord
+- RULE-SET,discord_asn,Discord,no-resolve
+- RULE-SET,signal_domain,Signal
+- RULE-SET,tencent!cn_domain,节点选择
+- RULE-SET,tencent_domain,全球直连
+- RULE-SET,iptv_domain,全球直连
+- RULE-SET,private_domain,全球直连
+- DOMAIN-KEYWORD,hk.tv.global.mi.com,节点选择
+- RULE-SET,xiaomi_domain,全球直连
+- RULE-SET,steam_cn_domain,全球直连
+- RULE-SET,steamcdn_domain,全球直连
+- RULE-SET,steamcdn_ip,全球直连,no-resolve
+- RULE-SET,NetEaseMusic_domain,全球直连
+- RULE-SET,NetEaseMusic_ip,全球直连,no-resolve
+- RULE-SET,pt_cn_domain,全球直连
+- RULE-SET,public-tracker_domain,全球直连
+- RULE-SET,media_cn_domain,国内媒体
+- RULE-SET,appleTV_domain,AppleTV
+- RULE-SET,apple_cn_domain,全球直连
+- RULE-SET,apple_firmware_domain,Apple
+- RULE-SET,apple_domain,Apple
+- RULE-SET,tiktok_domain,TikTok
+- RULE-SET,netflix_domain,NETFLIX
+- RULE-SET,netflix_ip,NETFLIX,no-resolve
+- RULE-SET,disney_domain,DisneyPlus
+- RULE-SET,hbo_domain,HBO
+- RULE-SET,primevideo_domain,Primevideo
+- RULE-SET,emby_domain,Emby
+- RULE-SET,emby_ip,Emby,no-resolve
+- RULE-SET,spotify_domain,Spotify
+- RULE-SET,facebook_domain,Meta
+- RULE-SET,whatsapp_domain,Meta
+- RULE-SET,instagram_domain,Meta
+- RULE-SET,threads_domain,Meta
+- RULE-SET,meta_domain,Meta
+- RULE-SET,facebook_ip,Meta,no-resolve
+- DOMAIN-SUFFIX,mytvsuper.com,Global-TV
+- DOMAIN-SUFFIX,mytv.com.hk,Global-TV
+- RULE-SET,twitch_domain,Global-TV
+- RULE-SET,porn_domain,Global-TV
+- RULE-SET,TVB_domain,Global-TV
+- RULE-SET,media!cn_domain,Global-Medial
+- RULE-SET,twitter_ip,节点选择,no-resolve
+- RULE-SET,steam_domain,STEAM
+- RULE-SET,Epic_domain,游戏平台
+- RULE-SET,EA_domain,游戏平台
+- RULE-SET,Blizzard_domain,游戏平台
+- RULE-SET,UBI_domain,游戏平台
+- RULE-SET,Sony_domain,游戏平台
+- RULE-SET,Nintendo_domain,游戏平台
+- RULE-SET,ifast_domain,全球直连
+- RULE-SET,Amazon_domain,国外电商
+- RULE-SET,Amazon_ip,国外电商,no-resolve
+- RULE-SET,Shopee_domain,国外电商
+- RULE-SET,Shopify_domain,国外电商
+- RULE-SET,ebay_domain,国外电商
+- RULE-SET,gfw_domain,节点选择
+- RULE-SET,geolocation-!cn,节点选择
+- RULE-SET,cn_domain,全球直连
+- RULE-SET,private_ip,全球直连,no-resolve
+- RULE-SET,cn_ip,全球直连,no-resolve
+- MATCH,Final
 rule-providers:
   private_domain:
     type: http
@@ -1010,109 +670,11 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/IP/AS132203.mrs
-rules:
-- RULE-SET,wechat_domain,全球直连
-- RULE-SET,wechat_asn,全球直连,no-resolve
-- RULE-SET,speedtest_domain,Speedtest
-- RULE-SET,Cloudflare_domain,节点选择
-- RULE-SET,Wise_domain,Wise
-- RULE-SET,paypal_domain,PayPal
-- RULE-SET,proxy_domain,节点选择
-- RULE-SET,biliintl_domain,哔哩东南亚
-- RULE-SET,bilibili_domain,哔哩哔哩
-- RULE-SET,bilibili_ip,哔哩哔哩,no-resolve
-- RULE-SET,bahamut_domain,巴哈姆特
-- RULE-SET,bank_cn_domain,全球直连
-- RULE-SET,ai_cn_domain,全球直连
-- RULE-SET,direct_domain,全球直连
-- RULE-SET,alibaba_domain,全球直连
-- RULE-SET,115_domain,全球直连
-- RULE-SET,aliyun_domain,全球直连
-- RULE-SET,github_domain,GitHub
-- RULE-SET,gitbook_domain,GitHub
-- RULE-SET,googlevpn_domain,GoogleVPN
-- RULE-SET,youtube_domain,YouTube
-- RULE-SET,fcm_domain,FCM
-- RULE-SET,google_domain,Google
-- RULE-SET,google_asn_cn,Google,no-resolve
-- RULE-SET,google_ip,Google,no-resolve
-- RULE-SET,onedrive_domain,OneDrive
-- RULE-SET,microsoft_domain,Microsoft
-- RULE-SET,ai!cn_domain,AI
-- RULE-SET,ai_domain,AI
-- RULE-SET,openai_domain,AI
-- RULE-SET,telegram_domain,Telegram
-- RULE-SET,telegram_ip,Telegram,no-resolve
-- RULE-SET,line_domain,LINE
-- RULE-SET,talkatone_domain,Talkatone
-- RULE-SET,talkatone_ip,Talkatone,no-resolve
-- RULE-SET,discord_domain,Discord
-- RULE-SET,discord_asn,Discord,no-resolve
-- RULE-SET,signal_domain,Signal
-- RULE-SET,tencent!cn_domain,节点选择
-- RULE-SET,tencent_domain,全球直连
-- RULE-SET,iptv_domain,全球直连
-- RULE-SET,private_domain,全球直连
-- DOMAIN-KEYWORD,hk.tv.global.mi.com,节点选择
-- RULE-SET,xiaomi_domain,全球直连
-- RULE-SET,steam_cn_domain,全球直连
-- RULE-SET,steamcdn_domain,全球直连
-- RULE-SET,steamcdn_ip,全球直连,no-resolve
-- RULE-SET,NetEaseMusic_domain,全球直连
-- RULE-SET,NetEaseMusic_ip,全球直连,no-resolve
-- RULE-SET,pt_cn_domain,全球直连
-- RULE-SET,public-tracker_domain,全球直连
-- RULE-SET,media_cn_domain,国内媒体
-- RULE-SET,appleTV_domain,AppleTV
-- RULE-SET,apple_cn_domain,全球直连
-- RULE-SET,apple_firmware_domain,Apple
-- RULE-SET,apple_domain,Apple
-- RULE-SET,tiktok_domain,TikTok
-- RULE-SET,netflix_domain,NETFLIX
-- RULE-SET,netflix_ip,NETFLIX,no-resolve
-- RULE-SET,disney_domain,DisneyPlus
-- RULE-SET,hbo_domain,HBO
-- RULE-SET,primevideo_domain,Primevideo
-- RULE-SET,emby_domain,Emby
-- RULE-SET,emby_ip,Emby,no-resolve
-- RULE-SET,spotify_domain,Spotify
-- RULE-SET,facebook_domain,Meta
-- RULE-SET,whatsapp_domain,Meta
-- RULE-SET,instagram_domain,Meta
-- RULE-SET,threads_domain,Meta
-- RULE-SET,meta_domain,Meta
-- RULE-SET,facebook_ip,Meta,no-resolve
-- DOMAIN-SUFFIX,mytvsuper.com,Global-TV
-- DOMAIN-SUFFIX,mytv.com.hk,Global-TV
-- RULE-SET,twitch_domain,Global-TV
-- RULE-SET,porn_domain,Global-TV
-- RULE-SET,TVB_domain,Global-TV
-- RULE-SET,media!cn_domain,Global-Medial
-- RULE-SET,twitter_ip,节点选择,no-resolve
-- RULE-SET,steam_domain,STEAM
-- RULE-SET,Epic_domain,游戏平台
-- RULE-SET,EA_domain,游戏平台
-- RULE-SET,Blizzard_domain,游戏平台
-- RULE-SET,UBI_domain,游戏平台
-- RULE-SET,Sony_domain,游戏平台
-- RULE-SET,Nintendo_domain,游戏平台
-- RULE-SET,ifast_domain,全球直连
-- RULE-SET,Amazon_domain,国外电商
-- RULE-SET,Amazon_ip,国外电商,no-resolve
-- RULE-SET,Shopee_domain,国外电商
-- RULE-SET,Shopify_domain,国外电商
-- RULE-SET,ebay_domain,国外电商
-- RULE-SET,gfw_domain,节点选择
-- RULE-SET,geolocation-!cn,节点选择
-- RULE-SET,cn_domain,全球直连
-- RULE-SET,private_ip,全球直连,no-resolve
-- RULE-SET,cn_ip,全球直连,no-resolve
-- MATCH,Final
 proxy-providers:
   Airport_01:
     type: http
     interval: 86400
-    health-check: &id004
+    health-check: &id001
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
@@ -1126,7 +688,7 @@ proxy-providers:
   Airport_02:
     type: http
     interval: 86400
-    health-check: *id004
+    health-check: *id001
     filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
     proxy: 故障转移
     url: 订阅链接2
@@ -1137,7 +699,7 @@ proxy-providers:
   Airport_03:
     type: http
     interval: 86400
-    health-check: *id004
+    health-check: *id001
     filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
     proxy: 故障转移
     url: 订阅链接3
@@ -1145,3 +707,441 @@ proxy-providers:
       additional-prefix: '[机场名称3]'
       skip-cert-verify: true
       udp: true
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 香港节点
+  - 新加坡节点
+  - 日本节点
+  - 台湾节点
+  - 美国节点
+  - 欧洲节点
+  - 全部节点
+  - 自建/家宽节点
+  - 故障转移
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png
+- type: select
+  proxies: &id002
+  - 节点选择
+  - 香港节点
+  - 新加坡节点
+  - 日本节点
+  - 台湾节点
+  - 美国节点
+  - 欧洲节点
+  - 全部节点
+  - 自建/家宽节点
+  - 全球直连
+  name: YouTube
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/youtube.png
+- type: select
+  proxies: *id002
+  name: FCM
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fcm.png
+- type: select
+  proxies: *id002
+  name: GoogleVPN
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/googlevpn.png
+- type: select
+  proxies: *id002
+  name: Google
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/google.png
+- type: select
+  proxies: *id002
+  name: Meta
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/meta.png
+- type: select
+  proxies: &id003
+  - 节点选择
+  - 香港节点
+  - 新加坡节点
+  - 日本节点
+  - 台湾节点
+  - 美国节点
+  - 欧洲节点
+  - 全部节点
+  - 自建/家宽节点
+  - 全球直连
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: AI
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/ai.png
+- type: select
+  proxies: *id002
+  name: GitHub
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/github.png
+- type: select
+  proxies: *id002
+  name: OneDrive
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/onedrive.png
+- type: select
+  proxies: *id002
+  name: Microsoft
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/microsoft.png
+- type: select
+  proxies: *id002
+  name: Telegram
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/telegram.png
+- type: select
+  proxies: *id002
+  name: Discord
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/discord.png
+- type: select
+  proxies: *id002
+  name: Talkatone
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/talkatone.png
+- type: select
+  proxies: *id002
+  name: LINE
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/line.png
+- type: select
+  proxies: *id002
+  name: Signal
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/signal.png
+- type: select
+  proxies: *id002
+  name: TikTok
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/tiktok.png
+- type: select
+  proxies: *id002
+  name: NETFLIX
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netflix.png
+- type: select
+  proxies: *id002
+  name: DisneyPlus
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disney.png
+- type: select
+  proxies: *id002
+  name: HBO
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/hbo.png
+- type: select
+  proxies: *id002
+  name: Primevideo
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/primevideo.png
+- type: select
+  proxies: *id002
+  name: AppleTV
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/appletv.png
+- type: select
+  proxies: &id004
+  - 全球直连
+  - 节点选择
+  - 香港节点
+  - 新加坡节点
+  - 日本节点
+  - 台湾节点
+  - 美国节点
+  - 欧洲节点
+  - 全部节点
+  - 自建/家宽节点
+  name: Apple
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/apple.png
+- type: select
+  proxies: *id003
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: Emby
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/emby.png
+- type: select
+  proxies: *id004
+  name: 哔哩哔哩
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bilibili.png
+- name: 哔哩东南亚
+  type: select
+  proxies:
+  - 节点选择
+  - 新加坡节点
+  - 全部节点
+  - 自建/家宽节点
+  - 全球直连
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bilibilit.png
+- name: 巴哈姆特
+  type: select
+  proxies:
+  - 台湾节点
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bahamut.png
+- type: select
+  proxies: *id002
+  name: Spotify
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/spotify.png
+- type: select
+  proxies: *id004
+  name: 国内媒体
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Chinese_media.png
+- type: select
+  proxies: *id003
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: Global-TV
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global_tv.png
+- type: select
+  proxies: *id003
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: Global-Medial
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global_media.png
+- type: select
+  proxies: *id002
+  name: 游戏平台
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/game.png
+- type: select
+  proxies: *id003
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: Speedtest
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/speedtest.png
+- type: select
+  proxies: *id002
+  name: PayPal
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/paypal.png
+- type: select
+  proxies: *id002
+  name: Wise
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/wise.png
+- type: select
+  proxies: *id002
+  name: 国外电商
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/shopping.png
+- type: select
+  proxies: *id003
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: STEAM
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/steam.png
+- name: 全球直连
+  type: select
+  proxies:
+  - 🟢 直连
+  - 🔗 代理
+  - 全部节点
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png
+- type: select
+  proxies: *id003
+  include-all: true
+  exclude-filter: (?i)(🟢 直连)
+  name: Final
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png
+- name: 自建/家宽节点
+  type: select
+  include-all: true
+  filter: (?=.*(?i)(自建|CF|The_house|private|home|家宽|hgc|HKT|HKBN|icable|Hinet|att))
+  exclude-filter: (?=.*(?i)(Seattle))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png
+- name: 香港节点
+  type: select
+  proxies:
+  - 香港自动
+  - 香港均衡
+  include-all: true
+  filter: (?=.*(?i)(港|hk|hongkong|Hong Kong|🇭🇰))
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/Hongkong.png
+- name: 新加坡节点
+  type: select
+  proxies:
+  - 新加坡自动
+  - 新加坡均衡
+  include-all: true
+  filter: (?=.*(?i)(新|🇸🇬|SG|singapore))
+  exclude-filter: (?=.*(?i)(新西兰))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png
+- name: 日本节点
+  type: select
+  proxies:
+  - 日本自动
+  - 日本均衡
+  include-all: true
+  filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png
+- name: 台湾节点
+  type: select
+  proxies:
+  - 台湾自动
+  - 台湾均衡
+  include-all: true
+  filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Taiwan_China.png
+- name: 美国节点
+  type: select
+  proxies:
+  - 美国自动
+  - 美国均衡
+  include-all: true
+  filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))
+  exclude-filter: (?=.*(?i)(Australia|Russia|RUS))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/America.png
+- name: 欧洲节点
+  type: select
+  include-all: true
+  filter: (?=.*(?i)(🇦🇱|🇦🇩|🇦🇹|🇧🇾|🇧🇪|🇧🇦|🇧🇬|🇭🇷|🇨🇾|🇨🇿|🇩🇰|🇪🇪|🇫🇮|🇫🇷|🇩🇪|🇬🇷|🇭🇺|🇮🇸|🇮🇪|🇮🇹|🇽🇰|🇱🇻|🇱🇮|🇱🇹|🇱🇺|🇲🇹|🇲🇩|🇲🇨|🇲🇪|🇳🇱|🇲🇰|🇳🇴|🇵🇱|🇵🇹|🇷🇴|🇷🇺|🇸🇲|🇷🇸|🇸🇰|🇸🇮|🇪🇸|🇸🇪|🇨🇭|🇹🇷|🇺🇦|🇬🇧|🇻🇦))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/European.png
+- name: 全部节点
+  type: select
+  include-all: true
+  tolerance: 20
+  interval: 300
+  exclude-filter: (?i)(🟢 直连)
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/all.png
+- type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  max-failed-times: 1
+  hidden: true
+  name: 香港自动
+  filter: (?=.*(?i)(香港|hk|hongkong|Hong Kong|🇭🇰))
+  exclude-filter: (?=.*(?i)(The_HK_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/hk_automatic_selection.png
+- type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  max-failed-times: 1
+  hidden: true
+  name: 新加坡自动
+  filter: (?=.*(?i)(新|🇸🇬|SG|Singapore))
+  exclude-filter: (?=.*(?i)(The_SG_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus|新西兰))
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/sg_automatic_selection.png
+- type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  max-failed-times: 1
+  hidden: true
+  name: 日本自动
+  filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
+  exclude-filter: (?=.*(?i)(The_JP_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/jp_automatic_selection.png
+- type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  max-failed-times: 1
+  hidden: true
+  name: 台湾自动
+  filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
+  exclude-filter: (?=.*(?i)(The_TW_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/tw_automatic_selection.png
+- type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  max-failed-times: 1
+  hidden: true
+  name: 美国自动
+  filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))
+  exclude-filter: (?=.*(?i)(The_US_automation|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|russia|austria|plus|traffic|Australia|rus|aus))
+  icon: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/usa_automatic_selection.png
+- name: 香港均衡
+  type: load-balance
+  include-all: true
+  strategy: consistent-hashing
+  hidden: true
+  filter: (?=.*(?i)(香港|hk|hongkong|Hong Kong|🇭🇰))
+  exclude-filter: (?=.*(?i)(The_HK_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
+- name: 新加坡均衡
+  type: load-balance
+  include-all: true
+  strategy: consistent-hashing
+  hidden: true
+  filter: (?=.*(?i)(新|🇸🇬|SG|Singapore))
+  exclude-filter: (?=.*(?i)(The_SG_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus|新西兰))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
+- name: 日本均衡
+  type: load-balance
+  include-all: true
+  strategy: consistent-hashing
+  hidden: true
+  filter: (?=.*(?i)(日本|🇯🇵|JP|Japan))
+  exclude-filter: (?=.*(?i)(The_JP_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
+- name: 台湾均衡
+  type: load-balance
+  include-all: true
+  strategy: consistent-hashing
+  hidden: true
+  filter: (?=.*(?i)(台|🇹🇼|TW|Taiwan))
+  exclude-filter: (?=.*(?i)(The_TW_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|traffic|plus))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
+- name: 美国均衡
+  type: load-balance
+  include-all: true
+  strategy: consistent-hashing
+  hidden: true
+  filter: (?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Ashburn|Kansas|Seattle))
+  exclude-filter: (?=.*(?i)(The_US_balance|wcloud|0倍|0\.1倍|0\.01倍|0\.3X|0\.2x|0\.5x|3X|2x|1\.5x|russia|austria|plus|traffic|Australia|rus|aus))
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png
+- name: 🔗 代理
+  type: select
+  hidden: true
+  proxies:
+  - 节点选择
+- name: 故障转移
+  type: fallback
+  include-all: true
+  interval: 300
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fallback.png
+- name: GLOBAL
+  type: select
+  include-all: true
+  proxies:
+  - 节点选择
+  - YouTube
+  - GoogleVPN
+  - FCM
+  - Google
+  - Meta
+  - AI
+  - GitHub
+  - OneDrive
+  - Microsoft
+  - Telegram
+  - Discord
+  - Talkatone
+  - LINE
+  - Signal
+  - TikTok
+  - NETFLIX
+  - DisneyPlus
+  - HBO
+  - Primevideo
+  - AppleTV
+  - Apple
+  - Emby
+  - 哔哩哔哩
+  - 哔哩东南亚
+  - 巴哈姆特
+  - Spotify
+  - 国内媒体
+  - Global-TV
+  - Global-Medial
+  - 游戏平台
+  - Speedtest
+  - PayPal
+  - Wise
+  - 国外电商
+  - STEAM
+  - 全球直连
+  - Final
+  - 自建/家宽节点
+  - 香港节点
+  - 新加坡节点
+  - 日本节点
+  - 台湾节点
+  - 美国节点
+  - 欧洲节点
+  - 全部节点
+  - 香港自动
+  - 新加坡自动
+  - 日本自动
+  - 台湾自动
+  - 美国自动
+  - 香港均衡
+  - 新加坡均衡
+  - 日本均衡
+  - 台湾均衡
+  - 美国均衡
+  - 故障转移
+  exclude-filter: (?i)(🟢 直连)
+  icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png

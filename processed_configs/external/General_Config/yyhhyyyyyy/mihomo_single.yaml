@@ -1,316 +1,29 @@
 # Processed: raw_configs/external/General_Config/yyhhyyyyyy/mihomo_single.yaml
 # Providers: 1 proxy, 21 rule
 
-proxy-groups:
-- name: 🎯节点选择
-  type: select
-  proxies:
-  - 智能选择
-  - 手动选择
-  - 全部节点
-  - DIRECT
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
-- name: 手动选择
-  type: select
-  proxies:
-  - 🇭🇰-手动选择
-  - 🇯🇵-手动选择
-  - 🇸🇬-手动选择
-  - 🇺🇸-手动选择
-  - 🇹🇼-手动选择
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Cylink.png
-- name: 智能选择
-  type: select
-  proxies:
-  - 🇭🇰-Auto
-  - 🇯🇵-Auto
-  - 🇸🇬-Auto
-  - 🇺🇸-Auto
-  - 🇹🇼-Auto
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
-- name: ✈️电报信息
-  type: select
-  proxies:
-  - 🎯节点选择
-  - 🇭🇰-Auto
-  - 🇯🇵-Auto
-  - 🇸🇬-Auto
-  - 🇺🇸-Auto
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
-- name: 🤖AIGC
-  type: select
-  proxies:
-  - 🇺🇸-Auto
-  - 🎯节点选择
-  - 🇭🇰-Auto
-  - 🇯🇵-Auto
-  - 🇸🇬-Auto
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
-- name: 🍎苹果服务
-  type: select
-  proxies:
-  - DIRECT
-  - 🎯节点选择
-  - 🇭🇰-Auto
-  - 🇺🇸-Auto
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
-- name: Ⓜ️微软服务
-  type: select
-  proxies:
-  - DIRECT
-  - 🎯节点选择
-  - 🇭🇰-Auto
-  - 🇺🇸-Auto
-  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
-- name: 🇭🇰-Auto
-  type: select
-  proxies:
-  - 🇭🇰-自动选择
-  - 🇭🇰-自动回退
-  - 🇭🇰-负载均衡
-- name: 🇯🇵-Auto
-  type: select
-  proxies:
-  - 🇯🇵-自动选择
-  - 🇯🇵-自动回退
-  - 🇯🇵-负载均衡
-- name: 🇸🇬-Auto
-  type: select
-  proxies:
-  - 🇸🇬-自动选择
-  - 🇸🇬-自动回退
-  - 🇸🇬-负载均衡
-- name: 🇺🇸-Auto
-  type: select
-  proxies:
-  - 🇺🇸-自动选择
-  - 🇺🇸-自动回退
-  - 🇺🇸-负载均衡
-- name: 🇹🇼-Auto
-  type: select
-  proxies:
-  - 🇹🇼-自动选择
-  - 🇹🇼-自动回退
-  - 🇹🇼-负载均衡
-- type: url-test
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  tolerance: 50
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇭🇰-自动选择
-  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
-- type: url-test
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  tolerance: 50
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇯🇵-自动选择
-  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
-- type: url-test
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  tolerance: 50
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇸🇬-自动选择
-  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
-- type: url-test
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  tolerance: 50
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇺🇸-自动选择
-  filter: (🇺🇸|美[国國]|America|United\s*States|[Uu][Ss])
-- type: url-test
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  tolerance: 50
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇹🇼-自动选择
-  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
-- type: fallback
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇭🇰-自动回退
-  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
-- type: fallback
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇯🇵-自动回退
-  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
-- type: fallback
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇸🇬-自动回退
-  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
-- type: fallback
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇺🇸-自动回退
-  filter: (🇺🇸|美[国國]|America|United\s*States|[Uu][Ss])
-- type: fallback
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  timeout: 2000
-  disable-udp: false
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇹🇼-自动回退
-  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
-- type: load-balance
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  disable-udp: false
-  strategy: consistent-hashing
-  timeout: 2000
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇭🇰-负载均衡
-  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
-- type: load-balance
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  disable-udp: false
-  strategy: consistent-hashing
-  timeout: 2000
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇯🇵-负载均衡
-  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
-- type: load-balance
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  disable-udp: false
-  strategy: consistent-hashing
-  timeout: 2000
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇸🇬-负载均衡
-  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
-- type: load-balance
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  disable-udp: false
-  strategy: consistent-hashing
-  timeout: 2000
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇺🇸-负载均衡
-  filter: (🇺🇸|美[国國]|America|United\s*States|[Uu][Ss])
-- type: load-balance
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  interval: 300
-  lazy: true
-  disable-udp: false
-  strategy: consistent-hashing
-  timeout: 2000
-  max-failed-times: 3
-  hidden: true
-  include-all: true
-  name: 🇹🇼-负载均衡
-  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
-- type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  disable-udp: false
-  hidden: false
-  include-all: true
-  name: 🇭🇰-手动选择
-  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
-- type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  disable-udp: false
-  hidden: false
-  include-all: true
-  name: 🇯🇵-手动选择
-  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
-- type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  disable-udp: false
-  hidden: false
-  include-all: true
-  name: 🇸🇬-手动选择
-  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
-- type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  disable-udp: false
-  hidden: false
-  include-all: true
-  name: 🇺🇸-手动选择
-  filter: (🇺🇸|美[国國]|America|United\s*States|[Uu][Ss])
-- type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  disable-udp: false
-  hidden: false
-  include-all: true
-  name: 🇹🇼-手动选择
-  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
-- type: select
-  url: http://connectivitycheck.platform.hicloud.com/generate_204
-  disable-udp: false
-  hidden: false
-  include-all: true
-  name: 全部节点
+rules:
+- RULE-SET,cdn_domainset,🎯节点选择
+- RULE-SET,cdn_non_ip,🎯节点选择
+- RULE-SET,stream_non_ip,🇺🇸-自动选择
+- RULE-SET,telegram_non_ip,✈️电报信息
+- RULE-SET,apple_cdn,DIRECT
+- RULE-SET,download_domainset,🎯节点选择
+- RULE-SET,download_non_ip,🎯节点选择
+- RULE-SET,microsoft_cdn_non_ip,DIRECT
+- RULE-SET,apple_cn_non_ip,DIRECT
+- RULE-SET,apple_services,🍎苹果服务
+- RULE-SET,microsoft_non_ip,Ⓜ️微软服务
+- RULE-SET,ai_non_ip,🤖AIGC
+- RULE-SET,global_non_ip,🎯节点选择
+- RULE-SET,domestic_non_ip,DIRECT
+- RULE-SET,direct_non_ip,DIRECT
+- RULE-SET,lan_non_ip,DIRECT
+- RULE-SET,telegram_ip,✈️电报信息
+- RULE-SET,stream_ip,🇺🇸-自动选择
+- RULE-SET,lan_ip,DIRECT
+- RULE-SET,domestic_ip,DIRECT
+- RULE-SET,china_ip,DIRECT
+- MATCH,🎯节点选择
 rule-providers:
   cdn_domainset:
     type: http
@@ -480,29 +193,6 @@ rule-providers:
     proxy: 🎯节点选择
     url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
     path: ./rule_set/sukkaw_ruleset/china_ip.txt
-rules:
-- RULE-SET,cdn_domainset,🎯节点选择
-- RULE-SET,cdn_non_ip,🎯节点选择
-- RULE-SET,stream_non_ip,🇺🇸-自动选择
-- RULE-SET,telegram_non_ip,✈️电报信息
-- RULE-SET,apple_cdn,DIRECT
-- RULE-SET,download_domainset,🎯节点选择
-- RULE-SET,download_non_ip,🎯节点选择
-- RULE-SET,microsoft_cdn_non_ip,DIRECT
-- RULE-SET,apple_cn_non_ip,DIRECT
-- RULE-SET,apple_services,🍎苹果服务
-- RULE-SET,microsoft_non_ip,Ⓜ️微软服务
-- RULE-SET,ai_non_ip,🤖AIGC
-- RULE-SET,global_non_ip,🎯节点选择
-- RULE-SET,domestic_non_ip,DIRECT
-- RULE-SET,direct_non_ip,DIRECT
-- RULE-SET,lan_non_ip,DIRECT
-- RULE-SET,telegram_ip,✈️电报信息
-- RULE-SET,stream_ip,🇺🇸-自动选择
-- RULE-SET,lan_ip,DIRECT
-- RULE-SET,domestic_ip,DIRECT
-- RULE-SET,china_ip,DIRECT
-- MATCH,🎯节点选择
 proxy-providers:
   Node:
     type: http
@@ -513,3 +203,313 @@ proxy-providers:
       interval: 300
     url: 替换订阅链接
     path: ./proxy_provider/providers.yaml
+proxy-groups:
+- name: 🎯节点选择
+  type: select
+  proxies:
+  - 智能选择
+  - 手动选择
+  - 全部节点
+  - DIRECT
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
+- name: 手动选择
+  type: select
+  proxies:
+  - 🇭🇰-手动选择
+  - 🇯🇵-手动选择
+  - 🇸🇬-手动选择
+  - 🇺🇸-手动选择
+  - 🇹🇼-手动选择
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Cylink.png
+- name: 智能选择
+  type: select
+  proxies:
+  - 🇭🇰-Auto
+  - 🇯🇵-Auto
+  - 🇸🇬-Auto
+  - 🇺🇸-Auto
+  - 🇹🇼-Auto
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
+- name: ✈️电报信息
+  type: select
+  proxies:
+  - 🎯节点选择
+  - 🇭🇰-Auto
+  - 🇯🇵-Auto
+  - 🇸🇬-Auto
+  - 🇺🇸-Auto
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
+- name: 🤖AIGC
+  type: select
+  proxies:
+  - 🇺🇸-Auto
+  - 🎯节点选择
+  - 🇭🇰-Auto
+  - 🇯🇵-Auto
+  - 🇸🇬-Auto
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+- name: 🍎苹果服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🎯节点选择
+  - 🇭🇰-Auto
+  - 🇺🇸-Auto
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png
+- name: Ⓜ️微软服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🎯节点选择
+  - 🇭🇰-Auto
+  - 🇺🇸-Auto
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
+- name: 🇭🇰-Auto
+  type: select
+  proxies:
+  - 🇭🇰-自动选择
+  - 🇭🇰-自动回退
+  - 🇭🇰-负载均衡
+- name: 🇯🇵-Auto
+  type: select
+  proxies:
+  - 🇯🇵-自动选择
+  - 🇯🇵-自动回退
+  - 🇯🇵-负载均衡
+- name: 🇸🇬-Auto
+  type: select
+  proxies:
+  - 🇸🇬-自动选择
+  - 🇸🇬-自动回退
+  - 🇸🇬-负载均衡
+- name: 🇺🇸-Auto
+  type: select
+  proxies:
+  - 🇺🇸-自动选择
+  - 🇺🇸-自动回退
+  - 🇺🇸-负载均衡
+- name: 🇹🇼-Auto
+  type: select
+  proxies:
+  - 🇹🇼-自动选择
+  - 🇹🇼-自动回退
+  - 🇹🇼-负载均衡
+- type: url-test
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  tolerance: 50
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇭🇰-自动选择
+  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
+- type: url-test
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  tolerance: 50
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇯🇵-自动选择
+  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
+- type: url-test
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  tolerance: 50
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇸🇬-自动选择
+  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
+- type: url-test
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  tolerance: 50
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇺🇸-自动选择
+  filter: (🇺🇸|美国|United\s*States|\b[Uu][Ss](\b|[_\d]))
+- type: url-test
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  tolerance: 50
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇹🇼-自动选择
+  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
+- type: fallback
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇭🇰-自动回退
+  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
+- type: fallback
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇯🇵-自动回退
+  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
+- type: fallback
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇸🇬-自动回退
+  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
+- type: fallback
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇺🇸-自动回退
+  filter: (🇺🇸|美国|United\s*States|\b[Uu][Ss](\b|[_\d]))
+- type: fallback
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  timeout: 2000
+  disable-udp: false
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇹🇼-自动回退
+  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
+- type: load-balance
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  disable-udp: false
+  strategy: consistent-hashing
+  timeout: 2000
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇭🇰-负载均衡
+  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
+- type: load-balance
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  disable-udp: false
+  strategy: consistent-hashing
+  timeout: 2000
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇯🇵-负载均衡
+  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
+- type: load-balance
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  disable-udp: false
+  strategy: consistent-hashing
+  timeout: 2000
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇸🇬-负载均衡
+  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
+- type: load-balance
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  disable-udp: false
+  strategy: consistent-hashing
+  timeout: 2000
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇺🇸-负载均衡
+  filter: (🇺🇸|美国|United\s*States|\b[Uu][Ss](\b|[_\d]))
+- type: load-balance
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  interval: 300
+  lazy: true
+  disable-udp: false
+  strategy: consistent-hashing
+  timeout: 2000
+  max-failed-times: 3
+  hidden: true
+  include-all: true
+  name: 🇹🇼-负载均衡
+  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
+- type: select
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  disable-udp: false
+  hidden: false
+  include-all: true
+  name: 🇭🇰-手动选择
+  filter: (🇭🇰|香港|[Hh][Kk]|Hong\s*Kong)
+- type: select
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  disable-udp: false
+  hidden: false
+  include-all: true
+  name: 🇯🇵-手动选择
+  filter: (🇯🇵|日本|东京|大阪|[Jj][Pp]|Japan)
+- type: select
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  disable-udp: false
+  hidden: false
+  include-all: true
+  name: 🇸🇬-手动选择
+  filter: (🇸🇬|新加坡|狮城|[Ss][Gg]|Singapore)
+- type: select
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  disable-udp: false
+  hidden: false
+  include-all: true
+  name: 🇺🇸-手动选择
+  filter: (🇺🇸|美国|United\s*States|\b[Uu][Ss](\b|[_\d]))
+- type: select
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  disable-udp: false
+  hidden: false
+  include-all: true
+  name: 🇹🇼-手动选择
+  filter: (🇹🇼|台[湾灣]|[Tt][Ww]|Taiwan)
+- type: select
+  url: http://connectivitycheck.platform.hicloud.com/generate_204
+  disable-udp: false
+  hidden: false
+  include-all: true
+  name: 全部节点
