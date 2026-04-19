@@ -263,54 +263,6 @@ proxy-groups:
   name: 低倍率-智能
   include-all: true
   policy-priority: 0.01:8;0.1:7;0.2:6;实验:6;0.3:5;0.4:4;0.5:3;0.6:2;0.7:1;0.8:0.5
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: &id003
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 300
-    header: &id004
-      User-Agent:
-      - clash.meta
-      - mihomo/1.9.22
-    override:
-      additional-suffix: ' [优]'
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 你的优质机场订阅链接
-  次优服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id003
-    header: *id004
-    override:
-      additional-suffix: ' [次]'
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 你的次优质机场订阅链接
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id003
-    header: *id004
-    override:
-      additional-suffix: ' [备]'
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 你的备用机场订阅链接
-  落地服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id003
-    header: *id004
-    override:
-      additional-suffix: ' [中]'
-      dialer-proxy: 中转服务
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 落地订阅源地址
 rule-providers:
   Private:
     type: http
@@ -914,6 +866,54 @@ rule-providers:
     interval: 86400
     url: https://gcore.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Encrypted_DNS_IP.mrs
     path: ./ruleset/Encrypted_DNS_IP.mrs
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: &id003
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+    header: &id004
+      User-Agent:
+      - clash.meta
+      - mihomo/1.9.22
+    override:
+      additional-suffix: ' [优]'
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 你的优质机场订阅链接
+  次优服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [次]'
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 你的次优质机场订阅链接
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [备]'
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 你的备用机场订阅链接
+  落地服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id003
+    header: *id004
+    override:
+      additional-suffix: ' [中]'
+      dialer-proxy: 中转服务
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 落地订阅源地址
 rules:
 - AND,(DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,China))),REJECT
 - AND,(DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,China-IP))),REJECT

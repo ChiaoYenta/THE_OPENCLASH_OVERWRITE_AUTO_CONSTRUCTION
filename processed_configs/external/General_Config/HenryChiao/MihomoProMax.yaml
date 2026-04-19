@@ -460,28 +460,6 @@ proxy-groups:
   include-all: true
   filter: ^(?=.*(?i)(奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU))(?!.*(排除1|排除2|5x)).*$
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: &id003
-      enable: true
-      url: https://www.google.com/generate_204
-      interval: 300
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 优质订阅源地址
-    override:
-      additional-prefix: '[优] '
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: *id003
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 备用订阅源地址
-    override:
-      additional-prefix: '[备] '
 rule-providers:
   Tracking:
     type: http
@@ -742,6 +720,28 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: &id003
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 优质订阅源地址
+    override:
+      additional-prefix: '[优] '
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: *id003
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 备用订阅源地址
+    override:
+      additional-prefix: '[备] '
 rules:
 - RULE-SET,Tracking,REJECT
 - RULE-SET,AWAvenueAds,REJECT
