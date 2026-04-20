@@ -1,6 +1,77 @@
 # Processed: raw_configs/external/Smart_Mode/echs-top/mihomo_smart.yaml
 # Providers: 3 proxy, 26 rule
 
+rules:
+- DST-PORT,5228-5230,直接连接
+- DST-PORT,1337/2710/6881-6999/7777,TRACKER
+- RULE-SET,private_ip,直接连接,no-resolve
+- RULE-SET,AWAvenue-Ads,REJECT
+- RULE-SET,private,直接连接
+- RULE-SET,fcm,直接连接
+- RULE-SET,captcha,人机验证
+- RULE-SET,ai,国外AI
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,github,GITHUB
+- RULE-SET,media,国外媒体
+- RULE-SET,google,GOOGLE
+- RULE-SET,trackerslist,TRACKER
+- RULE-SET,apple-cn,直接连接
+- RULE-SET,microsoft-cn,直接连接
+- RULE-SET,games-cn,直接连接
+- RULE-SET,proxy_domain,代理连接
+- RULE-SET,direct_domain,直接连接
+- RULE-SET,proxy,代理连接
+- RULE-SET,cn,直接连接
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,media_ip,国外媒体
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
+- RULE-SET,proxy_ip,代理连接
+- RULE-SET,direct_ip,直接连接
+- RULE-SET,cn_ip,直接连接
+- DST-PORT,10000-65535,TRACKER
+- MATCH,代理连接
+proxy-providers:
+  link1:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: &id001
+      User-Agent:
+      - clash-verge/v2.4.7
+    health-check: &id002
+      enable: true
+      url: https://dns.google/generate_204
+      expected-status: 204
+      interval: 900
+      timeout: 3000
+      max-failed-times: 2
+      lazy: false
+    override: &id003
+      ip-version: dual
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接1
+    path: ./providers/link1.yaml
+  link2:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id001
+    health-check: *id002
+    override: *id003
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接2
+    path: ./providers/link2.yaml
+  link3:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id001
+    health-check: *id002
+    override: *id003
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接3
+    path: ./providers/link3.yaml
 proxy-groups:
 - name: 代理连接
   type: select
@@ -30,7 +101,7 @@ proxy-groups:
   - 仅IPV6
   icon: https://mihomo.echs.top/img/icon/DIRECT.webp
 - type: select
-  proxies: &id001
+  proxies: &id004
   - 代理连接
   - 直接连接
   - 最低延迟
@@ -51,41 +122,41 @@ proxy-groups:
   name: 代理DNS
   icon: https://mihomo.echs.top/img/icon/Server.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: 人机验证
   icon: https://mihomo.echs.top/img/icon/CloudFlare.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: 国外AI
   icon: https://mihomo.echs.top/img/icon/AI.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: TELEGRAM
   icon: https://mihomo.echs.top/img/icon/Telegram.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: GITHUB
   icon: https://mihomo.echs.top/img/icon/GitHub.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: 国外媒体
   icon: https://mihomo.echs.top/img/icon/Emby.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: GOOGLE
   icon: https://mihomo.echs.top/img/icon/Google.webp
 - type: select
-  proxies: *id001
+  proxies: *id004
   include-all-providers: true
   name: TRACKER
   icon: https://mihomo.echs.top/img/icon/Download_2.webp
-- use: &id002
+- use: &id005
   - link1
   - link2
   name: 最低延迟
@@ -93,7 +164,7 @@ proxy-groups:
   tolerance: 30
   hidden: true
   icon: https://mihomo.echs.top/img/icon/Fast.webp
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -104,7 +175,7 @@ proxy-groups:
   name: 香港|智能选择
   filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b
   icon: https://mihomo.echs.top/img/flags/hk.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -115,7 +186,7 @@ proxy-groups:
   name: 台湾|智能选择
   filter: (?i)🇹🇼|台湾|\bTW\b|\btaiwan\b
   icon: https://mihomo.echs.top/img/flags/tw.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -126,7 +197,7 @@ proxy-groups:
   name: 新加坡|智能选择
   filter: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b
   icon: https://mihomo.echs.top/img/flags/sg.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -137,7 +208,7 @@ proxy-groups:
   name: 日本|智能选择
   filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
   icon: https://mihomo.echs.top/img/flags/jp.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -148,7 +219,7 @@ proxy-groups:
   name: 韩国|智能选择
   filter: (?i)🇰🇷|韩国|\bKR\b
   icon: https://mihomo.echs.top/img/flags/kr.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -159,7 +230,7 @@ proxy-groups:
   name: 美国|智能选择
   filter: (?i)🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b
   icon: https://mihomo.echs.top/img/flags/us.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -170,7 +241,7 @@ proxy-groups:
   name: 加拿大|智能选择
   filter: (?i)🇨🇦|加拿大|\bCA\b|\bcanada\b
   icon: https://mihomo.echs.top/img/flags/ca.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -181,7 +252,7 @@ proxy-groups:
   name: 德国|智能选择
   filter: (?i)🇩🇪|德国|\bDE\b|\bgermany\b
   icon: https://mihomo.echs.top/img/flags/de.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -192,7 +263,7 @@ proxy-groups:
   name: 英国|智能选择
   filter: (?i)🇬🇧|英国|\bUK\b|\bGB\b|\bunitedkingdom\b|\bunited\s?kingdom\b
   icon: https://mihomo.echs.top/img/flags/gb.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -203,7 +274,7 @@ proxy-groups:
   name: 法国|智能选择
   filter: (?i)🇫🇷|法国|\bFR\b
   icon: https://mihomo.echs.top/img/flags/fr.svg
-- use: *id002
+- use: *id005
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -451,74 +522,3 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/cn_ip.mrs
     path: ./rules/cn_ip.mrs
-proxy-providers:
-  link1:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: &id003
-      User-Agent:
-      - clash-verge/v2.4.7
-    health-check: &id004
-      enable: true
-      url: https://dns.google/generate_204
-      expected-status: 204
-      interval: 900
-      timeout: 3000
-      max-failed-times: 2
-      lazy: false
-    override: &id005
-      ip-version: dual
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接1
-    path: ./providers/link1.yaml
-  link2:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id003
-    health-check: *id004
-    override: *id005
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接2
-    path: ./providers/link2.yaml
-  link3:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id003
-    health-check: *id004
-    override: *id005
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接3
-    path: ./providers/link3.yaml
-rules:
-- DST-PORT,5228-5230,直接连接
-- DST-PORT,1337/2710/6881-6999/7777,TRACKER
-- RULE-SET,private_ip,直接连接,no-resolve
-- RULE-SET,AWAvenue-Ads,REJECT
-- RULE-SET,private,直接连接
-- RULE-SET,fcm,直接连接
-- RULE-SET,captcha,人机验证
-- RULE-SET,ai,国外AI
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,github,GITHUB
-- RULE-SET,media,国外媒体
-- RULE-SET,google,GOOGLE
-- RULE-SET,trackerslist,TRACKER
-- RULE-SET,apple-cn,直接连接
-- RULE-SET,microsoft-cn,直接连接
-- RULE-SET,games-cn,直接连接
-- RULE-SET,proxy_domain,代理连接
-- RULE-SET,direct_domain,直接连接
-- RULE-SET,proxy,代理连接
-- RULE-SET,cn,直接连接
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,media_ip,国外媒体
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
-- RULE-SET,proxy_ip,代理连接
-- RULE-SET,direct_ip,直接连接
-- RULE-SET,cn_ip,直接连接
-- DST-PORT,10000-65535,TRACKER
-- MATCH,代理连接
