@@ -1,6 +1,15 @@
 # Processed: raw_configs/external/General_Config/SHICHUNHUI88/Clash-Airport.yaml
 # Providers: 1 proxy, 35 rule
 
+proxy-providers:
+  机场:
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 rule-providers:
   reject:
     type: http
@@ -212,15 +221,6 @@ rule-providers:
     interval: 86400
     format: mrs
     url: https://gh.669588.xyz/rules/geo/geoip/cn.mrs
-proxy-providers:
-  机场:
-    type: http
-    interval: 3600
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 proxy-groups:
 - include-all: true
   exclude-type: direct

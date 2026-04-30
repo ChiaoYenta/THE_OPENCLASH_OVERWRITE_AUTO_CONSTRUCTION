@@ -1,6 +1,36 @@
 # Processed: raw_configs/external/General_Config/Kerronex/config.yaml
 # Providers: 2 proxy, 24 rule
 
+proxy-providers:
+  s1:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: &id001
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      timeout: 5
+      lazy: true
+      expected-status: '204'
+      method: HEAD
+    url: ''
+    path: ./proxy_provider/s1.yaml
+    override:
+      additional-prefix: s1 »
+  s2:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id001
+    url: ''
+    path: ./proxy_provider/s2.yaml
+    override:
+      additional-prefix: s2 »
 rule-providers:
   AWAvenue_Ads_Rule:
     type: http
@@ -170,36 +200,6 @@ rule-providers:
     format: mrs
     path: ./ruleset/speedtest_domain.mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
-proxy-providers:
-  s1:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: &id001
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      timeout: 5
-      lazy: true
-      expected-status: '204'
-      method: HEAD
-    url: ''
-    path: ./proxy_provider/s1.yaml
-    override:
-      additional-prefix: s1 »
-  s2:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id001
-    url: ''
-    path: ./proxy_provider/s2.yaml
-    override:
-      additional-prefix: s2 »
 proxy-groups:
 - name: Proxy
   type: select

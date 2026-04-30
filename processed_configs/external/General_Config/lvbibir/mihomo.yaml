@@ -1,6 +1,17 @@
 # Processed: raw_configs/external/General_Config/lvbibir/mihomo.yaml
 # Providers: 1 proxy, 23 rule
 
+proxy-providers:
+  150G_Mouth:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '---'
+    path: ./proxy-providers/providers-1.yaml
 rule-providers:
   custom_proxy:
     type: http
@@ -163,17 +174,6 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/telegram.mrs
     path: ./rule-providers/telegram_ip.mrs
-proxy-providers:
-  150G_Mouth:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '---'
-    path: ./proxy-providers/providers-1.yaml
 proxy-groups:
 - type: url-test
   url: https://www.gstatic.com/generate_204
