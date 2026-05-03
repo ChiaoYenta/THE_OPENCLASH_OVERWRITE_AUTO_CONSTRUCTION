@@ -1,6 +1,191 @@
 # Processed: raw_configs/external/General_Config/Seven1echo/Seven1_fallback_Rule-Set.yaml
 # Providers: 1 proxy, 26 rule
 
+rules:
+- RULE-SET,private_domain,DIRECT
+- RULE-SET,private_ip,DIRECT,no-resolve
+- RULE-SET,speedtest_domain,Speedtest
+- RULE-SET,ai,ChatGPT
+- RULE-SET,github_domain,GitHub
+- RULE-SET,youtube_domain,YouTube
+- RULE-SET,google_domain,Google
+- RULE-SET,onedrive_domain,OneDrive
+- RULE-SET,microsoft_domain,Microsoft
+- RULE-SET,appletv_domain,AppleTV
+- RULE-SET,apple_domain,Apple
+- RULE-SET,telegram_domain,Telegram
+- RULE-SET,tiktok_domain,TikTok
+- RULE-SET,twitter_domain,Twitter
+- RULE-SET,netflix_domain,Netflix
+- RULE-SET,disney_domain,Disney
+- RULE-SET,spotify_domain,Spotify
+- RULE-SET,paypal_domain,PayPal
+- RULE-SET,geolocation-!cn,一键代理
+- RULE-SET,google_ip,Google,no-resolve
+- RULE-SET,telegram_ip,Telegram,no-resolve
+- RULE-SET,twitter_ip,Twitter,no-resolve
+- RULE-SET,netflix_ip,Netflix,no-resolve
+- RULE-SET,add_direct_domain,DIRECT
+- RULE-SET,cn_domain,DIRECT
+- RULE-SET,cn_ip,DIRECT,no-resolve
+- MATCH,漏网之鱼
+rule-providers:
+  private_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+  speedtest_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
+  ai:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
+  github_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
+  youtube_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
+  google_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+  onedrive_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs
+  microsoft_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
+  appletv_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.mrs
+  apple_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs
+  telegram_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+  tiktok_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs
+  twitter_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs
+  netflix_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
+  disney_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs
+  spotify_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs
+  paypal_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs
+  geolocation-!cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
+  cn_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
+  add_direct_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
+  private_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs
+  google_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+  telegram_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
+  twitter_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs
+  netflix_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs
+  cn_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
 proxy-groups:
 - name: 一键代理
   type: select
@@ -344,188 +529,3 @@ proxy-providers:
     url: 订阅链接
     override:
       additional-prefix: '[机场名] '
-rule-providers:
-  private_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
-  speedtest_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
-  ai:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
-  github_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
-  youtube_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
-  google_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
-  onedrive_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs
-  microsoft_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
-  appletv_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-tvplus.mrs
-  apple_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs
-  telegram_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
-  tiktok_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs
-  twitter_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs
-  netflix_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
-  disney_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs
-  spotify_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs
-  paypal_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs
-  geolocation-!cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
-  cn_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
-  add_direct_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
-  private_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs
-  google_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
-  telegram_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
-  twitter_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs
-  netflix_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs
-  cn_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
-rules:
-- RULE-SET,private_domain,DIRECT
-- RULE-SET,private_ip,DIRECT,no-resolve
-- RULE-SET,speedtest_domain,Speedtest
-- RULE-SET,ai,ChatGPT
-- RULE-SET,github_domain,GitHub
-- RULE-SET,youtube_domain,YouTube
-- RULE-SET,google_domain,Google
-- RULE-SET,onedrive_domain,OneDrive
-- RULE-SET,microsoft_domain,Microsoft
-- RULE-SET,appletv_domain,AppleTV
-- RULE-SET,apple_domain,Apple
-- RULE-SET,telegram_domain,Telegram
-- RULE-SET,tiktok_domain,TikTok
-- RULE-SET,twitter_domain,Twitter
-- RULE-SET,netflix_domain,Netflix
-- RULE-SET,disney_domain,Disney
-- RULE-SET,spotify_domain,Spotify
-- RULE-SET,paypal_domain,PayPal
-- RULE-SET,geolocation-!cn,一键代理
-- RULE-SET,google_ip,Google,no-resolve
-- RULE-SET,telegram_ip,Telegram,no-resolve
-- RULE-SET,twitter_ip,Twitter,no-resolve
-- RULE-SET,netflix_ip,Netflix,no-resolve
-- RULE-SET,add_direct_domain,DIRECT
-- RULE-SET,cn_domain,DIRECT
-- RULE-SET,cn_ip,DIRECT,no-resolve
-- MATCH,漏网之鱼
