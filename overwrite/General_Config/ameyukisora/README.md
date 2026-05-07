@@ -1,9 +1,9 @@
-# cleaner_config 覆写配置
+# General_Config/ameyukisora 覆写配置
 
 ## 📍 来源
-- **路径**: `本地目录 cleaner_config`
-- **类型**: 本地手动维护
-- **用途**: 用户自定义配置
+- **路径**: `HenryChiao/mihomo_yamls/THEYAMLS/General_Config/ameyukisora`
+- **类型**: 外部自动同步
+- **用途**: 通用配置 - ameyukisora 作者维护
 
 ## 📁 文件说明
 
@@ -37,7 +37,7 @@ EN_DNS=223.5.5.5,114.114.114.114
 ```
 
 ## 📝 生成信息
-- 生成时间: 2026-05-07 08:28:22
+- 生成时间: 2026-05-07 08:28:18
 - 配置文件数: 9
 
 ---
