@@ -248,17 +248,6 @@ proxy-groups:
   max-failed-times: 3
   name: ♻️ 香港自动
   filter: ^(?=.*?(?i)(\bHK\b|Hong.?Kong|香港|深港|广港|港区)).*(?<!(?i)(回国|过期|剩余|官网|网址|节点|订阅|机场|客服|校园|本土)).*$
-proxy-providers:
-  150G_Mouth:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '---'
-    path: ./proxy-providers/providers-1.yaml
 rule-providers:
   custom_proxy:
     type: http
@@ -449,3 +438,14 @@ rules:
 - RULE-SET,cn_ip,直连,no-resolve
 - RULE-SET,geolocation-!cn_domain,🚀 默认代理
 - MATCH,🐟 漏网之鱼
+proxy-providers:
+  150G_Mouth:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '---'
+    path: ./proxy-providers/providers-1.yaml

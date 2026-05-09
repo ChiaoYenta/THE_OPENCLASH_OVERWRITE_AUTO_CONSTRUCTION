@@ -242,65 +242,6 @@ proxy-groups:
   proxies: *id003
   name: 漏网之鱼
   icon: https://testingcf.jsdelivr.net/gh/aihdde/Rules@master/icon/fish.png
-proxy-providers:
-  1.p1:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: &id004
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 600
-      timeout: 5
-      lazy: true
-      expected-status: '204'
-      method: HEAD
-    smux: &id005
-      enabled: true
-      padding: true
-      protocol: smux
-    url: ''
-    path: ./proxy_provider/p1.yaml
-    override:
-      additional-prefix: p1 »
-  2.p2:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id004
-    smux: *id005
-    url: ''
-    path: ./proxy_provider/p2.yaml
-    override:
-      additional-prefix: p2 »
-  3.p3:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id004
-    smux: *id005
-    url: ''
-    path: ./proxy_provider/p3.yaml
-    override:
-      additional-prefix: p3 »
-  4.p4:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id004
-    smux: *id005
-    url: ''
-    path: ./proxy_provider/p4.yaml
-    override:
-      additional-prefix: p4 »
 rule-providers:
   AWAvenue_Ads_Rule:
     type: http
@@ -548,3 +489,62 @@ rules:
 - RULE-SET,proxy,Proxy
 - RULE-SET,trackerslist,Trackerslist
 - MATCH,漏网之鱼
+proxy-providers:
+  1.p1:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: &id004
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 600
+      timeout: 5
+      lazy: true
+      expected-status: '204'
+      method: HEAD
+    smux: &id005
+      enabled: true
+      padding: true
+      protocol: smux
+    url: ''
+    path: ./proxy_provider/p1.yaml
+    override:
+      additional-prefix: p1 »
+  2.p2:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id004
+    smux: *id005
+    url: ''
+    path: ./proxy_provider/p2.yaml
+    override:
+      additional-prefix: p2 »
+  3.p3:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id004
+    smux: *id005
+    url: ''
+    path: ./proxy_provider/p3.yaml
+    override:
+      additional-prefix: p3 »
+  4.p4:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id004
+    smux: *id005
+    url: ''
+    path: ./proxy_provider/p4.yaml
+    override:
+      additional-prefix: p4 »

@@ -274,16 +274,6 @@ proxy-groups:
   type: select
   proxies:
   - DIRECT
-proxy-providers:
-  机场1:
-    type: http
-    url: ''
-    path: ./proxy_provider/air1.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
 rule-providers:
   ads:
     type: http
@@ -408,3 +398,13 @@ rules:
 - RULE-SET,privateip,🔒 私有网络,no-resolve
 - RULE-SET,cnip,🇨🇳 直连 IP
 - MATCH,🐟 漏网之鱼
+proxy-providers:
+  机场1:
+    type: http
+    url: ''
+    path: ./proxy_provider/air1.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600

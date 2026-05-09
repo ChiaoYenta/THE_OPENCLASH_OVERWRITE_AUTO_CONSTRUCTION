@@ -269,16 +269,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - 🚀 手动切换
-proxy-providers:
-  all-proxies:
-    type: http
-    url: https://example.com/your-subscription-url
-    interval: 3600
-    path: ./providers/all-proxies.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
 rule-providers:
   AdBlock:
     type: http
@@ -745,3 +735,13 @@ rules:
 - RULE-SET,LAN,DIRECT
 - GEOIP,CN,🎯 国内流量
 - MATCH,🌐 国际流量
+proxy-providers:
+  all-proxies:
+    type: http
+    url: https://example.com/your-subscription-url
+    interval: 3600
+    path: ./providers/all-proxies.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204

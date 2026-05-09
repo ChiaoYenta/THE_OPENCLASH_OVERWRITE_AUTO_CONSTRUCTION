@@ -115,36 +115,6 @@ proxy-groups:
   - DIRECTLY
   - Proxy
   icon: https://testingcf.jsdelivr.net/gh/aihdde/Rules@master/icon/fish.png
-proxy-providers:
-  s1:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: &id003
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      timeout: 5
-      lazy: true
-      expected-status: '204'
-      method: HEAD
-    url: ''
-    path: ./proxy_provider/s1.yaml
-    override:
-      additional-prefix: s1 »
-  s2:
-    type: http
-    udp: true
-    interval: 86400
-    proxy: DIRECTLY
-    lazy: true
-    health-check: *id003
-    url: ''
-    path: ./proxy_provider/s2.yaml
-    override:
-      additional-prefix: s2 »
 rule-providers:
   AWAvenue_Ads_Rule:
     type: http
@@ -352,3 +322,33 @@ rules:
 - RULE-SET,trackerslist,Trackerslist
 - GEOIP,CN,DIRECT
 - MATCH,漏网之鱼
+proxy-providers:
+  s1:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: &id003
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      timeout: 5
+      lazy: true
+      expected-status: '204'
+      method: HEAD
+    url: ''
+    path: ./proxy_provider/s1.yaml
+    override:
+      additional-prefix: s1 »
+  s2:
+    type: http
+    udp: true
+    interval: 86400
+    proxy: DIRECTLY
+    lazy: true
+    health-check: *id003
+    url: ''
+    path: ./proxy_provider/s2.yaml
+    override:
+      additional-prefix: s2 »
