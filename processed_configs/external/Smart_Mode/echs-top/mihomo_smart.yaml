@@ -1,6 +1,38 @@
 # Processed: raw_configs/external/Smart_Mode/echs-top/mihomo_smart.yaml
 # Providers: 3 proxy, 27 rule
 
+rules:
+- SUB-RULE,(DST-PORT,5228-5230),fcm_rules
+- DST-PORT,1337/2710/6881-6999/7777,TRACKER
+- RULE-SET,private_ip,直接连接,no-resolve
+- RULE-SET,private,直接连接
+- RULE-SET,AWAvenue-Ads,REJECT
+- SUB-RULE,(RULE-SET,fcm),fcm_rules
+- SUB-RULE,(RULE-SET,captcha),captcha_rules
+- SUB-RULE,(RULE-SET,ai),ai_rules
+- SUB-RULE,(RULE-SET,telegram),telegram_rules
+- SUB-RULE,(RULE-SET,media),media_rules
+- RULE-SET,google-cn,直接连接
+- SUB-RULE,(RULE-SET,google),google_rules
+- SUB-RULE,(RULE-SET,trackerslist),trackerslist_rules
+- RULE-SET,apple-cn,直接连接
+- RULE-SET,microsoft-cn,直接连接
+- RULE-SET,games-cn,直接连接
+- SUB-RULE,(RULE-SET,proxy_domain),proxy_rules
+- RULE-SET,direct_domain,直接连接
+- SUB-RULE,(RULE-SET,github),proxy_rules
+- SUB-RULE,(RULE-SET,proxy),proxy_rules
+- RULE-SET,cn,直接连接
+- SUB-RULE,(RULE-SET,telegram_ip),telegram_rules
+- SUB-RULE,(RULE-SET,media_ip),media_rules
+- SUB-RULE,(RULE-SET,google_ip),google_rules
+- SUB-RULE,(RULE-SET,proxy_ip),proxy_rules
+- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
+- RULE-SET,direct_ip,直接连接
+- RULE-SET,cn_ip,直接连接
+- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
+- DST-PORT,10000-65535,TRACKER
+- MATCH,代理连接
 proxy-groups:
 - name: 代理连接
   type: select
@@ -242,6 +274,47 @@ proxy-groups:
   include-all-providers: true
   hidden: true
   icon: https://mihomo.echs.top/img/icon/Globefish.webp
+proxy-providers:
+  link1:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: &id003
+      User-Agent:
+      - clash-verge/v2.4.7
+    health-check: &id004
+      enable: true
+      url: https://dns.google/generate_204
+      expected-status: 204
+      interval: 900
+      timeout: 3000
+      max-failed-times: 2
+      lazy: false
+    override: &id005
+      ip-version: dual
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接1
+    path: ./providers/link1.yaml
+  link2:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id003
+    health-check: *id004
+    override: *id005
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接2
+    path: ./providers/link2.yaml
+  link3:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id003
+    health-check: *id004
+    override: *id005
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    url: 订阅链接3
+    path: ./providers/link3.yaml
 rule-providers:
   private_ip:
     type: http
@@ -459,76 +532,3 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/cn_ip.mrs
     path: ./rules/cn_ip.mrs
-rules:
-- SUB-RULE,(DST-PORT,5228-5230),fcm_rules
-- DST-PORT,1337/2710/6881-6999/7777,TRACKER
-- RULE-SET,private_ip,直接连接,no-resolve
-- RULE-SET,private,直接连接
-- RULE-SET,AWAvenue-Ads,REJECT
-- SUB-RULE,(RULE-SET,fcm),fcm_rules
-- SUB-RULE,(RULE-SET,captcha),captcha_rules
-- SUB-RULE,(RULE-SET,ai),ai_rules
-- SUB-RULE,(RULE-SET,telegram),telegram_rules
-- SUB-RULE,(RULE-SET,media),media_rules
-- RULE-SET,google-cn,直接连接
-- SUB-RULE,(RULE-SET,google),google_rules
-- SUB-RULE,(RULE-SET,trackerslist),trackerslist_rules
-- RULE-SET,apple-cn,直接连接
-- RULE-SET,microsoft-cn,直接连接
-- RULE-SET,games-cn,直接连接
-- SUB-RULE,(RULE-SET,proxy_domain),proxy_rules
-- RULE-SET,direct_domain,直接连接
-- SUB-RULE,(RULE-SET,github),proxy_rules
-- SUB-RULE,(RULE-SET,proxy),proxy_rules
-- RULE-SET,cn,直接连接
-- SUB-RULE,(RULE-SET,telegram_ip),telegram_rules
-- SUB-RULE,(RULE-SET,media_ip),media_rules
-- SUB-RULE,(RULE-SET,google_ip),google_rules
-- SUB-RULE,(RULE-SET,proxy_ip),proxy_rules
-- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
-- RULE-SET,direct_ip,直接连接
-- RULE-SET,cn_ip,直接连接
-- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
-- DST-PORT,10000-65535,TRACKER
-- MATCH,代理连接
-proxy-providers:
-  link1:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: &id003
-      User-Agent:
-      - clash-verge/v2.4.7
-    health-check: &id004
-      enable: true
-      url: https://dns.google/generate_204
-      expected-status: 204
-      interval: 900
-      timeout: 3000
-      max-failed-times: 2
-      lazy: false
-    override: &id005
-      ip-version: dual
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接1
-    path: ./providers/link1.yaml
-  link2:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id003
-    health-check: *id004
-    override: *id005
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接2
-    path: ./providers/link2.yaml
-  link3:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id003
-    health-check: *id004
-    override: *id005
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
-    url: 订阅链接3
-    path: ./providers/link3.yaml

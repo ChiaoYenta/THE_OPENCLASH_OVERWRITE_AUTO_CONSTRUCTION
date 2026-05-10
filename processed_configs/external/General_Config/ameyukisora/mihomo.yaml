@@ -1,6 +1,19 @@
 # Processed: raw_configs/external/General_Config/ameyukisora/mihomo.yaml
 # Providers: 1 proxy, 12 rule
 
+rules:
+- RULE-SET,AWAvenue-Ads-Rule,秋风净化
+- RULE-SET,SpecialDirect,DIRECT
+- RULE-SET,ExHentai,EH图库
+- RULE-SET,JapanWeb,日区网站
+- RULE-SET,Steam,游戏平台
+- RULE-SET,Telegram,电报消息
+- RULE-SET,Google,Google
+- RULE-SET,Proxy,节点选择
+- RULE-SET,gfw,节点选择
+- RULE-SET,cn,DIRECT
+- RULE-SET,cn_v6,DIRECT
+- MATCH,♾️
 proxy-groups:
 - type: select
   include-all-providers: true
@@ -57,6 +70,18 @@ proxy-groups:
   proxies:
   - 节点选择
   hidden: true
+proxy-providers:
+  subscription:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 900
+    url: https://example.com/your-sub-url.yaml
+    path: ./providers/subscription.yaml
+    exclude-filter: 官|流量|Traffic|Expire|自动更新订阅|剩余|过期|网址
 rule-providers:
   SpecialDirect:
     type: http
@@ -134,28 +159,3 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/fakeip-filter.yaml
     path: ./rule_provider/fakeip-filter.yaml
-rules:
-- RULE-SET,AWAvenue-Ads-Rule,秋风净化
-- RULE-SET,SpecialDirect,DIRECT
-- RULE-SET,ExHentai,EH图库
-- RULE-SET,JapanWeb,日区网站
-- RULE-SET,Steam,游戏平台
-- RULE-SET,Telegram,电报消息
-- RULE-SET,Google,Google
-- RULE-SET,Proxy,节点选择
-- RULE-SET,gfw,节点选择
-- RULE-SET,cn,DIRECT
-- RULE-SET,cn_v6,DIRECT
-- MATCH,♾️
-proxy-providers:
-  subscription:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 900
-    url: https://example.com/your-sub-url.yaml
-    path: ./providers/subscription.yaml
-    exclude-filter: 官|流量|Traffic|Expire|自动更新订阅|剩余|过期|网址
