@@ -1,34 +1,6 @@
 # Processed: raw_configs/external/General_Config/bgpeer/Clashmi.yaml
 # Providers: 3 proxy, 34 rule
 
-proxy-providers:
-  机场1:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: &id001
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '#机场订阅'
-    override:
-      additional-prefix: ¹
-  机场2:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: *id001
-    url: '#机场订阅'
-    override:
-      additional-prefix: ²
-  机场3:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: *id001
-    url: '#机场订阅'
-    override:
-      additional-prefix: ³
 rules:
 - RULE-SET,reject,REJECT
 - RULE-SET,douyin-zj,🎷抖音
@@ -65,6 +37,34 @@ rules:
 - RULE-SET,private-ip,🎯直连,no-resolve
 - RULE-SET,cn-ip,🎯直连,no-resolve
 - MATCH,🤡漏网之鱼
+proxy-providers:
+  机场1:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: &id001
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '#机场订阅'
+    override:
+      additional-prefix: ¹
+  机场2:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: *id001
+    url: '#机场订阅'
+    override:
+      additional-prefix: ²
+  机场3:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: *id001
+    url: '#机场订阅'
+    override:
+      additional-prefix: ³
 rule-providers:
   reject:
     type: http

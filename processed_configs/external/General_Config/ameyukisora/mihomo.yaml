@@ -1,18 +1,6 @@
 # Processed: raw_configs/external/General_Config/ameyukisora/mihomo.yaml
 # Providers: 1 proxy, 12 rule
 
-proxy-providers:
-  subscription:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 900
-    url: https://example.com/your-sub-url.yaml
-    path: ./providers/subscription.yaml
-    exclude-filter: 官|流量|Traffic|Expire|自动更新订阅|剩余|过期|网址
 rules:
 - RULE-SET,AWAvenue-Ads-Rule,秋风净化
 - RULE-SET,SpecialDirect,DIRECT
@@ -26,6 +14,18 @@ rules:
 - RULE-SET,cn,DIRECT
 - RULE-SET,cn_v6,DIRECT
 - MATCH,♾️
+proxy-providers:
+  subscription:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 900
+    url: https://example.com/your-sub-url.yaml
+    path: ./providers/subscription.yaml
+    exclude-filter: 官|流量|Traffic|Expire|自动更新订阅|剩余|过期|网址
 rule-providers:
   SpecialDirect:
     type: http

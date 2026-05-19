@@ -1,19 +1,6 @@
 # Processed: raw_configs/external/General_Config/Seven1echo/Seven1_fallback_Geo.yaml
 # Providers: 1 proxy, 1 rule
 
-proxy-providers:
-  机场名:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.g.cn/generate_204
-      interval: 300
-    filter: ^(?!.*(到期|过期|剩余|网址|官网|邮箱|订阅|套餐|流量|说明|重置)).*$
-    url: 订阅链接
-    override:
-      additional-prefix: '[机场名] '
 rules:
 - GEOSITE,private,国内直连
 - GEOIP,private,国内直连,no-resolve
@@ -44,6 +31,19 @@ rules:
 - GEOSITE,cn,国内直连
 - GEOIP,cn,国内直连,no-resolve
 - MATCH,漏网之鱼
+proxy-providers:
+  机场名:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.g.cn/generate_204
+      interval: 300
+    filter: ^(?!.*(到期|过期|剩余|网址|官网|邮箱|订阅|套餐|流量|说明|重置)).*$
+    url: 订阅链接
+    override:
+      additional-prefix: '[机场名] '
 rule-providers:
   add_direct_domain:
     type: http
