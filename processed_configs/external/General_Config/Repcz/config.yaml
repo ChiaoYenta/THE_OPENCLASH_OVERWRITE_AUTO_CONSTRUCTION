@@ -1,151 +1,6 @@
 # Processed: raw_configs/external/General_Config/Repcz/config.yaml
 # Providers: 1 proxy, 24 rule
 
-rule-providers:
-  Direct:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Direct.list
-  Lan:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Lan.list
-  Reject:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Reject.list
-  AppleCN:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleCN.list
-  AppleProxy:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleServers.list
-  Microsoft:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Microsoft.list
-  OneDrive:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/OneDrive.list
-  Github:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Github.list
-  YouTube:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/YouTube.list
-  Google:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Google.list
-  Telegram:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list
-  Twitter:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list
-  Steam:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Steam.list
-  Epic:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Epic.list
-  AI:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list
-  Emby:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list
-  Spotify:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Spotify.list
-  Bahamut:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Bahamut.list
-  Netflix:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Netflix.list
-  Disney:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Disney.list
-  PrimeVideo:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/PrimeVideo.list
-  HBO:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/HBO.list
-  TikTok:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/TikTok.list
-  Proxy:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Proxy.list
 proxy-providers:
   Subscribe:
     type: http
@@ -292,3 +147,148 @@ rules:
 - RULE-SET,Lan,DIRECT
 - GEOIP,CN,DIRECT
 - MATCH,兜底分流
+rule-providers:
+  Direct:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Direct.list
+  Lan:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Lan.list
+  Reject:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Reject.list
+  AppleCN:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleCN.list
+  AppleProxy:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleServers.list
+  Microsoft:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Microsoft.list
+  OneDrive:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/OneDrive.list
+  Github:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Github.list
+  YouTube:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/YouTube.list
+  Google:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Google.list
+  Telegram:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list
+  Twitter:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list
+  Steam:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Steam.list
+  Epic:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Epic.list
+  AI:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list
+  Emby:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list
+  Spotify:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Spotify.list
+  Bahamut:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Bahamut.list
+  Netflix:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Netflix.list
+  Disney:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Disney.list
+  PrimeVideo:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/PrimeVideo.list
+  HBO:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/HBO.list
+  TikTok:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/TikTok.list
+  Proxy:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Proxy.list
