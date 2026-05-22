@@ -1,34 +1,6 @@
 # Processed: raw_configs/external/General_Config/bgpeer/Clashmi.yaml
-# Providers: 3 proxy, 34 rule
+# Providers: 3 proxy, 35 rule
 
-proxy-providers:
-  机场1:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: &id001
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '#机场订阅'
-    override:
-      additional-prefix: ¹
-  机场2:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: *id001
-    url: '#机场订阅'
-    override:
-      additional-prefix: ²
-  机场3:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: *id001
-    url: '#机场订阅'
-    override:
-      additional-prefix: ³
 proxy-groups:
 - include-all: true
   exclude-type: direct
@@ -53,7 +25,7 @@ proxy-groups:
   name: 🎷抖音
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/douyin_1.png
-  proxies: &id002
+  proxies: &id001
   - 🌍全球加速
   - ♻️全部随机
   - 🇭🇰香港随机
@@ -69,70 +41,70 @@ proxy-groups:
   name: 🎬TikTok
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/tiktok_1.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 🎮国际游戏
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/game_1.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 💻Telegram
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/telegram.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 🧠OpenAI
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/chatgpt.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 🤖Claude
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/claude_1.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 💳PayPal
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/paypal.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 🌐Google服务
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/google_1.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 📱Meta
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/meta.png
-  proxies: *id002
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 😈GitHub
   type: select
-  icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/github_1.png
-  proxies: *id002
+  icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/github.png
+  proxies: *id001
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 😊微软服务
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/microsoft.png
-  proxies: &id003
+  proxies: &id002
   - 🎯直连
   - 🌍全球加速
   - ♻️全部随机
@@ -148,21 +120,28 @@ proxy-groups:
   name: 🍎苹果服务
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/apple.png
-  proxies: *id003
+  proxies: *id002
+- include-all: true
+  exclude-type: direct
+  filter: .*
+  name: 💰加密货币
+  type: select
+  icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/cryptocurrency.png
+  proxies: *id002
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 📺哔哩哔哩
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/bilibili_2.png
-  proxies: *id003
+  proxies: *id002
 - include-all: true
   exclude-type: direct
   filter: .*
   name: 📕小红书
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/xiaohongshu_1.png
-  proxies: *id003
+  proxies: *id002
 - name: ⛩️阿里腾讯
   type: select
   icon: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/icons/main/color/alibaba_tencent.png
@@ -273,7 +252,7 @@ rules:
 - RULE-SET,Claude-zj,🤖Claude
 - RULE-SET,TikTok-zj,🎬TikTok
 - RULE-SET,PayPal,💳PayPal
-- RULE-SET,Facebook-zj,📱Meta
+- RULE-SET,Cryptocurrency,💰加密货币
 - RULE-SET,WildRift-zj,🎮国际游戏
 - RULE-SET,games-!cn,🎮国际游戏
 - RULE-SET,Telegram-zj,💻Telegram
@@ -281,6 +260,7 @@ rules:
 - RULE-SET,YouTube,🌐Google服务
 - RULE-SET,Google-zj,🌐Google服务
 - RULE-SET,google-ip,🌐Google服务,no-resolve
+- RULE-SET,Facebook-zj,📱Meta
 - RULE-SET,GitHub-zj,😈GitHub
 - RULE-SET,Microsoft,😊微软服务
 - RULE-SET,icloud,🍎苹果服务
@@ -302,6 +282,34 @@ rules:
 - RULE-SET,private-ip,🎯直连,no-resolve
 - RULE-SET,cn-ip,🎯直连,no-resolve
 - MATCH,🤡漏网之鱼
+proxy-providers:
+  机场1:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: &id003
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '#机场订阅'
+    override:
+      additional-prefix: ¹
+  机场2:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: *id003
+    url: '#机场订阅'
+    override:
+      additional-prefix: ²
+  机场3:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: *id003
+    url: '#机场订阅'
+    override:
+      additional-prefix: ³
 rule-providers:
   reject:
     type: http
@@ -369,6 +377,12 @@ rule-providers:
     interval: 86400
     format: mrs
     url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/paypal.mrs
+  Cryptocurrency:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-cryptocurrency.mrs
   YouTube:
     type: http
     behavior: domain

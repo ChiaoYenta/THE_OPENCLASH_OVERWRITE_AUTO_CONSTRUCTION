@@ -1,19 +1,6 @@
 # Processed: raw_configs/external/General_Config/AIsouler/mihomoconfig.yaml
-# Providers: 1 proxy, 38 rule
+# Providers: 1 proxy, 37 rule
 
-proxy-providers:
-  provider1:
-    exclude-filter: 群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|⚠️|@|Expire|http|com
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://g.cn/generate_204
-      interval: 600
-      lazy: true
-    url: 此处填入机场订阅链接
-    path: ./proxy_providers/provider1.yaml
 proxy-groups:
 - type: select
   interval: 600
@@ -428,7 +415,6 @@ rules:
 - RULE-SET,games_cn,直连
 - RULE-SET,epicgames,直连
 - RULE-SET,nvidia_cn,直连
-- RULE-SET,microsoft_cn,直连
 - RULE-SET,cloudflare_cn,直连
 - RULE-SET,apple_cn,直连
 - DOMAIN,fsend.cn,直连
@@ -465,6 +451,19 @@ rules:
 - RULE-SET,cn_additional,直连
 - RULE-SET,cn_ip,直连
 - MATCH,默认代理
+proxy-providers:
+  provider1:
+    exclude-filter: 群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|⚠️|@|Expire|http|com
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://g.cn/generate_204
+      interval: 600
+      lazy: true
+    url: 此处填入机场订阅链接
+    path: ./proxy_providers/provider1.yaml
 rule-providers:
   adblockmihomolite:
     type: http
@@ -550,13 +549,6 @@ rule-providers:
     format: mrs
     url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
     path: ./ruleset/microsoft.mrs
-  microsoft_cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs
-    path: ./ruleset/microsoft@cn.mrs
   telegram:
     type: http
     interval: 86400
