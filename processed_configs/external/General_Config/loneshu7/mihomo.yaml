@@ -1,6 +1,196 @@
 # Processed: raw_configs/external/General_Config/loneshu7/mihomo.yaml
 # Providers: 4 proxy, 27 rule
 
+rule-providers:
+  lan:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Lan/Lan.yaml
+    path: ./rule_set/lan.yaml
+  chinadirect:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@master/GeositeCN/GeositeCN.yaml
+    path: ./rule_set/chinadirect.yaml
+  gemini:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.yaml
+    path: ./rule_set/gemini.yaml
+  googlefcm:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.yaml
+    path: ./rule_set/googlefcm.yaml
+  bilibili:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/BiliBili/BiliBili.yaml
+    path: ./rule_set/bilibili.yaml
+  pikpak:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PikPak/PikPak.yaml
+    path: ./rule_set/pikpak.yaml
+  stream:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
+    path: ./rule_set/stream.yaml
+  telegram:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.yaml
+    path: ./rule_set/telegram.yaml
+  apple:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple.yaml
+    path: ./rule_set/apple.yaml
+  microsoft:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.yaml
+    path: ./rule_set/microsoft.yaml
+  steam:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.yaml
+    path: ./rule_set/steam.yaml
+  steam_cn:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml
+    path: ./rule_set/steam_cn.yaml
+  discord:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.yaml
+    path: ./rule_set/discord.yaml
+  spotify:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml
+    path: ./rule_set/spotify.yaml
+  tiktok:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.yaml
+    path: ./rule_set/tiktok.yaml
+  openai:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./rule_set/openai.yaml
+  epic:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Epic/Epic.yaml
+    path: ./rule_set/epic.yaml
+  google:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.yaml
+    path: ./rule_set/google.yaml
+  github:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./rule_set/github.yaml
+  youtube:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./rule_set/youtube.yaml
+  twitter:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.yaml
+    path: ./rule_set/twitter.yaml
+  pornhub:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Egern/Provider/Media/Pornhub.yaml
+    path: ./rule_set/pornhub.yaml
+  cloudflare:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.yaml
+    path: ./rule_set/cloudflare.yaml
+  netflix:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.yaml
+    path: ./rule_set/netflix.yaml
+  advertising:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Advertising/Advertising.yaml
+    path: ./rule_set/advertising.yaml
+  privacy:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Privacy/Privacy.yaml
+    path: ./rule_set/privacy.yaml
+  binance:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: Proxies
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Binance/Binance.yaml
+    path: ./rule_set/binance.yaml
 proxy-groups:
 - name: Proxies
   type: select
@@ -833,193 +1023,3 @@ proxy-providers:
     health-check: *id002
     type: file
     path: ./proxy_provider/OtherNode.yaml
-rule-providers:
-  lan:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Lan/Lan.yaml
-    path: ./rule_set/lan.yaml
-  chinadirect:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@master/GeositeCN/GeositeCN.yaml
-    path: ./rule_set/chinadirect.yaml
-  gemini:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.yaml
-    path: ./rule_set/gemini.yaml
-  googlefcm:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.yaml
-    path: ./rule_set/googlefcm.yaml
-  bilibili:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/BiliBili/BiliBili.yaml
-    path: ./rule_set/bilibili.yaml
-  pikpak:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PikPak/PikPak.yaml
-    path: ./rule_set/pikpak.yaml
-  stream:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
-    path: ./rule_set/stream.yaml
-  telegram:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.yaml
-    path: ./rule_set/telegram.yaml
-  apple:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple.yaml
-    path: ./rule_set/apple.yaml
-  microsoft:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.yaml
-    path: ./rule_set/microsoft.yaml
-  steam:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.yaml
-    path: ./rule_set/steam.yaml
-  steam_cn:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.yaml
-    path: ./rule_set/steam_cn.yaml
-  discord:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.yaml
-    path: ./rule_set/discord.yaml
-  spotify:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.yaml
-    path: ./rule_set/spotify.yaml
-  tiktok:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.yaml
-    path: ./rule_set/tiktok.yaml
-  openai:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml
-    path: ./rule_set/openai.yaml
-  epic:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Epic/Epic.yaml
-    path: ./rule_set/epic.yaml
-  google:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.yaml
-    path: ./rule_set/google.yaml
-  github:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml
-    path: ./rule_set/github.yaml
-  youtube:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.yaml
-    path: ./rule_set/youtube.yaml
-  twitter:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.yaml
-    path: ./rule_set/twitter.yaml
-  pornhub:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/dler-io/Rules/refs/heads/main/Egern/Provider/Media/Pornhub.yaml
-    path: ./rule_set/pornhub.yaml
-  cloudflare:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.yaml
-    path: ./rule_set/cloudflare.yaml
-  netflix:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.yaml
-    path: ./rule_set/netflix.yaml
-  advertising:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Advertising/Advertising.yaml
-    path: ./rule_set/advertising.yaml
-  privacy:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Privacy/Privacy.yaml
-    path: ./rule_set/privacy.yaml
-  binance:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: Proxies
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Binance/Binance.yaml
-    path: ./rule_set/binance.yaml

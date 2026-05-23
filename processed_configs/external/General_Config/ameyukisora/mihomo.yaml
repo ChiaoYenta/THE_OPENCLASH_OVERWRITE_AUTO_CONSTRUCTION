@@ -1,6 +1,83 @@
 # Processed: raw_configs/external/General_Config/ameyukisora/mihomo.yaml
 # Providers: 1 proxy, 12 rule
 
+rule-providers:
+  SpecialDirect:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/SpecialDirect.yaml
+    path: ./rule_provider/SpecialDirect.yaml
+  AWAvenue-Ads-Rule:
+    type: http
+    interval: 86400
+    behavior: domain
+    url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs
+    path: ./rule_provider/AWAvenue-Ads-Rule-Clash.mrs
+    format: mrs
+  ExHentai:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/ExHentai.yaml
+    path: ./rule_provider/ExHentai.yaml
+  JapanWeb:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/JapanWeb.yaml
+    path: ./rule_provider/JapanWeb.yaml
+  Steam:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Steam.yaml
+    path: ./rule_provider/Steam.yaml
+  Telegram:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Telegram.yaml
+    path: ./rule_provider/Telegram.yaml
+  Google:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Google.yaml
+    path: ./rule_provider/Google.yaml
+  Proxy:
+    type: http
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Proxy.yaml
+    path: ./rule_provider/Proxy.yaml
+  gfw:
+    type: http
+    interval: 86400
+    behavior: domain
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/gfw.mrs
+    path: ./rule_provider/gfw.mrs
+    format: mrs
+  cn_v6:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/cn_v6.mrs
+    path: ./rule_provider/cn_v6.mrs
+    format: mrs
+  cn:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/cn.mrs
+    path: ./rule_provider/cn.mrs
+    format: mrs
+  fakeip-filter:
+    type: http
+    interval: 86400
+    behavior: domain
+    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/fakeip-filter.yaml
+    path: ./rule_provider/fakeip-filter.yaml
 proxy-groups:
 - type: select
   include-all-providers: true
@@ -82,80 +159,3 @@ proxy-providers:
     url: https://example.com/your-sub-url.yaml
     path: ./providers/subscription.yaml
     exclude-filter: 官|流量|Traffic|Expire|自动更新订阅|剩余|过期|网址
-rule-providers:
-  SpecialDirect:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/SpecialDirect.yaml
-    path: ./rule_provider/SpecialDirect.yaml
-  AWAvenue-Ads-Rule:
-    type: http
-    interval: 86400
-    behavior: domain
-    url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs
-    path: ./rule_provider/AWAvenue-Ads-Rule-Clash.mrs
-    format: mrs
-  ExHentai:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/ExHentai.yaml
-    path: ./rule_provider/ExHentai.yaml
-  JapanWeb:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/JapanWeb.yaml
-    path: ./rule_provider/JapanWeb.yaml
-  Steam:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Steam.yaml
-    path: ./rule_provider/Steam.yaml
-  Telegram:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Telegram.yaml
-    path: ./rule_provider/Telegram.yaml
-  Google:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Google.yaml
-    path: ./rule_provider/Google.yaml
-  Proxy:
-    type: http
-    interval: 86400
-    behavior: classical
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Proxy.yaml
-    path: ./rule_provider/Proxy.yaml
-  gfw:
-    type: http
-    interval: 86400
-    behavior: domain
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/gfw.mrs
-    path: ./rule_provider/gfw.mrs
-    format: mrs
-  cn_v6:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/cn_v6.mrs
-    path: ./rule_provider/cn_v6.mrs
-    format: mrs
-  cn:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/cn.mrs
-    path: ./rule_provider/cn.mrs
-    format: mrs
-  fakeip-filter:
-    type: http
-    interval: 86400
-    behavior: domain
-    url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/fakeip-filter.yaml
-    path: ./rule_provider/fakeip-filter.yaml
