@@ -1,19 +1,6 @@
 # Processed: raw_configs/external/General_Config/ameyukisora/mihomo.yaml
 # Providers: 1 proxy, 12 rule
 
-rules:
-- RULE-SET,AWAvenue-Ads-Rule,秋风净化
-- RULE-SET,SpecialDirect,DIRECT
-- RULE-SET,ExHentai,EH图库
-- RULE-SET,JapanWeb,日区网站
-- RULE-SET,Steam,游戏平台
-- RULE-SET,Telegram,电报消息
-- RULE-SET,Google,Google
-- RULE-SET,Proxy,节点选择
-- RULE-SET,gfw,节点选择
-- RULE-SET,cn,DIRECT
-- RULE-SET,cn_v6,DIRECT
-- MATCH,♾️
 proxy-groups:
 - type: select
   include-all-providers: true
@@ -70,6 +57,19 @@ proxy-groups:
   proxies:
   - 节点选择
   hidden: true
+rules:
+- RULE-SET,AWAvenue-Ads-Rule,秋风净化
+- RULE-SET,SpecialDirect,DIRECT
+- RULE-SET,ExHentai,EH图库
+- RULE-SET,JapanWeb,日区网站
+- RULE-SET,Steam,游戏平台
+- RULE-SET,Telegram,电报消息
+- RULE-SET,Google,Google
+- RULE-SET,Proxy,节点选择
+- RULE-SET,gfw,节点选择
+- RULE-SET,cn,DIRECT
+- RULE-SET,cn_v6,DIRECT
+- MATCH,♾️
 proxy-providers:
   subscription:
     type: http

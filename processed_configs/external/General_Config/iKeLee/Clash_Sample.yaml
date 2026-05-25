@@ -1,18 +1,6 @@
 # Processed: raw_configs/external/General_Config/iKeLee/Clash_Sample.yaml
 # Providers: 2 proxy, 9 rule
 
-rules:
-- RULE-SET, LAN, DIRECT
-- RULE-SET, Direct, DIRECT
-- RULE-SET, Proxy, 兜底后备策略
-- RULE-SET, AI, AI
-- RULE-SET, TikTok, TikTok
-- RULE-SET, SpeedtestIntl, Speedtest国际
-- RULE-SET, Game, 游戏选择
-- RULE-SET, Netflix, Netflix
-- RULE-SET, ESET_China, DIRECT
-- GEOIP, CN, DIRECT
-- MATCH, 兜底后备策略
 proxy-groups:
 - name: 游戏选择
   type: select
@@ -161,6 +149,18 @@ proxy-groups:
   include-all-providers: true
   name: 德国自动策略
   filter: ^(?=.*((?i)🇩🇪|德国|(\b(DE|DEU|Germany)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$
+rules:
+- RULE-SET, LAN, DIRECT
+- RULE-SET, Direct, DIRECT
+- RULE-SET, Proxy, 兜底后备策略
+- RULE-SET, AI, AI
+- RULE-SET, TikTok, TikTok
+- RULE-SET, SpeedtestIntl, Speedtest国际
+- RULE-SET, Game, 游戏选择
+- RULE-SET, Netflix, Netflix
+- RULE-SET, ESET_China, DIRECT
+- GEOIP, CN, DIRECT
+- MATCH, 兜底后备策略
 proxy-providers:
   机场名称1:
     type: http

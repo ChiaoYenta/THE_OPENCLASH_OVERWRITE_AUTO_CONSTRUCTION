@@ -1,36 +1,6 @@
 # Processed: raw_configs/external/General_Config/Seven1echo/Seven1_fallback_Geo.yaml
 # Providers: 1 proxy, 1 rule
 
-rules:
-- GEOSITE,private,国内直连
-- GEOIP,private,国内直连,no-resolve
-- GEOSITE,openai,ChatGPT
-- GEOSITE,anthropic,Claude
-- GEOSITE,google-gemini,Gemini
-- GEOSITE,youtube,YouTube
-- GEOSITE,google,Google
-- GEOSITE,github,GitHub
-- GEOSITE,onedrive,OneDrive
-- GEOSITE,microsoft,Microsoft
-- GEOSITE,apple-tvplus,AppleTV
-- GEOSITE,apple,Apple
-- GEOSITE,tiktok,TikTok
-- GEOSITE,twitter,Twitter(X)
-- GEOSITE,telegram,Telegram
-- GEOSITE,netflix,Netflix
-- GEOSITE,disney,Disney
-- GEOSITE,spotify,Spotify
-- GEOSITE,paypal,PayPal
-- GEOSITE,category-speedtest,Speedtest
-- GEOIP,google,Google,no-resolve
-- GEOIP,telegram,Telegram,no-resolve
-- GEOIP,twitter,Twitter(X),no-resolve
-- GEOIP,netflix,Netflix,no-resolve
-- GEOSITE,geolocation-!cn,一键代理
-- RULE-SET,add_direct_domain,国内直连
-- GEOSITE,cn,国内直连
-- GEOIP,cn,国内直连,no-resolve
-- MATCH,漏网之鱼
 proxy-groups:
 - type: select
   proxies:
@@ -397,6 +367,36 @@ proxy-groups:
   name: 欧洲-自动
   filter: ^(?i)(?=.*(奥地利|奥地利共和国|比利时|保加利亚|克罗地亚|塞浦路斯|捷克|丹麦|爱沙尼亚|芬兰|法国|德国|希腊|匈牙利|爱尔兰|意大利|拉脱维亚|立陶宛|卢森堡|荷兰|波兰|葡萄牙|罗马尼亚|斯洛伐克|斯洛文尼亚|西班牙|瑞典|英国|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU)).*$
   icon: https://github.com/Seven1echo/Yaml/raw/main/icons/EU.png
+rules:
+- GEOSITE,private,国内直连
+- GEOIP,private,国内直连,no-resolve
+- GEOSITE,openai,ChatGPT
+- GEOSITE,anthropic,Claude
+- GEOSITE,google-gemini,Gemini
+- GEOSITE,youtube,YouTube
+- GEOSITE,google,Google
+- GEOSITE,github,GitHub
+- GEOSITE,onedrive,OneDrive
+- GEOSITE,microsoft,Microsoft
+- GEOSITE,apple-tvplus,AppleTV
+- GEOSITE,apple,Apple
+- GEOSITE,tiktok,TikTok
+- GEOSITE,twitter,Twitter(X)
+- GEOSITE,telegram,Telegram
+- GEOSITE,netflix,Netflix
+- GEOSITE,disney,Disney
+- GEOSITE,spotify,Spotify
+- GEOSITE,paypal,PayPal
+- GEOSITE,category-speedtest,Speedtest
+- GEOIP,google,Google,no-resolve
+- GEOIP,telegram,Telegram,no-resolve
+- GEOIP,twitter,Twitter(X),no-resolve
+- GEOIP,netflix,Netflix,no-resolve
+- GEOSITE,geolocation-!cn,一键代理
+- RULE-SET,add_direct_domain,国内直连
+- GEOSITE,cn,国内直连
+- GEOIP,cn,国内直连,no-resolve
+- MATCH,漏网之鱼
 proxy-providers:
   机场名:
     type: http

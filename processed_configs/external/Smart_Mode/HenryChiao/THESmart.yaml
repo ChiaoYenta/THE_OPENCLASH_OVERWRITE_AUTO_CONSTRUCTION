@@ -1,56 +1,6 @@
 # Processed: raw_configs/external/Smart_Mode/HenryChiao/THESmart.yaml
 # Providers: 2 proxy, 47 rule
 
-rules:
-- SUB-RULE,(DST-PORT,5228-5230),fcm_rules
-- DST-PORT,1337/2710/6881-6999/7777,下载追踪
-- RULE-SET,PrivateIP,直接连接,no-resolve
-- RULE-SET,Private,直接连接
-- RULE-SET,Tracking,REJECT
-- RULE-SET,Advertising,REJECT
-- SUB-RULE,(RULE-SET,FCM),fcm_rules
-- RULE-SET,LocationDKS,抖快书定位
-- RULE-SET,Direct,直接连接
-- RULE-SET,XPTV,直接连接
-- RULE-SET,Download,直接连接
-- RULE-SET,AppleCN,直接连接
-- RULE-SET,MicrosoftCN,直接连接
-- RULE-SET,GamesCN,直接连接
-- RULE-SET,GoogleCN,直接连接
-- SUB-RULE,(RULE-SET,Captcha),captcha_rules
-- SUB-RULE,(RULE-SET,AI),ai_rules
-- DOMAIN-KEYWORD,speedtest,网络测试
-- RULE-SET,Speedtest,网络测试
-- SUB-RULE,(RULE-SET,Github),proxy_rules
-- SUB-RULE,(RULE-SET,Twitter),proxy_rules
-- SUB-RULE,(RULE-SET,Telegram),telegram_rules
-- SUB-RULE,(RULE-SET,SocialMedia),proxy_rules
-- SUB-RULE,(RULE-SET,NewsMedia),proxy_rules
-- SUB-RULE,(RULE-SET,Games),proxy_rules
-- SUB-RULE,(RULE-SET,Crypto),proxy_rules
-- SUB-RULE,(RULE-SET,Emby),media_rules
-- SUB-RULE,(RULE-SET,Netflix),media_rules
-- SUB-RULE,(RULE-SET,YouTube),media_rules
-- SUB-RULE,(RULE-SET,Streaming),media_rules
-- SUB-RULE,(RULE-SET,Apple),proxy_rules
-- SUB-RULE,(RULE-SET,Google),google_rules
-- SUB-RULE,(RULE-SET,Microsoft),proxy_rules
-- SUB-RULE,(RULE-SET,Trackerslist),trackerslist_rules
-- SUB-RULE,(RULE-SET,Proxy),proxy_rules
-- RULE-SET,China,国内流量
-- RULE-SET,AdvertisingIP,REJECT,no-resolve
-- RULE-SET,XPTVIP,直接连接,no-resolve
-- SUB-RULE,(RULE-SET,AIIP),ai_rules
-- SUB-RULE,(RULE-SET,TelegramIP),telegram_rules
-- SUB-RULE,(RULE-SET,SocialMediaIP),proxy_rules
-- SUB-RULE,(RULE-SET,EmbyIP),media_rules
-- SUB-RULE,(RULE-SET,NetflixIP),media_rules
-- SUB-RULE,(RULE-SET,StreamingIP),media_rules
-- SUB-RULE,(RULE-SET,GoogleIP),google_rules
-- SUB-RULE,(RULE-SET,ProxyIP),proxy_rules
-- RULE-SET,ChinaIP,国内流量
-- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
-- MATCH,兜底流量
 proxy-groups:
 - type: select
   proxies:
@@ -663,6 +613,56 @@ proxy-groups:
   filter: ^(?=.*(?i)(荷兰|🇳🇱|NL|Netherlands|AMS))(?!.*(排除1|排除2|5x)).*$
   include-all: true
   icon: https://mihomo.echs.top/img/flags/nl.svg
+rules:
+- SUB-RULE,(DST-PORT,5228-5230),fcm_rules
+- DST-PORT,1337/2710/6881-6999/7777,下载追踪
+- RULE-SET,PrivateIP,直接连接,no-resolve
+- RULE-SET,Private,直接连接
+- RULE-SET,Tracking,REJECT
+- RULE-SET,Advertising,REJECT
+- SUB-RULE,(RULE-SET,FCM),fcm_rules
+- RULE-SET,LocationDKS,抖快书定位
+- RULE-SET,Direct,直接连接
+- RULE-SET,XPTV,直接连接
+- RULE-SET,Download,直接连接
+- RULE-SET,AppleCN,直接连接
+- RULE-SET,MicrosoftCN,直接连接
+- RULE-SET,GamesCN,直接连接
+- RULE-SET,GoogleCN,直接连接
+- SUB-RULE,(RULE-SET,Captcha),captcha_rules
+- SUB-RULE,(RULE-SET,AI),ai_rules
+- DOMAIN-KEYWORD,speedtest,网络测试
+- RULE-SET,Speedtest,网络测试
+- SUB-RULE,(RULE-SET,Github),proxy_rules
+- SUB-RULE,(RULE-SET,Twitter),proxy_rules
+- SUB-RULE,(RULE-SET,Telegram),telegram_rules
+- SUB-RULE,(RULE-SET,SocialMedia),proxy_rules
+- SUB-RULE,(RULE-SET,NewsMedia),proxy_rules
+- SUB-RULE,(RULE-SET,Games),proxy_rules
+- SUB-RULE,(RULE-SET,Crypto),proxy_rules
+- SUB-RULE,(RULE-SET,Emby),media_rules
+- SUB-RULE,(RULE-SET,Netflix),media_rules
+- SUB-RULE,(RULE-SET,YouTube),media_rules
+- SUB-RULE,(RULE-SET,Streaming),media_rules
+- SUB-RULE,(RULE-SET,Apple),proxy_rules
+- SUB-RULE,(RULE-SET,Google),google_rules
+- SUB-RULE,(RULE-SET,Microsoft),proxy_rules
+- SUB-RULE,(RULE-SET,Trackerslist),trackerslist_rules
+- SUB-RULE,(RULE-SET,Proxy),proxy_rules
+- RULE-SET,China,国内流量
+- RULE-SET,AdvertisingIP,REJECT,no-resolve
+- RULE-SET,XPTVIP,直接连接,no-resolve
+- SUB-RULE,(RULE-SET,AIIP),ai_rules
+- SUB-RULE,(RULE-SET,TelegramIP),telegram_rules
+- SUB-RULE,(RULE-SET,SocialMediaIP),proxy_rules
+- SUB-RULE,(RULE-SET,EmbyIP),media_rules
+- SUB-RULE,(RULE-SET,NetflixIP),media_rules
+- SUB-RULE,(RULE-SET,StreamingIP),media_rules
+- SUB-RULE,(RULE-SET,GoogleIP),google_rules
+- SUB-RULE,(RULE-SET,ProxyIP),proxy_rules
+- RULE-SET,ChinaIP,国内流量
+- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
+- MATCH,兜底流量
 proxy-providers:
   优质服务商:
     type: http
