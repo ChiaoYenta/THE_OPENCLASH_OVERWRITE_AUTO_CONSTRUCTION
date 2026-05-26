@@ -1,6 +1,151 @@
 # Processed: raw_configs/external/Smart_Mode/echs-top/mihomo_smart.yaml
-# Providers: 3 proxy, 27 rule
+# Providers: 3 proxy, 18 rule
 
+rule-providers:
+  private_ip:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: ipcidr
+    format: mrs
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/privateip.mrs
+    path: ./rules/private_ip.mrs
+  private:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs
+    path: ./rules/private.mrs
+  ads:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/ads.mrs
+    path: ./rules/ads.mrs
+  fcm:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.mrs
+    path: ./rules/fcm.mrs
+  captcha:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/captcha.mrs
+    path: ./rules/captcha.mrs
+  ai:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.mrs
+    path: ./rules/ai.mrs
+  telegram:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+    path: ./rules/telegram.mrs
+  media:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/media.mrs
+    path: ./rules/media.mrs
+  google:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/google.mrs
+    path: ./rules/google.mrs
+  trackerslist:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/trackerslist.mrs
+    path: ./rules/trackerslist.mrs
+  proxy-lite:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/proxy-lite.mrs
+    path: ./rules/proxy-lite.mrs
+  cn:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/cn.mrs
+    path: ./rules/cn.mrs
+  dnsmasq-china-lite:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/dnsmasq-china-lite.mrs
+    path: ./rules/dnsmasq-china-lite.mrs
+  telegram_ip:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/telegram.mrs
+    path: ./rules/telegram_ip.mrs
+  media_ip:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: ipcidr
+    format: mrs
+    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/mediaip.mrs
+    path: ./rules/media_ip.mrs
+  google_ip:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+    path: ./rules/google_ip.mrs
+  proxy_ip:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/proxy.mrs
+    path: ./rules/proxy_ip.mrs
+  cn_ip:
+    type: http
+    interval: 86400
+    proxy: 代理连接
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/cn.mrs
+    path: ./rules/cn_ip.mrs
 proxy-groups:
 - name: 代理连接
   type: select
@@ -19,21 +164,6 @@ proxy-groups:
   - 荷兰|智能选择
   include-all-providers: true
   icon: https://mihomo.echs.top/img/icon/Global.webp
-- name: 直接连接
-  type: select
-  proxies:
-  - DIRECT
-  - IPV4优先
-  - IPV6优先
-  - 仅IPV4
-  - 仅IPV6
-  icon: https://mihomo.echs.top/img/icon/DIRECT.webp
-- name: 代理QUIC
-  type: select
-  proxies:
-  - PASS
-  - REJECT
-  icon: https://mihomo.echs.top/img/icon/Settings.webp
 - type: select
   proxies: &id001
   - 代理连接
@@ -50,22 +180,9 @@ proxy-groups:
   - 英国|智能选择
   - 法国|智能选择
   - 荷兰|智能选择
-  - PASS
-  - REJECT
   include-all-providers: true
   name: 代理DNS
   icon: https://mihomo.echs.top/img/icon/Server.webp
-- name: 广告拦截
-  type: select
-  proxies:
-  - REJECT
-  - PASS
-  icon: https://mihomo.echs.top/img/icon/Forbidden.webp
-- type: select
-  proxies: *id001
-  include-all-providers: true
-  name: FCM服务
-  icon: https://mihomo.echs.top/img/icon/FCM_Firebase_Cloud_Messaging.webp
 - type: select
   proxies: *id001
   include-all-providers: true
@@ -241,11 +358,7 @@ proxy-groups:
   - 法国|智能选择
   - 荷兰|智能选择
   - 代理连接
-  - 直接连接
-  - 代理QUIC
   - 代理DNS
-  - 广告拦截
-  - FCM服务
   - 人机验证
   - 国外AI
   - TELEGRAM
@@ -257,35 +370,25 @@ proxy-groups:
   icon: https://mihomo.echs.top/img/icon/Globefish.webp
 rules:
 - DST-PORT,53/853,DNS劫持
-- DST-PORT,5228-5230,FCM服务
+- DST-PORT,5228-5230,直接连接
 - DST-PORT,1337/2710/6881-6999/7777,TRACKER
 - RULE-SET,private_ip,直接连接,no-resolve
 - RULE-SET,private,直接连接
-- RULE-SET,ads,广告拦截
-- RULE-SET,fcm,FCM服务
+- RULE-SET,ads,REJECT
+- RULE-SET,fcm,直接连接
 - RULE-SET,captcha,人机验证
-- SUB-RULE,(RULE-SET,ai),ai_rules
-- SUB-RULE,(RULE-SET,telegram),telegram_rules
-- SUB-RULE,(RULE-SET,media),media_rules
-- RULE-SET,google-cn,直接连接
-- SUB-RULE,(RULE-SET,google),google_rules
-- SUB-RULE,(RULE-SET,trackerslist),trackerslist_rules
-- RULE-SET,apple-cn,直接连接
-- RULE-SET,microsoft-cn,直接连接
-- RULE-SET,games-cn,直接连接
-- SUB-RULE,(RULE-SET,proxy_domain),proxy_rules
-- RULE-SET,direct_domain,直接连接
-- SUB-RULE,(RULE-SET,github),proxy_rules
-- SUB-RULE,(RULE-SET,proxy),proxy_rules
+- RULE-SET,ai,国外AI
+- RULE-SET,telegram,TELEGRAM
+- RULE-SET,media,国外媒体
+- RULE-SET,google,GOOGLE
+- RULE-SET,trackerslist,TRACKER
+- RULE-SET,proxy-lite,代理连接
 - RULE-SET,cn,直接连接
-- SUB-RULE,(RULE-SET,telegram_ip),telegram_rules
-- SUB-RULE,(RULE-SET,media_ip),media_rules
-- SUB-RULE,(RULE-SET,google_ip),google_rules
-- SUB-RULE,(RULE-SET,proxy_ip),proxy_rules
-- RULE-SET,enhanced-FaaS-in-China_ip,直接连接
-- RULE-SET,direct_ip,直接连接
+- RULE-SET,telegram_ip,TELEGRAM
+- RULE-SET,media_ip,国外媒体
+- RULE-SET,google_ip,GOOGLE
+- RULE-SET,proxy_ip,代理连接
 - RULE-SET,cn_ip,直接连接
-- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
 - DST-PORT,10000-65535,TRACKER
 - MATCH,代理连接
 proxy-providers:
@@ -329,220 +432,3 @@ proxy-providers:
     exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
     url: 订阅链接3
     path: ./providers/link3.yaml
-rule-providers:
-  private_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/private_ip.mrs
-    path: ./rules/private_ip.mrs
-  private:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/private.mrs
-    path: ./rules/private.mrs
-  ads:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/ads_domain.mrs
-    path: ./rules/ads.mrs
-  fcm:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/googlefcm.mrs
-    path: ./rules/fcm.mrs
-  captcha:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/captcha_domain.mrs
-    path: ./rules/captcha.mrs
-  ai:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/ai.mrs
-    path: ./rules/ai.mrs
-  telegram:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/telegram.mrs
-    path: ./rules/telegram.mrs
-  media:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/media.mrs
-    path: ./rules/media.mrs
-  google-cn:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/google-cn_domain.mrs
-    path: ./rules/google-cn.mrs
-  google:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/google.mrs
-    path: ./rules/google.mrs
-  trackerslist:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/trackerslist.mrs
-    path: ./rules/trackerslist.mrs
-  apple-cn:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/apple-cn.mrs
-    path: ./rules/apple-cn.mrs
-  microsoft-cn:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/microsoft-cn.mrs
-    path: ./rules/microsoft-cn.mrs
-  games-cn:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/games-cn.mrs
-    path: ./rules/games-cn.mrs
-  proxy_domain:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/proxy_domain.mrs
-    path: ./rules/proxy_domain.mrs
-  direct_domain:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/direct_domain.mrs
-    path: ./rules/direct_domain.mrs
-  github:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/github.mrs
-    path: ./rules/github.mrs
-  proxy:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/proxy.mrs
-    path: ./rules/proxy.mrs
-  cn:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/cn_domain.mrs
-    path: ./rules/cn.mrs
-  dnsmasq-china-add:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/dnsmasq-china-add_domain.mrs
-    path: ./rules/dnsmasq-china-add.mrs
-  telegram_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/telegram_ip.mrs
-    path: ./rules/telegram_ip.mrs
-  media_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/media_ip.mrs
-    path: ./rules/media_ip.mrs
-  google_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/google_ip.mrs
-    path: ./rules/google_ip.mrs
-  proxy_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/proxy_ip.mrs
-    path: ./rules/proxy_ip.mrs
-  enhanced-FaaS-in-China_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/enhanced-FaaS-in-China_ip.mrs
-    path: ./rules/enhanced-FaaS-in-China_ip.mrs
-  direct_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/direct_ip.mrs
-    path: ./rules/direct_ip.mrs
-  cn_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/rules/mrs/cn_ip.mrs
-    path: ./rules/cn_ip.mrs

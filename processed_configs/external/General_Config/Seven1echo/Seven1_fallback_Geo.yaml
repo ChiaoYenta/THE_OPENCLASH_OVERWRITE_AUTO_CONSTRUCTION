@@ -1,6 +1,13 @@
 # Processed: raw_configs/external/General_Config/Seven1echo/Seven1_fallback_Geo.yaml
 # Providers: 1 proxy, 1 rule
 
+rule-providers:
+  add_direct_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
 proxy-groups:
 - type: select
   proxies:
@@ -410,10 +417,3 @@ proxy-providers:
     url: 订阅链接
     override:
       additional-prefix: '[机场名] '
-rule-providers:
-  add_direct_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
