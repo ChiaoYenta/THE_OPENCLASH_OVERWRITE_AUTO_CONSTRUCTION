@@ -1,6 +1,254 @@
 # Processed: raw_configs/external/General_Config/bgpeer/Clashmi-fx.yaml
 # Providers: 0 proxy, 35 rule
 
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-ads-all.mrs
+  douyin-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/douyin.yaml
+  TikTok-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/tiktok.yaml
+  Telegram-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/telegram.yaml
+  OpenAI-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/openai.yaml
+  Facebook-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/facebook.yaml
+  Google-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/google.yaml
+  WildRift-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/wildrift.yaml
+  GitHub-zj:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/github.mrs
+  Claude-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/anthropic.yaml
+  PayPal:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/paypal.mrs
+  Cryptocurrency:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-cryptocurrency.mrs
+  YouTube:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/youtube.mrs
+  games-!cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-games-!cn.mrs
+  twitter:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/twitter.mrs
+  telegram-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/telegram.mrs
+  google-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/google.mrs
+  cloudflare-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cloudflare.mrs
+  cloudfront-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cloudfront.mrs
+  fastly-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/fastly.mrs
+  icloud:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/icloud.mrs
+  Apple:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/apple.mrs
+  Microsoft:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/microsoft.mrs
+  gfw:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/gfw.mrs
+  greatfire:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/greatfire.mrs
+  geolocation-!cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/geolocation-!cn.mrs
+  games-cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-games-cn.mrs
+  bilibili:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/bilibili.mrs
+  xiaohongshu:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/xiaohongshu.yaml
+  Alibaba:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/alibaba.yaml
+  Tencent:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/tencent.yaml
+  private:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/private.mrs
+  cn-domain:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/cn.mrs
+  private-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/private.mrs
+  cn-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cn.mrs
+rules:
+- RULE-SET,reject,REJECT
+- RULE-SET,douyin-zj,🎷抖音
+- RULE-SET,OpenAI-zj,🧠OpenAI
+- RULE-SET,Claude-zj,🤖Claude
+- RULE-SET,TikTok-zj,🎬TikTok
+- RULE-SET,PayPal,💳PayPal
+- RULE-SET,Cryptocurrency,💰加密货币
+- RULE-SET,WildRift-zj,🎮国际游戏
+- RULE-SET,games-!cn,🎮国际游戏
+- RULE-SET,Telegram-zj,💻Telegram
+- RULE-SET,telegram-ip,💻Telegram,no-resolve
+- RULE-SET,YouTube,🌐Google服务
+- RULE-SET,Google-zj,🌐Google服务
+- RULE-SET,google-ip,🌐Google服务,no-resolve
+- RULE-SET,Facebook-zj,📱Meta
+- RULE-SET,GitHub-zj,😈GitHub
+- RULE-SET,Microsoft,😊微软服务
+- RULE-SET,icloud,🍎苹果服务
+- RULE-SET,Apple,🍎苹果服务
+- RULE-SET,twitter,🌍全球加速
+- RULE-SET,cloudflare-ip,🌍全球加速,no-resolve
+- RULE-SET,cloudfront-ip,🌍全球加速,no-resolve
+- RULE-SET,fastly-ip,🌍全球加速,no-resolve
+- RULE-SET,greatfire,🌍全球加速
+- RULE-SET,gfw,🌍全球加速
+- RULE-SET,geolocation-!cn,🌍全球加速
+- RULE-SET,games-cn,🎯直连
+- RULE-SET,bilibili,📺哔哩哔哩
+- RULE-SET,xiaohongshu,📕小红书
+- RULE-SET,Alibaba,⛩️阿里腾讯
+- RULE-SET,Tencent,⛩️阿里腾讯
+- RULE-SET,private,🎯直连
+- RULE-SET,cn-domain,🎯直连
+- RULE-SET,private-ip,🎯直连,no-resolve
+- RULE-SET,cn-ip,🎯直连,no-resolve
+- MATCH,🤡漏网之鱼
 proxy-groups:
 - include-all: true
   exclude-type: direct
@@ -245,251 +493,3 @@ proxy-groups:
   hidden: true
   name: ♻️全部随机
   filter: .*
-rule-providers:
-  reject:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-ads-all.mrs
-  douyin-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/douyin.yaml
-  TikTok-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/tiktok.yaml
-  Telegram-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/telegram.yaml
-  OpenAI-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/openai.yaml
-  Facebook-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/facebook.yaml
-  Google-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/google.yaml
-  WildRift-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/wildrift.yaml
-  GitHub-zj:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/github.mrs
-  Claude-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/claude.yaml
-  PayPal:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/paypal.mrs
-  Cryptocurrency:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-cryptocurrency.mrs
-  YouTube:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/youtube.mrs
-  games-!cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-games-!cn.mrs
-  twitter:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/twitter.mrs
-  telegram-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/telegram.mrs
-  google-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/google.mrs
-  cloudflare-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cloudflare.mrs
-  cloudfront-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cloudfront.mrs
-  fastly-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/fastly.mrs
-  icloud:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/icloud.mrs
-  Apple:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/apple.mrs
-  Microsoft:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/microsoft.mrs
-  gfw:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/gfw.mrs
-  greatfire:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/greatfire.mrs
-  geolocation-!cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/geolocation-!cn.mrs
-  games-cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/category-games-cn.mrs
-  bilibili:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/bilibili.mrs
-  xiaohongshu:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/xiaohongshu.yaml
-  Alibaba:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/alibaba.yaml
-  Tencent:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/tencent.yaml
-  private:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/private.mrs
-  cn-domain:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/cn.mrs
-  private-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/private.mrs
-  cn-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cn.mrs
-rules:
-- RULE-SET,reject,REJECT
-- RULE-SET,douyin-zj,🎷抖音
-- RULE-SET,OpenAI-zj,🧠OpenAI
-- RULE-SET,Claude-zj,🤖Claude
-- RULE-SET,TikTok-zj,🎬TikTok
-- RULE-SET,PayPal,💳PayPal
-- RULE-SET,Cryptocurrency,💰加密货币
-- RULE-SET,WildRift-zj,🎮国际游戏
-- RULE-SET,games-!cn,🎮国际游戏
-- RULE-SET,Telegram-zj,💻Telegram
-- RULE-SET,telegram-ip,💻Telegram,no-resolve
-- RULE-SET,YouTube,🌐Google服务
-- RULE-SET,Google-zj,🌐Google服务
-- RULE-SET,google-ip,🌐Google服务,no-resolve
-- RULE-SET,Facebook-zj,📱Meta
-- RULE-SET,GitHub-zj,😈GitHub
-- RULE-SET,Microsoft,😊微软服务
-- RULE-SET,icloud,🍎苹果服务
-- RULE-SET,Apple,🍎苹果服务
-- RULE-SET,twitter,🌍全球加速
-- RULE-SET,cloudflare-ip,🌍全球加速,no-resolve
-- RULE-SET,cloudfront-ip,🌍全球加速,no-resolve
-- RULE-SET,fastly-ip,🌍全球加速,no-resolve
-- RULE-SET,greatfire,🌍全球加速
-- RULE-SET,gfw,🌍全球加速
-- RULE-SET,geolocation-!cn,🌍全球加速
-- RULE-SET,games-cn,🎯直连
-- RULE-SET,bilibili,📺哔哩哔哩
-- RULE-SET,xiaohongshu,📕小红书
-- RULE-SET,Alibaba,⛩️阿里腾讯
-- RULE-SET,Tencent,⛩️阿里腾讯
-- RULE-SET,private,🎯直连
-- RULE-SET,cn-domain,🎯直连
-- RULE-SET,private-ip,🎯直连,no-resolve
-- RULE-SET,cn-ip,🎯直连,no-resolve
-- MATCH,🤡漏网之鱼
