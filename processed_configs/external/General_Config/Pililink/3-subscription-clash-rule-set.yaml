@@ -22,34 +22,6 @@ rules:
 - RULE-SET,privateip,🔒 私有网络,no-resolve
 - RULE-SET,cnip,🇨🇳 直连 IP
 - MATCH,🐟 漏网之鱼
-proxy-providers:
-  A机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air1.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  B机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air2.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  C机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air3.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -469,3 +441,31 @@ rule-providers:
     path: ./rule_provider/myproxy.list
     url: https://raw.githubusercontent.com/Pililink/AirRules/refs/heads/main/clash/ruleset/proxy.list
     interval: 7200
+proxy-providers:
+  A机场:
+    type: http
+    url: ''
+    path: ./proxy_provider/air1.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  B机场:
+    type: http
+    url: ''
+    path: ./proxy_provider/air2.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  C机场:
+    type: http
+    url: ''
+    path: ./proxy_provider/air3.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600

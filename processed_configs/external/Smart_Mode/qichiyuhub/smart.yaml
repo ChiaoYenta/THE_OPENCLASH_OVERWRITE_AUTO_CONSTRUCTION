@@ -25,16 +25,6 @@ rules:
 - RULE-SET,cn_domain,直连
 - RULE-SET,cn_ip,直连
 - MATCH,🐟 漏网之鱼
-proxy-providers:
-  Airport1:
-    url: 机场订阅1
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
 proxy-groups:
 - name: 🚀 默认代理
   type: select
@@ -483,3 +473,13 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs
+proxy-providers:
+  Airport1:
+    url: 机场订阅1
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连

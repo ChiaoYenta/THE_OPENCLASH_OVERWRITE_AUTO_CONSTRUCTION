@@ -31,19 +31,6 @@ rules:
 - RULE-SET,cn_domain,国内直连
 - RULE-SET,cn_ip,国内直连,no-resolve
 - MATCH,漏网之鱼
-proxy-providers:
-  机场名:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.g.cn/generate_204
-      interval: 300
-    filter: ^(?!.*(到期|过期|剩余|网址|官网|邮箱|订阅|套餐|流量|说明|重置)).*$
-    url: 订阅链接
-    override:
-      additional-prefix: '[机场名] '
 proxy-groups:
 - type: select
   proxies:
@@ -579,3 +566,16 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+proxy-providers:
+  机场名:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.g.cn/generate_204
+      interval: 300
+    filter: ^(?!.*(到期|过期|剩余|网址|官网|邮箱|订阅|套餐|流量|说明|重置)).*$
+    url: 订阅链接
+    override:
+      additional-prefix: '[机场名] '
