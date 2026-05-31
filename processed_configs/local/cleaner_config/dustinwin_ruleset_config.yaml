@@ -16,27 +16,6 @@ rules:
 - RULE-SET,cnip,直连 IP
 - RULE-SET,telegramip,电报消息,no-resolve
 - MATCH,漏网之鱼
-proxy-providers:
-  🛫 机场订阅:
-    type: http
-    url: https://example.com/xxx/xxx&flag=clash
-    path: ./proxies/airport.yaml
-    interval: 86400
-    filter: (?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united
-      states)
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  🆓 免费订阅:
-    type: http
-    url: https://example.com/xxx/xxx&flag=clash
-    path: ./proxies/free.yaml
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
 proxy-groups:
 - name: 节点选择
   type: select
@@ -200,6 +179,27 @@ proxy-groups:
   use:
   - 🆓 免费订阅
   icon: https://github.com/DustinWin/ruleset_geodata/releases/download/icons/free.png
+proxy-providers:
+  🛫 机场订阅:
+    type: http
+    url: https://example.com/xxx/xxx&flag=clash
+    path: ./proxies/airport.yaml
+    interval: 86400
+    filter: (?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united
+      states)
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  🆓 免费订阅:
+    type: http
+    url: https://example.com/xxx/xxx&flag=clash
+    path: ./proxies/free.yaml
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
 rule-providers:
   ads:
     type: http
