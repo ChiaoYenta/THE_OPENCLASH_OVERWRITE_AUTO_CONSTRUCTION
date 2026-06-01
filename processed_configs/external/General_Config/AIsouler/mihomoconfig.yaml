@@ -1,6 +1,279 @@
 # Processed: raw_configs/external/General_Config/AIsouler/mihomoconfig.yaml
 # Providers: 1 proxy, 37 rule
 
+rule-providers:
+  adblockmihomolite:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomolite.mrs
+    path: ./ruleset/adblockmihomolite.mrs
+  DownloadApps:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Rules/DownloadApps.txt
+    path: ./ruleset/DownloadApps.txt
+  fakeip_filter:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/wwqgtxx/clash-rules@release/fakeip-filter.mrs
+    path: ./ruleset/fakeip-filter.mrs
+  epicgames:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/epicgames.mrs
+    path: ./ruleset/epicgames.mrs
+  nvidia_cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/nvidia@cn.mrs
+    path: ./ruleset/nvidia@cn.mrs
+  ai:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs
+    path: ./ruleset/ai.mrs
+  youtube:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs
+    path: ./ruleset/youtube.mrs
+  googlefcm:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/googlefcm.mrs
+    path: ./ruleset/googlefcm.mrs
+  google:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs
+    path: ./ruleset/google.mrs
+  google_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs
+    path: ./ruleset/google_ip.mrs
+  github:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs
+    path: ./ruleset/github.mrs
+  microsoft:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
+    path: ./ruleset/microsoft.mrs
+  telegram:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs
+    path: ./ruleset/telegram.mrs
+  telegram_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs
+    path: ./ruleset/telegram_ip.mrs
+  pixiv:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.mrs
+    path: ./ruleset/pixiv.mrs
+  steam:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs
+    path: ./ruleset/steam.mrs
+  games_cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games@cn.mrs
+    path: ./ruleset/category-games@cn.mrs
+  twitter:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.mrs
+    path: ./ruleset/twitter.mrs
+  twitter_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs
+    path: ./ruleset/twitter_ip.mrs
+  private:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs
+    path: ./ruleset/private.mrs
+  private_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs
+    path: ./ruleset/private_ip.mrs
+  gfw:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs
+    path: ./ruleset/gfw.mrs
+  cn_additional:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://static-file-global.353355.xyz/rules/cn-additional-list.mrs
+    path: ./ruleset/cn-additional-list.mrs
+  cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/wwqgtxx/clash-rules@release/direct.mrs
+    path: ./ruleset/cn.mrs
+  cn_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
+    path: ./ruleset/cn_ip.mrs
+  emby:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/666OS/rules@release/mihomo/domain/Emby.mrs
+    path: ./ruleset/emby.mrs
+  emby_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/666OS/rules@release/mihomo/ip/Emby.mrs
+    path: ./ruleset/emby_ip.mrs
+  spotify:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs
+    path: ./ruleset/spotify.mrs
+  tiktok:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs
+    path: ./ruleset/tiktok.mrs
+  netflix:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs
+    path: ./ruleset/netflix.mrs
+  netflix_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs
+    path: ./ruleset/netflix_ip.mrs
+  cloudflare:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.mrs
+    path: ./ruleset/cloudflare.mrs
+  cloudflare_cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare@cn.mrs
+    path: ./ruleset/cloudflare@cn.mrs
+  cloudflare_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cloudflare.mrs
+    path: ./ruleset/cloudflare_ip.mrs
+  apple:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs
+    path: ./ruleset/apple.mrs
+  apple_cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.mrs
+    path: ./ruleset/apple@cn.mrs
+  instagram:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/instagram.mrs
+    path: ./ruleset/instagram.mrs
+proxy-providers:
+  provider1:
+    exclude-filter: 群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|⚠️|@|Expire|http|com
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://g.cn/generate_204
+      interval: 600
+      lazy: true
+    url: 此处填入机场订阅链接
+    path: ./proxy_providers/provider1.yaml
 proxy-groups:
 - type: select
   interval: 600
@@ -593,19 +866,6 @@ proxy-groups:
   hidden: true
   name: 其他节点-负载均衡
   exclude-filter: 港|HK|🇭🇰|日本|JP|🇯🇵|美|US|🇺🇸|新加坡|SG|🇸🇬|台湾|TW|🇹🇼|直连
-proxy-providers:
-  provider1:
-    exclude-filter: 群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|⚠️|@|Expire|http|com
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://g.cn/generate_204
-      interval: 600
-      lazy: true
-    url: 此处填入机场订阅链接
-    path: ./proxy_providers/provider1.yaml
 rules:
 - RULE-SET,private,直连
 - RULE-SET,private_ip,直连,no-resolve
@@ -648,263 +908,3 @@ rules:
 - RULE-SET,cn_additional,直连
 - RULE-SET,cn_ip,直连
 - MATCH,默认代理
-rule-providers:
-  adblockmihomolite:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomolite.mrs
-    path: ./ruleset/adblockmihomolite.mrs
-  DownloadApps:
-    type: http
-    interval: 86400
-    behavior: classical
-    format: text
-    url: https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Rules/DownloadApps.txt
-    path: ./ruleset/DownloadApps.txt
-  fakeip_filter:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/wwqgtxx/clash-rules@release/fakeip-filter.mrs
-    path: ./ruleset/fakeip-filter.mrs
-  epicgames:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/epicgames.mrs
-    path: ./ruleset/epicgames.mrs
-  nvidia_cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/nvidia@cn.mrs
-    path: ./ruleset/nvidia@cn.mrs
-  ai:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs
-    path: ./ruleset/ai.mrs
-  youtube:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs
-    path: ./ruleset/youtube.mrs
-  googlefcm:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/googlefcm.mrs
-    path: ./ruleset/googlefcm.mrs
-  google:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs
-    path: ./ruleset/google.mrs
-  google_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs
-    path: ./ruleset/google_ip.mrs
-  github:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs
-    path: ./ruleset/github.mrs
-  microsoft:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
-    path: ./ruleset/microsoft.mrs
-  telegram:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs
-    path: ./ruleset/telegram.mrs
-  telegram_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs
-    path: ./ruleset/telegram_ip.mrs
-  pixiv:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.mrs
-    path: ./ruleset/pixiv.mrs
-  steam:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs
-    path: ./ruleset/steam.mrs
-  games_cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games@cn.mrs
-    path: ./ruleset/category-games@cn.mrs
-  twitter:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.mrs
-    path: ./ruleset/twitter.mrs
-  twitter_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs
-    path: ./ruleset/twitter_ip.mrs
-  private:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs
-    path: ./ruleset/private.mrs
-  private_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs
-    path: ./ruleset/private_ip.mrs
-  gfw:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs
-    path: ./ruleset/gfw.mrs
-  cn_additional:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://static-file-global.353355.xyz/rules/cn-additional-list.mrs
-    path: ./ruleset/cn-additional-list.mrs
-  cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/wwqgtxx/clash-rules@release/direct.mrs
-    path: ./ruleset/cn.mrs
-  cn_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
-    path: ./ruleset/cn_ip.mrs
-  emby:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/666OS/rules@release/mihomo/domain/Emby.mrs
-    path: ./ruleset/emby.mrs
-  emby_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/666OS/rules@release/mihomo/ip/Emby.mrs
-    path: ./ruleset/emby_ip.mrs
-  spotify:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs
-    path: ./ruleset/spotify.mrs
-  tiktok:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs
-    path: ./ruleset/tiktok.mrs
-  netflix:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs
-    path: ./ruleset/netflix.mrs
-  netflix_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs
-    path: ./ruleset/netflix_ip.mrs
-  cloudflare:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.mrs
-    path: ./ruleset/cloudflare.mrs
-  cloudflare_cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare@cn.mrs
-    path: ./ruleset/cloudflare@cn.mrs
-  cloudflare_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cloudflare.mrs
-    path: ./ruleset/cloudflare_ip.mrs
-  apple:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs
-    path: ./ruleset/apple.mrs
-  apple_cn:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.mrs
-    path: ./ruleset/apple@cn.mrs
-  instagram:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/instagram.mrs
-    path: ./ruleset/instagram.mrs

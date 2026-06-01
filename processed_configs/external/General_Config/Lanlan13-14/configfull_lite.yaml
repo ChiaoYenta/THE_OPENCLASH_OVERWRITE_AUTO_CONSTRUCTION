@@ -1,6 +1,68 @@
 # Processed: raw_configs/external/General_Config/Lanlan13-14/configfull_lite.yaml
 # Providers: 3 proxy, 4 rule
 
+rule-providers:
+  emby_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/emby.mrs
+  ai_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/ai.mrs
+  bilibili_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/bilibili.mrs
+  fakeip_filter_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-filter.mrs
+proxy-providers:
+  Airport_01:
+    type: http
+    interval: 86400
+    health-check: &id001
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接1
+    override:
+      additional-prefix: '[机场名称1]'
+      skip-cert-verify: true
+      udp: true
+  Airport_02:
+    type: http
+    interval: 86400
+    health-check: *id001
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接2
+    override:
+      additional-prefix: '[机场名称2]'
+      skip-cert-verify: true
+      udp: true
+  Airport_03:
+    type: http
+    interval: 86400
+    health-check: *id001
+    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
+    proxy: 故障转移
+    url: 订阅链接3
+    override:
+      additional-prefix: '[机场名称3]'
+      skip-cert-verify: true
+      udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -16,7 +78,7 @@ proxy-groups:
   - 故障转移
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png
 - type: select
-  proxies: &id001
+  proxies: &id002
   - 节点选择
   - 香港节点
   - 新加坡节点
@@ -30,15 +92,15 @@ proxy-groups:
   name: YouTube
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/youtube.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Google
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/google.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Meta
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/meta.png
 - type: select
-  proxies: &id002
+  proxies: &id003
   - 节点选择
   - 香港节点
   - 新加坡节点
@@ -54,39 +116,39 @@ proxy-groups:
   name: AI
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/ai.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: GitHub
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/github.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: OneDrive
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/onedrive.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Microsoft
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/microsoft.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Telegram
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/telegram.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: TikTok
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/tiktok.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: NETFLIX
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netflix.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: DisneyPlus
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disney.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: HBO
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/hbo.png
 - type: select
-  proxies: &id003
+  proxies: &id004
   - 全球直连
   - 节点选择
   - 香港节点
@@ -100,13 +162,13 @@ proxy-groups:
   name: Apple
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/apple.png
 - type: select
-  proxies: *id002
+  proxies: *id003
   include-all: true
   exclude-filter: (?i)(🟢 直连)
   name: Emby
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/emby.png
 - type: select
-  proxies: *id003
+  proxies: *id004
   name: 哔哩哔哩
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bilibili.png
 - name: 哔哩东南亚
@@ -124,15 +186,15 @@ proxy-groups:
   - 台湾节点
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bahamut.png
 - type: select
-  proxies: *id001
+  proxies: *id002
   name: Spotify
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/spotify.png
 - type: select
-  proxies: *id003
+  proxies: *id004
   name: 国内媒体
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Chinese_media.png
 - type: select
-  proxies: *id002
+  proxies: *id003
   include-all: true
   exclude-filter: (?i)(🟢 直连)
   name: STEAM
@@ -153,7 +215,7 @@ proxy-groups:
   - 🔗 代理
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/block.png
 - type: select
-  proxies: *id002
+  proxies: *id003
   include-all: true
   exclude-filter: (?i)(🟢 直连)
   name: Final
@@ -377,43 +439,6 @@ proxy-groups:
   - 故障转移
   exclude-filter: (?i)(🟢 直连)
   icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png
-proxy-providers:
-  Airport_01:
-    type: http
-    interval: 86400
-    health-check: &id004
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接1
-    override:
-      additional-prefix: '[机场名称1]'
-      skip-cert-verify: true
-      udp: true
-  Airport_02:
-    type: http
-    interval: 86400
-    health-check: *id004
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接2
-    override:
-      additional-prefix: '[机场名称2]'
-      skip-cert-verify: true
-      udp: true
-  Airport_03:
-    type: http
-    interval: 86400
-    health-check: *id004
-    filter: ^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))
-    proxy: 故障转移
-    url: 订阅链接3
-    override:
-      additional-prefix: '[机场名称3]'
-      skip-cert-verify: true
-      udp: true
 rules:
 - GEOSITE,category-ads-all,隐私拦截
 - GEOSITE,private,全球直连
@@ -453,28 +478,3 @@ rules:
 - GEOIP,private,全球直连,no-resolve
 - GEOIP,cn,全球直连,no-resolve
 - MATCH,Final
-rule-providers:
-  emby_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/emby.mrs
-  ai_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/ai.mrs
-  bilibili_ip:
-    type: http
-    interval: 86400
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/bilibili.mrs
-  fakeip_filter_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-filter.mrs
