@@ -1,99 +1,6 @@
 # Processed: raw_configs/external/General_Config/iKeLee/Clash_Sample.yaml
 # Providers: 2 proxy, 9 rule
 
-rule-providers:
-  LAN:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Lan.yaml
-    url: https://kelee.one/Tool/Clash/Rule/LAN_SPLITTER.yaml
-  Direct:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Direct.yaml
-    url: https://kelee.one/Tool/Clash/Rule/Direct.yaml
-  Proxy:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Proxy.yaml
-    url: https://kelee.one/Tool/Clash/Rule/Proxy.yaml
-  AI:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/AI.yaml
-    url: https://kelee.one/Tool/Clash/Rule/AI.yaml
-  TikTok:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/TikTok.yaml
-    url: https://kelee.one/Tool/Clash/Rule/TikTok.yaml
-  SpeedtestIntl:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/SpeedtestInternational.yaml
-    url: https://kelee.one/Tool/Clash/Rule/SpeedtestInternational.yaml
-  Game:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Game.yaml
-    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
-  Netflix:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Netflix.yaml
-    url: https://rule.kelee.one/Clash/Netflix.yaml
-  ESET_China:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/ESET_China.yaml
-    url: https://kelee.one/Tool/Clash/Rule/ESET_China.yaml
-proxy-providers:
-  机场名称1:
-    type: http
-    interval: 3600
-    health-check: &id001
-      enable: true
-      url: http://www.google.com/blank.html
-      interval: 6
-    url: 机场1的订阅URL
-    path: ./proxy_providers/机场名称1.yaml
-    override:
-      additional-prefix: '[机场名称1] '
-  机场名称2:
-    type: http
-    interval: 3600
-    health-check: *id001
-    url: 机场2的订阅URL
-    path: ./proxy_providers/机场名称2.yaml
-    override:
-      additional-prefix: '[机场名称2] '
 proxy-groups:
 - name: 游戏选择
   type: select
@@ -121,8 +28,16 @@ proxy-groups:
   type: select
   include-all-providers: true
   filter: ^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
-- name: 兜底后备策略
-  type: fallback
+- type: fallback
+  interval: 6
+  lazy: true
+  url: http://www.google.com/blank.html
+  disable-udp: false
+  timeout: 2000
+  max-failed-times: 3
+  hidden: true
+  include-all-providers: true
+  name: 兜底后备策略
   proxies:
   - 香港自动策略
   - 台湾自动策略
@@ -242,6 +157,99 @@ proxy-groups:
   include-all-providers: true
   name: 德国自动策略
   filter: ^(?=.*((?i)🇩🇪|德国|(\b(DE|DEU|Germany)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$
+rule-providers:
+  LAN:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Lan.yaml
+    url: https://kelee.one/Tool/Clash/Rule/LAN_SPLITTER.yaml
+  Direct:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Direct.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Direct.yaml
+  Proxy:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Proxy.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Proxy.yaml
+  AI:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/AI.yaml
+    url: https://kelee.one/Tool/Clash/Rule/AI.yaml
+  TikTok:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/TikTok.yaml
+    url: https://kelee.one/Tool/Clash/Rule/TikTok.yaml
+  SpeedtestIntl:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/SpeedtestInternational.yaml
+    url: https://kelee.one/Tool/Clash/Rule/SpeedtestInternational.yaml
+  Game:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Game.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
+  Netflix:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Netflix.yaml
+    url: https://rule.kelee.one/Clash/Netflix.yaml
+  ESET_China:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/ESET_China.yaml
+    url: https://kelee.one/Tool/Clash/Rule/ESET_China.yaml
+proxy-providers:
+  机场名称1:
+    type: http
+    interval: 3600
+    health-check: &id001
+      enable: true
+      url: http://www.google.com/blank.html
+      interval: 6
+    url: 机场1的订阅URL
+    path: ./proxy_providers/机场名称1.yaml
+    override:
+      additional-prefix: '[机场名称1] '
+  机场名称2:
+    type: http
+    interval: 3600
+    health-check: *id001
+    url: 机场2的订阅URL
+    path: ./proxy_providers/机场名称2.yaml
+    override:
+      additional-prefix: '[机场名称2] '
 rules:
 - RULE-SET, LAN, DIRECT
 - RULE-SET, Direct, DIRECT
