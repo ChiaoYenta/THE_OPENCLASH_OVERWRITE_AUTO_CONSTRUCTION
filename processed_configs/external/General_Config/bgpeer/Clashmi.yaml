@@ -245,6 +245,34 @@ proxy-groups:
   hidden: true
   name: ♻️全部随机
   filter: .*
+proxy-providers:
+  机场1:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: &id003
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '#机场订阅'
+    override:
+      additional-prefix: ¹
+  机场2:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: *id003
+    url: '#机场订阅'
+    override:
+      additional-prefix: ²
+  机场3:
+    type: http
+    interval: 3600
+    proxy: 🌍全球加速
+    health-check: *id003
+    url: '#机场订阅'
+    override:
+      additional-prefix: ³
 rule-providers:
   reject:
     type: http
@@ -456,34 +484,6 @@ rule-providers:
     interval: 86400
     format: mrs
     url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geoip/cn.mrs
-proxy-providers:
-  机场1:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: &id003
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '#机场订阅'
-    override:
-      additional-prefix: ¹
-  机场2:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: *id003
-    url: '#机场订阅'
-    override:
-      additional-prefix: ²
-  机场3:
-    type: http
-    interval: 3600
-    proxy: 🌍全球加速
-    health-check: *id003
-    url: '#机场订阅'
-    override:
-      additional-prefix: ³
 rules:
 - RULE-SET,reject,REJECT
 - RULE-SET,douyin-zj,🎷抖音

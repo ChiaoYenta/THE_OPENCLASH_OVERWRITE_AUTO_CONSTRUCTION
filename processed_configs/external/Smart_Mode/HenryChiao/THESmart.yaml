@@ -613,6 +613,28 @@ proxy-groups:
   filter: ^(?=.*(?i)(荷兰|🇳🇱|NL|Netherlands|AMS))(?!.*(排除1|排除2|5x)).*$
   include-all: true
   icon: https://mihomo.echs.top/img/flags/nl.svg
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: &id003
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 优质订阅源地址
+    override:
+      additional-prefix: '[优] '
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: *id003
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 备用订阅源地址
+    override:
+      additional-prefix: '[备] '
 rule-providers:
   fakeip-filter:
     type: http
@@ -896,28 +918,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/666OS/rules/raw/release/mihomo/ip/China.mrs
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: &id003
-      enable: true
-      url: https://www.google.com/generate_204
-      interval: 300
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 优质订阅源地址
-    override:
-      additional-prefix: '[优] '
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: *id003
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 备用订阅源地址
-    override:
-      additional-prefix: '[备] '
 rules:
 - SUB-RULE,(DST-PORT,5228-5230),fcm_rules
 - DST-PORT,1337/2710/6881-6999/7777,下载追踪

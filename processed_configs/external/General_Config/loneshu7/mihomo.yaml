@@ -697,6 +697,46 @@ proxy-groups:
   hidden: true
   proxies:
   - 落地
+proxy-providers:
+  机场1:
+    interval: 43200
+    health-check: &id002
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    url: 在此填入第1个机场的订阅链接(Clash/mihomo 格式)
+    type: http
+    path: ./proxy_provider/providers_1.yaml
+    proxy: Proxies
+    override:
+      additional-prefix: 机场标识
+    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  机场2:
+    interval: 43200
+    health-check: *id002
+    url: 在此填入第2个机场的订阅链接(Clash/mihomo 格式)
+    type: http
+    path: ./proxy_provider/providers_2.yaml
+    proxy: Proxies
+    override:
+      additional-prefix: 机场标识
+    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  LandNode:
+    interval: 43200
+    health-check: *id002
+    type: file
+    override:
+      additional-prefix: 🔗
+      dialer-proxy: 中转
+    path: ./proxy_provider/LandNode.yaml
+  OtherNode:
+    interval: 43200
+    health-check: *id002
+    type: file
+    path: ./proxy_provider/OtherNode.yaml
 rule-providers:
   lan:
     type: http
@@ -896,46 +936,6 @@ rule-providers:
     proxy: Proxies
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Binance/Binance.yaml
     path: ./rule_set/binance.yaml
-proxy-providers:
-  机场1:
-    interval: 43200
-    health-check: &id002
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-    url: 在此填入第1个机场的订阅链接(Clash/mihomo 格式)
-    type: http
-    path: ./proxy_provider/providers_1.yaml
-    proxy: Proxies
-    override:
-      additional-prefix: 机场标识
-    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  机场2:
-    interval: 43200
-    health-check: *id002
-    url: 在此填入第2个机场的订阅链接(Clash/mihomo 格式)
-    type: http
-    path: ./proxy_provider/providers_2.yaml
-    proxy: Proxies
-    override:
-      additional-prefix: 机场标识
-    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  LandNode:
-    interval: 43200
-    health-check: *id002
-    type: file
-    override:
-      additional-prefix: 🔗
-      dialer-proxy: 中转
-    path: ./proxy_provider/LandNode.yaml
-  OtherNode:
-    interval: 43200
-    health-check: *id002
-    type: file
-    path: ./proxy_provider/OtherNode.yaml
 rules:
 - RULE-SET,advertising,⛔阻断
 - RULE-SET,privacy,⛔阻断

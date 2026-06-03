@@ -304,6 +304,25 @@ proxy-groups:
   - B机场
   exclude-filter: (?i)(香港|HK|HKG|Hong Kong|HongKong|日本|JP|Japan|东京|大阪|韩国|KR|Korea|首尔|新加坡|SG|Singapore|美国|美|US|USA|United
     States|America|台湾|TW|Taiwan|台北|欧洲|EU|Europe|英国|UK|London|德国|DE|Germany|法国|FR|France|荷兰|NL|Netherlands)
+proxy-providers:
+  A机场:
+    type: http
+    url: ''
+    path: ./proxy_provider/air1.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  B机场:
+    type: http
+    url: ''
+    path: ./proxy_provider/air2.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
 rule-providers:
   ads:
     type: http
@@ -410,25 +429,6 @@ rule-providers:
     path: ./rule_provider/myproxy.list
     url: https://raw.githubusercontent.com/Pililink/AirRules/refs/heads/main/clash/ruleset/proxy.list
     interval: 7200
-proxy-providers:
-  A机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air1.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  B机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air2.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
 rules:
 - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
 - RULE-SET,myignore,DIRECT
