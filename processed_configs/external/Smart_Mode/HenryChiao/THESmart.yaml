@@ -613,28 +613,56 @@ proxy-groups:
   filter: ^(?=.*(?i)(荷兰|🇳🇱|NL|Netherlands|AMS))(?!.*(排除1|排除2|5x)).*$
   include-all: true
   icon: https://mihomo.echs.top/img/flags/nl.svg
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: &id003
-      enable: true
-      url: https://www.google.com/generate_204
-      interval: 300
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 优质订阅源地址
-    override:
-      additional-prefix: '[优] '
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check: *id003
-    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
-    url: 备用订阅源地址
-    override:
-      additional-prefix: '[备] '
+rules:
+- SUB-RULE,(DST-PORT,5228-5230),fcm_rules
+- DST-PORT,1337/2710/6881-6999/7777,下载追踪
+- RULE-SET,PrivateIP,直接连接,no-resolve
+- RULE-SET,Private,直接连接
+- RULE-SET,Tracking,REJECT
+- RULE-SET,Advertising,REJECT
+- SUB-RULE,(RULE-SET,FCM),fcm_rules
+- RULE-SET,LocationDKS,抖快书定位
+- RULE-SET,Direct,直接连接
+- RULE-SET,XPTV,直接连接
+- RULE-SET,Download,直接连接
+- RULE-SET,AppleCN,直接连接
+- RULE-SET,MicrosoftCN,直接连接
+- RULE-SET,GamesCN,直接连接
+- RULE-SET,GoogleCN,直接连接
+- SUB-RULE,(RULE-SET,Captcha),captcha_rules
+- SUB-RULE,(RULE-SET,AI),ai_rules
+- DOMAIN-KEYWORD,speedtest,网络测试
+- RULE-SET,Speedtest,网络测试
+- SUB-RULE,(RULE-SET,Github),proxy_rules
+- SUB-RULE,(RULE-SET,Twitter),proxy_rules
+- SUB-RULE,(RULE-SET,Telegram),telegram_rules
+- SUB-RULE,(RULE-SET,SocialMedia),proxy_rules
+- SUB-RULE,(RULE-SET,NewsMedia),proxy_rules
+- SUB-RULE,(RULE-SET,Games),proxy_rules
+- SUB-RULE,(RULE-SET,Crypto),proxy_rules
+- SUB-RULE,(RULE-SET,Emby),media_rules
+- SUB-RULE,(RULE-SET,Netflix),media_rules
+- SUB-RULE,(RULE-SET,YouTube),media_rules
+- SUB-RULE,(RULE-SET,Streaming),media_rules
+- SUB-RULE,(RULE-SET,Apple),proxy_rules
+- SUB-RULE,(RULE-SET,Google),google_rules
+- SUB-RULE,(RULE-SET,Microsoft),proxy_rules
+- SUB-RULE,(RULE-SET,Trackerslist),trackerslist_rules
+- SUB-RULE,(RULE-SET,Proxy),proxy_rules
+- RULE-SET,China,国内流量
+- RULE-SET,AdvertisingIP,REJECT,no-resolve
+- RULE-SET,XPTVIP,直接连接,no-resolve
+- SUB-RULE,(RULE-SET,AIIP),ai_rules
+- SUB-RULE,(RULE-SET,TelegramIP),telegram_rules
+- SUB-RULE,(RULE-SET,SocialMediaIP),proxy_rules
+- SUB-RULE,(RULE-SET,EmbyIP),media_rules
+- SUB-RULE,(RULE-SET,NetflixIP),media_rules
+- SUB-RULE,(RULE-SET,StreamingIP),media_rules
+- SUB-RULE,(RULE-SET,GoogleIP),google_rules
+- SUB-RULE,(RULE-SET,ProxyIP),proxy_rules
+- RULE-SET,ChinaIP,国内流量
+- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
+- MATCH,兜底流量
 rule-providers:
   fakeip-filter:
     type: http
@@ -918,53 +946,25 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/666OS/rules/raw/release/mihomo/ip/China.mrs
-rules:
-- SUB-RULE,(DST-PORT,5228-5230),fcm_rules
-- DST-PORT,1337/2710/6881-6999/7777,下载追踪
-- RULE-SET,PrivateIP,直接连接,no-resolve
-- RULE-SET,Private,直接连接
-- RULE-SET,Tracking,REJECT
-- RULE-SET,Advertising,REJECT
-- SUB-RULE,(RULE-SET,FCM),fcm_rules
-- RULE-SET,LocationDKS,抖快书定位
-- RULE-SET,Direct,直接连接
-- RULE-SET,XPTV,直接连接
-- RULE-SET,Download,直接连接
-- RULE-SET,AppleCN,直接连接
-- RULE-SET,MicrosoftCN,直接连接
-- RULE-SET,GamesCN,直接连接
-- RULE-SET,GoogleCN,直接连接
-- SUB-RULE,(RULE-SET,Captcha),captcha_rules
-- SUB-RULE,(RULE-SET,AI),ai_rules
-- DOMAIN-KEYWORD,speedtest,网络测试
-- RULE-SET,Speedtest,网络测试
-- SUB-RULE,(RULE-SET,Github),proxy_rules
-- SUB-RULE,(RULE-SET,Twitter),proxy_rules
-- SUB-RULE,(RULE-SET,Telegram),telegram_rules
-- SUB-RULE,(RULE-SET,SocialMedia),proxy_rules
-- SUB-RULE,(RULE-SET,NewsMedia),proxy_rules
-- SUB-RULE,(RULE-SET,Games),proxy_rules
-- SUB-RULE,(RULE-SET,Crypto),proxy_rules
-- SUB-RULE,(RULE-SET,Emby),media_rules
-- SUB-RULE,(RULE-SET,Netflix),media_rules
-- SUB-RULE,(RULE-SET,YouTube),media_rules
-- SUB-RULE,(RULE-SET,Streaming),media_rules
-- SUB-RULE,(RULE-SET,Apple),proxy_rules
-- SUB-RULE,(RULE-SET,Google),google_rules
-- SUB-RULE,(RULE-SET,Microsoft),proxy_rules
-- SUB-RULE,(RULE-SET,Trackerslist),trackerslist_rules
-- SUB-RULE,(RULE-SET,Proxy),proxy_rules
-- RULE-SET,China,国内流量
-- RULE-SET,AdvertisingIP,REJECT,no-resolve
-- RULE-SET,XPTVIP,直接连接,no-resolve
-- SUB-RULE,(RULE-SET,AIIP),ai_rules
-- SUB-RULE,(RULE-SET,TelegramIP),telegram_rules
-- SUB-RULE,(RULE-SET,SocialMediaIP),proxy_rules
-- SUB-RULE,(RULE-SET,EmbyIP),media_rules
-- SUB-RULE,(RULE-SET,NetflixIP),media_rules
-- SUB-RULE,(RULE-SET,StreamingIP),media_rules
-- SUB-RULE,(RULE-SET,GoogleIP),google_rules
-- SUB-RULE,(RULE-SET,ProxyIP),proxy_rules
-- RULE-SET,ChinaIP,国内流量
-- AND,((NETWORK,UDP),(DST-PORT,443)),代理QUIC
-- MATCH,兜底流量
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: &id003
+      enable: true
+      url: https://www.google.com/generate_204
+      interval: 300
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 优质订阅源地址
+    override:
+      additional-prefix: '[优] '
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    health-check: *id003
+    filter: ^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))
+    url: 备用订阅源地址
+    override:
+      additional-prefix: '[备] '
