@@ -1,343 +1,6 @@
 # Processed: raw_configs/external/General_Config/ClashConnectRules/Clash.yaml
 # Providers: 1 proxy, 66 rule
 
-proxy-groups:
-- name: 🚀 节点选择
-  type: select
-  proxies:
-  - DIRECT
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 🚀 手动切换
-  type: select
-  proxies:
-  - DIRECT
-  use:
-  - all-proxies
-- name: ♻️ 自动选择
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  use:
-  - all-proxies
-- name: 🇭🇰 Hong Kong
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)港|HK|Hong Kong
-- name: 🇯🇵 Japan
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)日|JP|Japan
-- name: 🇺🇸 United States
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)美|US|United States
-- name: 🇸🇬 Singapore
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)新|SG|Singapore
-- name: 🇹🇼 Taiwan
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)台|TW|Taiwan
-- name: 🇰🇷 Korea
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)韩|KR|Korea
-- name: 🇬🇧 United Kingdom
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)英|UK|United Kingdom
-- name: 🇩🇪 Germany
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)德|DE|Germany
-- name: 🇫🇷 France
-  type: select
-  use:
-  - all-proxies
-  filter: (?i)法|FR|France
-- name: 🌍 Other Regions
-  type: select
-  use:
-  - all-proxies
-  filter: ^(?!.*((?i)港|HK|Hong Kong|日|JP|Japan|美|US|United States|Balance|新|SG|Singapore|台|TW|Taiwan|韩|KR|Korea|英|UK|United
-    Kingdom|德|DE|Germany|法|FR|France)).*$
-- name: 🌐 国际流量
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 🎯 国内流量
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
-- name: 🚫 国内广告
-  type: select
-  proxies:
-  - REJECT
-  - DIRECT
-  - 🚀 节点选择
-- name: 🚫 国外广告
-  type: select
-  proxies:
-  - REJECT
-  - DIRECT
-  - 🚀 节点选择
-- name: 🤖 AI服务
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 📹 YouTube
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: Ⓜ️ 微软服务
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 🔍 谷歌服务
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 📧 Google FCM
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 🍎 Apple服务
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 🌍 国外媒体
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-  - DIRECT
-  use:
-  - all-proxies
-- name: ✈️ Telegram
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: Ⓜ️ Microsoft
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - 🚀 手动切换
-  - 🇭🇰 Hong Kong
-  - 🇯🇵 Japan
-  - 🇺🇸 United States
-  - 🇸🇬 Singapore
-  - 🇹🇼 Taiwan
-  - 🇰🇷 Korea
-  - 🇬🇧 United Kingdom
-  - 🇩🇪 Germany
-  - 🇫🇷 France
-  - 🌍 Other Regions
-- name: 🫧 WeChat
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
-  - 🚀 手动切换
-rules:
-- RULE-SET,AdBlock,🚫 国外广告
-- RULE-SET,HTTPDNS,🚫 国外广告
-- RULE-SET,Special,DIRECT
-- RULE-SET,AI Suite,🤖 AI服务
-- RULE-SET,Netflix,🌍 国外媒体
-- RULE-SET,Disney Plus,🌍 国外媒体
-- RULE-SET,YouTube,📹 YouTube
-- RULE-SET,Max,🌍 国外媒体
-- RULE-SET,Spotify,🌍 国外媒体
-- RULE-SET,Bilibili,🎯 国内流量
-- RULE-SET,IQ,🎯 国内流量
-- RULE-SET,IQIYI,🎯 国内流量
-- RULE-SET,Letv,🎯 国内流量
-- RULE-SET,Netease Music,🎯 国内流量
-- RULE-SET,Tencent Video,🎯 国内流量
-- RULE-SET,WeTV,🎯 国内流量
-- RULE-SET,Youku,🎯 国内流量
-- RULE-SET,Abema TV,🌍 国外媒体
-- RULE-SET,Bahamut,🌍 国外媒体
-- RULE-SET,DMM,🌍 国外媒体
-- RULE-SET,Fox+,🌍 国外媒体
-- RULE-SET,Hulu Japan,🌍 国外媒体
-- RULE-SET,Japonx,🌍 国外媒体
-- RULE-SET,JOOX,🌍 国外媒体
-- RULE-SET,KKBOX,🌍 国外媒体
-- RULE-SET,KKTV,🌍 国外媒体
-- RULE-SET,Line TV,🌍 国外媒体
-- RULE-SET,myTV SUPER,🌍 国外媒体
-- RULE-SET,Niconico,🌍 国外媒体
-- RULE-SET,ViuTV,🌍 国外媒体
-- RULE-SET,ABC,🌍 国外媒体
-- RULE-SET,Amazon,🌍 国外媒体
-- RULE-SET,BBC iPlayer,🌍 国外媒体
-- RULE-SET,DAZN,🌍 国外媒体
-- RULE-SET,Discovery Plus,🌍 国外媒体
-- RULE-SET,encoreTVB,🌍 国外媒体
-- RULE-SET,F1 TV,🌍 国外媒体
-- RULE-SET,Fox Now,🌍 国外媒体
-- RULE-SET,Hulu,🌍 国外媒体
-- RULE-SET,Pandora,🌍 国外媒体
-- RULE-SET,PBS,🌍 国外媒体
-- RULE-SET,Pornhub,🌍 国外媒体
-- RULE-SET,Soundcloud,🌍 国外媒体
-- RULE-SET,Telegram,✈️ Telegram
-- RULE-SET,Crypto,🌐 国际流量
-- RULE-SET,Discord,🌐 国际流量
-- RULE-SET,Google FCM,📧 Google FCM
-- RULE-SET,Google,🔍 谷歌服务
-- RULE-SET,Google Drive,🔍 谷歌服务
-- RULE-SET,YouTube Music,📹 YouTube
-- RULE-SET,Google Search,🔍 谷歌服务
-- RULE-SET,Microsoft,Ⓜ️ Microsoft
-- RULE-SET,PayPal,🌐 国际流量
-- RULE-SET,Scholar,🔍 谷歌服务
-- RULE-SET,Speedtest,🌐 国际流量
-- RULE-SET,Steam,🌐 国际流量
-- RULE-SET,TikTok,🌐 国际流量
-- RULE-SET,Apple Music,🍎 Apple服务
-- RULE-SET,Apple News,🍎 Apple服务
-- RULE-SET,Apple TV,🍎 Apple服务
-- RULE-SET,Apple,🍎 Apple服务
-- RULE-SET,miHoYo,🎯 国内流量
-- RULE-SET,PROXY,🌐 国际流量
-- RULE-SET,Domestic,🎯 国内流量
-- RULE-SET,Domestic IPs,🎯 国内流量
-- RULE-SET,LAN,DIRECT
-- GEOIP,CN,🎯 国内流量
-- MATCH,🌐 国际流量
 rule-providers:
   AdBlock:
     type: http
@@ -735,6 +398,75 @@ rule-providers:
     url: https://testingcf.jsdelivr.net/gh/dler-io/Rules@main/Clash/Provider/miHoYo.yaml
     path: ./Rules/miHoYo
     interval: 604800
+rules:
+- RULE-SET,AdBlock,🚫 国外广告
+- RULE-SET,HTTPDNS,🚫 国外广告
+- RULE-SET,Special,DIRECT
+- RULE-SET,AI Suite,🤖 AI服务
+- RULE-SET,Netflix,🌍 国外媒体
+- RULE-SET,Disney Plus,🌍 国外媒体
+- RULE-SET,YouTube,📹 YouTube
+- RULE-SET,Max,🌍 国外媒体
+- RULE-SET,Spotify,🌍 国外媒体
+- RULE-SET,Bilibili,🎯 国内流量
+- RULE-SET,IQ,🎯 国内流量
+- RULE-SET,IQIYI,🎯 国内流量
+- RULE-SET,Letv,🎯 国内流量
+- RULE-SET,Netease Music,🎯 国内流量
+- RULE-SET,Tencent Video,🎯 国内流量
+- RULE-SET,WeTV,🎯 国内流量
+- RULE-SET,Youku,🎯 国内流量
+- RULE-SET,Abema TV,🌍 国外媒体
+- RULE-SET,Bahamut,🌍 国外媒体
+- RULE-SET,DMM,🌍 国外媒体
+- RULE-SET,Fox+,🌍 国外媒体
+- RULE-SET,Hulu Japan,🌍 国外媒体
+- RULE-SET,Japonx,🌍 国外媒体
+- RULE-SET,JOOX,🌍 国外媒体
+- RULE-SET,KKBOX,🌍 国外媒体
+- RULE-SET,KKTV,🌍 国外媒体
+- RULE-SET,Line TV,🌍 国外媒体
+- RULE-SET,myTV SUPER,🌍 国外媒体
+- RULE-SET,Niconico,🌍 国外媒体
+- RULE-SET,ViuTV,🌍 国外媒体
+- RULE-SET,ABC,🌍 国外媒体
+- RULE-SET,Amazon,🌍 国外媒体
+- RULE-SET,BBC iPlayer,🌍 国外媒体
+- RULE-SET,DAZN,🌍 国外媒体
+- RULE-SET,Discovery Plus,🌍 国外媒体
+- RULE-SET,encoreTVB,🌍 国外媒体
+- RULE-SET,F1 TV,🌍 国外媒体
+- RULE-SET,Fox Now,🌍 国外媒体
+- RULE-SET,Hulu,🌍 国外媒体
+- RULE-SET,Pandora,🌍 国外媒体
+- RULE-SET,PBS,🌍 国外媒体
+- RULE-SET,Pornhub,🌍 国外媒体
+- RULE-SET,Soundcloud,🌍 国外媒体
+- RULE-SET,Telegram,✈️ Telegram
+- RULE-SET,Crypto,🌐 国际流量
+- RULE-SET,Discord,🌐 国际流量
+- RULE-SET,Google FCM,📧 Google FCM
+- RULE-SET,Google,🔍 谷歌服务
+- RULE-SET,Google Drive,🔍 谷歌服务
+- RULE-SET,YouTube Music,📹 YouTube
+- RULE-SET,Google Search,🔍 谷歌服务
+- RULE-SET,Microsoft,Ⓜ️ Microsoft
+- RULE-SET,PayPal,🌐 国际流量
+- RULE-SET,Scholar,🔍 谷歌服务
+- RULE-SET,Speedtest,🌐 国际流量
+- RULE-SET,Steam,🌐 国际流量
+- RULE-SET,TikTok,🌐 国际流量
+- RULE-SET,Apple Music,🍎 Apple服务
+- RULE-SET,Apple News,🍎 Apple服务
+- RULE-SET,Apple TV,🍎 Apple服务
+- RULE-SET,Apple,🍎 Apple服务
+- RULE-SET,miHoYo,🎯 国内流量
+- RULE-SET,PROXY,🌐 国际流量
+- RULE-SET,Domestic,🎯 国内流量
+- RULE-SET,Domestic IPs,🎯 国内流量
+- RULE-SET,LAN,DIRECT
+- GEOIP,CN,🎯 国内流量
+- MATCH,🌐 国际流量
 proxy-providers:
   all-proxies:
     type: http
@@ -745,3 +477,271 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - DIRECT
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 🚀 手动切换
+  type: select
+  proxies:
+  - DIRECT
+  use:
+  - all-proxies
+- name: ♻️ 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - all-proxies
+- name: 🇭🇰 Hong Kong
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)港|HK|Hong Kong
+- name: 🇯🇵 Japan
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)日|JP|Japan
+- name: 🇺🇸 United States
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)美|US|United States
+- name: 🇸🇬 Singapore
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)新|SG|Singapore
+- name: 🇹🇼 Taiwan
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)台|TW|Taiwan
+- name: 🇰🇷 Korea
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)韩|KR|Korea
+- name: 🇬🇧 United Kingdom
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)英|UK|United Kingdom
+- name: 🇩🇪 Germany
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)德|DE|Germany
+- name: 🇫🇷 France
+  type: select
+  use:
+  - all-proxies
+  filter: (?i)法|FR|France
+- name: 🌍 Other Regions
+  type: select
+  use:
+  - all-proxies
+  filter: ^(?!.*((?i)港|HK|Hong Kong|日|JP|Japan|美|US|United States|Balance|新|SG|Singapore|台|TW|Taiwan|韩|KR|Korea|英|UK|United
+    Kingdom|德|DE|Germany|法|FR|France)).*$
+- name: 🌐 国际流量
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 🎯 国内流量
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+- name: 🚫 国内广告
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+  - 🚀 节点选择
+- name: 🚫 国外广告
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+  - 🚀 节点选择
+- name: 🤖 AI服务
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 📹 YouTube
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: Ⓜ️ 微软服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 🔍 谷歌服务
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 📧 Google FCM
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 🍎 Apple服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+  - DIRECT
+  use:
+  - all-proxies
+- name: ✈️ Telegram
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: Ⓜ️ Microsoft
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🚀 手动切换
+  - 🇭🇰 Hong Kong
+  - 🇯🇵 Japan
+  - 🇺🇸 United States
+  - 🇸🇬 Singapore
+  - 🇹🇼 Taiwan
+  - 🇰🇷 Korea
+  - 🇬🇧 United Kingdom
+  - 🇩🇪 Germany
+  - 🇫🇷 France
+  - 🌍 Other Regions
+- name: 🫧 WeChat
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🚀 手动切换
