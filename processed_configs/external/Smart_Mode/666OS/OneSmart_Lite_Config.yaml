@@ -162,6 +162,7 @@ proxy-providers:
       additional-prefix: '[备] '
 proxy-groups:
 - type: select
+  empty-fallback: REJECT
   proxies:
   - 香港智能
   - 台湾智能
@@ -175,6 +176,7 @@ proxy-groups:
   name: 一键智能
   icon: https://github.com/666OS/YYDS/raw/main/mihomo/image/mihomo.png
 - type: select
+  empty-fallback: REJECT
   proxies: &id002
   - 一键智能
   - 香港智能
@@ -189,18 +191,22 @@ proxy-groups:
   name: 人工智能
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/AI.png
 - type: select
+  empty-fallback: REJECT
   proxies: *id002
   name: 社交平台
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/PBS.png
 - type: select
+  empty-fallback: REJECT
   proxies: *id002
   name: 国际媒体
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/DomesticMedia.png
 - type: select
+  empty-fallback: REJECT
   proxies: *id002
   name: 国外流量
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png
 - type: select
+  empty-fallback: REJECT
   proxies:
   - 直接连接
   - 一键智能
@@ -215,6 +221,7 @@ proxy-groups:
   name: 国内流量
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/China.png
 - type: select
+  empty-fallback: REJECT
   proxies: *id002
   name: 兜底流量
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Final.png
@@ -232,6 +239,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true
@@ -243,6 +251,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true
@@ -254,6 +263,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true
@@ -265,6 +275,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true
@@ -276,6 +287,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true
@@ -287,6 +299,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true
@@ -298,6 +311,7 @@ proxy-groups:
 - type: smart
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   uselightgbm: true

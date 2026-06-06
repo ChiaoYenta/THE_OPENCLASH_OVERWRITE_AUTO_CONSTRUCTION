@@ -526,6 +526,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 香港自动
@@ -535,6 +536,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 台湾自动
@@ -544,6 +546,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 狮城自动
@@ -553,6 +556,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 日本自动
@@ -562,6 +566,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 韩国自动
@@ -571,6 +576,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 美国自动
@@ -580,6 +586,7 @@ proxy-groups:
 - type: url-test
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   hidden: true
   name: 欧盟自动
@@ -589,6 +596,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -599,6 +607,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -609,6 +618,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -619,6 +629,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -629,6 +640,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -639,6 +651,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -649,6 +662,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: consistent-hashing
   hidden: true
@@ -659,6 +673,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true
@@ -669,6 +684,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true
@@ -679,6 +695,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true
@@ -689,6 +706,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true
@@ -699,6 +717,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true
@@ -709,6 +728,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true
@@ -719,6 +739,7 @@ proxy-groups:
 - type: load-balance
   interval: 200
   lazy: true
+  empty-fallback: REJECT
   url: https://www.google.com/generate_204
   strategy: round-robin
   hidden: true

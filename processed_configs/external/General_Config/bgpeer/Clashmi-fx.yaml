@@ -13,7 +13,7 @@ rule-providers:
     behavior: classical
     interval: 86400
     format: yaml
-    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/douyin.yaml
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/bgpeer/rules/main/geo/geosite/bytedance.yaml
   TikTok-zj:
     type: http
     behavior: classical

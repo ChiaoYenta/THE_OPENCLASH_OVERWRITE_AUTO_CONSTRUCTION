@@ -1,23 +1,7 @@
 # Processed: raw_configs/external/Smart_Mode/echs-top/mihomo_smart.yaml
-# Providers: 3 proxy, 18 rule
+# Providers: 3 proxy, 9 rule
 
 rule-providers:
-  private_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/privateip.mrs
-    path: ./rules/private_ip.mrs
-  private:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs
-    path: ./rules/private.mrs
   ads:
     type: http
     interval: 86400
@@ -26,22 +10,6 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/ads.mrs
     path: ./rules/ads.mrs
-  fcm:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.mrs
-    path: ./rules/fcm.mrs
-  captcha:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/captcha.mrs
-    path: ./rules/captcha.mrs
   ai:
     type: http
     interval: 86400
@@ -58,54 +26,38 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
     path: ./rules/telegram.mrs
-  media:
+  proxy@direct:
     type: http
     interval: 86400
     proxy: 代理连接
     behavior: domain
     format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/media.mrs
-    path: ./rules/media.mrs
-  google:
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/proxy@direct.mrs
+    path: ./rules/proxy@direct.mrs
+  proxy-ltsc:
     type: http
     interval: 86400
     proxy: 代理连接
     behavior: domain
     format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/google.mrs
-    path: ./rules/google.mrs
-  trackerslist:
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/proxy-ltsc.mrs
+    path: ./rules/proxy-ltsc.mrs
+  direct-ltsc:
     type: http
     interval: 86400
     proxy: 代理连接
     behavior: domain
     format: mrs
-    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/trackerslist.mrs
-    path: ./rules/trackerslist.mrs
-  proxy-lite:
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/direct-ltsc.mrs
+    path: ./rules/direct-ltsc.mrs
+  dnsmasq-china-ltsc:
     type: http
     interval: 86400
     proxy: 代理连接
     behavior: domain
     format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/proxy-lite.mrs
-    path: ./rules/proxy-lite.mrs
-  cn:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/cn.mrs
-    path: ./rules/cn.mrs
-  dnsmasq-china-lite:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/dnsmasq-china-lite.mrs
-    path: ./rules/dnsmasq-china-lite.mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/domain/dnsmasq-china-ltsc.mrs
+    path: ./rules/dnsmasq-china-ltsc.mrs
   telegram_ip:
     type: http
     interval: 86400
@@ -114,60 +66,27 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/telegram.mrs
     path: ./rules/telegram_ip.mrs
-  media_ip:
+  direct-ltsc_ip:
     type: http
     interval: 86400
     proxy: 代理连接
     behavior: ipcidr
     format: mrs
-    url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/mediaip.mrs
-    path: ./rules/media_ip.mrs
-  google_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
-    path: ./rules/google_ip.mrs
-  proxy_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/proxy.mrs
-    path: ./rules/proxy_ip.mrs
-  cn_ip:
-    type: http
-    interval: 86400
-    proxy: 代理连接
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/cn.mrs
-    path: ./rules/cn_ip.mrs
+    url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/direct-ltsc.mrs
+    path: ./rules/direct-ltsc_ip.mrs
 rules:
-- DST-PORT,53/853,DNS劫持
+- DST-PORT,53,DNS劫持
+- DST-PORT,853,REJECT
 - DST-PORT,5228-5230,直接连接
-- DST-PORT,1337/2710/6881-6999/7777,TRACKER
-- RULE-SET,private_ip,直接连接,no-resolve
-- RULE-SET,private,直接连接
 - RULE-SET,ads,REJECT
-- RULE-SET,fcm,直接连接
-- RULE-SET,captcha,人机验证
-- RULE-SET,ai,国外AI
-- RULE-SET,telegram,TELEGRAM
-- RULE-SET,media,国外媒体
-- RULE-SET,google,GOOGLE
-- RULE-SET,trackerslist,TRACKER
-- RULE-SET,proxy-lite,代理连接
-- RULE-SET,cn,直接连接
-- RULE-SET,telegram_ip,TELEGRAM
-- RULE-SET,media_ip,国外媒体
-- RULE-SET,google_ip,GOOGLE
-- RULE-SET,proxy_ip,代理连接
-- RULE-SET,cn_ip,直接连接
-- DST-PORT,10000-65535,TRACKER
+- SUB-RULE,(RULE-SET,ai),sub-ai
+- SUB-RULE,(RULE-SET,telegram),sub-telegram
+- RULE-SET,proxy@direct,直接连接
+- SUB-RULE,(RULE-SET,proxy-ltsc),sub-proxy
+- RULE-SET,direct-ltsc,直接连接
+- SUB-RULE,(RULE-SET,telegram_ip),sub-telegram
+- RULE-SET,direct-ltsc_ip,直接连接
+- AND,((NETWORK,udp),(DST-PORT,443)),代理QUIC
 - MATCH,代理连接
 proxy-providers:
   link1:
@@ -187,7 +106,7 @@ proxy-providers:
       lazy: true
     override: &id003
       ip-version: dual
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
     url: 订阅链接1
     path: ./providers/link1.yaml
   link2:
@@ -197,7 +116,7 @@ proxy-providers:
     header: *id001
     health-check: *id002
     override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
     url: 订阅链接2
     path: ./providers/link2.yaml
   link3:
@@ -207,7 +126,7 @@ proxy-providers:
     header: *id001
     health-check: *id002
     override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|海外|恢复|处理|谢谢
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
     url: 订阅链接3
     path: ./providers/link3.yaml
 proxy-groups:
@@ -228,6 +147,15 @@ proxy-groups:
   - 荷兰|智能选择
   include-all-providers: true
   icon: https://mihomo.echs.top/img/icon/Global.webp
+- name: 直接连接
+  type: select
+  proxies:
+  - DIRECT
+  - IPV4优先
+  - IPV6优先
+  - 仅IPV4
+  - 仅IPV6
+  icon: https://mihomo.echs.top/img/icon/DIRECT.webp
 - type: select
   proxies: &id004
   - 代理连接
@@ -247,11 +175,12 @@ proxy-groups:
   include-all-providers: true
   name: 代理DNS
   icon: https://mihomo.echs.top/img/icon/Server.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: 人机验证
-  icon: https://mihomo.echs.top/img/icon/CloudFlare.webp
+- name: 代理QUIC
+  type: select
+  proxies:
+  - PASS-RULE
+  - REJECT
+  icon: https://mihomo.echs.top/img/icon/Settings.webp
 - type: select
   proxies: *id004
   include-all-providers: true
@@ -262,21 +191,6 @@ proxy-groups:
   include-all-providers: true
   name: TELEGRAM
   icon: https://mihomo.echs.top/img/icon/Telegram.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: 国外媒体
-  icon: https://mihomo.echs.top/img/icon/Emby.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: GOOGLE
-  icon: https://mihomo.echs.top/img/icon/Google.webp
-- type: select
-  proxies: *id004
-  include-all-providers: true
-  name: TRACKER
-  icon: https://mihomo.echs.top/img/icon/Download_2.webp
 - use: &id005
   - link1
   - link2
@@ -294,7 +208,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 香港|智能选择
-  filter: (?i)🇭🇰|香港|\bHK\b|\bhongkong\b|\bhong\s?kong\b
+  filter: (?i)🇭🇰|香港|\\bHK\\b|\\bhongkong\\b|\\bhong\s?kong\\b
   icon: https://mihomo.echs.top/img/flags/hk.svg
 - use: *id005
   type: smart
@@ -305,7 +219,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 台湾|智能选择
-  filter: (?i)🇹🇼|台湾|\bTW\b|\btaiwan\b
+  filter: (?i)🇹🇼|台湾|\\bTW\\b|\\btaiwan\\b
   icon: https://mihomo.echs.top/img/flags/tw.svg
 - use: *id005
   type: smart
@@ -316,7 +230,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 新加坡|智能选择
-  filter: (?i)🇸🇬|新加坡|狮城|\bSG\b|\bsingapore\b
+  filter: (?i)🇸🇬|新加坡|狮城|\\bSG\\b|\\bsingapore\\b
   icon: https://mihomo.echs.top/img/flags/sg.svg
 - use: *id005
   type: smart
@@ -327,7 +241,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 日本|智能选择
-  filter: (?i)🇯🇵|日本|\bJP\b|\bjapan\b
+  filter: (?i)🇯🇵|日本|\\bJP\\b|\\bjapan\\b
   icon: https://mihomo.echs.top/img/flags/jp.svg
 - use: *id005
   type: smart
@@ -338,7 +252,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 韩国|智能选择
-  filter: (?i)🇰🇷|韩国|\bKR\b
+  filter: (?i)🇰🇷|韩国|\\bKR\\b
   icon: https://mihomo.echs.top/img/flags/kr.svg
 - use: *id005
   type: smart
@@ -349,7 +263,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 美国|智能选择
-  filter: (?i)🇺🇸|美国|\bUS\b|\bunitedstates\b|\bunited\s?states\b
+  filter: (?i)🇺🇸|美国|\\bUS\\b|\\bunitedstates\\b|\\bunited\s?states\\b
   icon: https://mihomo.echs.top/img/flags/us.svg
 - use: *id005
   type: smart
@@ -360,7 +274,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 加拿大|智能选择
-  filter: (?i)🇨🇦|加拿大|\bCA\b|\bcanada\b
+  filter: (?i)🇨🇦|加拿大|\\bCA\\b|\\bcanada\\b
   icon: https://mihomo.echs.top/img/flags/ca.svg
 - use: *id005
   type: smart
@@ -371,7 +285,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 德国|智能选择
-  filter: (?i)🇩🇪|德国|\bDE\b|\bgermany\b
+  filter: (?i)🇩🇪|德国|\\bDE\\b|\\bgermany\\b
   icon: https://mihomo.echs.top/img/flags/de.svg
 - use: *id005
   type: smart
@@ -382,7 +296,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 英国|智能选择
-  filter: (?i)🇬🇧|英国|\bUK\b|\bGB\b|\bunitedkingdom\b|\bunited\s?kingdom\b
+  filter: (?i)🇬🇧|英国|\\bUK\\b|\\bGB\\b|\\bunitedkingdom\\b|\\bunited\s?kingdom\\b
   icon: https://mihomo.echs.top/img/flags/gb.svg
 - use: *id005
   type: smart
@@ -393,7 +307,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 法国|智能选择
-  filter: (?i)🇫🇷|法国|\bFR\b
+  filter: (?i)🇫🇷|法国|\\bFR\\b
   icon: https://mihomo.echs.top/img/flags/fr.svg
 - use: *id005
   type: smart
@@ -404,7 +318,7 @@ proxy-groups:
   prefer-asn: false
   hidden: true
   name: 荷兰|智能选择
-  filter: (?i)🇳🇱|荷兰|\bNL\b|\bnetherlands?\b
+  filter: (?i)🇳🇱|荷兰|\\bNL\\b|\\bnetherlands?\\b
   icon: https://mihomo.echs.top/img/flags/nl.svg
 - name: GLOBAL
   type: select
@@ -422,13 +336,11 @@ proxy-groups:
   - 法国|智能选择
   - 荷兰|智能选择
   - 代理连接
+  - 直接连接
   - 代理DNS
-  - 人机验证
+  - 代理QUIC
   - 国外AI
   - TELEGRAM
-  - 国外媒体
-  - GOOGLE
-  - TRACKER
   include-all-providers: true
   hidden: true
   icon: https://mihomo.echs.top/img/icon/Globefish.webp
