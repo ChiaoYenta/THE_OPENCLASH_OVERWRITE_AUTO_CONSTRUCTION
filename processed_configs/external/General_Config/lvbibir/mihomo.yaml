@@ -1,168 +1,17 @@
 # Processed: raw_configs/external/General_Config/lvbibir/mihomo.yaml
 # Providers: 1 proxy, 23 rule
 
-rule-providers:
-  custom_proxy:
+proxy-providers:
+  150G_Mouth:
     type: http
-    behavior: classical
-    interval: 43200
-    format: text
-    url: https://raw.githubusercontent.com/lvbibir/clash/refs/heads/master/Ruleset/Proxy.list
-    path: ./rule-providers/custom_proxy.list
-  custom_direct:
-    type: http
-    behavior: classical
-    interval: 43200
-    format: text
-    url: https://raw.githubusercontent.com/lvbibir/clash/refs/heads/master/Ruleset/Direct.list
-    path: ./rule-providers/custom_direct.list
-  fakeipfilter:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: text
-    url: https://raw.githubusercontent.com/juewuy/ShellCrash/refs/heads/dev/public/fake_ip_filter.list
-    path: ./rule-providers/fakeipfilter.list
-  private_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
-    path: ./rule-providers/private_domain.mrs
-  ai_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
-    path: ./rule-providers/ai_domain.mrs
-  x_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.mrs
-    path: ./rule-providers/x_domain.mrs
-  youtube_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
-    path: ./rule-providers/youtube_domain.mrs
-  google_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
-    path: ./rule-providers/google_domain.mrs
-  github_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
-    path: ./rule-providers/github_domain.mrs
-  steam_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs
-    path: ./rule-providers/steam_domain.mrs
-  sony_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs
-    path: ./rule-providers/sony_domain.mrs
-  telegram_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
-    path: ./rule-providers/telegram_domain.mrs
-  onedrive_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs
-    path: ./rule-providers/onedrive_domain.mrs
-  microsoft_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
-    path: ./rule-providers/microsoft_domain.mrs
-  apple_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs
-    path: ./rule-providers/apple_domain.mrs
-  speedtest_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
-    path: ./rule-providers/speedtest_domain.mrs
-  geolocation-!cn_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
-    path: ./rule-providers/geolocation-!cn_domain.mrs
-  cn_domain:
-    type: http
-    behavior: domain
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
-    path: ./rule-providers/cn_domain.mrs
-  private_ip:
-    type: http
-    behavior: ipcidr
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs
-    path: ./rule-providers/private_ip.mrs
-  cn_ip:
-    type: http
-    behavior: ipcidr
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
-    path: ./rule-providers/cn_ip.mrs
-  google_ip:
-    type: http
-    behavior: ipcidr
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
-    path: ./rule-providers/google_ip.mrs
-  apple_ip:
-    type: http
-    behavior: ipcidr
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs
-    path: ./rule-providers/apple_ip.mrs
-  telegram_ip:
-    type: http
-    behavior: ipcidr
-    interval: 43200
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/telegram.mrs
-    path: ./rule-providers/telegram_ip.mrs
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: '---'
+    path: ./proxy-providers/providers-1.yaml
 rules:
 - IP-CIDR,169.254.169.254/32,REJECT,no-resolve
 - DOMAIN,t-ring-fdv2.msedge.net,REJECT,no-resolve
@@ -191,17 +40,6 @@ rules:
 - RULE-SET,cn_ip,直连,no-resolve
 - RULE-SET,geolocation-!cn_domain,🚀 默认代理
 - MATCH,🐟 漏网之鱼
-proxy-providers:
-  150G_Mouth:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: '---'
-    path: ./proxy-providers/providers-1.yaml
 proxy-groups:
 - type: url-test
   url: https://www.gstatic.com/generate_204
@@ -449,3 +287,165 @@ proxy-groups:
   max-failed-times: 3
   name: ♻️ 香港自动
   filter: ^(?=.*?(?i)(\bHK\b|Hong.?Kong|香港|深港|广港|港区)).*(?<!(?i)(回国|过期|剩余|官网|网址|节点|订阅|机场|客服|校园|本土)).*$
+rule-providers:
+  custom_proxy:
+    type: http
+    behavior: classical
+    interval: 43200
+    format: text
+    url: https://raw.githubusercontent.com/lvbibir/clash/refs/heads/master/Ruleset/Proxy.list
+    path: ./rule-providers/custom_proxy.list
+  custom_direct:
+    type: http
+    behavior: classical
+    interval: 43200
+    format: text
+    url: https://raw.githubusercontent.com/lvbibir/clash/refs/heads/master/Ruleset/Direct.list
+    path: ./rule-providers/custom_direct.list
+  fakeipfilter:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: text
+    url: https://raw.githubusercontent.com/juewuy/ShellCrash/refs/heads/dev/public/fake_ip_filter.list
+    path: ./rule-providers/fakeipfilter.list
+  private_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+    path: ./rule-providers/private_domain.mrs
+  ai_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
+    path: ./rule-providers/ai_domain.mrs
+  x_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.mrs
+    path: ./rule-providers/x_domain.mrs
+  youtube_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
+    path: ./rule-providers/youtube_domain.mrs
+  google_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+    path: ./rule-providers/google_domain.mrs
+  github_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
+    path: ./rule-providers/github_domain.mrs
+  steam_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs
+    path: ./rule-providers/steam_domain.mrs
+  sony_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs
+    path: ./rule-providers/sony_domain.mrs
+  telegram_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+    path: ./rule-providers/telegram_domain.mrs
+  onedrive_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs
+    path: ./rule-providers/onedrive_domain.mrs
+  microsoft_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
+    path: ./rule-providers/microsoft_domain.mrs
+  apple_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs
+    path: ./rule-providers/apple_domain.mrs
+  speedtest_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
+    path: ./rule-providers/speedtest_domain.mrs
+  geolocation-!cn_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
+    path: ./rule-providers/geolocation-!cn_domain.mrs
+  cn_domain:
+    type: http
+    behavior: domain
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
+    path: ./rule-providers/cn_domain.mrs
+  private_ip:
+    type: http
+    behavior: ipcidr
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs
+    path: ./rule-providers/private_ip.mrs
+  cn_ip:
+    type: http
+    behavior: ipcidr
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+    path: ./rule-providers/cn_ip.mrs
+  google_ip:
+    type: http
+    behavior: ipcidr
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+    path: ./rule-providers/google_ip.mrs
+  apple_ip:
+    type: http
+    behavior: ipcidr
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs
+    path: ./rule-providers/apple_ip.mrs
+  telegram_ip:
+    type: http
+    behavior: ipcidr
+    interval: 43200
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/telegram.mrs
+    path: ./rule-providers/telegram_ip.mrs

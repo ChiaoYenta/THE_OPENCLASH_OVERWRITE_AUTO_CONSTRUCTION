@@ -1,112 +1,25 @@
 # Processed: raw_configs/external/General_Config/Pililink/2-subscription-clash-rule-set.yaml
 # Providers: 2 proxy, 15 rule
 
-rule-providers:
-  ads:
+proxy-providers:
+  A机场:
     type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/ads.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/ads.list
-    interval: 7200
-  private:
+    url: ''
+    path: ./proxy_provider/air1.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  B机场:
     type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/private.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/private.list
-    interval: 7200
-  microsoft-cn:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/microsoft-cn.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/microsoft-cn.list
-    interval: 7200
-  apple-cn:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/apple-cn.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/apple-cn.list
-    interval: 7200
-  google-cn:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/google-cn.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/google-cn.list
-    interval: 7200
-  games-cn:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/games-cn.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/games-cn.list
-    interval: 7200
-  ai:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/ai.list
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list
-    interval: 7200
-  networktest:
-    type: http
-    behavior: classical
-    format: text
-    path: ./rule_provider/networktest.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/networktest.list
-    interval: 7200
-  proxy:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/proxy.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/proxy.list
-    interval: 7200
-  cn:
-    type: http
-    behavior: domain
-    format: text
-    path: ./rule_provider/cn.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/cn.list
-    interval: 7200
-  telegramip:
-    type: http
-    behavior: ipcidr
-    format: text
-    path: ./rule_provider/telegramip.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/telegramip.list
-    interval: 7200
-  privateip:
-    type: http
-    behavior: ipcidr
-    format: text
-    path: ./rule_provider/privateip.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/privateip.list
-    interval: 7200
-  cnip:
-    type: http
-    behavior: ipcidr
-    format: text
-    path: ./rule_provider/cnip.list
-    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/cnip.list
-    interval: 7200
-  myignore:
-    type: http
-    behavior: classical
-    format: text
-    path: ./rule_provider/myignore.list
-    url: https://raw.githubusercontent.com/Pililink/AirRules/refs/heads/main/clash/ruleset/ignore.list
-    interval: 7200
-  myproxy:
-    type: http
-    behavior: classical
-    format: text
-    path: ./rule_provider/myproxy.list
-    url: https://raw.githubusercontent.com/Pililink/AirRules/refs/heads/main/clash/ruleset/proxy.list
-    interval: 7200
+    url: ''
+    path: ./proxy_provider/air2.yaml
+    interval: 300
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
 rules:
 - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
 - RULE-SET,myignore,DIRECT
@@ -128,25 +41,6 @@ rules:
 - RULE-SET,privateip,🔒 私有网络,no-resolve
 - RULE-SET,cnip,🇨🇳 直连 IP
 - MATCH,🐟 漏网之鱼
-proxy-providers:
-  A机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air1.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  B机场:
-    type: http
-    url: ''
-    path: ./proxy_provider/air2.yaml
-    interval: 300
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -450,3 +344,109 @@ proxy-groups:
   - B机场
   exclude-filter: (?i)(香港|HK|HKG|Hong Kong|HongKong|日本|JP|Japan|东京|大阪|韩国|KR|Korea|首尔|新加坡|SG|Singapore|美国|美|US|USA|United
     States|America|台湾|TW|Taiwan|台北|欧洲|EU|Europe|英国|UK|London|德国|DE|Germany|法国|FR|France|荷兰|NL|Netherlands)
+rule-providers:
+  ads:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/ads.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/ads.list
+    interval: 7200
+  private:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/private.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/private.list
+    interval: 7200
+  microsoft-cn:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/microsoft-cn.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/microsoft-cn.list
+    interval: 7200
+  apple-cn:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/apple-cn.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/apple-cn.list
+    interval: 7200
+  google-cn:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/google-cn.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/google-cn.list
+    interval: 7200
+  games-cn:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/games-cn.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/games-cn.list
+    interval: 7200
+  ai:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/ai.list
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list
+    interval: 7200
+  networktest:
+    type: http
+    behavior: classical
+    format: text
+    path: ./rule_provider/networktest.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/networktest.list
+    interval: 7200
+  proxy:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/proxy.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/proxy.list
+    interval: 7200
+  cn:
+    type: http
+    behavior: domain
+    format: text
+    path: ./rule_provider/cn.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/cn.list
+    interval: 7200
+  telegramip:
+    type: http
+    behavior: ipcidr
+    format: text
+    path: ./rule_provider/telegramip.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/telegramip.list
+    interval: 7200
+  privateip:
+    type: http
+    behavior: ipcidr
+    format: text
+    path: ./rule_provider/privateip.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/privateip.list
+    interval: 7200
+  cnip:
+    type: http
+    behavior: ipcidr
+    format: text
+    path: ./rule_provider/cnip.list
+    url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/cnip.list
+    interval: 7200
+  myignore:
+    type: http
+    behavior: classical
+    format: text
+    path: ./rule_provider/myignore.list
+    url: https://raw.githubusercontent.com/Pililink/AirRules/refs/heads/main/clash/ruleset/ignore.list
+    interval: 7200
+  myproxy:
+    type: http
+    behavior: classical
+    format: text
+    path: ./rule_provider/myproxy.list
+    url: https://raw.githubusercontent.com/Pililink/AirRules/refs/heads/main/clash/ruleset/proxy.list
+    interval: 7200

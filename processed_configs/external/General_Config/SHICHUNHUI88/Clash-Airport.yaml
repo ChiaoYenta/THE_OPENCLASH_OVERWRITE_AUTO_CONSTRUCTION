@@ -1,217 +1,15 @@
 # Processed: raw_configs/external/General_Config/SHICHUNHUI88/Clash-Airport.yaml
 # Providers: 1 proxy, 35 rule
 
-rule-providers:
-  reject:
+proxy-providers:
+  机场:
     type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/category-ads-all.mrs
-  douyin-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/douyin.yaml
-  TikTok-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/tiktok.yaml
-  Telegram-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/telegram.yaml
-  OpenAI-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/openai.yaml
-  Facebook-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/facebook.yaml
-  Google-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/google.yaml
-  WildRift-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/wildrift.yaml
-  GitHub-zj:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/github.mrs
-  Claude-zj:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/claude.yaml
-  PayPal:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/paypal.mrs
-  YouTube:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/youtube.mrs
-  Netflix:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/netflix.mrs
-  games-!cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/category-games-!cn.mrs
-  twitter:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/twitter.mrs
-  telegram-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/telegram.mrs
-  google-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/google.mrs
-  cloudflare-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/cloudflare.mrs
-  cloudfront-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/cloudfront.mrs
-  fastly-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/fastly.mrs
-  icloud:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/icloud.mrs
-  Apple:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/apple.mrs
-  Microsoft:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/microsoft.mrs
-  gfw:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/gfw.mrs
-  greatfire:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/greatfire.mrs
-  geolocation-!cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/geolocation-!cn.mrs
-  games-cn:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/category-games-cn.mrs
-  bilibili:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/bilibili.mrs
-  xiaohongshu:
-    type: http
-    behavior: classical
-    interval: 86400
-    format: yaml
-    url: https://gh.669588.xyz/rules/geo/geosite/xiaohongshu.yaml
-  Alibaba:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/alibaba.mrs
-  Tencent:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/tencent.mrs
-  private:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/private.mrs
-  cn-domain:
-    type: http
-    behavior: domain
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geosite/cn.mrs
-  private-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/private.mrs
-  cn-ip:
-    type: http
-    behavior: ipcidr
-    interval: 86400
-    format: mrs
-    url: https://gh.669588.xyz/rules/geo/geoip/cn.mrs
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 rules:
 - RULE-SET,reject,REJECT
 - RULE-SET,douyin-zj,🎷抖音
@@ -249,15 +47,6 @@ rules:
 - RULE-SET,private-ip,🎯直连,no-resolve
 - RULE-SET,cn-ip,🎯直连,no-resolve
 - MATCH,🤡漏网之鱼
-proxy-providers:
-  机场:
-    type: http
-    interval: 3600
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://cdn.gh-proxy.org/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 proxy-groups:
 - include-all: true
   exclude-type: direct
@@ -474,3 +263,214 @@ proxy-groups:
   hidden: true
   name: ♻️随机
   filter: .*
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/category-ads-all.mrs
+  douyin-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/douyin.yaml
+  TikTok-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/tiktok.yaml
+  Telegram-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/telegram.yaml
+  OpenAI-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/openai.yaml
+  Facebook-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/facebook.yaml
+  Google-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/google.yaml
+  WildRift-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/wildrift.yaml
+  GitHub-zj:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/github.mrs
+  Claude-zj:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/claude.yaml
+  PayPal:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/paypal.mrs
+  YouTube:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/youtube.mrs
+  Netflix:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/netflix.mrs
+  games-!cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/category-games-!cn.mrs
+  twitter:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/twitter.mrs
+  telegram-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/telegram.mrs
+  google-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/google.mrs
+  cloudflare-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/cloudflare.mrs
+  cloudfront-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/cloudfront.mrs
+  fastly-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/fastly.mrs
+  icloud:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/icloud.mrs
+  Apple:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/apple.mrs
+  Microsoft:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/microsoft.mrs
+  gfw:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/gfw.mrs
+  greatfire:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/greatfire.mrs
+  geolocation-!cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/geolocation-!cn.mrs
+  games-cn:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/category-games-cn.mrs
+  bilibili:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/bilibili.mrs
+  xiaohongshu:
+    type: http
+    behavior: classical
+    interval: 86400
+    format: yaml
+    url: https://gh.669588.xyz/rules/geo/geosite/xiaohongshu.yaml
+  Alibaba:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/alibaba.mrs
+  Tencent:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/tencent.mrs
+  private:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/private.mrs
+  cn-domain:
+    type: http
+    behavior: domain
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geosite/cn.mrs
+  private-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/private.mrs
+  cn-ip:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    format: mrs
+    url: https://gh.669588.xyz/rules/geo/geoip/cn.mrs

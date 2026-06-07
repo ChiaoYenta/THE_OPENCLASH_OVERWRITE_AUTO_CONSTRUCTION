@@ -1,91 +1,6 @@
 # Processed: raw_configs/external/General_Config/iKeLee/Clash_Sample.yaml
 # Providers: 2 proxy, 9 rule
 
-rule-providers:
-  LAN:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Lan.yaml
-    url: https://kelee.one/Tool/Clash/Rule/LAN_SPLITTER.yaml
-  Direct:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Direct.yaml
-    url: https://kelee.one/Tool/Clash/Rule/Direct.yaml
-  Proxy:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Proxy.yaml
-    url: https://kelee.one/Tool/Clash/Rule/Proxy.yaml
-  AI:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/AI.yaml
-    url: https://kelee.one/Tool/Clash/Rule/AI.yaml
-  TikTok:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/TikTok.yaml
-    url: https://kelee.one/Tool/Clash/Rule/TikTok.yaml
-  SpeedtestIntl:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/SpeedtestInternational.yaml
-    url: https://kelee.one/Tool/Clash/Rule/SpeedtestInternational.yaml
-  Game:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Game.yaml
-    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
-  Netflix:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/Netflix.yaml
-    url: https://rule.kelee.one/Clash/Netflix.yaml
-  ESET_China:
-    type: http
-    behavior: classical
-    interval: 3600
-    format: yaml
-    proxy: DIRECT
-    path: ./rules/ESET_China.yaml
-    url: https://kelee.one/Tool/Clash/Rule/ESET_China.yaml
-rules:
-- RULE-SET, LAN, DIRECT
-- RULE-SET, Direct, DIRECT
-- RULE-SET, Proxy, 兜底后备策略
-- RULE-SET, AI, AI
-- RULE-SET, TikTok, TikTok
-- RULE-SET, SpeedtestIntl, Speedtest国际
-- RULE-SET, Game, 游戏选择
-- RULE-SET, Netflix, Netflix
-- RULE-SET, ESET_China, DIRECT
-- GEOIP, CN, DIRECT
-- MATCH, 兜底后备策略
 proxy-providers:
   机场名称1:
     type: http
@@ -106,6 +21,18 @@ proxy-providers:
     path: ./proxy_providers/机场名称2.yaml
     override:
       additional-prefix: '[机场名称2] '
+rules:
+- RULE-SET, LAN, DIRECT
+- RULE-SET, Direct, DIRECT
+- RULE-SET, Proxy, 兜底后备策略
+- RULE-SET, AI, AI
+- RULE-SET, TikTok, TikTok
+- RULE-SET, SpeedtestIntl, Speedtest国际
+- RULE-SET, Game, 游戏选择
+- RULE-SET, Netflix, Netflix
+- RULE-SET, ESET_China, DIRECT
+- GEOIP, CN, DIRECT
+- MATCH, 兜底后备策略
 proxy-groups:
 - name: 游戏选择
   type: select
@@ -262,3 +189,76 @@ proxy-groups:
   include-all-providers: true
   name: 德国自动策略
   filter: ^(?=.*((?i)🇩🇪|德国|(\b(DE|DEU|Germany)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$
+rule-providers:
+  LAN:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Lan.yaml
+    url: https://kelee.one/Tool/Clash/Rule/LAN_SPLITTER.yaml
+  Direct:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Direct.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Direct.yaml
+  Proxy:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Proxy.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Proxy.yaml
+  AI:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/AI.yaml
+    url: https://kelee.one/Tool/Clash/Rule/AI.yaml
+  TikTok:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/TikTok.yaml
+    url: https://kelee.one/Tool/Clash/Rule/TikTok.yaml
+  SpeedtestIntl:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/SpeedtestInternational.yaml
+    url: https://kelee.one/Tool/Clash/Rule/SpeedtestInternational.yaml
+  Game:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Game.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
+  Netflix:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/Netflix.yaml
+    url: https://rule.kelee.one/Clash/Netflix.yaml
+  ESET_China:
+    type: http
+    behavior: classical
+    interval: 3600
+    format: yaml
+    proxy: DIRECT
+    path: ./rules/ESET_China.yaml
+    url: https://kelee.one/Tool/Clash/Rule/ESET_China.yaml
