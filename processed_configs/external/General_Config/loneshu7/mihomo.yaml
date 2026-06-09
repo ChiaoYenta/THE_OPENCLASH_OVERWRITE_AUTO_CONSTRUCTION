@@ -1,6 +1,48 @@
 # Processed: raw_configs/external/General_Config/loneshu7/mihomo.yaml
 # Providers: 4 proxy, 28 rule
 
+rules:
+- RULE-SET,advertising,⛔阻断
+- RULE-SET,privacy,⛔阻断
+- RULE-SET,googlefcm,🇺🇸手动选择
+- DOMAIN,cdn.usefathom.com,OpenAI
+- DOMAIN-SUFFIX,anthropic.com,OpenAI
+- DOMAIN-SUFFIX,claude.ai,OpenAI
+- PROCESS-NAME,com.qidian.QDReader,DIRECT
+- DOMAIN-SUFFIX,youpin898.com,DIRECT
+- DOMAIN-SUFFIX,youpinimg.com,DIRECT
+- DOMAIN-SUFFIX,jianguoyun.com,Proxies
+- DOMAIN-SUFFIX,linux.do,OpenAI
+- RULE-SET,lan,DIRECT
+- PROCESS-NAME,com.honjow.fehviewer,🇺🇸自动选择
+- IP-CIDR,149.154.160.0/20,Emby
+- RULE-SET,steam_cn,DIRECT
+- RULE-SET,steam,Steam
+- RULE-SET,epic,Epic
+- RULE-SET,twitter,Twitter
+- RULE-SET,spotify,Spotify
+- RULE-SET,github,GitHub
+- RULE-SET,pikpak,Pikpak
+- RULE-SET,discord,Discord
+- RULE-SET,tiktok,Tiktok
+- RULE-SET,pornhub,Pornhub
+- RULE-SET,gemini,OpenAI
+- RULE-SET,openai,OpenAI
+- RULE-SET,bilibili,Bilibili
+- RULE-SET,youtube,YouTube
+- RULE-SET,netflix,Netflix
+- RULE-SET,google,Google
+- RULE-SET,binance,🇺🇸自动选择
+- RULE-SET,apple,Apple
+- RULE-SET,microsoft,Microsoft
+- RULE-SET,cloudflare,Cloudflare
+- RULE-SET,cnsite,DIRECT
+- RULE-SET,cnip,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- RULE-SET,telegram,Telegram
+- PROCESS-NAME,com.exteragram.messenger,Telegram
+- PROCESS-NAME,com.radolyn.ayugram,Telegram
+- MATCH,Proxies
 rule-providers:
   lan:
     type: http
@@ -200,6 +242,46 @@ rule-providers:
     proxy: Proxies
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Binance/Binance.yaml
     path: ./rule_set/binance.yaml
+proxy-providers:
+  机场1:
+    interval: 43200
+    health-check: &id001
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    url: 在此填入第1个机场的订阅链接(Clash/mihomo 格式)
+    type: http
+    path: ./proxy_provider/providers_1.yaml
+    proxy: Proxies
+    override:
+      additional-prefix: 机场标识
+    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  机场2:
+    interval: 43200
+    health-check: *id001
+    url: 在此填入第2个机场的订阅链接(Clash/mihomo 格式)
+    type: http
+    path: ./proxy_provider/providers_2.yaml
+    proxy: Proxies
+    override:
+      additional-prefix: 机场标识
+    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  LandNode:
+    interval: 43200
+    health-check: *id001
+    type: file
+    override:
+      additional-prefix: 🔗
+      dialer-proxy: 中转
+    path: ./proxy_provider/LandNode.yaml
+  OtherNode:
+    interval: 43200
+    health-check: *id001
+    type: file
+    path: ./proxy_provider/OtherNode.yaml
 proxy-groups:
 - name: Proxies
   type: select
@@ -338,7 +420,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: &id001
+  proxies: &id002
   - Proxies
   - 🧪实验低倍率
   - 🔗链式代理
@@ -388,7 +470,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Bilibili
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/icon/mini/bilibili.png
@@ -396,7 +478,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Tiktok
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png
@@ -404,7 +486,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Netflix
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
@@ -412,7 +494,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: YouTube
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/YouTube.png
@@ -420,7 +502,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Emby
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
@@ -428,7 +510,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Cloudflare
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cloudflare.png
@@ -436,7 +518,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Epic
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Epic_Games.png
@@ -444,7 +526,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Steam
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
@@ -452,7 +534,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Telegram
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
@@ -460,7 +542,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Twitter
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/loneshu7/mihomo_rules_profile/refs/heads/master/icon/Twitter.png
@@ -468,7 +550,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: GitHub
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png
@@ -476,7 +558,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Google
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Google.png
@@ -484,7 +566,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Discord
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Discord.png
@@ -492,7 +574,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Spotify
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
@@ -500,7 +582,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Pikpak
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/blackTangerine11/mihomo_rules_profile/master/icon/Pikpak.png
@@ -508,7 +590,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: OpenAI
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
@@ -516,7 +598,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Apple
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
@@ -524,7 +606,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: Microsoft
   filter: ^(?!.*((?i)(🔗|实验))).*$
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
@@ -896,85 +978,3 @@ proxy-groups:
   hidden: true
   proxies:
   - 落地
-rules:
-- RULE-SET,advertising,⛔阻断
-- RULE-SET,privacy,⛔阻断
-- RULE-SET,googlefcm,🇺🇸手动选择
-- DOMAIN,cdn.usefathom.com,OpenAI
-- DOMAIN-SUFFIX,anthropic.com,OpenAI
-- DOMAIN-SUFFIX,claude.ai,OpenAI
-- PROCESS-NAME,com.qidian.QDReader,DIRECT
-- DOMAIN-SUFFIX,youpin898.com,DIRECT
-- DOMAIN-SUFFIX,youpinimg.com,DIRECT
-- DOMAIN-SUFFIX,jianguoyun.com,Proxies
-- DOMAIN-SUFFIX,linux.do,OpenAI
-- RULE-SET,lan,DIRECT
-- PROCESS-NAME,com.honjow.fehviewer,🇺🇸自动选择
-- IP-CIDR,149.154.160.0/20,Emby
-- RULE-SET,steam_cn,DIRECT
-- RULE-SET,steam,Steam
-- RULE-SET,epic,Epic
-- RULE-SET,twitter,Twitter
-- RULE-SET,spotify,Spotify
-- RULE-SET,github,GitHub
-- RULE-SET,pikpak,Pikpak
-- RULE-SET,discord,Discord
-- RULE-SET,tiktok,Tiktok
-- RULE-SET,pornhub,Pornhub
-- RULE-SET,gemini,OpenAI
-- RULE-SET,openai,OpenAI
-- RULE-SET,bilibili,Bilibili
-- RULE-SET,youtube,YouTube
-- RULE-SET,netflix,Netflix
-- RULE-SET,google,Google
-- RULE-SET,binance,🇺🇸自动选择
-- RULE-SET,apple,Apple
-- RULE-SET,microsoft,Microsoft
-- RULE-SET,cloudflare,Cloudflare
-- RULE-SET,cnsite,DIRECT
-- RULE-SET,cnip,DIRECT,no-resolve
-- GEOIP,CN,DIRECT
-- RULE-SET,telegram,Telegram
-- PROCESS-NAME,com.exteragram.messenger,Telegram
-- PROCESS-NAME,com.radolyn.ayugram,Telegram
-- MATCH,Proxies
-proxy-providers:
-  机场1:
-    interval: 43200
-    health-check: &id002
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-    url: 在此填入第1个机场的订阅链接(Clash/mihomo 格式)
-    type: http
-    path: ./proxy_provider/providers_1.yaml
-    proxy: Proxies
-    override:
-      additional-prefix: 机场标识
-    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  机场2:
-    interval: 43200
-    health-check: *id002
-    url: 在此填入第2个机场的订阅链接(Clash/mihomo 格式)
-    type: http
-    path: ./proxy_provider/providers_2.yaml
-    proxy: Proxies
-    override:
-      additional-prefix: 机场标识
-    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  LandNode:
-    interval: 43200
-    health-check: *id002
-    type: file
-    override:
-      additional-prefix: 🔗
-      dialer-proxy: 中转
-    path: ./proxy_provider/LandNode.yaml
-  OtherNode:
-    interval: 43200
-    health-check: *id002
-    type: file
-    path: ./proxy_provider/OtherNode.yaml

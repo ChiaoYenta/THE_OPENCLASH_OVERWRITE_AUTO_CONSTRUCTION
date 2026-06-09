@@ -1,13 +1,6 @@
 # Processed: raw_configs/external/General_Config/Ayanami0-configs/Ayanami0_config_geo-lite.yaml
 # Providers: 4 proxy, 0 rule
 
-proxy-groups:
-- name: PROXY
-  icon: https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/All.svg
-  type: select
-  proxies:
-  - DIRECT
-  include-all: true
 rules:
 - GEOSITE,googlefcm,DIRECT
 - GEOSITE,category-ads-all,REJECT
@@ -60,3 +53,10 @@ proxy-providers:
       additional-prefix: δ-
     path: ./proxies/δ.yaml
     url: null
+proxy-groups:
+- name: PROXY
+  icon: https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/All.svg
+  type: select
+  proxies:
+  - DIRECT
+  include-all: true
