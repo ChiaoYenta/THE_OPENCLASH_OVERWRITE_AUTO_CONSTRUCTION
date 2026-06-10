@@ -1,18 +1,13 @@
 # Processed: raw_configs/external/General_Config/Ayanami0-configs/Ayanami0_config_geo-lite.yaml
 # Providers: 4 proxy, 0 rule
 
-rules:
-- GEOSITE,googlefcm,DIRECT
-- GEOSITE,category-ads-all,REJECT
-- GEOSITE,cn,DIRECT
-- GEOSITE,private,DIRECT
-- GEOSITE,category-games,DIRECT
-- GEOSITE,microsoft@cn,DIRECT
-- GEOSITE,geolocation-!cn,PROXY
-- GEOIP,telegram,PROXY
-- GEOIP,cn,DIRECT
-- GEOIP,private,DIRECT,no-resolve
-- MATCH,PROXY
+proxy-groups:
+- name: PROXY
+  icon: https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/All.svg
+  type: select
+  proxies:
+  - DIRECT
+  include-all: true
 proxy-providers:
   α:
     type: http
@@ -53,10 +48,15 @@ proxy-providers:
       additional-prefix: δ-
     path: ./proxies/δ.yaml
     url: null
-proxy-groups:
-- name: PROXY
-  icon: https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/All.svg
-  type: select
-  proxies:
-  - DIRECT
-  include-all: true
+rules:
+- GEOSITE,googlefcm,DIRECT
+- GEOSITE,category-ads-all,REJECT
+- GEOSITE,cn,DIRECT
+- GEOSITE,private,DIRECT
+- GEOSITE,category-games,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOSITE,geolocation-!cn,PROXY
+- GEOIP,telegram,PROXY
+- GEOIP,cn,DIRECT
+- GEOIP,private,DIRECT,no-resolve
+- MATCH,PROXY
