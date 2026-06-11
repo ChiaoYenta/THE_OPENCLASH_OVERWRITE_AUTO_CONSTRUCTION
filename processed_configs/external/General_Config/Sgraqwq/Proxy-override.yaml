@@ -1,6 +1,19 @@
 # Processed: raw_configs/external/General_Config/Sgraqwq/Proxy-override.yaml
 # Providers: 1 proxy, 9 rule
 
+proxy-providers:
+  sub:
+    type: http
+    url: https://你的机场订阅链接
+    path: ./proxy-providers/sub.yaml
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      lazy: true
+      timeout: 5000
 proxy-groups:
 - name: 节点选择
   type: select
@@ -150,92 +163,6 @@ proxy-groups:
   - 故障转移
   - DIRECT
   - REJECT
-proxy-providers:
-  sub:
-    type: http
-    url: https://你的机场订阅链接
-    path: ./proxy-providers/sub.yaml
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-      lazy: true
-      timeout: 5000
-rule-providers:
-  anti-ad:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/ads.mrs
-    path: ./ruleset/anti-ad.mrs
-    interval: 85515
-    proxy: DIRECT
-  openai:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.mrs
-    path: ./ruleset/meta-openai.mrs
-    interval: 85530
-    proxy: AI
-  tiktok:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs
-    path: ./ruleset/meta-tiktok.mrs
-    interval: 85575
-    proxy: 流媒体
-  github:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs
-    path: ./ruleset/meta-github.mrs
-    interval: 85635
-    proxy: DIRECT
-  microsoft:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
-    path: ./ruleset/meta-microsoft.mrs
-    interval: 85650
-    proxy: 微软
-  apple:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs
-    path: ./ruleset/meta-apple.mrs
-    interval: 85665
-    proxy: 苹果
-  proxy_sites:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs
-    path: ./ruleset/proxy_sites.mrs
-    interval: 86415
-    proxy: DIRECT
-  cn_sites:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
-    path: ./ruleset/cn_sites.mrs
-    interval: 86430
-    proxy: DIRECT
-  gfw:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs
-    path: ./ruleset/meta-gfw.mrs
-    interval: 86445
-    proxy: DIRECT
 rules:
 - DOMAIN-SUFFIX,wxs.qq.com,DIRECT
 - DOMAIN-SUFFIX,wx.qlogo.cn,DIRECT
@@ -453,3 +380,76 @@ rules:
 - RULE-SET,proxy_sites,节点选择
 - GEOIP,CN,国内直连,no-resolve
 - MATCH,漏网之鱼
+rule-providers:
+  anti-ad:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/ads.mrs
+    path: ./ruleset/anti-ad.mrs
+    interval: 85515
+    proxy: DIRECT
+  openai:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.mrs
+    path: ./ruleset/meta-openai.mrs
+    interval: 85530
+    proxy: AI
+  tiktok:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs
+    path: ./ruleset/meta-tiktok.mrs
+    interval: 85575
+    proxy: 流媒体
+  github:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs
+    path: ./ruleset/meta-github.mrs
+    interval: 85635
+    proxy: DIRECT
+  microsoft:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
+    path: ./ruleset/meta-microsoft.mrs
+    interval: 85650
+    proxy: 微软
+  apple:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs
+    path: ./ruleset/meta-apple.mrs
+    interval: 85665
+    proxy: 苹果
+  proxy_sites:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs
+    path: ./ruleset/proxy_sites.mrs
+    interval: 86415
+    proxy: DIRECT
+  cn_sites:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
+    path: ./ruleset/cn_sites.mrs
+    interval: 86430
+    proxy: DIRECT
+  gfw:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs
+    path: ./ruleset/meta-gfw.mrs
+    interval: 86445
+    proxy: DIRECT
