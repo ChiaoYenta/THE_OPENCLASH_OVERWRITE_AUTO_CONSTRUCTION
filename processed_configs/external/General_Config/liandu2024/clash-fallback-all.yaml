@@ -1,16 +1,6 @@
 # Processed: raw_configs/external/General_Config/liandu2024/clash-fallback-all.yaml
 # Providers: 1 proxy, 51 rule
 
-proxy-providers:
-  机场名称:
-    url: 机场订阅地址
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
 proxy-groups:
 - type: select
   proxies: &id001
@@ -331,6 +321,16 @@ rules:
 - RULE-SET,China / IP,国内,no-resolve
 - RULE-SET,Private / Domain,国内
 - MATCH,其他
+proxy-providers:
+  机场名称:
+    url: 机场订阅地址
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
 rule-providers:
   TEST / Domain:
     type: http

@@ -1,19 +1,6 @@
 # Processed: raw_configs/external/General_Config/Sgraqwq/Proxy-override.yaml
 # Providers: 1 proxy, 9 rule
 
-proxy-providers:
-  sub:
-    type: http
-    url: https://你的机场订阅链接
-    path: ./proxy-providers/sub.yaml
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-      lazy: true
-      timeout: 5000
 proxy-groups:
 - name: 节点选择
   type: select
@@ -380,6 +367,19 @@ rules:
 - RULE-SET,proxy_sites,节点选择
 - GEOIP,CN,国内直连,no-resolve
 - MATCH,漏网之鱼
+proxy-providers:
+  sub:
+    type: http
+    url: https://你的机场订阅链接
+    path: ./proxy-providers/sub.yaml
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+      lazy: true
+      timeout: 5000
 rule-providers:
   anti-ad:
     type: http

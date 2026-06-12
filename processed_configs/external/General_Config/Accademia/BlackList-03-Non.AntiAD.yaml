@@ -1,12 +1,6 @@
 # Processed: raw_configs/external/General_Config/Accademia/BlackList-03-Non.AntiAD.yaml
 # Providers: 1 proxy, 111 rule
 
-proxy-providers:
-  SUB-Provider-01:
-    type: http
-    url: https://example.com/replace/your/subscription/url
-    interval: 43200
-    path: ./proxy-providers/SUB-Provider-01.yaml
 proxy-groups:
 - name: 🌐.Line-[Global.VPS]
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@latest/IconSet/Color/Available.png
@@ -2810,6 +2804,12 @@ rules:
 - rule-set        , Apple_IP                                   , ☁️.<Apps>--Apple
 - rule-set        , MicrosoftAPPs_Domain                       , ☁️.<Apps>--Microsoft
 - rule-set        , GFWList_Domain                             , 🚧.<GFWList>
+proxy-providers:
+  SUB-Provider-01:
+    type: http
+    url: https://example.com/replace/your/subscription/url
+    interval: 43200
+    path: ./proxy-providers/SUB-Provider-01.yaml
 rule-providers:
   GlobalDNS_Domain:
     type: http
