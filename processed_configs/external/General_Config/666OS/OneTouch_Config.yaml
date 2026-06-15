@@ -25,6 +25,133 @@ rules:
 - RULE-SET,ProxyIP,一键连,no-resolve
 - RULE-SET,ChinaIP,国内流量,no-resolve
 - MATCH,一键连
+rule-providers:
+  Private:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Private.mrs
+  Direct:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Direct.mrs
+  AppleCN:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/AppleCN.mrs
+  Download:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Download.mrs
+  XPTV:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/XPTV.mrs
+  AI:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/AI.mrs
+  Telegram:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Telegram.mrs
+  SocialMedia:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/SocialMedia.mrs
+  YouTube:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/YouTube.mrs
+  Spotify:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Spotify.mrs
+  Netflix:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Netflix.mrs
+  Disney:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Disney.mrs
+  HBO:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/HBO.mrs
+  Proxy:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Proxy.mrs
+  China:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/domain/China.mrs
+  TelegramIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Telegram.mrs
+  SocialMediaIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/ip/SocialMedia.mrs
+  NetflixIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Netflix.mrs
+  ProxyIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Proxy.mrs
+  ChinaIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/ip/China.mrs
+  PrivateIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Private.mrs
 proxy-groups:
 - type: select
   proxies:
@@ -166,133 +293,6 @@ proxy-groups:
   filter: ^(?=.*(?i)(奥|比|保|克罗地亚|塞|捷|丹|爱沙|芬|法|德|希|匈|爱尔|意|拉|立|卢|马其它|荷|波|葡|罗|斯洛伐|斯洛文|西|瑞|英|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|🇬🇧|CDG|FRA|AMS|MAD|BCN|FCO|MUC|BRU))(?!.*(排除1|排除2|5x)).*$
   include-all: true
   icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png
-rule-providers:
-  Private:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Private.mrs
-  Direct:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Direct.mrs
-  AppleCN:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/AppleCN.mrs
-  Download:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Download.mrs
-  XPTV:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/XPTV.mrs
-  AI:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/AI.mrs
-  Telegram:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Telegram.mrs
-  SocialMedia:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/SocialMedia.mrs
-  YouTube:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/YouTube.mrs
-  Spotify:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Spotify.mrs
-  Netflix:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Netflix.mrs
-  Disney:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Disney.mrs
-  HBO:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/HBO.mrs
-  Proxy:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/Proxy.mrs
-  China:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/domain/China.mrs
-  TelegramIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Telegram.mrs
-  SocialMediaIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/ip/SocialMedia.mrs
-  NetflixIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Netflix.mrs
-  ProxyIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Proxy.mrs
-  ChinaIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/ip/China.mrs
-  PrivateIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/666OS/rules/raw/release/mihomo/ip/Private.mrs
 proxy-providers:
   优质服务商:
     type: http

@@ -14,62 +14,6 @@ rules:
 - RULE-SET,cn,DIRECT
 - RULE-SET,cn_v6,DIRECT
 - MATCH,♾️
-proxy-groups:
-- type: select
-  include-all-providers: true
-  name: 节点选择
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/start.png
-  filter: (港|HK|Hong Kong|日本|JP|Japan|🇭🇰|🇯🇵)
-  proxies:
-  - 其他节点
-- type: select
-  include-all-providers: true
-  name: 日区网站
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/cherry-blossom.png
-  filter: (日本|JP|Japan|🇯🇵)
-  proxies:
-  - 节点选择
-- type: select
-  include-all-providers: true
-  name: 其他节点
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/Global.png
-  exclude-filter: (港|HK|Hong Kong|日本|JP|Japan|🇭🇰|🇯🇵)
-  proxies:
-  - DIRECT
-- type: select
-  include-all-providers: true
-  name: EH图库
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/ehentai.png
-- type: select
-  include-all-providers: true
-  name: 游戏平台
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/steam.png
-  filter: (港|HK|Hong Kong|🇭🇰)
-  proxies:
-  - DIRECT
-  - 节点选择
-- type: select
-  include-all-providers: true
-  name: 电报消息
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/telegram.png
-- type: select
-  include-all-providers: true
-  name: Google
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/Google.png
-- name: 秋风净化
-  type: select
-  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/AWAvenue.png
-  proxies:
-  - REJECT
-  - REJECT-DROP
-  - PASS
-  - DIRECT
-  - 节点选择
-- name: ♾️
-  type: select
-  proxies:
-  - 节点选择
-  hidden: true
 rule-providers:
   SpecialDirect:
     type: http
@@ -147,6 +91,62 @@ rule-providers:
     behavior: domain
     url: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/provider/fakeip-filter.yaml
     path: ./rule_provider/fakeip-filter.yaml
+proxy-groups:
+- type: select
+  include-all-providers: true
+  name: 节点选择
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/start.png
+  filter: (港|HK|Hong Kong|日本|JP|Japan|🇭🇰|🇯🇵)
+  proxies:
+  - 其他节点
+- type: select
+  include-all-providers: true
+  name: 日区网站
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/cherry-blossom.png
+  filter: (日本|JP|Japan|🇯🇵)
+  proxies:
+  - 节点选择
+- type: select
+  include-all-providers: true
+  name: 其他节点
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/Global.png
+  exclude-filter: (港|HK|Hong Kong|日本|JP|Japan|🇭🇰|🇯🇵)
+  proxies:
+  - DIRECT
+- type: select
+  include-all-providers: true
+  name: EH图库
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/ehentai.png
+- type: select
+  include-all-providers: true
+  name: 游戏平台
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/steam.png
+  filter: (港|HK|Hong Kong|🇭🇰)
+  proxies:
+  - DIRECT
+  - 节点选择
+- type: select
+  include-all-providers: true
+  name: 电报消息
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/telegram.png
+- type: select
+  include-all-providers: true
+  name: Google
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/Google.png
+- name: 秋风净化
+  type: select
+  icon: https://raw.githubusercontent.com/amenorira/Clash-Rule/master/icon/AWAvenue.png
+  proxies:
+  - REJECT
+  - REJECT-DROP
+  - PASS
+  - DIRECT
+  - 节点选择
+- name: ♾️
+  type: select
+  proxies:
+  - 节点选择
+  hidden: true
 proxy-providers:
   subscription:
     type: http

@@ -164,6 +164,27 @@ proxy-groups:
   use:
   - 🆓 免费订阅
   icon: https://github.com/DustinWin/ruleset_geodata/releases/download/icons/free.png
+proxy-providers:
+  🛫 机场订阅:
+    type: http
+    url: https://example.com/xxx/xxx&flag=clash
+    path: ./proxies/airport.yaml
+    interval: 86400
+    filter: (?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united
+      states)
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+  🆓 免费订阅:
+    type: http
+    url: https://example.com/xxx/xxx&flag=clash
+    path: ./proxies/free.yaml
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
 rules:
 - RULE-SET,private,私有网络
 - RULE-SET,trackerslist,Trackerslist
@@ -278,24 +299,3 @@ rule-providers:
     path: ./ruleset/telegramip.mrs
     url: https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/telegramip.mrs
     interval: 86400
-proxy-providers:
-  🛫 机场订阅:
-    type: http
-    url: https://example.com/xxx/xxx&flag=clash
-    path: ./proxies/airport.yaml
-    interval: 86400
-    filter: (?i)(🇭🇰|港|hk|hongkong|hong kong|🇹🇼|台|tw|taiwan|tai wan|🇯🇵|日|jp|japan|🇸🇬|新|sg|singapore|🇺🇸|美|us|unitedstates|united
-      states)
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
-  🆓 免费订阅:
-    type: http
-    url: https://example.com/xxx/xxx&flag=clash
-    path: ./proxies/free.yaml
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 600
