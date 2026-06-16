@@ -1,43 +1,6 @@
 # Processed: raw_configs/external/General_Config/Seven1echo/Seven1_fallback_Geo.yaml
 # Providers: 1 proxy, 1 rule
 
-rules:
-- GEOSITE,private,国内直连
-- GEOIP,private,国内直连,no-resolve
-- GEOSITE,openai,ChatGPT
-- GEOSITE,anthropic,Claude
-- GEOSITE,google-gemini,Gemini
-- GEOSITE,youtube,YouTube
-- GEOSITE,google,Google
-- GEOSITE,github,GitHub
-- GEOSITE,onedrive,OneDrive
-- GEOSITE,microsoft,Microsoft
-- GEOSITE,apple-tvplus,AppleTV
-- GEOSITE,apple,Apple
-- GEOSITE,tiktok,TikTok
-- GEOSITE,twitter,Twitter(X)
-- GEOSITE,telegram,Telegram
-- GEOSITE,netflix,Netflix
-- GEOSITE,disney,Disney
-- GEOSITE,spotify,Spotify
-- GEOSITE,paypal,PayPal
-- GEOSITE,category-speedtest,Speedtest
-- GEOIP,google,Google,no-resolve
-- GEOIP,telegram,Telegram,no-resolve
-- GEOIP,twitter,Twitter(X),no-resolve
-- GEOIP,netflix,Netflix,no-resolve
-- GEOSITE,geolocation-!cn,一键代理
-- RULE-SET,add_direct_domain,国内直连
-- GEOSITE,cn,国内直连
-- GEOIP,cn,国内直连,no-resolve
-- MATCH,漏网之鱼
-rule-providers:
-  add_direct_domain:
-    type: http
-    interval: 86400
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
 proxy-groups:
 - type: select
   proxies:
@@ -417,3 +380,40 @@ proxy-providers:
     url: 订阅链接
     override:
       additional-prefix: '[机场名] '
+rules:
+- GEOSITE,private,国内直连
+- GEOIP,private,国内直连,no-resolve
+- GEOSITE,openai,ChatGPT
+- GEOSITE,anthropic,Claude
+- GEOSITE,google-gemini,Gemini
+- GEOSITE,youtube,YouTube
+- GEOSITE,google,Google
+- GEOSITE,github,GitHub
+- GEOSITE,onedrive,OneDrive
+- GEOSITE,microsoft,Microsoft
+- GEOSITE,apple-tvplus,AppleTV
+- GEOSITE,apple,Apple
+- GEOSITE,tiktok,TikTok
+- GEOSITE,twitter,Twitter(X)
+- GEOSITE,telegram,Telegram
+- GEOSITE,netflix,Netflix
+- GEOSITE,disney,Disney
+- GEOSITE,spotify,Spotify
+- GEOSITE,paypal,PayPal
+- GEOSITE,category-speedtest,Speedtest
+- GEOIP,google,Google,no-resolve
+- GEOIP,telegram,Telegram,no-resolve
+- GEOIP,twitter,Twitter(X),no-resolve
+- GEOIP,netflix,Netflix,no-resolve
+- GEOSITE,geolocation-!cn,一键代理
+- RULE-SET,add_direct_domain,国内直连
+- GEOSITE,cn,国内直连
+- GEOIP,cn,国内直连,no-resolve
+- MATCH,漏网之鱼
+rule-providers:
+  add_direct_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/rules/Seven1_Direct_Domain.mrs
