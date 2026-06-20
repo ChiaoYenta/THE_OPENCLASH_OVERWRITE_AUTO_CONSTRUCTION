@@ -293,6 +293,8 @@ proxy-groups:
 - filter: (?i)🇭🇰|香港|\\bHK\\b|\\bhongkong\\b|\\bhong\s?kong\\b|🇸🇬|新加坡|狮城|\\bSG\\b|\\bsingapore\\b|🇯🇵|日本|\\bJP\\b|\\bjapan\\b|🇺🇸|美国|\\bUS\\b|\\bunitedstates\\b|\\bunited\s?states\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Universal/RoundRobin.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -305,6 +307,8 @@ proxy-groups:
 - filter: (?i)🇭🇰|香港|\\bHK\\b|\\bhongkong\\b|\\bhong\s?kong\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Hong_Kong.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -317,6 +321,8 @@ proxy-groups:
 - filter: (?i)🇹🇼|台湾|\\bTW\\b|\\btaiwan\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Taiwan.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -329,6 +335,8 @@ proxy-groups:
 - filter: (?i)🇸🇬|新加坡|狮城|\\bSG\\b|\\bsingapore\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Singapore.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -341,6 +349,8 @@ proxy-groups:
 - filter: (?i)🇯🇵|日本|\\bJP\\b|\\bjapan\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Japan.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -353,6 +363,8 @@ proxy-groups:
 - filter: (?i)🇺🇸|美国|\\bUS\\b|\\bunitedstates\\b|\\bunited\s?states\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/United_States.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -365,6 +377,8 @@ proxy-groups:
 - filter: (?i)🇩🇪|德国|\\bDE\\b|\\bgermany\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Germany.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -377,6 +391,8 @@ proxy-groups:
 - filter: (?i)🇬🇧|英国|\\bUK\\b|\\bGB\\b|\\bunitedkingdom\\b|\\bunited\s?kingdom\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/United_Kingdom.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -389,6 +405,8 @@ proxy-groups:
 - filter: (?i)🇳🇱|荷兰|\\bNL\\b|\\bnetherlands?\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Netherlands.png
   use: *id006
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -409,6 +427,8 @@ proxy-groups:
 - filter: (?i)🇭🇰|香港|\\bHK\\b|\\bhongkong\\b|\\bhong\s?kong\\b|🇸🇬|新加坡|狮城|\\bSG\\b|\\bsingapore\\b|🇯🇵|日本|\\bJP\\b|\\bjapan\\b|🇺🇸|美国|\\bUS\\b|\\bunitedstates\\b|\\bunited\s?states\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Universal/RoundRobin.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -421,6 +441,8 @@ proxy-groups:
 - filter: (?i)🇭🇰|香港|\\bHK\\b|\\bhongkong\\b|\\bhong\s?kong\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Hong_Kong.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -433,6 +455,8 @@ proxy-groups:
 - filter: (?i)🇹🇼|台湾|\\bTW\\b|\\btaiwan\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Taiwan.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -445,6 +469,8 @@ proxy-groups:
 - filter: (?i)🇸🇬|新加坡|狮城|\\bSG\\b|\\bsingapore\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Singapore.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -457,6 +483,8 @@ proxy-groups:
 - filter: (?i)🇯🇵|日本|\\bJP\\b|\\bjapan\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Japan.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -469,6 +497,8 @@ proxy-groups:
 - filter: (?i)🇺🇸|美国|\\bUS\\b|\\bunitedstates\\b|\\bunited\s?states\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/United_States.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -481,6 +511,8 @@ proxy-groups:
 - filter: (?i)🇩🇪|德国|\\bDE\\b|\\bgermany\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Germany.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -493,6 +525,8 @@ proxy-groups:
 - filter: (?i)🇬🇧|英国|\\bUK\\b|\\bGB\\b|\\bunitedkingdom\\b|\\bunited\s?kingdom\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/United_Kingdom.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
@@ -505,6 +539,8 @@ proxy-groups:
 - filter: (?i)🇳🇱|荷兰|\\bNL\\b|\\bnetherlands?\\b
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Rounded_Rectangle/Netherlands.png
   use: *id007
+  policy-priority: ''
+  type-priority: ''
   type: smart
   strategy: sticky-sessions
   uselightgbm: true
