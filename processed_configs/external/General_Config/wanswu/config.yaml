@@ -1,281 +1,6 @@
 # Processed: raw_configs/external/General_Config/wanswu/config.yaml
 # Providers: 2 proxy, 30 rule
 
-proxy-providers:
-  main:
-    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期|地址
-    type: http
-    proxy: DIRECT
-    interval: 600
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: https://anyland.club/#/register?code=R7vdKxbE
-    path: ./proxy_provider/main.yaml
-    header:
-      User-Agent:
-      - Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
-      token:
-      - '*********'
-    override:
-      udp: true
-      additional-prefix: 主-
-  back:
-    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期|地址
-    type: file
-    proxy: DIRECT
-    interval: 600
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    path: proxy_provider/back.yaml
-    override:
-      udp: true
-      additional-prefix: 备-6-
-rule-providers:
-  category-ads-all:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs
-  Apple:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.mrs
-  China:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
-  Claude:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.mrs
-  Disney:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.mrs
-  Emby:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-emby.mrs
-  Gemini:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.mrs
-  Github:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs
-  Google:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs
-  Lan:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs
-  Microsoft:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
-  Netflix:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs
-  OpenAI:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.mrs
-  OneDrive:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.mrs
-  Steam:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs
-  Spotify:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs
-  TikTok:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs
-  WhatsApp:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/whatsapp.mrs
-  Twitter:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/x.mrs
-  Telegram:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs
-  YouTube:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs
-  DNSLeak:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/DNSLeak.mrs
-  ChinaIP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
-  GoogleIP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs
-  LanIP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs
-  NetflixIP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs
-  TwitterIP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs
-  TelegramIP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: ipcidr
-    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs
-  ChinaAPP:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: yaml
-    behavior: classical
-    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/Process/ChinaAPP.yaml
-  Direct:
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    format: mrs
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/Direct.mrs
-rules:
-- RULE-SET,Direct,DIRECT
-- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,ChinaIP))),(NOT,((RULE-SET,China)))),REJECT
-- RULE-SET,ChinaAPP,DIRECT
-- RULE-SET,category-ads-all,REJECT
-- RULE-SET,YouTube,YouTube
-- RULE-SET,Github,Github
-- RULE-SET,OpenAI,OpenAI
-- RULE-SET,Gemini,Gemini
-- RULE-SET,Google,Google
-- RULE-SET,Apple,Apple
-- RULE-SET,Claude,Claude
-- RULE-SET,Twitter,Twitter(X)
-- RULE-SET,Telegram,Telegram
-- RULE-SET,Spotify,Spotify
-- RULE-SET,TikTok,TikTok
-- RULE-SET,WhatsApp,WhatsApp
-- RULE-SET,OneDrive,OneDrive
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,Netflix,Netflix
-- RULE-SET,Disney,Disney
-- RULE-SET,Steam,Steam
-- RULE-SET,Emby,Emby
-- RULE-SET,Lan,DIRECT
-- RULE-SET,China,DIRECT
-- RULE-SET,LanIP,DIRECT,no-resolve
-- RULE-SET,ChinaIP,DIRECT,no-resolve
-- RULE-SET,GoogleIP,Google,no-resolve
-- RULE-SET,TelegramIP,Telegram,no-resolve
-- RULE-SET,TwitterIP,Twitter(X),no-resolve
-- MATCH,手动选择
 proxy-groups:
 - type: select
   include-all: true
@@ -842,3 +567,278 @@ proxy-groups:
   name: 英国均衡-轮询
   filter: (?i)(?=.*(🇬🇧|英国|英|GBR|UK|united ?kingdom|london))
   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
+proxy-providers:
+  main:
+    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期|地址
+    type: http
+    proxy: DIRECT
+    interval: 600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: https://anyland.club/#/register?code=R7vdKxbE
+    path: ./proxy_provider/main.yaml
+    header:
+      User-Agent:
+      - Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+      token:
+      - '*********'
+    override:
+      udp: true
+      additional-prefix: 主-
+  back:
+    exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期|地址
+    type: file
+    proxy: DIRECT
+    interval: 600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    path: proxy_provider/back.yaml
+    override:
+      udp: true
+      additional-prefix: 备-6-
+rule-providers:
+  category-ads-all:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs
+  Apple:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.mrs
+  China:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
+  Claude:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.mrs
+  Disney:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.mrs
+  Emby:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-emby.mrs
+  Gemini:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.mrs
+  Github:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs
+  Google:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs
+  Lan:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs
+  Microsoft:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs
+  Netflix:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs
+  OpenAI:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.mrs
+  OneDrive:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.mrs
+  Steam:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs
+  Spotify:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs
+  TikTok:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs
+  WhatsApp:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/whatsapp.mrs
+  Twitter:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/x.mrs
+  Telegram:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs
+  YouTube:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs
+  DNSLeak:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/DNSLeak.mrs
+  ChinaIP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
+  GoogleIP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs
+  LanIP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs
+  NetflixIP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs
+  TwitterIP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs
+  TelegramIP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: ipcidr
+    url: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs
+  ChinaAPP:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: yaml
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/Process/ChinaAPP.yaml
+  Direct:
+    type: http
+    interval: 86400
+    proxy: DIRECT
+    format: mrs
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/0xWans/my-backup@main/clash/rules/Direct.mrs
+rules:
+- RULE-SET,Direct,DIRECT
+- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,ChinaIP))),(NOT,((RULE-SET,China)))),REJECT
+- RULE-SET,ChinaAPP,DIRECT
+- RULE-SET,category-ads-all,REJECT
+- RULE-SET,YouTube,YouTube
+- RULE-SET,Github,Github
+- RULE-SET,OpenAI,OpenAI
+- RULE-SET,Gemini,Gemini
+- RULE-SET,Google,Google
+- RULE-SET,Apple,Apple
+- RULE-SET,Claude,Claude
+- RULE-SET,Twitter,Twitter(X)
+- RULE-SET,Telegram,Telegram
+- RULE-SET,Spotify,Spotify
+- RULE-SET,TikTok,TikTok
+- RULE-SET,WhatsApp,WhatsApp
+- RULE-SET,OneDrive,OneDrive
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Netflix,Netflix
+- RULE-SET,Disney,Disney
+- RULE-SET,Steam,Steam
+- RULE-SET,Emby,Emby
+- RULE-SET,Lan,DIRECT
+- RULE-SET,China,DIRECT
+- RULE-SET,LanIP,DIRECT,no-resolve
+- RULE-SET,ChinaIP,DIRECT,no-resolve
+- RULE-SET,GoogleIP,Google,no-resolve
+- RULE-SET,TelegramIP,Telegram,no-resolve
+- RULE-SET,TwitterIP,Twitter(X),no-resolve
+- MATCH,手动选择
