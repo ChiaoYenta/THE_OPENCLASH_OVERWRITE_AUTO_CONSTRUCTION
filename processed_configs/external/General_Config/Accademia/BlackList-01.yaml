@@ -1,6 +1,1121 @@
 # Processed: raw_configs/external/General_Config/Accademia/BlackList-01.yaml
 # Providers: 1 proxy, 115 rule
 
+rule-providers:
+  GlobalDNS_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/GlobalDNS/GlobalDNS_Domain.yaml
+    path: ./ruleset/GlobalDNS_Domain.yaml
+  GlobalDNS_IP:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/GlobalDNS/GlobalDNS_IP.yaml
+    path: ./ruleset/GlobalDNS_IP.yaml
+  ChinaDNS_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/ChinaDNS/ChinaDNS_Domain.yaml
+    path: ./ruleset/ChinaDNS_Domain.yaml
+  ChinaDNS_IP:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/ChinaDNS/ChinaDNS_IP.yaml
+    path: ./ruleset/ChinaDNS_IP.yaml
+  Lan_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Lan/Lan.yaml
+    path: ./ruleset/Lan.yaml
+  BlockHttpDNS_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
+    path: ./ruleset/BlockHttpDNS.yaml
+  Hijacking_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Hijacking/Hijacking.yaml
+    path: ./ruleset/Hijacking.yaml
+  HijackingPlus_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/HijackingPlus/HijackingPlus.yaml
+    path: ./ruleset/HijackingPlus.yaml
+  PreRepairEasyPrivacy_REJECT_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/PreRepairEasyPrivacy/PreRepairEasyPrivacy_REJECT.yaml
+    path: ./ruleset/PreRepairEasyPrivacy_REJECT.yaml
+  PreRepairEasyPrivacy_DIRECT_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/PreRepairEasyPrivacy/PreRepairEasyPrivacy_DIRECT.yaml
+    path: ./ruleset/PreRepairEasyPrivacy_DIRECT.yaml
+  PreRepairEasyPrivacy_PROXY_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/PreRepairEasyPrivacy/PreRepairEasyPrivacy_PROXY.yaml
+    path: ./ruleset/PreRepairEasyPrivacy_PROXY.yaml
+  EasyPrivacy_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/EasyPrivacy/EasyPrivacy_Domain.yaml
+    path: ./ruleset/EasyPrivacy_Domain.yaml
+  AdvertisingLite_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.yaml
+    path: ./ruleset/AdvertisingLite_Domain.yaml
+  FakeLocationBiliBili_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationBiliBili.yaml
+    path: ./ruleset/FakeLocationBiliBili.yaml
+  FakeLocationDouYin_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationDouYin.yaml
+    path: ./ruleset/FakeLocationDouYin.yaml
+  FakeLocationKuaiShou_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationKuaiShou.yaml
+    path: ./ruleset/FakeLocationKuaiShou.yaml
+  FakeLocationXiaoHongShu_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationXiaoHongShu.yaml
+    path: ./ruleset/FakeLocationXiaoHongShu.yaml
+  FakeLocationXiGua_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationXiGua.yaml
+    path: ./ruleset/FakeLocationXiGua.yaml
+  FakeLocationWeiBo_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationWeiBo.yaml
+    path: ./ruleset/FakeLocationWeiBo.yaml
+  FakeLocationZhiHu_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationZhiHu.yaml
+    path: ./ruleset/FakeLocationZhiHu.yaml
+  FakeLocationTieBa_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationTieBa.yaml
+    path: ./ruleset/FakeLocationTieBa.yaml
+  FakeLocationDouBan_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationDouBan.yaml
+    path: ./ruleset/FakeLocationDouBan.yaml
+  FakeLocationXianYu_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationXianYu.yaml
+    path: ./ruleset/FakeLocationXianYu.yaml
+  GeositeCN_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/GeositeCN/GeositeCN_Domain.yaml
+    path: ./ruleset/GeositeCN_Domain.yaml
+  CloudflareCN_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Cloudflarecn/Cloudflarecn.yaml
+    path: ./ruleset/CloudflareCN.yaml
+  AmazonCN_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/AmazonCN/AmazonCN.yaml
+    path: ./ruleset/AmazonCN.yaml
+  Speedtest_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Speedtest/Speedtest.yaml
+    path: ./ruleset/Speedtest.yaml
+  Synology_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Synology/Synology.yaml
+    path: ./ruleset/Synology.yaml
+  AqaraGlobal_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Aqara/AqaraGlobal.yaml
+    path: ./ruleset/AqaraGlobal.yaml
+  OneDrive_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/OneDrive/OneDrive.yaml
+    path: ./ruleset/OneDrive.yaml
+  Dropbox_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Dropbox/Dropbox.yaml
+    path: ./ruleset/Dropbox.yaml
+  MEGA_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/MEGA/MEGA.yaml
+    path: ./ruleset/MEGA.yaml
+  Imgur_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Imgur/Imgur.yaml
+    path: ./ruleset/Imgur.yaml
+  GoogleDrive_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/GoogleDrive/GoogleDrive.yaml
+    path: ./ruleset/GoogleDrive.yaml
+  WaybackMachine_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/WaybackMachine/WaybackMachine_Domain.yaml
+    path: ./ruleset/WaybackMachine_Domain.yaml
+  WaybackMachine_IP:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/WaybackMachine/WaybackMachine_IP.yaml
+    path: ./ruleset/WaybackMachine_IP.yaml
+  PrivateTracker_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/PrivateTracker/PrivateTracker.yaml
+    path: ./ruleset/PrivateTracker.yaml
+  eMuleServer_IP:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/eMuleServer/eMuleServer_IP.yaml
+    path: ./ruleset/eMuleServer_IP.yaml
+  MacAppUpgrade_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/MacAppUpgrade/MacAppUpgrade_Domain.yaml
+    path: ./ruleset/MacAppUpgrade_Domain.yaml
+  Paypal_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Paypal.yaml
+    path: ./ruleset/Paypal.yaml
+  Wise_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Wise.yaml
+    path: ./ruleset/Wise.yaml
+  Binance_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Binance/Binance.yaml
+    path: ./ruleset/Binance.yaml
+  OKX_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/OKX/OKX.yaml
+    path: ./ruleset/OKX.yaml
+  Monzo_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Monzo.yaml
+    path: ./ruleset/Monzo.yaml
+  Revolut_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Revolut.yaml
+    path: ./ruleset/Revolut.yaml
+  BankUS_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankUS_Domain.yaml
+    path: ./ruleset/BankUS_Domain.yaml
+  BankCA_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankCA_Domain.yaml
+    path: ./ruleset/BankCA_Domain.yaml
+  BankUK_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankUK_Domain.yaml
+    path: ./ruleset/BankUK_Domain.yaml
+  BankAU_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankAU_Domain.yaml
+    path: ./ruleset/BankAU_Domain.yaml
+  BankJP_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankJP_Domain.yaml
+    path: ./ruleset/BankJP_Domain.yaml
+  BankHK_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankHK_Domain.yaml
+    path: ./ruleset/BankHK_Domain.yaml
+  BankSG_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankSG_Domain.yaml
+    path: ./ruleset/BankSG_Domain.yaml
+  HomeIPUS_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/HomeIP/HomeIPUS.yaml
+    path: ./ruleset/HomeIPUS.yaml
+  HomeIPJP_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/HomeIP/HomeIPJP.yaml
+    path: ./ruleset/HomeIPJP.yaml
+  UnsupportVPN_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/UnsupportVPN/UnsupportVPN.yaml
+    path: ./ruleset/UnsupportVPN.yaml
+  eBay_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/eBay/eBay.yaml
+    path: ./ruleset/eBay.yaml
+  Patreon_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Patreon/Patreon.yaml
+    path: ./ruleset/Patreon.yaml
+  Xbox_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Xbox/Xbox.yaml
+    path: ./ruleset/Xbox.yaml
+  PlayStation_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/PlayStation/PlayStation.yaml
+    path: ./ruleset/PlayStation.yaml
+  Nintendo_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Nintendo/Nintendo.yaml
+    path: ./ruleset/Nintendo.yaml
+  Steam_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Steam/Steam.yaml
+    path: ./ruleset/Steam.yaml
+  EPIC_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Epic/Epic.yaml
+    path: ./ruleset/EPIC.yaml
+  GOG_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Gog/Gog.yaml
+    path: ./ruleset/GOG.yaml
+  RockStar_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Rockstar/Rockstar.yaml
+    path: ./ruleset/RockStar.yaml
+  EA_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/EA/EA.yaml
+    path: ./ruleset/EA.yaml
+  Origin_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Origin/Origin.yaml
+    path: ./ruleset/Origin.yaml
+  UBI_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/UBI/UBI.yaml
+    path: ./ruleset/UBI.yaml
+  Ubisoft_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Ubisoft/Ubisoft.yaml
+    path: ./ruleset/Ubisoft.yaml
+  YouTube_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/YouTube/YouTube.yaml
+    path: ./ruleset/YouTube.yaml
+  Netflix_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Netflix/Netflix.yaml
+    path: ./ruleset/Netflix.yaml
+  Disney_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Disney/Disney.yaml
+    path: ./ruleset/Disney.yaml
+  PrimeVideo_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/PrimeVideo/PrimeVideo.yaml
+    path: ./ruleset/PrimeVideo.yaml
+  HBO_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/HBO/HBO.yaml
+    path: ./ruleset/HBO.yaml
+  FOXPlus_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/FOXPlus/FOXPlus.yaml
+    path: ./ruleset/FOXPlus.yaml
+  FOXNOW_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/FOXNOW/FOXNOW.yaml
+    path: ./ruleset/FOXNOW.yaml
+  AppleTV_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/AppleTV/AppleTV.yaml
+    path: ./ruleset/AppleTV.yaml
+  Pornhub_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Pornhub/Pornhub_Domain.yaml
+    path: ./ruleset/Pornhub_Domain.yaml
+  TikTok_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/TikTok/TikTok.yaml
+    path: ./ruleset/TikTok.yaml
+  Kwai_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Kwai/Kwai_Domain.yaml
+    path: ./ruleset/Kwai_Domain.yaml
+  Instagram_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Instagram/Instagram.yaml
+    path: ./ruleset/Instagram.yaml
+  Twitch_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Twitch/Twitch.yaml
+    path: ./ruleset/Twitch.yaml
+  Spotify_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Spotify/Spotify.yaml
+    path: ./ruleset/Spotify.yaml
+  YouTubeMusic_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/YouTubeMusic/YouTubeMusic.yaml
+    path: ./ruleset/YouTubeMusic.yaml
+  Twitter_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Twitter/Twitter.yaml
+    path: ./ruleset/Twitter.yaml
+  Facebook_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Facebook/Facebook.yaml
+    path: ./ruleset/Facebook.yaml
+  Telegram_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Telegram/Telegram.yaml
+    path: ./ruleset/Telegram.yaml
+  Whatsapp_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Whatsapp/Whatsapp.yaml
+    path: ./ruleset/Whatsapp.yaml
+  Line_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Line/Line.yaml
+    path: ./ruleset/Line.yaml
+  Reddit_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Reddit/Reddit.yaml
+    path: ./ruleset/Reddit.yaml
+  Discord_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Discord/Discord.yaml
+    path: ./ruleset/Discord.yaml
+  LinkedIn_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/LinkedIn/LinkedIn.yaml
+    path: ./ruleset/LinkedIn.yaml
+  Clubhouse_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Clubhouse/Clubhouse.yaml
+    path: ./ruleset/Clubhouse.yaml
+  ClubhouseIP_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/ClubhouseIP/ClubhouseIP.yaml
+    path: ./ruleset/ClubhouseIP.yaml
+  Signal_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Signal/Signal_Domain.yaml
+    path: ./ruleset/Signal_Domain.yaml
+  Wikipedia_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Wikipedia/Wikipedia.yaml
+    path: ./ruleset/Wikipedia.yaml
+  AppleAI_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/AppleAI/AppleAI_Domain.yaml
+    path: ./ruleset/AppleAI_Domain.yaml
+  OpenAI_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./ruleset/OpenAI.yaml
+  Grok_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Grok/Grok_Domain.yaml
+    path: ./ruleset/Grok_Domian.yaml
+  Gemini_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Gemini/Gemini_Domain.yaml
+    path: ./ruleset/Gemini_Domian.yaml
+  Claude_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Claude/Claude.yaml
+    path: ./ruleset/Claude.yaml
+  Copilot_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Copilot/Copilot_Domain.yaml
+    path: ./ruleset/Copilot_Domian.yaml
+  Adobe_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Adobe/Adobe.yaml
+    path: ./ruleset/Adobe.yaml
+  GitHub_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/GitHub/GitHub.yaml
+    path: ./ruleset/GitHub.yaml
+  Notion_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Notion/Notion.yaml
+    path: ./ruleset/Notion.yaml
+  Pinterest_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Pinterest/Pinterest.yaml
+    path: ./ruleset/Pinterest.yaml
+  Bing_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Bing/Bing.yaml
+    path: ./ruleset/Bing.yaml
+  MicrosoftEdge_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/MicrosoftEdge/MicrosoftEdge.yaml
+    path: ./ruleset/MicrosoftEdge.yaml
+  RustDesk_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/RustDesk/RustDesk_Domain.yaml
+    path: ./ruleset/RustDesk_Domain.yaml
+  Parsec_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Parsec/Parsec_Domain.yaml
+    path: ./ruleset/Parsec_Domain.yaml
+  Google_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Google/Google.yaml
+    path: ./ruleset/Google.yaml
+  Amazon_Do_Resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Amazon/Amazon.yaml
+    path: ./ruleset/Amazon.yaml
+  MicrosoftAPPs_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/MicrosoftAPPs/MicrosoftAPPs_Domain.yaml
+    path: ./ruleset/MicrosoftAPPs.yaml
+  Apple_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Apple/Apple_Domain.yaml
+    path: ./ruleset/Apple_Domain.yaml
+  Apple_IP:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Apple/Apple_IP.yaml
+    path: ./ruleset/Apple_IP.yaml
+  GFWList_Domain:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Proxy/Proxy_Domain.yaml
+    path: ./ruleset/GFWList_Domain.yaml
+proxy-providers:
+  SUB-Provider-01:
+    type: http
+    url: https://example.com/replace/your/subscription/url
+    interval: 43200
+    path: ./proxy-providers/SUB-Provider-01.yaml
+rules:
+- AND,((OR,((DST-PORT,53),(DST-PORT,853))),(NOT,((GEOIP,CN)))) , 📡.<DNS>--GlobalDNS
+- rule-set        , GlobalDNS_Domain                           , 📡.<DNS>--GlobalDNS
+- rule-set        , GlobalDNS_IP                               , 📡.<DNS>--GlobalDNS
+- AND,((OR,((DST-PORT,53),(DST-PORT,853))),(GEOIP,CN))         , 📡.<DNS>--ChinaDNS
+- rule-set        , ChinaDNS_Domain                            , 📡.<DNS>--ChinaDNS
+- rule-set        , ChinaDNS_IP                                , 📡.<DNS>--ChinaDNS
+- AND,((NETWORK,udp),(DST-PORT,123),(NOT,((GEOIP,CN))))        , 📡.<NTP>--GlobalNTP
+- AND,((NETWORK,udp),(DST-PORT,123),(GEOIP,CN))                , 📡.<NTP>--ChinaNTP
+- geosite         , private                                    , 💻.<Lan>
+- rule-set        , Lan_Do_Resolve                             , 💻.<Lan>
+- geosite         , category-httpdns-cn                        , 📡.<Protection>--HttpDNS
+- rule-set        , BlockHttpDNS_Do_Resolve                    , 📡.<Protection>--HttpDNS
+- rule-set        , Hijacking_Do_Resolve                       , ⛔️.<Protection>--Hijacking
+- rule-set        , HijackingPlus_Do_Resolve                   , ⛔️.<Protection>--Hijacking
+- rule-set        , PreRepairEasyPrivacy_REJECT_Do_Resolve     , REJECT-DROP
+- rule-set        , PreRepairEasyPrivacy_DIRECT_Do_Resolve     , DIRECT
+- rule-set        , PreRepairEasyPrivacy_PROXY_Do_Resolve      , ☁️.<Apps>--Google
+- rule-set        , EasyPrivacy_Domain                         , ⛔️.<Protection>--Privacy
+- rule-set        , AdvertisingLite_Domain                     , ⛔️.<Protection>--ADblock
+- geosite         , category-ads                               , ⛔️.<Protection>--ADblock
+- rule-set        , Kwai_Domain                                , 🎬.<Short>--Kwai
+- rule-set        , FakeLocationBiliBili_Do_Resolve            , 🇨🇳.<ShowIP>--BiliBili
+- rule-set        , FakeLocationDouYin_Do_Resolve              , 🇨🇳.<ShowIP>--抖音
+- rule-set        , FakeLocationKuaiShou_Do_Resolve            , 🇨🇳.<ShowIP>--快手
+- rule-set        , FakeLocationXiaoHongShu_Do_Resolve         , 🇨🇳.<ShowIP>--小红书
+- rule-set        , FakeLocationXiGua_Do_Resolve               , 🇨🇳.<ShowIP>--西瓜
+- rule-set        , FakeLocationWeiBo_Do_Resolve               , 🇨🇳.<ShowIP>--微博
+- rule-set        , FakeLocationZhiHu_Do_Resolve               , 🇨🇳.<ShowIP>--知乎
+- rule-set        , FakeLocationTieBa_Do_Resolve               , 🇨🇳.<ShowIP>--贴吧
+- rule-set        , FakeLocationDouBan_Do_Resolve              , 🇨🇳.<ShowIP>--豆瓣
+- rule-set        , FakeLocationXianYu_Do_Resolve              , 🇨🇳.<ShowIP>--闲鱼
+- rule-set        , GeositeCN_Domain                           , 🇨🇳.<Country>--CN
+- geoip           , cn                                         , 🇨🇳.<Country>--CN
+- geosite         , cloudflare-cn                              , 🇨🇳.<Country>--CN
+- rule-set        , CloudflareCN_Do_Resolve                    , 🇨🇳.<Country>--CN
+- geosite         , amazon@cn                                  , 🇨🇳.<Country>--CN
+- rule-set        , AmazonCN_Do_Resolve                        , 🇨🇳.<Country>--CN
+- geosite         , ookla-speedtest                            , 🎚.<Speedtest>
+- rule-set        , Speedtest_Do_Resolve                       , 🎚.<Speedtest>
+- domain-suffix   , oca.nflxvideo.net                          , 🎚.<Speedtest>
+- geosite         , synology                                   , 💻.<NAS>--Synology
+- rule-set        , Synology_Do_Resolve                        , 💻.<NAS>--Synology
+- rule-set        , AqaraGlobal_Do_Resolve                     , 🔌.<Home>--AqaraGlobal
+- geosite         , onedrive                                   , 📂.<Drive>--OneDrive
+- rule-set        , OneDrive_Do_Resolve                        , 📂.<Drive>--OneDrive
+- domain-suffix   , onedrive.live.com                          , 📂.<Drive>--OneDrive
+- geosite         , dropbox                                    , 📂.<Drive>--Dropbox
+- rule-set        , Dropbox_Do_Resolve                         , 📂.<Drive>--Dropbox
+- geosite         , mega                                       , 📂.<Drive>--MEGA
+- rule-set        , MEGA_Do_Resolve                            , 📂.<Drive>--MEGA
+- geosite         , imgur                                      , 📂.<Drive>--Imgur
+- rule-set        , Imgur_Do_Resolve                           , 📂.<Drive>--Imgur
+- rule-set        , WaybackMachine_Domain                      , 📂.<Drive>--InternetArchive
+- rule-set        , WaybackMachine_IP                          , 📂.<Drive>--InternetArchive
+- geosite         , category-pt                                , ⬇️.<P2P>--PT-Server
+- rule-set        , PrivateTracker_Do_Resolve                  , ⬇️.<P2P>--PT-Server
+- rule-set        , eMuleServer_IP                             , ⬇️.<P2P>--eMule-Server
+- geosite         , paypal                                     , 💰.<Finance>--Paypal
+- rule-set        , Paypal_Do_Resolve                          , 💰.<Finance>--Paypal
+- geosite         , wise                                       , 💰.<Finance>--Wise
+- rule-set        , Wise_Do_Resolve                            , 💰.<Finance>--Wise
+- geosite         , binance                                    , ₿.<Crypto>--Binance
+- rule-set        , Binance_Do_Resolve                         , ₿.<Crypto>--Binance
+- geosite         , okx                                        , ₿.<Crypto>--OKX
+- rule-set        , OKX_Do_Resolve                             , ₿.<Crypto>--OKX
+- rule-set        , Monzo_Do_Resolve                           , 💳.<Virtual>--Monzo
+- rule-set        , Revolut_Do_Resolve                         , 💳.<Virtual>--Revolut
+- rule-set        , BankUS_Domain                              , 🇺🇸.<Bank>--US
+- rule-set        , BankCA_Domain                              , 🇨🇦.<Bank>--CA
+- rule-set        , BankUK_Domain                              , 🇬🇧.<Bank>--UK
+- rule-set        , BankAU_Domain                              , 🇦🇺.<Bank>--AU
+- rule-set        , BankJP_Domain                              , 🇯🇵.<Bank>--JP
+- rule-set        , BankHK_Domain                              , 🇭🇰.<Bank>--HK
+- rule-set        , BankSG_Domain                              , 🇸🇬.<Bank>--SG
+- rule-set        , HomeIPUS_Do_Resolve                        , 🇺🇸.<HomeIP>--US
+- rule-set        , HomeIPJP_Do_Resolve                        , 🇯🇵.<HomeIP>--JP
+- rule-set        , UnsupportVPN_Do_Resolve                    , ❌.<UnsupportVPN>
+- geosite         , ebay                                       , 🛒.<Shopping>--eBay
+- rule-set        , eBay_Do_Resolve                            , 🛒.<Shopping>--eBay
+- geosite         , patreon                                    , 🛒.<Shopping>--Patreon
+- rule-set        , Patreon_Do_Resolve                         , 🛒.<Shopping>--Patreon
+- geosite         , xbox                                       , 🕹️.<Game>--Xbox
+- rule-set        , Xbox_Do_Resolve                            , 🕹️.<Game>--Xbox
+- geosite         , playstation                                , 🕹️.<Game>--PlayStation
+- rule-set        , PlayStation_Do_Resolve                     , 🕹️.<Game>--PlayStation
+- geosite         , nintendo                                   , 🕹️.<Game>--Nintendo
+- rule-set        , Nintendo_Do_Resolve                        , 🕹️.<Game>--Nintendo
+- geosite         , steam                                      , 🕹️.<Game>--Steam
+- rule-set        , Steam_Do_Resolve                           , 🕹️.<Game>--Steam
+- domain-suffix   , steamserver.net                            , 🕹️.<Game>--Steam
+- geosite         , epicgames                                  , 🕹️.<Game>--EPIC
+- rule-set        , EPIC_Do_Resolve                            , 🕹️.<Game>--EPIC
+- geosite         , gog                                        , 🕹️.<Game>--GOG
+- rule-set        , GOG_Do_Resolve                             , 🕹️.<Game>--GOG
+- geosite         , rockstar                                   , 🕹️.<Game>--RockStar
+- rule-set        , RockStar_Do_Resolve                        , 🕹️.<Game>--RockStar
+- geosite         , ea                                         , 🕹️.<Game>--EA.Origin
+- rule-set        , EA_Do_Resolve                              , 🕹️.<Game>--EA.Origin
+- geosite         , origin                                     , 🕹️.<Game>--EA.Origin
+- rule-set        , Origin_Do_Resolve                          , 🕹️.<Game>--EA.Origin
+- geosite         , ubisoft                                    , 🕹️.<Game>--UbiSoft
+- rule-set        , UBI_Do_Resolve                             , 🕹️.<Game>--UbiSoft
+- rule-set        , Ubisoft_Do_Resolve                         , 🕹️.<Game>--UbiSoft
+- geosite         , netflix                                    , 📺.<Video>--Netflix
+- rule-set        , Netflix_Do_Resolve                         , 📺.<Video>--Netflix
+- geosite         , disney                                     , 📺.<Video>--Disney
+- rule-set        , Disney_Do_Resolve                          , 📺.<Video>--Disney
+- geosite         , primevideo                                 , 📺.<Video>--PrimeVideo
+- rule-set        , PrimeVideo_Do_Resolve                      , 📺.<Video>--PrimeVideo
+- geosite         , hbo                                        , 📺.<Video>--HBO
+- rule-set        , HBO_Do_Resolve                             , 📺.<Video>--HBO
+- geosite         , fox                                        , 📺.<Video>--FOX
+- rule-set        , FOXPlus_Do_Resolve                         , 📺.<Video>--FOX
+- rule-set        , FOXNOW_Do_Resolve                          , 📺.<Video>--FOX
+- geosite         , apple-tvplus                               , 📺.<Video>--AppleTV
+- rule-set        , AppleTV_Do_Resolve                         , 📺.<Video>--AppleTV
+- geosite         , category-porn                              , 📺.<Video>--Porn
+- geosite         , pornhub                                    , 📺.<Video>--Porn
+- rule-set        , Pornhub_Domain                             , 📺.<Video>--Porn
+- geosite         , tiktok                                     , 🎬.<Short>--TikTok
+- rule-set        , TikTok_Do_Resolve                          , 🎬.<Short>--TikTok
+- geosite         , instagram                                  , 🎬.<Short>--Instagram
+- rule-set        , Instagram_Do_Resolve                       , 🎬.<Short>--Instagram
+- geosite         , twitch                                     , 🎞️.<Live>--Twitch
+- rule-set        , Twitch_Do_Resolve                          , 🎞️.<Live>--Twitch
+- geosite         , spotify                                    , 🎧.<Audio>--Spotify
+- rule-set        , Spotify_Do_Resolve                         , 🎧.<Audio>--Spotify
+- geosite         , whatsapp                                   , 💛.<Social>--Whatsapp
+- rule-set        , Whatsapp_Do_Resolve                        , 💛.<Social>--Whatsapp
+- geosite         , facebook                                   , 💛.<Social>--Facebook
+- rule-set        , Facebook_Do_Resolve                        , 💛.<Social>--Facebook
+- geosite         , reddit                                     , 💛.<Social>--Reddit
+- rule-set        , Reddit_Do_Resolve                          , 💛.<Social>--Reddit
+- geosite         , telegram                                   , 💛.<Social>--Telegram
+- rule-set        , Telegram_Do_Resolve                        , 💛.<Social>--Telegram
+- geosite         , line                                       , 💛.<Social>--Line
+- rule-set        , Line_Do_Resolve                            , 💛.<Social>--Line
+- geosite         , discord                                    , 💛.<Social>--Discord
+- rule-set        , Discord_Do_Resolve                         , 💛.<Social>--Discord
+- geosite         , linkedin                                   , 💛.<Social>--LinkedIn
+- rule-set        , LinkedIn_Do_Resolve                        , 💛.<Social>--LinkedIn
+- geosite         , clubhouse                                  , 💛.<Social>--Clubhouse
+- rule-set        , Clubhouse_Do_Resolve                       , 💛.<Social>--Clubhouse
+- rule-set        , ClubhouseIP_Do_Resolve                     , 💛.<Social>--Clubhouse
+- geosite         , signal                                     , 💛.<Social>--Signal
+- rule-set        , Signal_Domain                              , 💛.<Social>--Signal
+- rule-set        , Wikipedia_Do_Resolve                       , 📰.<News>--Wikipedia
+- geosite         , apple-intelligence                         , 💡.<AI>--AppleAI
+- rule-set        , AppleAI_Domain                             , 💡.<AI>--AppleAI
+- geosite         , openai                                     , 💡.<AI>--OpenAI
+- rule-set        , OpenAI_Do_Resolve                          , 💡.<AI>--OpenAI
+- geosite         , xai                                        , 💡.<AI>--Grok
+- rule-set        , Grok_Domain                                , 💡.<AI>--Grok
+- geosite         , twitter                                    , 💛.<Social>--Twitter
+- rule-set        , Twitter_Do_Resolve                         , 💛.<Social>--Twitter
+- geosite         , anthropic                                  , 💡.<AI>--Claude
+- rule-set        , Claude_Do_Resolve                          , 💡.<AI>--Claude
+- geosite         , google-gemini                              , 💡.<AI>--Gemini
+- rule-set        , Gemini_Domain                              , 💡.<AI>--Gemini
+- rule-set        , Copilot_Domain                             , 💡.<AI>--Copilot
+- geosite         , category-ai-!cn                            , 💡.<AI>--GlobalAI
+- geosite         , adobe                                      , 🔧.<Tools>--Adobe
+- rule-set        , Adobe_Do_Resolve                           , 🔧.<Tools>--Adobe
+- geosite         , github                                     , 🔧.<Tools>--GitHub
+- rule-set        , GitHub_Do_Resolve                          , 🔧.<Tools>--GitHub
+- geosite         , bing                                       , 🔧.<Tools>--Bing/Edge
+- rule-set        , Bing_Do_Resolve                            , 🔧.<Tools>--Bing/Edge
+- rule-set        , MicrosoftEdge_Do_Resolve                   , 🔧.<Tools>--Bing/Edge
+- geosite         , notion                                     , 🔧.<Tools>--Notion
+- rule-set        , Notion_Do_Resolve                          , 🔧.<Tools>--Notion
+- geosite         , pinterest                                  , 🔧.<Tools>--Pinterest
+- rule-set        , Pinterest_Do_Resolve                       , 🔧.<Tools>--Pinterest
+- rule-set        , RustDesk_Domain                            , 🖥️.<Remote>--RustDesk
+- rule-set        , Parsec_Domain                              , 🖥️.<Remote>--Parsec
+- rule-set        , MacAppUpgrade_Domain                       , ⬇️.<Download>--MacAppUpgrade
+- rule-set        , GoogleDrive_Do_Resolve                     , 📂.<Drive>--GoogleDrive
+- geosite         , youtube                                    , 📺.<Video>--YouTube
+- rule-set        , YouTube_Do_Resolve                         , 📺.<Video>--YouTube
+- rule-set        , YouTubeMusic_Do_Resolve                    , 🎧.<Audio>--YouTubeMusic
+- geosite         , google                                     , ☁️.<Apps>--Google
+- rule-set        , Google_Do_Resolve                          , ☁️.<Apps>--Google
+- geosite         , amazon                                     , ☁️.<Apps>--Amazon
+- rule-set        , Amazon_Do_Resolve                          , ☁️.<Apps>--Amazon
+- rule-set        , Apple_Domain                               , ☁️.<Apps>--Apple
+- rule-set        , Apple_IP                                   , ☁️.<Apps>--Apple
+- rule-set        , MicrosoftAPPs_Domain                       , ☁️.<Apps>--Microsoft
+- rule-set        , GFWList_Domain                             , 🚧.<GFWList>
 proxy-groups:
 - name: 🌐.Line-[Global.VPS]
   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@latest/IconSet/Color/Available.png
@@ -2650,1118 +3765,3 @@ proxy-groups:
   benchmark-url: https://www.apple.com/library/test/success.html
   benchmark-timeout: 5
   hidden: false
-proxy-providers:
-  SUB-Provider-01:
-    type: http
-    url: https://example.com/replace/your/subscription/url
-    interval: 43200
-    path: ./proxy-providers/SUB-Provider-01.yaml
-rule-providers:
-  GlobalDNS_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/GlobalDNS/GlobalDNS_Domain.yaml
-    path: ./ruleset/GlobalDNS_Domain.yaml
-  GlobalDNS_IP:
-    type: http
-    behavior: ipcidr
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/GlobalDNS/GlobalDNS_IP.yaml
-    path: ./ruleset/GlobalDNS_IP.yaml
-  ChinaDNS_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/ChinaDNS/ChinaDNS_Domain.yaml
-    path: ./ruleset/ChinaDNS_Domain.yaml
-  ChinaDNS_IP:
-    type: http
-    behavior: ipcidr
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/ChinaDNS/ChinaDNS_IP.yaml
-    path: ./ruleset/ChinaDNS_IP.yaml
-  Lan_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Lan/Lan.yaml
-    path: ./ruleset/Lan.yaml
-  BlockHttpDNS_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
-    path: ./ruleset/BlockHttpDNS.yaml
-  Hijacking_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Hijacking/Hijacking.yaml
-    path: ./ruleset/Hijacking.yaml
-  HijackingPlus_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/HijackingPlus/HijackingPlus.yaml
-    path: ./ruleset/HijackingPlus.yaml
-  PreRepairEasyPrivacy_REJECT_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/PreRepairEasyPrivacy/PreRepairEasyPrivacy_REJECT.yaml
-    path: ./ruleset/PreRepairEasyPrivacy_REJECT.yaml
-  PreRepairEasyPrivacy_DIRECT_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/PreRepairEasyPrivacy/PreRepairEasyPrivacy_DIRECT.yaml
-    path: ./ruleset/PreRepairEasyPrivacy_DIRECT.yaml
-  PreRepairEasyPrivacy_PROXY_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/PreRepairEasyPrivacy/PreRepairEasyPrivacy_PROXY.yaml
-    path: ./ruleset/PreRepairEasyPrivacy_PROXY.yaml
-  EasyPrivacy_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/EasyPrivacy/EasyPrivacy_Domain.yaml
-    path: ./ruleset/EasyPrivacy_Domain.yaml
-  AdvertisingLite_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.yaml
-    path: ./ruleset/AdvertisingLite_Domain.yaml
-  FakeLocationBiliBili_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationBiliBili.yaml
-    path: ./ruleset/FakeLocationBiliBili.yaml
-  FakeLocationDouYin_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationDouYin.yaml
-    path: ./ruleset/FakeLocationDouYin.yaml
-  FakeLocationKuaiShou_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationKuaiShou.yaml
-    path: ./ruleset/FakeLocationKuaiShou.yaml
-  FakeLocationXiaoHongShu_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationXiaoHongShu.yaml
-    path: ./ruleset/FakeLocationXiaoHongShu.yaml
-  FakeLocationXiGua_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationXiGua.yaml
-    path: ./ruleset/FakeLocationXiGua.yaml
-  FakeLocationWeiBo_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationWeiBo.yaml
-    path: ./ruleset/FakeLocationWeiBo.yaml
-  FakeLocationZhiHu_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationZhiHu.yaml
-    path: ./ruleset/FakeLocationZhiHu.yaml
-  FakeLocationTieBa_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationTieBa.yaml
-    path: ./ruleset/FakeLocationTieBa.yaml
-  FakeLocationDouBan_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationDouBan.yaml
-    path: ./ruleset/FakeLocationDouBan.yaml
-  FakeLocationXianYu_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/FakeLocation/FakeLocationXianYu.yaml
-    path: ./ruleset/FakeLocationXianYu.yaml
-  GeositeCN_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/GeositeCN/GeositeCN_Domain.yaml
-    path: ./ruleset/GeositeCN_Domain.yaml
-  CloudflareCN_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Cloudflarecn/Cloudflarecn.yaml
-    path: ./ruleset/CloudflareCN.yaml
-  AmazonCN_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/AmazonCN/AmazonCN.yaml
-    path: ./ruleset/AmazonCN.yaml
-  Speedtest_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Speedtest/Speedtest.yaml
-    path: ./ruleset/Speedtest.yaml
-  Synology_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Synology/Synology.yaml
-    path: ./ruleset/Synology.yaml
-  AqaraGlobal_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Aqara/AqaraGlobal.yaml
-    path: ./ruleset/AqaraGlobal.yaml
-  OneDrive_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/OneDrive/OneDrive.yaml
-    path: ./ruleset/OneDrive.yaml
-  Dropbox_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Dropbox/Dropbox.yaml
-    path: ./ruleset/Dropbox.yaml
-  MEGA_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/MEGA/MEGA.yaml
-    path: ./ruleset/MEGA.yaml
-  Imgur_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Imgur/Imgur.yaml
-    path: ./ruleset/Imgur.yaml
-  GoogleDrive_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/GoogleDrive/GoogleDrive.yaml
-    path: ./ruleset/GoogleDrive.yaml
-  WaybackMachine_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/WaybackMachine/WaybackMachine_Domain.yaml
-    path: ./ruleset/WaybackMachine_Domain.yaml
-  WaybackMachine_IP:
-    type: http
-    behavior: ipcidr
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/WaybackMachine/WaybackMachine_IP.yaml
-    path: ./ruleset/WaybackMachine_IP.yaml
-  PrivateTracker_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/PrivateTracker/PrivateTracker.yaml
-    path: ./ruleset/PrivateTracker.yaml
-  eMuleServer_IP:
-    type: http
-    behavior: ipcidr
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/eMuleServer/eMuleServer_IP.yaml
-    path: ./ruleset/eMuleServer_IP.yaml
-  MacAppUpgrade_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/MacAppUpgrade/MacAppUpgrade_Domain.yaml
-    path: ./ruleset/MacAppUpgrade_Domain.yaml
-  Paypal_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Paypal.yaml
-    path: ./ruleset/Paypal.yaml
-  Wise_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Wise.yaml
-    path: ./ruleset/Wise.yaml
-  Binance_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Binance/Binance.yaml
-    path: ./ruleset/Binance.yaml
-  OKX_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/OKX/OKX.yaml
-    path: ./ruleset/OKX.yaml
-  Monzo_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Monzo.yaml
-    path: ./ruleset/Monzo.yaml
-  Revolut_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/VirtualFinance/Revolut.yaml
-    path: ./ruleset/Revolut.yaml
-  BankUS_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankUS_Domain.yaml
-    path: ./ruleset/BankUS_Domain.yaml
-  BankCA_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankCA_Domain.yaml
-    path: ./ruleset/BankCA_Domain.yaml
-  BankUK_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankUK_Domain.yaml
-    path: ./ruleset/BankUK_Domain.yaml
-  BankAU_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankAU_Domain.yaml
-    path: ./ruleset/BankAU_Domain.yaml
-  BankJP_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankJP_Domain.yaml
-    path: ./ruleset/BankJP_Domain.yaml
-  BankHK_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankHK_Domain.yaml
-    path: ./ruleset/BankHK_Domain.yaml
-  BankSG_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Bank/BankSG_Domain.yaml
-    path: ./ruleset/BankSG_Domain.yaml
-  HomeIPUS_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/HomeIP/HomeIPUS.yaml
-    path: ./ruleset/HomeIPUS.yaml
-  HomeIPJP_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/HomeIP/HomeIPJP.yaml
-    path: ./ruleset/HomeIPJP.yaml
-  UnsupportVPN_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/UnsupportVPN/UnsupportVPN.yaml
-    path: ./ruleset/UnsupportVPN.yaml
-  eBay_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/eBay/eBay.yaml
-    path: ./ruleset/eBay.yaml
-  Patreon_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Patreon/Patreon.yaml
-    path: ./ruleset/Patreon.yaml
-  Xbox_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Xbox/Xbox.yaml
-    path: ./ruleset/Xbox.yaml
-  PlayStation_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/PlayStation/PlayStation.yaml
-    path: ./ruleset/PlayStation.yaml
-  Nintendo_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Nintendo/Nintendo.yaml
-    path: ./ruleset/Nintendo.yaml
-  Steam_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Steam/Steam.yaml
-    path: ./ruleset/Steam.yaml
-  EPIC_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Epic/Epic.yaml
-    path: ./ruleset/EPIC.yaml
-  GOG_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Gog/Gog.yaml
-    path: ./ruleset/GOG.yaml
-  RockStar_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Rockstar/Rockstar.yaml
-    path: ./ruleset/RockStar.yaml
-  EA_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/EA/EA.yaml
-    path: ./ruleset/EA.yaml
-  Origin_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Origin/Origin.yaml
-    path: ./ruleset/Origin.yaml
-  UBI_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/UBI/UBI.yaml
-    path: ./ruleset/UBI.yaml
-  Ubisoft_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Ubisoft/Ubisoft.yaml
-    path: ./ruleset/Ubisoft.yaml
-  YouTube_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/YouTube/YouTube.yaml
-    path: ./ruleset/YouTube.yaml
-  Netflix_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Netflix/Netflix.yaml
-    path: ./ruleset/Netflix.yaml
-  Disney_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Disney/Disney.yaml
-    path: ./ruleset/Disney.yaml
-  PrimeVideo_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/PrimeVideo/PrimeVideo.yaml
-    path: ./ruleset/PrimeVideo.yaml
-  HBO_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/HBO/HBO.yaml
-    path: ./ruleset/HBO.yaml
-  FOXPlus_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/FOXPlus/FOXPlus.yaml
-    path: ./ruleset/FOXPlus.yaml
-  FOXNOW_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/FOXNOW/FOXNOW.yaml
-    path: ./ruleset/FOXNOW.yaml
-  AppleTV_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/AppleTV/AppleTV.yaml
-    path: ./ruleset/AppleTV.yaml
-  Pornhub_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Pornhub/Pornhub_Domain.yaml
-    path: ./ruleset/Pornhub_Domain.yaml
-  TikTok_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/TikTok/TikTok.yaml
-    path: ./ruleset/TikTok.yaml
-  Kwai_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Kwai/Kwai_Domain.yaml
-    path: ./ruleset/Kwai_Domain.yaml
-  Instagram_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Instagram/Instagram.yaml
-    path: ./ruleset/Instagram.yaml
-  Twitch_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Twitch/Twitch.yaml
-    path: ./ruleset/Twitch.yaml
-  Spotify_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Spotify/Spotify.yaml
-    path: ./ruleset/Spotify.yaml
-  YouTubeMusic_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/YouTubeMusic/YouTubeMusic.yaml
-    path: ./ruleset/YouTubeMusic.yaml
-  Twitter_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Twitter/Twitter.yaml
-    path: ./ruleset/Twitter.yaml
-  Facebook_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Facebook/Facebook.yaml
-    path: ./ruleset/Facebook.yaml
-  Telegram_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Telegram/Telegram.yaml
-    path: ./ruleset/Telegram.yaml
-  Whatsapp_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Whatsapp/Whatsapp.yaml
-    path: ./ruleset/Whatsapp.yaml
-  Line_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Line/Line.yaml
-    path: ./ruleset/Line.yaml
-  Reddit_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Reddit/Reddit.yaml
-    path: ./ruleset/Reddit.yaml
-  Discord_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Discord/Discord.yaml
-    path: ./ruleset/Discord.yaml
-  LinkedIn_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/LinkedIn/LinkedIn.yaml
-    path: ./ruleset/LinkedIn.yaml
-  Clubhouse_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Clubhouse/Clubhouse.yaml
-    path: ./ruleset/Clubhouse.yaml
-  ClubhouseIP_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/ClubhouseIP/ClubhouseIP.yaml
-    path: ./ruleset/ClubhouseIP.yaml
-  Signal_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Signal/Signal_Domain.yaml
-    path: ./ruleset/Signal_Domain.yaml
-  Wikipedia_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Wikipedia/Wikipedia.yaml
-    path: ./ruleset/Wikipedia.yaml
-  AppleAI_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/AppleAI/AppleAI_Domain.yaml
-    path: ./ruleset/AppleAI_Domain.yaml
-  OpenAI_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/OpenAI/OpenAI.yaml
-    path: ./ruleset/OpenAI.yaml
-  Grok_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Grok/Grok_Domain.yaml
-    path: ./ruleset/Grok_Domian.yaml
-  Gemini_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Gemini/Gemini_Domain.yaml
-    path: ./ruleset/Gemini_Domian.yaml
-  Claude_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Claude/Claude.yaml
-    path: ./ruleset/Claude.yaml
-  Copilot_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Copilot/Copilot_Domain.yaml
-    path: ./ruleset/Copilot_Domian.yaml
-  Adobe_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Adobe/Adobe.yaml
-    path: ./ruleset/Adobe.yaml
-  GitHub_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/GitHub/GitHub.yaml
-    path: ./ruleset/GitHub.yaml
-  Notion_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Notion/Notion.yaml
-    path: ./ruleset/Notion.yaml
-  Pinterest_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Pinterest/Pinterest.yaml
-    path: ./ruleset/Pinterest.yaml
-  Bing_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Bing/Bing.yaml
-    path: ./ruleset/Bing.yaml
-  MicrosoftEdge_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/MicrosoftEdge/MicrosoftEdge.yaml
-    path: ./ruleset/MicrosoftEdge.yaml
-  RustDesk_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/RustDesk/RustDesk_Domain.yaml
-    path: ./ruleset/RustDesk_Domain.yaml
-  Parsec_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Parsec/Parsec_Domain.yaml
-    path: ./ruleset/Parsec_Domain.yaml
-  Google_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Google/Google.yaml
-    path: ./ruleset/Google.yaml
-  Amazon_Do_Resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Amazon/Amazon.yaml
-    path: ./ruleset/Amazon.yaml
-  MicrosoftAPPs_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/MicrosoftAPPs/MicrosoftAPPs_Domain.yaml
-    path: ./ruleset/MicrosoftAPPs.yaml
-  Apple_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Apple/Apple_Domain.yaml
-    path: ./ruleset/Apple_Domain.yaml
-  Apple_IP:
-    type: http
-    behavior: ipcidr
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/Apple/Apple_IP.yaml
-    path: ./ruleset/Apple_IP.yaml
-  GFWList_Domain:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🔰⚡.Line-[Relay.VPS]-Low.Latency
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@latest/rule/Clash/Proxy/Proxy_Domain.yaml
-    path: ./ruleset/GFWList_Domain.yaml
-rules:
-- AND,((OR,((DST-PORT,53),(DST-PORT,853))),(NOT,((GEOIP,CN)))) , 📡.<DNS>--GlobalDNS
-- rule-set        , GlobalDNS_Domain                           , 📡.<DNS>--GlobalDNS
-- rule-set        , GlobalDNS_IP                               , 📡.<DNS>--GlobalDNS
-- AND,((OR,((DST-PORT,53),(DST-PORT,853))),(GEOIP,CN))         , 📡.<DNS>--ChinaDNS
-- rule-set        , ChinaDNS_Domain                            , 📡.<DNS>--ChinaDNS
-- rule-set        , ChinaDNS_IP                                , 📡.<DNS>--ChinaDNS
-- AND,((NETWORK,udp),(DST-PORT,123),(NOT,((GEOIP,CN))))        , 📡.<NTP>--GlobalNTP
-- AND,((NETWORK,udp),(DST-PORT,123),(GEOIP,CN))                , 📡.<NTP>--ChinaNTP
-- geosite         , private                                    , 💻.<Lan>
-- rule-set        , Lan_Do_Resolve                             , 💻.<Lan>
-- geosite         , category-httpdns-cn                        , 📡.<Protection>--HttpDNS
-- rule-set        , BlockHttpDNS_Do_Resolve                    , 📡.<Protection>--HttpDNS
-- rule-set        , Hijacking_Do_Resolve                       , ⛔️.<Protection>--Hijacking
-- rule-set        , HijackingPlus_Do_Resolve                   , ⛔️.<Protection>--Hijacking
-- rule-set        , PreRepairEasyPrivacy_REJECT_Do_Resolve     , REJECT-DROP
-- rule-set        , PreRepairEasyPrivacy_DIRECT_Do_Resolve     , DIRECT
-- rule-set        , PreRepairEasyPrivacy_PROXY_Do_Resolve      , ☁️.<Apps>--Google
-- rule-set        , EasyPrivacy_Domain                         , ⛔️.<Protection>--Privacy
-- rule-set        , AdvertisingLite_Domain                     , ⛔️.<Protection>--ADblock
-- geosite         , category-ads                               , ⛔️.<Protection>--ADblock
-- rule-set        , Kwai_Domain                                , 🎬.<Short>--Kwai
-- rule-set        , FakeLocationBiliBili_Do_Resolve            , 🇨🇳.<ShowIP>--BiliBili
-- rule-set        , FakeLocationDouYin_Do_Resolve              , 🇨🇳.<ShowIP>--抖音
-- rule-set        , FakeLocationKuaiShou_Do_Resolve            , 🇨🇳.<ShowIP>--快手
-- rule-set        , FakeLocationXiaoHongShu_Do_Resolve         , 🇨🇳.<ShowIP>--小红书
-- rule-set        , FakeLocationXiGua_Do_Resolve               , 🇨🇳.<ShowIP>--西瓜
-- rule-set        , FakeLocationWeiBo_Do_Resolve               , 🇨🇳.<ShowIP>--微博
-- rule-set        , FakeLocationZhiHu_Do_Resolve               , 🇨🇳.<ShowIP>--知乎
-- rule-set        , FakeLocationTieBa_Do_Resolve               , 🇨🇳.<ShowIP>--贴吧
-- rule-set        , FakeLocationDouBan_Do_Resolve              , 🇨🇳.<ShowIP>--豆瓣
-- rule-set        , FakeLocationXianYu_Do_Resolve              , 🇨🇳.<ShowIP>--闲鱼
-- rule-set        , GeositeCN_Domain                           , 🇨🇳.<Country>--CN
-- geoip           , cn                                         , 🇨🇳.<Country>--CN
-- geosite         , cloudflare-cn                              , 🇨🇳.<Country>--CN
-- rule-set        , CloudflareCN_Do_Resolve                    , 🇨🇳.<Country>--CN
-- geosite         , amazon@cn                                  , 🇨🇳.<Country>--CN
-- rule-set        , AmazonCN_Do_Resolve                        , 🇨🇳.<Country>--CN
-- geosite         , ookla-speedtest                            , 🎚.<Speedtest>
-- rule-set        , Speedtest_Do_Resolve                       , 🎚.<Speedtest>
-- domain-suffix   , oca.nflxvideo.net                          , 🎚.<Speedtest>
-- geosite         , synology                                   , 💻.<NAS>--Synology
-- rule-set        , Synology_Do_Resolve                        , 💻.<NAS>--Synology
-- rule-set        , AqaraGlobal_Do_Resolve                     , 🔌.<Home>--AqaraGlobal
-- geosite         , onedrive                                   , 📂.<Drive>--OneDrive
-- rule-set        , OneDrive_Do_Resolve                        , 📂.<Drive>--OneDrive
-- domain-suffix   , onedrive.live.com                          , 📂.<Drive>--OneDrive
-- geosite         , dropbox                                    , 📂.<Drive>--Dropbox
-- rule-set        , Dropbox_Do_Resolve                         , 📂.<Drive>--Dropbox
-- geosite         , mega                                       , 📂.<Drive>--MEGA
-- rule-set        , MEGA_Do_Resolve                            , 📂.<Drive>--MEGA
-- geosite         , imgur                                      , 📂.<Drive>--Imgur
-- rule-set        , Imgur_Do_Resolve                           , 📂.<Drive>--Imgur
-- rule-set        , WaybackMachine_Domain                      , 📂.<Drive>--InternetArchive
-- rule-set        , WaybackMachine_IP                          , 📂.<Drive>--InternetArchive
-- geosite         , category-pt                                , ⬇️.<P2P>--PT-Server
-- rule-set        , PrivateTracker_Do_Resolve                  , ⬇️.<P2P>--PT-Server
-- rule-set        , eMuleServer_IP                             , ⬇️.<P2P>--eMule-Server
-- geosite         , paypal                                     , 💰.<Finance>--Paypal
-- rule-set        , Paypal_Do_Resolve                          , 💰.<Finance>--Paypal
-- geosite         , wise                                       , 💰.<Finance>--Wise
-- rule-set        , Wise_Do_Resolve                            , 💰.<Finance>--Wise
-- geosite         , binance                                    , ₿.<Crypto>--Binance
-- rule-set        , Binance_Do_Resolve                         , ₿.<Crypto>--Binance
-- geosite         , okx                                        , ₿.<Crypto>--OKX
-- rule-set        , OKX_Do_Resolve                             , ₿.<Crypto>--OKX
-- rule-set        , Monzo_Do_Resolve                           , 💳.<Virtual>--Monzo
-- rule-set        , Revolut_Do_Resolve                         , 💳.<Virtual>--Revolut
-- rule-set        , BankUS_Domain                              , 🇺🇸.<Bank>--US
-- rule-set        , BankCA_Domain                              , 🇨🇦.<Bank>--CA
-- rule-set        , BankUK_Domain                              , 🇬🇧.<Bank>--UK
-- rule-set        , BankAU_Domain                              , 🇦🇺.<Bank>--AU
-- rule-set        , BankJP_Domain                              , 🇯🇵.<Bank>--JP
-- rule-set        , BankHK_Domain                              , 🇭🇰.<Bank>--HK
-- rule-set        , BankSG_Domain                              , 🇸🇬.<Bank>--SG
-- rule-set        , HomeIPUS_Do_Resolve                        , 🇺🇸.<HomeIP>--US
-- rule-set        , HomeIPJP_Do_Resolve                        , 🇯🇵.<HomeIP>--JP
-- rule-set        , UnsupportVPN_Do_Resolve                    , ❌.<UnsupportVPN>
-- geosite         , ebay                                       , 🛒.<Shopping>--eBay
-- rule-set        , eBay_Do_Resolve                            , 🛒.<Shopping>--eBay
-- geosite         , patreon                                    , 🛒.<Shopping>--Patreon
-- rule-set        , Patreon_Do_Resolve                         , 🛒.<Shopping>--Patreon
-- geosite         , xbox                                       , 🕹️.<Game>--Xbox
-- rule-set        , Xbox_Do_Resolve                            , 🕹️.<Game>--Xbox
-- geosite         , playstation                                , 🕹️.<Game>--PlayStation
-- rule-set        , PlayStation_Do_Resolve                     , 🕹️.<Game>--PlayStation
-- geosite         , nintendo                                   , 🕹️.<Game>--Nintendo
-- rule-set        , Nintendo_Do_Resolve                        , 🕹️.<Game>--Nintendo
-- geosite         , steam                                      , 🕹️.<Game>--Steam
-- rule-set        , Steam_Do_Resolve                           , 🕹️.<Game>--Steam
-- domain-suffix   , steamserver.net                            , 🕹️.<Game>--Steam
-- geosite         , epicgames                                  , 🕹️.<Game>--EPIC
-- rule-set        , EPIC_Do_Resolve                            , 🕹️.<Game>--EPIC
-- geosite         , gog                                        , 🕹️.<Game>--GOG
-- rule-set        , GOG_Do_Resolve                             , 🕹️.<Game>--GOG
-- geosite         , rockstar                                   , 🕹️.<Game>--RockStar
-- rule-set        , RockStar_Do_Resolve                        , 🕹️.<Game>--RockStar
-- geosite         , ea                                         , 🕹️.<Game>--EA.Origin
-- rule-set        , EA_Do_Resolve                              , 🕹️.<Game>--EA.Origin
-- geosite         , origin                                     , 🕹️.<Game>--EA.Origin
-- rule-set        , Origin_Do_Resolve                          , 🕹️.<Game>--EA.Origin
-- geosite         , ubisoft                                    , 🕹️.<Game>--UbiSoft
-- rule-set        , UBI_Do_Resolve                             , 🕹️.<Game>--UbiSoft
-- rule-set        , Ubisoft_Do_Resolve                         , 🕹️.<Game>--UbiSoft
-- geosite         , netflix                                    , 📺.<Video>--Netflix
-- rule-set        , Netflix_Do_Resolve                         , 📺.<Video>--Netflix
-- geosite         , disney                                     , 📺.<Video>--Disney
-- rule-set        , Disney_Do_Resolve                          , 📺.<Video>--Disney
-- geosite         , primevideo                                 , 📺.<Video>--PrimeVideo
-- rule-set        , PrimeVideo_Do_Resolve                      , 📺.<Video>--PrimeVideo
-- geosite         , hbo                                        , 📺.<Video>--HBO
-- rule-set        , HBO_Do_Resolve                             , 📺.<Video>--HBO
-- geosite         , fox                                        , 📺.<Video>--FOX
-- rule-set        , FOXPlus_Do_Resolve                         , 📺.<Video>--FOX
-- rule-set        , FOXNOW_Do_Resolve                          , 📺.<Video>--FOX
-- geosite         , apple-tvplus                               , 📺.<Video>--AppleTV
-- rule-set        , AppleTV_Do_Resolve                         , 📺.<Video>--AppleTV
-- geosite         , category-porn                              , 📺.<Video>--Porn
-- geosite         , pornhub                                    , 📺.<Video>--Porn
-- rule-set        , Pornhub_Domain                             , 📺.<Video>--Porn
-- geosite         , tiktok                                     , 🎬.<Short>--TikTok
-- rule-set        , TikTok_Do_Resolve                          , 🎬.<Short>--TikTok
-- geosite         , instagram                                  , 🎬.<Short>--Instagram
-- rule-set        , Instagram_Do_Resolve                       , 🎬.<Short>--Instagram
-- geosite         , twitch                                     , 🎞️.<Live>--Twitch
-- rule-set        , Twitch_Do_Resolve                          , 🎞️.<Live>--Twitch
-- geosite         , spotify                                    , 🎧.<Audio>--Spotify
-- rule-set        , Spotify_Do_Resolve                         , 🎧.<Audio>--Spotify
-- geosite         , whatsapp                                   , 💛.<Social>--Whatsapp
-- rule-set        , Whatsapp_Do_Resolve                        , 💛.<Social>--Whatsapp
-- geosite         , facebook                                   , 💛.<Social>--Facebook
-- rule-set        , Facebook_Do_Resolve                        , 💛.<Social>--Facebook
-- geosite         , reddit                                     , 💛.<Social>--Reddit
-- rule-set        , Reddit_Do_Resolve                          , 💛.<Social>--Reddit
-- geosite         , telegram                                   , 💛.<Social>--Telegram
-- rule-set        , Telegram_Do_Resolve                        , 💛.<Social>--Telegram
-- geosite         , line                                       , 💛.<Social>--Line
-- rule-set        , Line_Do_Resolve                            , 💛.<Social>--Line
-- geosite         , discord                                    , 💛.<Social>--Discord
-- rule-set        , Discord_Do_Resolve                         , 💛.<Social>--Discord
-- geosite         , linkedin                                   , 💛.<Social>--LinkedIn
-- rule-set        , LinkedIn_Do_Resolve                        , 💛.<Social>--LinkedIn
-- geosite         , clubhouse                                  , 💛.<Social>--Clubhouse
-- rule-set        , Clubhouse_Do_Resolve                       , 💛.<Social>--Clubhouse
-- rule-set        , ClubhouseIP_Do_Resolve                     , 💛.<Social>--Clubhouse
-- geosite         , signal                                     , 💛.<Social>--Signal
-- rule-set        , Signal_Domain                              , 💛.<Social>--Signal
-- rule-set        , Wikipedia_Do_Resolve                       , 📰.<News>--Wikipedia
-- geosite         , apple-intelligence                         , 💡.<AI>--AppleAI
-- rule-set        , AppleAI_Domain                             , 💡.<AI>--AppleAI
-- geosite         , openai                                     , 💡.<AI>--OpenAI
-- rule-set        , OpenAI_Do_Resolve                          , 💡.<AI>--OpenAI
-- geosite         , xai                                        , 💡.<AI>--Grok
-- rule-set        , Grok_Domain                                , 💡.<AI>--Grok
-- geosite         , twitter                                    , 💛.<Social>--Twitter
-- rule-set        , Twitter_Do_Resolve                         , 💛.<Social>--Twitter
-- geosite         , anthropic                                  , 💡.<AI>--Claude
-- rule-set        , Claude_Do_Resolve                          , 💡.<AI>--Claude
-- geosite         , google-gemini                              , 💡.<AI>--Gemini
-- rule-set        , Gemini_Domain                              , 💡.<AI>--Gemini
-- rule-set        , Copilot_Domain                             , 💡.<AI>--Copilot
-- geosite         , category-ai-!cn                            , 💡.<AI>--GlobalAI
-- geosite         , adobe                                      , 🔧.<Tools>--Adobe
-- rule-set        , Adobe_Do_Resolve                           , 🔧.<Tools>--Adobe
-- geosite         , github                                     , 🔧.<Tools>--GitHub
-- rule-set        , GitHub_Do_Resolve                          , 🔧.<Tools>--GitHub
-- geosite         , bing                                       , 🔧.<Tools>--Bing/Edge
-- rule-set        , Bing_Do_Resolve                            , 🔧.<Tools>--Bing/Edge
-- rule-set        , MicrosoftEdge_Do_Resolve                   , 🔧.<Tools>--Bing/Edge
-- geosite         , notion                                     , 🔧.<Tools>--Notion
-- rule-set        , Notion_Do_Resolve                          , 🔧.<Tools>--Notion
-- geosite         , pinterest                                  , 🔧.<Tools>--Pinterest
-- rule-set        , Pinterest_Do_Resolve                       , 🔧.<Tools>--Pinterest
-- rule-set        , RustDesk_Domain                            , 🖥️.<Remote>--RustDesk
-- rule-set        , Parsec_Domain                              , 🖥️.<Remote>--Parsec
-- rule-set        , MacAppUpgrade_Domain                       , ⬇️.<Download>--MacAppUpgrade
-- rule-set        , GoogleDrive_Do_Resolve                     , 📂.<Drive>--GoogleDrive
-- geosite         , youtube                                    , 📺.<Video>--YouTube
-- rule-set        , YouTube_Do_Resolve                         , 📺.<Video>--YouTube
-- rule-set        , YouTubeMusic_Do_Resolve                    , 🎧.<Audio>--YouTubeMusic
-- geosite         , google                                     , ☁️.<Apps>--Google
-- rule-set        , Google_Do_Resolve                          , ☁️.<Apps>--Google
-- geosite         , amazon                                     , ☁️.<Apps>--Amazon
-- rule-set        , Amazon_Do_Resolve                          , ☁️.<Apps>--Amazon
-- rule-set        , Apple_Domain                               , ☁️.<Apps>--Apple
-- rule-set        , Apple_IP                                   , ☁️.<Apps>--Apple
-- rule-set        , MicrosoftAPPs_Domain                       , ☁️.<Apps>--Microsoft
-- rule-set        , GFWList_Domain                             , 🚧.<GFWList>

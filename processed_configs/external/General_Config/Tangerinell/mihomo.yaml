@@ -1,6 +1,288 @@
 # Processed: raw_configs/external/General_Config/Tangerinell/mihomo.yaml
 # Providers: 4 proxy, 24 rule
 
+rule-providers:
+  LAN:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Lan.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Lan.yaml
+    path: ./rule_set/LAN.yaml
+  ChinaDirectIP:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: geoipcn.mrs
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/geoipcn.mrs
+    path: ./rule_set/ChinaDirectIP.mrs
+  ChinaDirectSite:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: geositecn.mrs
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/geositecn.mrs
+    path: ./rule_set/ChinaDirectSite.mrs
+  ChinaDirectAdd:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: chinadirectadd.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/chinadirectadd.yaml
+    path: ./rule_set/ChinaDirectAdd.yaml
+  Gemini:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Gemini.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Gemini.yaml
+    path: ./rule_set/Gemini.yaml
+  PikPak:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: PikPak.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/PikPak.yaml
+    path: ./rule_set/PikPak.yaml
+  GlobalMedia:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: GlobalMedia.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/GlobalMedia.yaml
+    path: ./rule_set/GlobalMedia.yaml
+  Telegram:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Telegram.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Telegram.yaml
+    path: ./rule_set/Telegram.yaml
+  Apple:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Apple.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Apple.yaml
+    path: ./rule_set/Apple.yaml
+  Microsoft:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Microsoft.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Microsoft.yaml
+    path: ./rule_set/Microsoft.yaml
+  Steam:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Steam.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Steam.yaml
+    path: ./rule_set/Steam.yaml
+  SteamCN:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: SteamCN.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/SteamCN.yaml
+    path: ./rule_set/SteamCN.yaml
+  Discord:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Discord.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Discord.yaml
+    path: ./rule_set/Discord.yaml
+  Spotify:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Spotify.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Spotify.yaml
+    path: ./rule_set/Spotify.yaml
+  TikTok:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: TikTok.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/TikTok.yaml
+    path: ./rule_set/TikTok.yaml
+  OpenAI:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: OpenAI.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/OpenAI.yaml
+    path: ./rule_set/OpenAI.yaml
+  Epic:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Epic.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Epic.yaml
+    path: ./rule_set/Epic.yaml
+  Google:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Google.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Google.yaml
+    path: ./rule_set/Google.yaml
+  GitHub:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: GitHub.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/GitHub.yaml
+    path: ./rule_set/GitHub.yaml
+  YouTube:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: YouTube.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/YouTube.yaml
+    path: ./rule_set/YouTube.yaml
+  Pornhub:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Pornhub.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Pornhub.yaml
+    path: ./rule_set/Pornhub.yaml
+  Cloudflare:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Cloudflare.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Cloudflare.yaml
+    path: ./rule_set/Cloudflare.yaml
+  Netflix:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Netflix.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Netflix.yaml
+    path: ./rule_set/Netflix.yaml
+  Instagram:
+    type: http
+    behavior: classical
+    interval: 43200
+    proxy: 🎯代理
+    path-in-bundle: Instagram.yaml
+    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Instagram.yaml
+    path: ./rule_set/Instagram.yaml
+proxy-providers:
+  Node-1:
+    interval: 43200
+    health-check: &id001
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    url: https://鸡你太美1.com
+    type: http
+    path: ./proxy_provider/providers_1.yaml
+    proxy: 🎯代理
+    override:
+      additional-prefix: 1🐔
+      proxy-name:
+      - pattern: 美国
+        target: 🇺🇸
+      - pattern: 日本
+        target: 🇯🇵
+      - pattern: 新加坡
+        target: 🇸🇬
+      - pattern: 台湾
+        target: 🇹🇼
+      - pattern: 香港
+        target: 🇭🇰
+      - pattern: 韩国
+        target: 🇰🇷
+      - pattern: 英国
+        target: 🇬🇧
+      - pattern: 澳大利亚
+        target: 🇦🇺
+      - pattern: 法国
+        target: 🇫🇷
+      - pattern: 德国
+        target: 🇩🇪
+    filter: ^(?!.*(?i)(?:剩余|到期|官网)).*$
+  Node-2:
+    interval: 43200
+    health-check: *id001
+    url: https://鸡你太美2.com
+    type: http
+    path: ./proxy_provider/providers_2.yaml
+    proxy: 🎯代理
+    override:
+      additional-prefix: 2🐒
+    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  LandNode:
+    interval: 43200
+    health-check: *id001
+    type: file
+    override:
+      additional-prefix: 🔗
+      dialer-proxy: 中转
+    path: ./proxy_provider/LandNode.yaml
+  OtherNode:
+    interval: 43200
+    health-check: *id001
+    type: file
+    path: ./proxy_provider/OtherNode.yaml
+rules:
+- RULE-SET,LAN,DIRECT
+- RULE-SET,SteamCN,DIRECT
+- RULE-SET,Steam,Steam
+- RULE-SET,Epic,Epic
+- RULE-SET,Telegram,Telegram
+- RULE-SET,Spotify,Spotify
+- RULE-SET,Instagram,Instagram
+- RULE-SET,GitHub,GitHub
+- RULE-SET,PikPak,PikPak
+- RULE-SET,Discord,Discord
+- RULE-SET,TikTok,TikTok
+- RULE-SET,Pornhub,Pornhub
+- RULE-SET,Gemini,Gemini
+- RULE-SET,OpenAI,OpenAI
+- RULE-SET,YouTube,YouTube
+- RULE-SET,Netflix,Netflix
+- RULE-SET,GlobalMedia,GlobalMedia
+- RULE-SET,Google,Google
+- RULE-SET,Apple,Apple
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Cloudflare,Cloudflare
+- RULE-SET,ChinaDirectSite,DIRECT
+- RULE-SET,ChinaDirectIP,DIRECT
+- RULE-SET,ChinaDirectAdd,DIRECT
+- MATCH,🌐其他
 proxy-groups:
 - type: select
   disable-udp: false
@@ -185,7 +467,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: &id001
+  proxies: &id002
   - 🟨手动选择
   - 🟦手动选择
   - 🟢故障转移
@@ -243,7 +525,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id001
+  proxies: *id002
   name: 🌐其他
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Global.png
@@ -428,7 +710,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: &id002
+  proxies: &id003
   - 🎯代理
   - 🌐其他
   - 🔗链式代理
@@ -488,7 +770,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: TikTok
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/TikTok_2.png
@@ -496,7 +778,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Netflix
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Netflix.png
@@ -504,7 +786,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Gemini
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/gemini-color.png
@@ -512,7 +794,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: YouTube
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/YouTube.png
@@ -520,7 +802,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Emby
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Emby.png
@@ -528,7 +810,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: GlobalMedia
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Streaming.png
@@ -536,7 +818,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Cloudflare
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Cloudflare.png
@@ -544,7 +826,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Epic
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Epic_Games.png
@@ -552,7 +834,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Steam
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Steam.png
@@ -560,7 +842,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Telegram
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Telegram_X.png
@@ -568,7 +850,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: GitHub
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/GitHub.png
@@ -576,7 +858,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Google
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Google.png
@@ -584,7 +866,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Discord
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Discord.png
@@ -592,7 +874,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Instagram
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Instagram.png
@@ -600,7 +882,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Spotify
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Spotify.png
@@ -608,7 +890,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: PikPak
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/PikPak.png
@@ -616,7 +898,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: OpenAI
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/ChatGPT.png
@@ -624,7 +906,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Apple
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Apple.png
@@ -632,7 +914,7 @@ proxy-groups:
   disable-udp: false
   hidden: false
   include-all: true
-  proxies: *id002
+  proxies: *id003
   name: Microsoft
   filter: ^(?!.*((?i)(🔗))).*$
   icon: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/icon/Microsoft.png
@@ -1126,285 +1408,3 @@ proxy-groups:
   strategy: round-robin
   name: 📋均衡全部
   filter: ^(?!.*((?i)(🔗))).*$
-proxy-providers:
-  Node-1:
-    interval: 43200
-    health-check: &id003
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-    url: https://鸡你太美1.com
-    type: http
-    path: ./proxy_provider/providers_1.yaml
-    proxy: 🎯代理
-    override:
-      additional-prefix: 1🐔
-      proxy-name:
-      - pattern: 美国
-        target: 🇺🇸
-      - pattern: 日本
-        target: 🇯🇵
-      - pattern: 新加坡
-        target: 🇸🇬
-      - pattern: 台湾
-        target: 🇹🇼
-      - pattern: 香港
-        target: 🇭🇰
-      - pattern: 韩国
-        target: 🇰🇷
-      - pattern: 英国
-        target: 🇬🇧
-      - pattern: 澳大利亚
-        target: 🇦🇺
-      - pattern: 法国
-        target: 🇫🇷
-      - pattern: 德国
-        target: 🇩🇪
-    filter: ^(?!.*(?i)(?:剩余|到期|官网)).*$
-  Node-2:
-    interval: 43200
-    health-check: *id003
-    url: https://鸡你太美2.com
-    type: http
-    path: ./proxy_provider/providers_2.yaml
-    proxy: 🎯代理
-    override:
-      additional-prefix: 2🐒
-    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  LandNode:
-    interval: 43200
-    health-check: *id003
-    type: file
-    override:
-      additional-prefix: 🔗
-      dialer-proxy: 中转
-    path: ./proxy_provider/LandNode.yaml
-  OtherNode:
-    interval: 43200
-    health-check: *id003
-    type: file
-    path: ./proxy_provider/OtherNode.yaml
-rule-providers:
-  LAN:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Lan.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Lan.yaml
-    path: ./rule_set/LAN.yaml
-  ChinaDirectIP:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: geoipcn.mrs
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/geoipcn.mrs
-    path: ./rule_set/ChinaDirectIP.mrs
-  ChinaDirectSite:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: geositecn.mrs
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/geositecn.mrs
-    path: ./rule_set/ChinaDirectSite.mrs
-  ChinaDirectAdd:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: chinadirectadd.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/chinadirectadd.yaml
-    path: ./rule_set/ChinaDirectAdd.yaml
-  Gemini:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Gemini.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Gemini.yaml
-    path: ./rule_set/Gemini.yaml
-  PikPak:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: PikPak.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/PikPak.yaml
-    path: ./rule_set/PikPak.yaml
-  GlobalMedia:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: GlobalMedia.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/GlobalMedia.yaml
-    path: ./rule_set/GlobalMedia.yaml
-  Telegram:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Telegram.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Telegram.yaml
-    path: ./rule_set/Telegram.yaml
-  Apple:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Apple.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Apple.yaml
-    path: ./rule_set/Apple.yaml
-  Microsoft:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Microsoft.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Microsoft.yaml
-    path: ./rule_set/Microsoft.yaml
-  Steam:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Steam.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Steam.yaml
-    path: ./rule_set/Steam.yaml
-  SteamCN:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: SteamCN.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/SteamCN.yaml
-    path: ./rule_set/SteamCN.yaml
-  Discord:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Discord.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Discord.yaml
-    path: ./rule_set/Discord.yaml
-  Spotify:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Spotify.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Spotify.yaml
-    path: ./rule_set/Spotify.yaml
-  TikTok:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: TikTok.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/TikTok.yaml
-    path: ./rule_set/TikTok.yaml
-  OpenAI:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: OpenAI.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/OpenAI.yaml
-    path: ./rule_set/OpenAI.yaml
-  Epic:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Epic.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Epic.yaml
-    path: ./rule_set/Epic.yaml
-  Google:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Google.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Google.yaml
-    path: ./rule_set/Google.yaml
-  GitHub:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: GitHub.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/GitHub.yaml
-    path: ./rule_set/GitHub.yaml
-  YouTube:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: YouTube.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/YouTube.yaml
-    path: ./rule_set/YouTube.yaml
-  Pornhub:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Pornhub.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Pornhub.yaml
-    path: ./rule_set/Pornhub.yaml
-  Cloudflare:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Cloudflare.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Cloudflare.yaml
-    path: ./rule_set/Cloudflare.yaml
-  Netflix:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Netflix.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Netflix.yaml
-    path: ./rule_set/Netflix.yaml
-  Instagram:
-    type: http
-    behavior: classical
-    interval: 43200
-    proxy: 🎯代理
-    path-in-bundle: Instagram.yaml
-    url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Instagram.yaml
-    path: ./rule_set/Instagram.yaml
-rules:
-- RULE-SET,LAN,DIRECT
-- RULE-SET,SteamCN,DIRECT
-- RULE-SET,Steam,Steam
-- RULE-SET,Epic,Epic
-- RULE-SET,Telegram,Telegram
-- RULE-SET,Spotify,Spotify
-- RULE-SET,Instagram,Instagram
-- RULE-SET,GitHub,GitHub
-- RULE-SET,PikPak,PikPak
-- RULE-SET,Discord,Discord
-- RULE-SET,TikTok,TikTok
-- RULE-SET,Pornhub,Pornhub
-- RULE-SET,Gemini,Gemini
-- RULE-SET,OpenAI,OpenAI
-- RULE-SET,YouTube,YouTube
-- RULE-SET,Netflix,Netflix
-- RULE-SET,GlobalMedia,GlobalMedia
-- RULE-SET,Google,Google
-- RULE-SET,Apple,Apple
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,Cloudflare,Cloudflare
-- RULE-SET,ChinaDirectSite,DIRECT
-- RULE-SET,ChinaDirectIP,DIRECT
-- RULE-SET,ChinaDirectAdd,DIRECT
-- MATCH,🌐其他
