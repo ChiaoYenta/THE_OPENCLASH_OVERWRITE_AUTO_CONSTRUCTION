@@ -1,6 +1,67 @@
 # Processed: raw_configs/external/General_Config/Tangerinell/mihomo.yaml
 # Providers: 4 proxy, 24 rule
 
+proxy-providers:
+  Node-1:
+    interval: 43200
+    health-check: &id001
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+    url: https://鸡你太美1.com
+    type: http
+    path: ./proxy_provider/providers_1.yaml
+    proxy: 🎯代理
+    override:
+      additional-prefix: 1🐔
+      proxy-name:
+      - pattern: 美国
+        target: 🇺🇸
+      - pattern: 日本
+        target: 🇯🇵
+      - pattern: 新加坡
+        target: 🇸🇬
+      - pattern: 台湾
+        target: 🇹🇼
+      - pattern: 香港
+        target: 🇭🇰
+      - pattern: 韩国
+        target: 🇰🇷
+      - pattern: 英国
+        target: 🇬🇧
+      - pattern: 澳大利亚
+        target: 🇦🇺
+      - pattern: 法国
+        target: 🇫🇷
+      - pattern: 德国
+        target: 🇩🇪
+    filter: ^(?!.*(?i)(?:剩余|到期|官网)).*$
+  Node-2:
+    interval: 43200
+    health-check: *id001
+    url: https://鸡你太美2.com
+    type: http
+    path: ./proxy_provider/providers_2.yaml
+    proxy: 🎯代理
+    override:
+      additional-prefix: 2🐒
+    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
+  LandNode:
+    interval: 43200
+    health-check: *id001
+    type: file
+    override:
+      additional-prefix: 🔗
+      dialer-proxy: 中转
+    path: ./proxy_provider/LandNode.yaml
+  OtherNode:
+    interval: 43200
+    health-check: *id001
+    type: file
+    path: ./proxy_provider/OtherNode.yaml
 rule-providers:
   LAN:
     type: http
@@ -196,93 +257,6 @@ rule-providers:
     path-in-bundle: Instagram.yaml
     url: https://raw.githubusercontent.com/Tangerinell/mihomo_rules_profile/master/rules/Instagram.yaml
     path: ./rule_set/Instagram.yaml
-proxy-providers:
-  Node-1:
-    interval: 43200
-    health-check: &id001
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
-    url: https://鸡你太美1.com
-    type: http
-    path: ./proxy_provider/providers_1.yaml
-    proxy: 🎯代理
-    override:
-      additional-prefix: 1🐔
-      proxy-name:
-      - pattern: 美国
-        target: 🇺🇸
-      - pattern: 日本
-        target: 🇯🇵
-      - pattern: 新加坡
-        target: 🇸🇬
-      - pattern: 台湾
-        target: 🇹🇼
-      - pattern: 香港
-        target: 🇭🇰
-      - pattern: 韩国
-        target: 🇰🇷
-      - pattern: 英国
-        target: 🇬🇧
-      - pattern: 澳大利亚
-        target: 🇦🇺
-      - pattern: 法国
-        target: 🇫🇷
-      - pattern: 德国
-        target: 🇩🇪
-    filter: ^(?!.*(?i)(?:剩余|到期|官网)).*$
-  Node-2:
-    interval: 43200
-    health-check: *id001
-    url: https://鸡你太美2.com
-    type: http
-    path: ./proxy_provider/providers_2.yaml
-    proxy: 🎯代理
-    override:
-      additional-prefix: 2🐒
-    filter: ^(?!.*(?i)(?:NEVER_MATCH)).*$
-  LandNode:
-    interval: 43200
-    health-check: *id001
-    type: file
-    override:
-      additional-prefix: 🔗
-      dialer-proxy: 中转
-    path: ./proxy_provider/LandNode.yaml
-  OtherNode:
-    interval: 43200
-    health-check: *id001
-    type: file
-    path: ./proxy_provider/OtherNode.yaml
-rules:
-- RULE-SET,LAN,DIRECT
-- RULE-SET,SteamCN,DIRECT
-- RULE-SET,Steam,Steam
-- RULE-SET,Epic,Epic
-- RULE-SET,Telegram,Telegram
-- RULE-SET,Spotify,Spotify
-- RULE-SET,Instagram,Instagram
-- RULE-SET,GitHub,GitHub
-- RULE-SET,PikPak,PikPak
-- RULE-SET,Discord,Discord
-- RULE-SET,TikTok,TikTok
-- RULE-SET,Pornhub,Pornhub
-- RULE-SET,Gemini,Gemini
-- RULE-SET,OpenAI,OpenAI
-- RULE-SET,YouTube,YouTube
-- RULE-SET,Netflix,Netflix
-- RULE-SET,GlobalMedia,GlobalMedia
-- RULE-SET,Google,Google
-- RULE-SET,Apple,Apple
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,Cloudflare,Cloudflare
-- RULE-SET,ChinaDirectSite,DIRECT
-- RULE-SET,ChinaDirectIP,DIRECT
-- RULE-SET,ChinaDirectAdd,DIRECT
-- MATCH,🌐其他
 proxy-groups:
 - type: select
   disable-udp: false
@@ -1408,3 +1382,29 @@ proxy-groups:
   strategy: round-robin
   name: 📋均衡全部
   filter: ^(?!.*((?i)(🔗))).*$
+rules:
+- RULE-SET,LAN,DIRECT
+- RULE-SET,SteamCN,DIRECT
+- RULE-SET,Steam,Steam
+- RULE-SET,Epic,Epic
+- RULE-SET,Telegram,Telegram
+- RULE-SET,Spotify,Spotify
+- RULE-SET,Instagram,Instagram
+- RULE-SET,GitHub,GitHub
+- RULE-SET,PikPak,PikPak
+- RULE-SET,Discord,Discord
+- RULE-SET,TikTok,TikTok
+- RULE-SET,Pornhub,Pornhub
+- RULE-SET,Gemini,Gemini
+- RULE-SET,OpenAI,OpenAI
+- RULE-SET,YouTube,YouTube
+- RULE-SET,Netflix,Netflix
+- RULE-SET,GlobalMedia,GlobalMedia
+- RULE-SET,Google,Google
+- RULE-SET,Apple,Apple
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Cloudflare,Cloudflare
+- RULE-SET,ChinaDirectSite,DIRECT
+- RULE-SET,ChinaDirectIP,DIRECT
+- RULE-SET,ChinaDirectAdd,DIRECT
+- MATCH,🌐其他

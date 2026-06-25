@@ -1,6 +1,57 @@
 # Processed: raw_configs/external/General_Config/echs-top/mihomo.yaml
 # Providers: 4 proxy, 15 rule
 
+proxy-providers:
+  link1:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: &id001
+      User-Agent:
+      - clash-verge/v2.5.1
+    health-check: &id002
+      enable: true
+      url: https://dns.google/generate_204
+      expected-status: 204
+      interval: 600
+      timeout: 3000
+      max-failed-times: 2
+      lazy: false
+    override: &id003
+      ip-version: dual
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
+    url: 订阅链接1
+    path: ./providers/link1.yaml
+  link2:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id001
+    health-check: *id002
+    override: *id003
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
+    url: 订阅链接2
+    path: ./providers/link2.yaml
+  link3:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id001
+    health-check: *id002
+    override: *id003
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
+    url: 订阅链接3
+    path: ./providers/link3.yaml
+  link4:
+    type: http
+    interval: 86400
+    proxy: 直接连接
+    header: *id001
+    health-check: *id002
+    override: *id003
+    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
+    url: 订阅链接4
+    path: ./providers/link4.yaml
 rule-providers:
   ads:
     type: http
@@ -122,75 +173,6 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/echs-top/proxy/main/mrs/ip/direct.mrs
     path: ./rules/direct_ip.mrs
-proxy-providers:
-  link1:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: &id001
-      User-Agent:
-      - clash-verge/v2.5.1
-    health-check: &id002
-      enable: true
-      url: https://dns.google/generate_204
-      expected-status: 204
-      interval: 600
-      timeout: 3000
-      max-failed-times: 2
-      lazy: false
-    override: &id003
-      ip-version: dual
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
-    url: 订阅链接1
-    path: ./providers/link1.yaml
-  link2:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id001
-    health-check: *id002
-    override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
-    url: 订阅链接2
-    path: ./providers/link2.yaml
-  link3:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id001
-    health-check: *id002
-    override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
-    url: 订阅链接3
-    path: ./providers/link3.yaml
-  link4:
-    type: http
-    interval: 86400
-    proxy: 直接连接
-    header: *id001
-    health-check: *id002
-    override: *id003
-    exclude-filter: (?i)套餐|剩余|流量|到期|重置|频道|订阅|官网|禁止|客户端|有效|联系|测试|节点|日期|群组|加入|通知|维护|网址|地址|下载|更新|APP|登录|严禁|恢复|处理|谢谢
-    url: 订阅链接4
-    path: ./providers/link4.yaml
-rules:
-- DST-PORT,5228-5230,直接连接
-- SUB-RULE,(RULE-SET,telegram_ip,no-resolve),sub-telegram
-- RULE-SET,ads,REJECT
-- RULE-SET,proxy@direct,直接连接
-- SUB-RULE,(RULE-SET,ai),sub-ai
-- SUB-RULE,(RULE-SET,download),sub-download
-- SUB-RULE,(RULE-SET,safe),sub-safe
-- SUB-RULE,(RULE-SET,google),sub-google
-- SUB-RULE,(RULE-SET,media),sub-media
-- SUB-RULE,(RULE-SET,proxy-lite),sub-proxy
-- RULE-SET,direct-lite,直接连接
-- SUB-RULE,(RULE-SET,safe_ip),sub-safe
-- SUB-RULE,(RULE-SET,google_ip),sub-google
-- SUB-RULE,(RULE-SET,media_ip),sub-media
-- RULE-SET,direct_ip,直接连接
-- AND,((NETWORK,udp),(DST-PORT,443)),代理QUIC
-- MATCH,代理连接
 proxy-groups:
 - use: &id004
   - link1
@@ -515,3 +497,21 @@ proxy-groups:
   include-all-providers: true
   hidden: true
   icon: https://mihomo.echs.top/img/Hand-Painted-icon/Google_Suite/Browser.png
+rules:
+- DST-PORT,5228-5230,直接连接
+- SUB-RULE,(RULE-SET,telegram_ip,no-resolve),sub-telegram
+- RULE-SET,ads,REJECT
+- RULE-SET,proxy@direct,直接连接
+- SUB-RULE,(RULE-SET,ai),sub-ai
+- SUB-RULE,(RULE-SET,download),sub-download
+- SUB-RULE,(RULE-SET,safe),sub-safe
+- SUB-RULE,(RULE-SET,google),sub-google
+- SUB-RULE,(RULE-SET,media),sub-media
+- SUB-RULE,(RULE-SET,proxy-lite),sub-proxy
+- RULE-SET,direct-lite,直接连接
+- SUB-RULE,(RULE-SET,safe_ip),sub-safe
+- SUB-RULE,(RULE-SET,google_ip),sub-google
+- SUB-RULE,(RULE-SET,media_ip),sub-media
+- RULE-SET,direct_ip,直接连接
+- AND,((NETWORK,udp),(DST-PORT,443)),代理QUIC
+- MATCH,代理连接

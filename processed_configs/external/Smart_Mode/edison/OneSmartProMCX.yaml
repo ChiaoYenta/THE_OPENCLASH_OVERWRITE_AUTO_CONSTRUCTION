@@ -1,6 +1,54 @@
 # Processed: raw_configs/external/Smart_Mode/edison/OneSmartProMCX.yaml
 # Providers: 4 proxy, 69 rule
 
+proxy-providers:
+  优质服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: &id001
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 180
+    header: &id002
+      User-Agent:
+      - clash.meta
+      - mihomo/1.9.22
+    override:
+      additional-suffix: ' [优]'
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 填写你的优质机场订阅链接
+  次优服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id001
+    header: *id002
+    override:
+      additional-suffix: ' [次]'
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 填写你的次优质机场订阅链接
+  备用服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id001
+    header: *id002
+    override:
+      additional-suffix: ' [备]'
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 填写你的备用机场订阅链接
+  落地服务商:
+    type: http
+    interval: 86400
+    proxy: 国内直连
+    health-check: *id001
+    header: *id002
+    override:
+      additional-suffix: ' [中]'
+      dialer-proxy: 中转服务
+    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
+    url: 填写你的落地订阅源地址
 rule-providers:
   PublicTracker:
     type: http
@@ -485,145 +533,6 @@ rule-providers:
     interval: 86400
     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs
     path: ./ruleset/cn-ip.mrs
-proxy-providers:
-  优质服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: &id001
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 180
-    header: &id002
-      User-Agent:
-      - clash.meta
-      - mihomo/1.9.22
-    override:
-      additional-suffix: ' [优]'
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 填写你的优质机场订阅链接
-  次优服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id001
-    header: *id002
-    override:
-      additional-suffix: ' [次]'
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 填写你的次优质机场订阅链接
-  备用服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id001
-    header: *id002
-    override:
-      additional-suffix: ' [备]'
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 填写你的备用机场订阅链接
-  落地服务商:
-    type: http
-    interval: 86400
-    proxy: 国内直连
-    health-check: *id001
-    header: *id002
-    override:
-      additional-suffix: ' [中]'
-      dialer-proxy: 中转服务
-    exclude-filter: (?i)(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|剩余|重置|套餐|距离)
-    url: 填写你的落地订阅源地址
-rules:
-- AND,(DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,China))),REJECT
-- AND,(DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,China-IP))),REJECT
-- RULE-SET,DNS-IP,REJECT,no-resolve
-- RULE-SET,Category-DoH,REJECT
-- RULE-SET,HTTPDNS-CN,REJECT
-- RULE-SET,Private,国内直连
-- RULE-SET,Private-IP,国内直连,no-resolve
-- DOMAIN,access.pikpakdrive.com,REJECT
-- DOMAIN,access.mypikpak.com,REJECT
-- DOMAIN,access.mypikpak.net,REJECT
-- DOMAIN,access.pikpak.me,REJECT
-- DOMAIN-KEYWORD,dl-a10b-,国内直连
-- DOMAIN-KEYWORD,dl-z01a-,国内直连
-- DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,国内直连
-- DOMAIN-KEYWORD,ipv6tracker,Tracker
-- DOMAIN-KEYWORD,bittorrent,Tracker
-- DOMAIN-KEYWORD,torrent,Tracker
-- DOMAIN-KEYWORD,tracker,Tracker
-- RULE-SET,PublicTracker,Tracker
-- RULE-SET,Trackers,Tracker
-- RULE-SET,Xunlei,Tracker
-- RULE-SET,GameDownload,国内直连
-- RULE-SET,Accelerator,国内直连
-- RULE-SET,Blizzard,国内直连
-- RULE-SET,Ubisoft,国内直连
-- RULE-SET,GamesCN,国内直连
-- RULE-SET,PlayStation,ProxyGame
-- RULE-SET,Nintendo,ProxyGame
-- RULE-SET,Origin,ProxyGame
-- RULE-SET,Steam,ProxyGame
-- RULE-SET,Xbox,ProxyGame
-- RULE-SET,Epic,ProxyGame
-- RULE-SET,GOG,ProxyGame
-- RULE-SET,EA,ProxyGame
-- RULE-SET,GamesGlobal,ProxyGame
-- DOMAIN-SUFFIX,copilot.microsoft.com,AI
-- DOMAIN-SUFFIX,api.microsoftapp.net,AI
-- DOMAIN-SUFFIX,copilot.azure.com,AI
-- DOMAIN-SUFFIX,openai.azure.com,AI
-- DOMAIN,edgeservices.bing.com,AI
-- DOMAIN,sydney.bing.com,AI
-- DOMAIN,img.bing.com,AI
-- RULE-SET,Bing,Bing
-- RULE-SET,MSN,Bing
-- RULE-SET,Crypto,Crypto
-- RULE-SET,PayPal,PayPal
-- RULE-SET,Emby,Emby
-- RULE-SET,AI,AI
-- RULE-SET,GlobalAI,AI
-- RULE-SET,TikTok,TikTok
-- RULE-SET,PrimeVideo,Streaming
-- RULE-SET,AppleTV,Streaming
-- RULE-SET,Spotify,Streaming
-- RULE-SET,YouTube,Streaming
-- RULE-SET,Netflix,Streaming
-- RULE-SET,Disney,Streaming
-- RULE-SET,Hulu,Streaming
-- RULE-SET,HBO,Streaming
-- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Google
-- DOMAIN-SUFFIX,googleapis.cn,Google
-- RULE-SET,GoogleFCM,Google
-- RULE-SET,Google,Google
-- RULE-SET,Speedtest,Speedtest
-- RULE-SET,Telegram,Proxy
-- RULE-SET,Twitter,Proxy
-- RULE-SET,Docker,Proxy
-- RULE-SET,Tumblr,Proxy
-- RULE-SET,Reddit,Proxy
-- RULE-SET,GitHub,Proxy
-- RULE-SET,Pixiv,Proxy
-- RULE-SET,Meta,Proxy
-- RULE-SET,Communication,Proxy
-- RULE-SET,SocialMedia,Proxy
-- RULE-SET,Ecommerce,Proxy
-- RULE-SET,Scholar,Proxy
-- RULE-SET,MicrosoftCN,国内直连
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,Apple-CN,国内直连
-- RULE-SET,Apple,Apple
-- RULE-SET,Netflix-IP,Streaming,no-resolve
-- RULE-SET,Trackers-IP,Tracker,no-resolve
-- RULE-SET,Facebook-IP,Proxy,no-resolve
-- RULE-SET,Telegram-IP,Proxy,no-resolve
-- RULE-SET,Twitter-IP,Proxy,no-resolve
-- RULE-SET,Google-IP,Google,no-resolve
-- RULE-SET,Apple-IP,Apple,no-resolve
-- RULE-SET,Geo-!CN,Proxy
-- RULE-SET,China,国内直连
-- RULE-SET,China-IP,国内直连,no-resolve
-- MATCH,漏网之鱼
 proxy-groups:
 - type: select
   proxies: &id003
@@ -932,3 +841,94 @@ proxy-groups:
   url: https://cp.cloudflare.com/generate_204
   name: 全部节点-手选
   include-all: true
+rules:
+- AND,(DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,China))),REJECT
+- AND,(DST-PORT,443),(NETWORK,UDP),(NOT,((RULE-SET,China-IP))),REJECT
+- RULE-SET,DNS-IP,REJECT,no-resolve
+- RULE-SET,Category-DoH,REJECT
+- RULE-SET,HTTPDNS-CN,REJECT
+- RULE-SET,Private,国内直连
+- RULE-SET,Private-IP,国内直连,no-resolve
+- DOMAIN,access.pikpakdrive.com,REJECT
+- DOMAIN,access.mypikpak.com,REJECT
+- DOMAIN,access.mypikpak.net,REJECT
+- DOMAIN,access.pikpak.me,REJECT
+- DOMAIN-KEYWORD,dl-a10b-,国内直连
+- DOMAIN-KEYWORD,dl-z01a-,国内直连
+- DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,国内直连
+- DOMAIN-KEYWORD,ipv6tracker,Tracker
+- DOMAIN-KEYWORD,bittorrent,Tracker
+- DOMAIN-KEYWORD,torrent,Tracker
+- DOMAIN-KEYWORD,tracker,Tracker
+- RULE-SET,PublicTracker,Tracker
+- RULE-SET,Trackers,Tracker
+- RULE-SET,Xunlei,Tracker
+- RULE-SET,GameDownload,国内直连
+- RULE-SET,Accelerator,国内直连
+- RULE-SET,Blizzard,国内直连
+- RULE-SET,Ubisoft,国内直连
+- RULE-SET,GamesCN,国内直连
+- RULE-SET,PlayStation,ProxyGame
+- RULE-SET,Nintendo,ProxyGame
+- RULE-SET,Origin,ProxyGame
+- RULE-SET,Steam,ProxyGame
+- RULE-SET,Xbox,ProxyGame
+- RULE-SET,Epic,ProxyGame
+- RULE-SET,GOG,ProxyGame
+- RULE-SET,EA,ProxyGame
+- RULE-SET,GamesGlobal,ProxyGame
+- DOMAIN-SUFFIX,copilot.microsoft.com,AI
+- DOMAIN-SUFFIX,api.microsoftapp.net,AI
+- DOMAIN-SUFFIX,copilot.azure.com,AI
+- DOMAIN-SUFFIX,openai.azure.com,AI
+- DOMAIN,edgeservices.bing.com,AI
+- DOMAIN,sydney.bing.com,AI
+- DOMAIN,img.bing.com,AI
+- RULE-SET,Bing,Bing
+- RULE-SET,MSN,Bing
+- RULE-SET,Crypto,Crypto
+- RULE-SET,PayPal,PayPal
+- RULE-SET,Emby,Emby
+- RULE-SET,AI,AI
+- RULE-SET,GlobalAI,AI
+- RULE-SET,TikTok,TikTok
+- RULE-SET,PrimeVideo,Streaming
+- RULE-SET,AppleTV,Streaming
+- RULE-SET,Spotify,Streaming
+- RULE-SET,YouTube,Streaming
+- RULE-SET,Netflix,Streaming
+- RULE-SET,Disney,Streaming
+- RULE-SET,Hulu,Streaming
+- RULE-SET,HBO,Streaming
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Google
+- DOMAIN-SUFFIX,googleapis.cn,Google
+- RULE-SET,GoogleFCM,Google
+- RULE-SET,Google,Google
+- RULE-SET,Speedtest,Speedtest
+- RULE-SET,Telegram,Proxy
+- RULE-SET,Twitter,Proxy
+- RULE-SET,Docker,Proxy
+- RULE-SET,Tumblr,Proxy
+- RULE-SET,Reddit,Proxy
+- RULE-SET,GitHub,Proxy
+- RULE-SET,Pixiv,Proxy
+- RULE-SET,Meta,Proxy
+- RULE-SET,Communication,Proxy
+- RULE-SET,SocialMedia,Proxy
+- RULE-SET,Ecommerce,Proxy
+- RULE-SET,Scholar,Proxy
+- RULE-SET,MicrosoftCN,国内直连
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Apple-CN,国内直连
+- RULE-SET,Apple,Apple
+- RULE-SET,Netflix-IP,Streaming,no-resolve
+- RULE-SET,Trackers-IP,Tracker,no-resolve
+- RULE-SET,Facebook-IP,Proxy,no-resolve
+- RULE-SET,Telegram-IP,Proxy,no-resolve
+- RULE-SET,Twitter-IP,Proxy,no-resolve
+- RULE-SET,Google-IP,Google,no-resolve
+- RULE-SET,Apple-IP,Apple,no-resolve
+- RULE-SET,Geo-!CN,Proxy
+- RULE-SET,China,国内直连
+- RULE-SET,China-IP,国内直连,no-resolve
+- MATCH,漏网之鱼
